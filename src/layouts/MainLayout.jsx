@@ -11,10 +11,14 @@ const MainLayout = () => {
             <Col xs={3} > <SideHeader /></Col>
             <Col xs={9} className='mainNav'>
                 <Header />
-                <Outlet />
-                <footer>
-                    <p> &copy; 2023. All rights reserved by Abubakar Siddik </p>
-                </footer>
+                <div className='mainNavView'>
+                    <div>
+                        <Outlet />
+                    </div>
+                    <footer>
+                        <p> &copy; 2023. All rights reserved by Abubakar Siddik </p>
+                    </footer>
+                </div>
             </Col>
         </Row>
     );

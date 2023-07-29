@@ -1,3 +1,8 @@
+.header {
+    background: var(  --color-bg-primary);
+    box-shadow:  var(--header-shadow)
+}
+
 .header a {
     text-decoration: none;
     margin: 8px;
@@ -10,7 +15,7 @@
     background-color: var(--color-bg-primary);
 }
 
-.theme{
+.theme {
     font-size: 30px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -25,4 +30,16 @@
     border-bottom-right-radius: 15px;
     box-shadow: var(--shadow-primary);
     background: var(--shadow-bg-primary);
+}
+.navToggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+.navToggle img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
 }

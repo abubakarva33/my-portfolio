@@ -5,41 +5,39 @@
   --color-body: #878e99;
   --text-color: #3c3e41;
 
-/* ---------shadow----------- */
+  /* ---------shadow----------- */
   --shadow-bg-primary: linear-gradient(145deg, #e2e8ec, #ffffff);
   --shadow-primary: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
-/* ------------Hover---------- */
+  /* ------------Hover---------- */
   --color-primary-gradient-from: #6a67ce;
   --color-primary-gradient-to: #fc636b;
-  --hover-gradient-light: linear-gradient(145deg, var(--color-primary-gradient-from), var( --color-primary-gradient-to));
+  --hover-gradient-light: linear-gradient(145deg, var(--color-primary-gradient-from), var(--color-primary-gradient-to));
   /* ------------------------- */
-  --imgShadow:rgba(37, 37, 37, 0.266);
-  --border-color:rgba(37, 37, 37, 0.266);
-  
-  
-
+  --header-shadow: -8px 8px 16px #dee2e4,
+  8px -8px 16px #fafeff;
 }
+
 .darkTheme {
   --color-bg-primary: #212428;
   --color-primary: #ff014f;
   --color-heading-bold: #1e2125;
   --color-body: #878e99;
   --text-color: #cfcfcf;
-
-
-  /* ------------------------- */
-  --imgShadow:#32363b;
-  --border-color:#636363;
   
+  --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
+  
+  /* ------------------------- */
+  --imgShadow: #32363b;
+  --border-color: #636363;
+
 
   --shadow-bg-primary: linear-gradient(145deg, #1e2024, #23272b);
   --shadow-primary: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
 }
 
-body{
+body {
   background-color: var(--color-bg-primary) !important;
   color: var(--text-color) !important;
   transition: 0.2s all ease-in-out;
   scroll-behavior: smooth;
 }
-

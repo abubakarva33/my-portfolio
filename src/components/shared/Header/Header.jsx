@@ -25,18 +25,15 @@ const Header = () => {
     return (
         <div className='header'>
             <Navbar expand='lg'>
-                <Navbar.Brand href="#">My Portfolio</Navbar.Brand>
+                <NavLink to="/">My Portfolio</NavLink>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-lg`}
                     aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
                     placement="end"
                 >
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                            My portfolio
-                        </Offcanvas.Title>
-                        <img src="/Images/userImg2.webp" alt="" className='img-fluid' />
+                    <Offcanvas.Header closeButton className='navToggle'>
+                        <img src="/Images/userImg2.webp" alt=""  />
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -57,7 +54,6 @@ const Header = () => {
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Navbar>
-            <hr />
         </div>
     );
 };

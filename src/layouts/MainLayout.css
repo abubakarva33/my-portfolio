@@ -1,7 +1,15 @@
 .mainNav{
     height: 100vh;
     overflow-y: auto;
+
 }
+.mainNavView{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+}
+
 
 @media screen {
     
