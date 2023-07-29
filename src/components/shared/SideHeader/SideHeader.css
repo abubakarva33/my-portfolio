@@ -5,14 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border-right: 5px solid var(--sideBorder);
-}
-.sideBorderLight{
-    border-right: 5px solid ;
-}
-.sideBorderDark{
-
-
+    border-right: 5px solid var(--border-color);
 }
 
 
@@ -21,7 +14,7 @@
     margin-top: 10px;
     height: 200px;
     border-radius: 50%;
-    border: 5px solid var(--imgShadow);
+    border: 5px solid var(--border-color);
 }
 .contactIcon{
     font-size: 25px;
@@ -30,6 +23,7 @@
     border-radius: 10px;
     box-shadow: var(--shadow-primary);
     background: var(--shadow-bg-primary);
+    transition: .2s ease-in-out;
 }
 .sideHeader a{
     text-decoration: none;

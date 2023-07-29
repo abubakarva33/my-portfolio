@@ -14,13 +14,13 @@
   --hover-gradient-light: linear-gradient(145deg, var(--color-primary-gradient-from), var( --color-primary-gradient-to));
   /* ------------------------- */
   --imgShadow:rgba(37, 37, 37, 0.266);
-  --sideBorder:rgba(37, 37, 37, 0.266);
+  --border-color:rgba(37, 37, 37, 0.266);
   
   
 
 }
 .darkTheme {
-  --color-bg-primary: #212428;;
+  --color-bg-primary: #212428;
   --color-primary: #ff014f;
   --color-heading-bold: #1e2125;
   --color-body: #878e99;
@@ -29,7 +29,7 @@
 
   /* ------------------------- */
   --imgShadow:#32363b;
-  --sideBorder:#121415;
+  --border-color:#636363;
   
 
   --shadow-bg-primary: linear-gradient(145deg, #1e2024, #23272b);
@@ -39,5 +39,7 @@
 body{
   background-color: var(--color-bg-primary) !important;
   color: var(--text-color) !important;
+  transition: 0.2s all ease-in-out;
+  scroll-behavior: smooth;
 }
 

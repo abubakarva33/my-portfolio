@@ -9,7 +9,7 @@ const MainLayout = () => {
     return (
         <Row className='gx-0'>
             <Col xs={3} > <SideHeader /></Col>
-            <Col xs={9} className='mainNav px-5'>
+            <Col xs={9} className='mainNav'>
                 <Header />
                 <Outlet />
                 <footer>
