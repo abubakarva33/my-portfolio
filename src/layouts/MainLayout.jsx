@@ -11,11 +11,11 @@ const MainLayout = () => {
             <Col xs={3} > <SideHeader /></Col>
             <Col xs={9} className='mainNav'>
                 <Header />
-                <div className='mainNavView'>
+                <div className='mainNavView '>
                     <div>
                         <Outlet />
                     </div>
-                    <footer>
+                    <footer className='footer'>
                         <p> &copy; 2023. All rights reserved by Abubakar Siddik </p>
                     </footer>
                 </div>

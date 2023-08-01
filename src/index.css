@@ -1,9 +1,10 @@
 :root {
   --color-bg-primary: #ecf0f3;
   --color-primary: #ff014f;
-  --color-heading-bold: #1e2125;
+  --color-heading-bold:#1e2125 ;
   --color-body: #878e99;
   --text-color: #3c3e41;
+  --border-color: #636363;
 
   /* ---------shadow----------- */
   --shadow-bg-primary: linear-gradient(145deg, #e2e8ec, #ffffff);
@@ -20,7 +21,7 @@
 .darkTheme {
   --color-bg-primary: #212428;
   --color-primary: #ff014f;
-  --color-heading-bold: #1e2125;
+  --color-heading-bold: #ffffff;
   --color-body: #878e99;
   --text-color: #cfcfcf;
   

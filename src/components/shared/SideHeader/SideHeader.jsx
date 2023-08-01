@@ -22,7 +22,7 @@ const SideHeader = () => {
                 </Link>
             </div>
             <div>
-                <Link to="/contacts" className=' hireBtn hireBtnMain d-flex  align-items-center justify-content-center w-100 mt-3 p-2'><FiMail className='me-2' /><span className='hireBtnSpan'>HIRE ME</span></Link>
+                <Link to="/contacts" className=' mainBtn w-100 mt-3 p-2'><FiMail className='me-2' /><span className='mainBtnSpan'>HIRE ME</span></Link>
                 <hr className='w-100 bg-dark my-3 ms-2' />
                 <h6 className='ms-3 pb-2'>Find With Me</h6>
                 <div className='my-4'>

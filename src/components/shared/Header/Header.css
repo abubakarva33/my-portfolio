@@ -3,8 +3,9 @@
     box-shadow:  var(--header-shadow)
 }
 
-.header a {
-    text-decoration: none;
+.header a, 
+.offcanvas.offcanvas-end.show  a{
+    text-decoration: none ;
     margin: 8px;
 }
 
@@ -42,4 +43,8 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
+}
+
+.navbar-toggler{
+    margin-left: auto;
 }

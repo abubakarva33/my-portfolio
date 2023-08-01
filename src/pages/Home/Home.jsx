@@ -1,12 +1,31 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
+import Typed from 'react-typed';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis assumenda iure quo, perspiciatis odit vitae officia distinctio neque quam esse id accusantium deleniti repellat quod voluptas illo repellendus quas quaerat natus nihil placeat dolore? Reiciendis laborum iusto, consectetur incidunt aspernatur labore tempore voluptatum velit enim accusamus voluptas recusandae nesciunt molestias quia eligendi id saepe iste ipsam quidem culpa? Inventore molestias beatae a odit natus sed repellendus odio voluptates similique. Fugiat aliquid architecto, vero recusandae dolore deserunt doloribus temporibus eum delectus voluptatibus ad id saepe, molestiae ut accusamus, quasi mollitia officia debitis eius amet velit iure alias! Error tenetur sit aperiam! Pariatur, necessitatibus! Voluptas molestias impedit quisquam vel ab ducimus animi exercitationem dolore! Esse iure numquam harum, reprehenderit deserunt dicta odio in quibusdam dolore optio, minima qui nesciunt. Enim veritatis autem corrupti consectetur voluptate, corporis velit id asperiores vero, cupiditate, ducimus eaque amet atque? Amet natus dolore nulla, sit asperiores quod facere labore ex, quia repellat vero illum fugiat ut accusamus. Natus dignissimos quisquam quos fuga aliquam magnam. Ullam repudiandae vero odio repellat voluptatem eum veniam. Cumque ea maiores, obcaecati, doloremque voluptatem voluptates hic labore recusandae necessitatibus vel eum quasi consequuntur molestiae inventore provident blanditiis officia libero pariatur praesentium dolor quae?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis assumenda iure quo, perspiciatis odit vitae officia distinctio neque quam esse id accusantium deleniti repellat quod voluptas illo repellendus quas quaerat natus nihil placeat dolore? Reiciendis laborum iusto, consectetur incidunt aspernatur labore tempore voluptatum velit enim accusamus voluptas recusandae nesciunt molestias quia eligendi id saepe iste ipsam quidem culpa? Inventore molestias beatae a odit natus sed repellendus odio voluptates similique. Fugiat aliquid architecto, vero recusandae dolore deserunt doloribus temporibus eum delectus voluptatibus ad id saepe, molestiae ut accusamus, quasi mollitia officia debitis eius amet velit iure alias! Error tenetur sit aperiam! Pariatur, necessitatibus! Voluptas molestias impedit quisquam vel ab ducimus animi exercitationem dolore! Esse iure numquam harum, reprehenderit deserunt dicta odio in quibusdam dolore optio, minima qui nesciunt. Enim veritatis autem corrupti consectetur voluptate, corporis velit id asperiores vero, cupiditate, ducimus eaque amet atque? Amet natus dolore nulla, sit asperiores quod facere labore ex, quia repellat vero illum fugiat ut accusamus. Natus dignissimos quisquam quos fuga aliquam magnam. Ullam repudiandae vero odio repellat voluptatem eum veniam. Cumque ea maiores, obcaecati, doloremque voluptatem voluptates hic labore recusandae necessitatibus vel eum quasi consequuntur molestiae inventore provident blanditiis officia libero pariatur praesentium dolor quae?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis assumenda iure quo, perspiciatis odit vitae officia distinctio neque quam esse id accusantium deleniti repellat quod voluptas illo repellendus quas quaerat natus nihil placeat dolore? Reiciendis laborum iusto, consectetur incidunt aspernatur labore tempore voluptatum velit enim accusamus voluptas recusandae nesciunt molestias quia eligendi id saepe iste ipsam quidem culpa? Inventore molestias beatae a odit natus sed repellendus odio voluptates similique. Fugiat aliquid architecto, vero recusandae dolore deserunt doloribus temporibus eum delectus voluptatibus ad id saepe, molestiae ut accusamus, quasi mollitia officia debitis eius amet velit iure alias! Error tenetur sit aperiam! Pariatur, necessitatibus! Voluptas molestias impedit quisquam vel ab ducimus animi exercitationem dolore! Esse iure numquam harum, reprehenderit deserunt dicta odio in quibusdam dolore optio, minima qui nesciunt. Enim veritatis autem corrupti consectetur voluptate, corporis velit id asperiores vero, cupiditate, ducimus eaque amet atque? Amet natus dolore nulla, sit asperiores quod facere labore ex, quia repellat vero illum fugiat ut accusamus. Natus dignissimos quisquam quos fuga aliquam magnam. Ullam repudiandae vero odio repellat voluptatem eum veniam. Cumque ea maiores, obcaecati, doloremque voluptatem voluptates hic labore recusandae necessitatibus vel eum quasi consequuntur molestiae inventore provident blanditiis officia libero pariatur praesentium dolor quae?</p>
+            <div className='home p-5'>
+                <h6>WELCOME TO MY WORLD</h6>
+                <div className='homeHeading'>
+                    <p>Hi, I’m <span className='homeHeadingSpan'>ABUBAKAR SIDDIK</span></p>
+                    <div className='d-flex'>
+                        <p className='homeHeadingSpan pe-3'>a</p>
+                        <Typed
+                            strings={['Developer',
+                                'FrontEnd Developer',
+                                'Designer']}
+                            typeSpeed={40}
+                            backSpeed={50}
+                            loop
+                        />
+                    </div>
+                </div>
+                <p className='fs-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quia? Magnam quae fugiat ex placeat, nulla deleniti maiores aperiam sequi id dolorem veniam alias repellat corrupti? Doloremque sapiente assumenda dignissimos temporibus officia recusandae quam enim quod consequuntur accusamus odio optio quidem minima, sunt dolorem? Vel magni impedit ad distinctio saepe atque unde sunt earum sed! Nihil magni vero dicta enim exercitationem omnis natus harum.</p>
+                <Link to="/contacts" className='mainBtn w-25 mt-4'> <p className='mainBtnSpan'> Contact Me</p> </Link>
+            </div>
+            <Services />
         </div>
     );
 };

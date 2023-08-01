@@ -25,12 +25,13 @@ const Header = () => {
     return (
         <div className='header'>
             <Navbar expand='lg'>
-                <NavLink to="/">My Portfolio</NavLink>
+                {/* <NavLink to="/">My Portfolio</NavLink> */}
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-lg`}
                     aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
                     placement="end"
+                    className=' ms-auto'
                 >
                     <Offcanvas.Header closeButton className='navToggle'>
                         <img src="/Images/userImg2.webp" alt=""  />

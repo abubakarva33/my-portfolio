@@ -9,6 +9,14 @@
     justify-content: space-between;
     height: 90vh;
 }
+.footer{
+    background: var(  --color-bg-primary);
+    box-shadow:  var(--header-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 
 
 @media screen {
