@@ -1,3 +1,4 @@
+
 .mainCard  * {
 	transition: 0.5s;
 }
@@ -5,8 +6,12 @@
 .mainCard{
 position: relative;
 padding-top: 30px;
-padding-bottom: 50px;
+padding-bottom: 30px;
+background: var(--shadow-bg-primary);
+box-shadow: var(--shadow-primary);
 overflow: hidden;
+
+border: none !important;
 }
 .mainCard:hover img{
 	transform: translateY(-20px);
@@ -22,3 +27,17 @@ overflow: hidden;
 .mainCard:hover .btnGroup{
 	top: 0;
 	}
+
+.btnGroup{
+position: relative;
+}
+.btn1{
+	position: absolute;
+    right: -40px;
+    top: 0;
+}
+.btn2{
+	position: absolute;
+	left: 170px;
+	top: 0;
+}

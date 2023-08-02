@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Typed from 'react-typed';
 import Services from '../Services/Services';
+import Resume from '../Resume/Resume';
 
 const Home = () => {
     return (
@@ -25,6 +26,7 @@ const Home = () => {
                 <p className='fs-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quia? Magnam quae fugiat ex placeat, nulla deleniti maiores aperiam sequi id dolorem veniam alias repellat corrupti? Doloremque sapiente assumenda dignissimos temporibus officia recusandae quam enim quod consequuntur accusamus odio optio quidem minima, sunt dolorem? Vel magni impedit ad distinctio saepe atque unde sunt earum sed! Nihil magni vero dicta enim exercitationem omnis natus harum.</p>
                 <Link to="/contacts" className='mainBtn w-25 mt-4'> <p className='mainBtnSpan'> Contact Me</p> </Link>
             </div>
+            <Resume/>
             <Services />
         </div>
     );

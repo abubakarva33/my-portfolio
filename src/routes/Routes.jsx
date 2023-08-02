@@ -8,6 +8,9 @@ import Pricing from "../pages/Pricing/Pricing";
 import Resume from "../pages/Resume/Resume";
 import Services from "../pages/Services/Services";
 import RecentProjects from "../pages/RecentProjects/RecentProjects";
+import Skills from "../pages/Resume/ResumeComponents/Skills/Skills";
+import Education from "../pages/Resume/ResumeComponents/Education/Education";
+import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
 
 export const routes = createBrowserRouter([
     {
@@ -36,7 +39,30 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/resume',
-                element: <Resume/>
+                element: <Resume/>,
+                children:[
+                    {
+                        path: '/resume',
+                        loader: async () => fetch("http://localhost:3000/resumes"),
+                        element: <Skills/>
+                    },
+                    {
+                        path: '/resume/skills',
+                        loader: async () => fetch("http://localhost:3000/resumes"),
+                        element: <Skills/>
+                    },
+                    {
+                        path: '/resume/educations',
+                        // loader: async () => fetch("http://localhost:3000/resumes"),
+                        element: <Education/>
+                    },
+                    {
+                        path: '/resume/experience',
+                        // loader: async () => fetch("http://localhost:3000/resumes"),
+                        element: <Experience/>
+                    }
+
+                ]
             },
             {
                 path: '/services',
