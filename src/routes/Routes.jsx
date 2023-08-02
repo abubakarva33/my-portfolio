@@ -53,12 +53,12 @@ export const routes = createBrowserRouter([
                     },
                     {
                         path: '/resume/educations',
-                        // loader: async () => fetch("http://localhost:3000/resumes"),
+                        loader: async () => fetch("http://localhost:3000/resumes"),
                         element: <Education/>
                     },
                     {
                         path: '/resume/experience',
-                        // loader: async () => fetch("http://localhost:3000/resumes"),
+                        loader: async () => fetch("http://localhost:3000/resumes"),
                         element: <Experience/>
                     }
 
