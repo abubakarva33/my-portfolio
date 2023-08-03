@@ -27,7 +27,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/blogs',
-                loader: async ()=>fetch("http://localhost:3000/recentProjects"),
+                loader: async ()=>fetch("http://localhost:3000/blogs"),
                 element: <Blogs/>
             },
             {

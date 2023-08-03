@@ -14,7 +14,7 @@ const ExperienceSection = ({ details, institute, title, range, location }) => {
                     <small className="fs-6 ps-1">{`( ${range})`}</small>
                 </div>
             </div>
-            <p className="pt-4">{details}</p>
+            <p className="pt-4">{(details.length) > 180? `${(details).slice(0,180)}...` : details }</p>
         </div>
         </div>
     );

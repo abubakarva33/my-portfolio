@@ -2,4 +2,5 @@
     border-radius: 10px;
     background: var(--shadow-bg-primary);
     box-shadow:  var(--shadow-primary);
+    min-height: 350px;
 }
