@@ -11,6 +11,18 @@
     justify-content: space-around;
 }
 .resumeBtn{
+
+}
+.resumeBtn:hover{
+    border-radius: 10px;
+    background: var(--shadow-bg-primary);
+    box-shadow:  var(--shadow-primary);
+}
+
+.resumeBtn:active{
+    background-color: aquamarine;
+}
+.resumeHeader a{
     background: var(  --color-bg-primary);
     padding: 30px 0px;
     box-shadow:  var(--header-shadow);
@@ -21,8 +33,17 @@
     font-size: 25px;
     font-weight: 600;
 }
-.resumeBtn:hover{
+.resumeHeader a.active{
+background-color: aquamarine !important;
+}
+
+.resumeHeader a:hover{
     border-radius: 10px;
     background: var(--shadow-bg-primary);
+    box-shadow:  var(--shadow-primary);
+}
+.resumeHeader a.active:hover{
+    border-radius: 10px;
+    background: aquamarine;
     box-shadow:  var(--shadow-primary);
 }

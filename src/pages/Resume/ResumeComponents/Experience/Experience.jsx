@@ -1,8 +1,8 @@
 import "./Experience.css";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import EducationSection from "./EducationSection/EducationSection";
 import { useLoaderData } from "react-router-dom";
+import ExperienceSection from "./ExperienceSection/ExperienceSection";
 
 const Experience = () => {
     const experienceData=useLoaderData();
@@ -10,10 +10,10 @@ const Experience = () => {
         <div>
             <Row>
                 <Col>
-                    <h1>Educational Quality</h1>
+                    <h1>Job Experience</h1>
                     <div>
                         {(experienceData[0].academicEducation).map((skill) =>
-                            <EducationSection
+                            <ExperienceSection
                                 key={skill.id}
                                 range={skill.range}
                                 title={skill.title}
@@ -25,10 +25,10 @@ const Experience = () => {
                     </div>
                 </Col>
                 <Col>
-                    <h1>Developer Quality</h1>
+                    <h1>Trainer Experience</h1>
                     <div>
                         {(experienceData[0].devEducation).map((skill) =>
-                            <EducationSection
+                            <ExperienceSection
                                 key={skill.id}
                                 range={skill.range}
                                 title={skill.title}

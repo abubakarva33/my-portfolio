@@ -102,10 +102,11 @@
   "recentProjects": [
     {
       "id": "64ca5d371fd893f5b58d7c39",
-      "picture": "http://placehold.it/32x32",
+      "picture": "/Images/project1.png",
       "serviceName": "reprehenderit pariatur",
       "about": "Enim labore do ut occaecat occaecat proident laborum nisi. Eiusmod do ea voluptate duis quis ut ad officia consequat ipsum. Pariatur culpa Lorem ipsum cillum. Laboris esse enim ea labore anim labore reprehenderit aute dolor aliqua ad ut anim. Ex nostrud voluptate cupidatat occaecat consequat consequat et reprehenderit fugiat dolore ad eiusmod. Do consectetur ex ipsum sit. Nisi commodo laborum id ipsum veniam ex excepteur cillum voluptate et reprehenderit ad.\r\n",
       "registered": "2018-06-26",
+      "mainTag": "Education",
       "tags": [
         "aliqua",
         "fugiat",
@@ -116,10 +117,11 @@
     },
     {
       "id": "64ca5d37d4a067016d9f85eb",
-      "picture": "http://placehold.it/32x32",
+      "picture": "/Images/project2.png",
       "serviceName": "veniam dolor",
       "about": "Consectetur eu sint nostrud amet quis reprehenderit nisi. Proident culpa sint Lorem dolore fugiat labore ex sit Lorem in. Id irure commodo deserunt fugiat dolor ut esse et eiusmod voluptate duis ullamco. Ipsum cillum nisi esse cupidatat Lorem eu.\r\n",
       "registered": "2018-01-14",
+      "mainTag": "Education",
       "tags": [
         "cupidatat",
         "dolore",
@@ -130,10 +132,11 @@
     },
     {
       "id": "64ca5d37b7c4d75dc74a85e4",
-      "picture": "http://placehold.it/32x32",
+      "picture": "/Images/project3.png",
       "serviceName": "ut excepteur",
       "about": "Veniam commodo ipsum enim fugiat culpa Lorem in sit irure minim excepteur irure et. Sint pariatur veniam mollit proident ipsum laboris nisi excepteur aliqua cupidatat id nostrud esse id. Tempor aliqua qui est tempor deserunt.\r\n",
       "registered": "2015-06-26",
+      "mainTag": "Education",
       "tags": [
         "occaecat",
         "irure",
@@ -144,10 +147,11 @@
     },
     {
       "id": "64ca5d37d80bea96b42ebaf5",
-      "picture": "http://placehold.it/32x32",
+      "picture": "/Images/project1.png",
       "serviceName": "magna voluptate",
       "about": "Adipisicing Lorem irure tempor amet reprehenderit commodo pariatur Lorem minim ex. Id culpa ullamco incididunt sint ut dolor laborum nostrud adipisicing excepteur. Tempor occaecat duis ullamco occaecat est. Exercitation voluptate Lorem sunt excepteur eu fugiat adipisicing ex minim fugiat officia occaecat adipisicing velit. Minim sint cupidatat magna ea adipisicing. Est dolor quis excepteur sint cupidatat excepteur sunt commodo eu excepteur excepteur sint incididunt minim. Qui aliquip eiusmod incididunt ut nostrud consequat proident deserunt tempor qui commodo voluptate non.\r\n",
       "registered": "2020-02-04",
+      "mainTag": "Education",
       "tags": [
         "elit",
         "in",
@@ -158,10 +162,11 @@
     },
     {
       "id": "64ca5d370cc735e1b1b16797",
-      "picture": "http://placehold.it/32x32",
+      "picture": "/Images/project2.png",
       "serviceName": "duis veniam",
       "about": "Exercitation nostrud quis velit id elit amet sit. Adipisicing quis esse aliqua dolore non id amet aute consequat nostrud voluptate sunt. Et sunt incididunt incididunt excepteur ullamco ullamco duis quis minim nisi anim labore sit. Officia quis minim cupidatat reprehenderit pariatur aute in magna pariatur aliqua irure nulla aute amet.\r\n",
       "registered": "2017-06-14",
+      "mainTag": "Education",
       "tags": [
         "culpa",
         "cillum",
@@ -443,7 +448,6 @@
           "id": 2,
           "title": "minim reprehenderit qui in ex",
           "institute": "aliqua ad reprehenderit commodo",
-          "location": "Dhaka, Bangladesh",
           "range": "2016 - 2022",
           "details": "Eu ut Lorem amet incididunt qui cupidatat. Aliqua elit proident aliqua consectetur duis adipisicing velit non excepteur. Incididunt adipisicing irure dolore ullamco aliqua esse sunt dolore deserunt.\r\n"
         }

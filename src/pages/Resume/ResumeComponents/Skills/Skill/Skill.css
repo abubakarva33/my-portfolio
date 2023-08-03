@@ -1,7 +1,11 @@
-.progress-bar{
+.progress-bar {
+    height: 10px;
     border-radius: 10px;
-    background: #6b0c0c !important;
+    /* background: #6b0c0c !important; */
+    /* background: linear-gradient(90deg, rgb(29, 36, 244) 0%,rgb(155, 203, 243) 100%); */
 }
-.progress{
-    background: #000 !important;
+
+.progress {
+    height: 10px !important;
+    /* background-color: rgb(213, 222, 232) !important; */
 }

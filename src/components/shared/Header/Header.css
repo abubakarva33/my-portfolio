@@ -1,6 +1,8 @@
 .header {
     background: var(  --color-bg-primary);
-    box-shadow:  var(--header-shadow)
+    box-shadow:  var(--header-shadow);
+    position: sticky;
+    top: 0;
 }
 
 .header a, 

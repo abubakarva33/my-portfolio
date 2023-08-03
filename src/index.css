@@ -6,6 +6,11 @@
   --text-color: #3c3e41;
   --border-color: #636363;
 
+
+  /* 
+  --color-bg-primary: #ecf0f3;
+  */
+
   /* ---------shadow----------- */
   --shadow-bg-primary: linear-gradient(145deg, #e2e8ec, #ffffff);
   --shadow-primary: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;

@@ -33,7 +33,7 @@ const Education = () => {
                             range={skill.range}
                             title={skill.title}
                             institute={skill.institute}
-                            location={skill.location}
+                             location={skill.location}
                             details={skill.details}
                             />
                         )}

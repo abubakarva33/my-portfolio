@@ -1,6 +1,6 @@
 
 import './Resume.css';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 
 const Resume = () => {
@@ -9,9 +9,9 @@ const Resume = () => {
             <div >
                 <h1 className='resumeHeaderName py-4'>My Resume</h1>
                 <div className='resumeHeader w-100 '>
-                    <Link to="/resume/skills" className='resumeBtn w-100'> Skills </Link>
-                    <Link to="/resume/educations" className='resumeBtn w-100'> Education </Link>
-                    <Link to="/resume/experience" className='resumeBtn w-100'> Experience </Link>
+                    <NavLink to="/resume/skills" className=' w-100'> Skills </NavLink>
+                    <NavLink to="/resume/educations" className=' w-100'> Education </NavLink>
+                    <NavLink to="/resume/experience" className=' w-100'> Experience </NavLink>
                 </div>
             </div>
             <Outlet/>

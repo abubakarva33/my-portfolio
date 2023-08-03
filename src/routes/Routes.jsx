@@ -27,6 +27,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/blogs',
+                loader: async ()=>fetch("http://localhost:3000/recentProjects"),
                 element: <Blogs/>
             },
             {
@@ -70,6 +71,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/recent-works',
+                loader: async ()=>fetch("http://localhost:3000/recentProjects"),
                 element: <RecentProjects/>
             }
         ]
