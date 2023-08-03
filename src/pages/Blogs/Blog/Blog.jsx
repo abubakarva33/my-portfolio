@@ -1,8 +1,7 @@
 import "./Blog.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
-import { Link } from "react-router-dom";
-import { AiOutlineEye, AiOutlineLink } from 'react-icons/ai';
+import { GrLinkNext } from "react-icons/gr";
 
 const Blog = ({ registered, mainTag, serviceName, picture ,about}) => {
     return (
@@ -14,12 +13,7 @@ const Blog = ({ registered, mainTag, serviceName, picture ,about}) => {
             </div>
             <h3>{serviceName}</h3>
             <p>{(about.length) > 180? `${(about).slice(0,180)}...` : about }</p>
-            <div className="">
-                <div className='btnGroup mt-4'>
-                    <Link to="/" className="mt-3 mainBtn"> <AiOutlineEye className="me-1" />Preview</Link>
-                    <Link to="/" className="mt-3 mainBtn"> <AiOutlineLink className="me-1" />Visit Site</Link>
-                </div>
-            </div>
+            <p className="fs-4"><GrLinkNext/></p>
         </div>
     );
 };

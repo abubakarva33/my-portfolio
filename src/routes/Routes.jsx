@@ -67,6 +67,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/services',
+                loader: async ()=>fetch("http://localhost:3000/services"),
                 element: <Services/>
             },
             {
