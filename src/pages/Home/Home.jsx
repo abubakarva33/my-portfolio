@@ -27,7 +27,6 @@ const Home = () => {
                 <Link to="/contacts" className='mainBtn w-25 mt-4'> <p className='mainBtnSpan'> Contact Me</p> </Link>
             </div>
             <Resume/>
-            <Services />
         </div>
     );
 };

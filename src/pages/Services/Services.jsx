@@ -15,7 +15,6 @@ const Services = () => {
                         <Service
                             picture={service.picture}
                             serviceName={service.serviceName}
-                            mainTag={service.mainTag}
                             registered={service.registered}
                             about={service.about}
                         />
