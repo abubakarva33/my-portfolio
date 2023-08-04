@@ -9,6 +9,6 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    height: 18px !important;
-    box-shadow: var(--progressbar);
+    height: 10px !important;
+    box-shadow: var(--progressbar-shadow);
 }

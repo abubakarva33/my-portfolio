@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--btn-primary-shadow);
+    box-shadow: var(--icon-primary-shadow);
 }
 .profilePicInner{
     background-image: url('/Images/userImg2.png');
@@ -26,6 +26,11 @@
     height: 180px;
     border-radius: 50%;
 }
+
+.profilePicInner:hover {
+  transform: scale(1.2);
+} 
+
 .contactIcon {
     display: flex;
     align-items: center;
