@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Typed from 'react-typed';
-import Services from '../Services/Services';
-import Resume from '../Resume/Resume';
 
 const Home = () => {
     return (

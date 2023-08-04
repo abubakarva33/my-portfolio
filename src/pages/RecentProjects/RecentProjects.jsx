@@ -6,7 +6,6 @@ import Project from './Project/Project';
 
 const RecentProjects = () => {
     const recentProjectsData = useLoaderData();
-    console.log(recentProjectsData);
     return (
         <div className='mx-5'>
             <h1 className='resumeHeaderName py-4 '>My Recent Projects</h1>
@@ -18,9 +17,14 @@ const RecentProjects = () => {
                             serviceName={project.serviceName}
                             mainTag={project.mainTag}
                             registered={project.registered}
+                            cliant={project.cliant}
+                            shortDescription={project.shortDescription}
+                            tags={project.tags}
+                            about={project.about}
+                            keyFeatures={project.keyFeatures}
+                            materials={project.materials}
                         />
                     </Col>
-
                 )}
             </Row>
         </div>
