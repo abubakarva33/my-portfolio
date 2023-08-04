@@ -7,7 +7,7 @@ import Service from './Service/Service';
 const Services = () => {
     const serviceData = useLoaderData();
     return (
-        <div className='mx-5'>
+        <div className='mx-5 mb-4'>
             <h1 className='resumeHeaderName py-4'>Services</h1>
             <Row md={2} className='g-4'>
                 {serviceData.map((service) =>

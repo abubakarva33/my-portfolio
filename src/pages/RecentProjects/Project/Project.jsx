@@ -19,25 +19,25 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
 
 
     const toggleShow = () => setShow(!show);
+    const openModal = () => setIsOpen(true);
+    const closeModal = () => setIsOpen(false);
 
-    const openModal = () => {
-        setIsOpen(true)
-    }
-    const closeModal = () => {
-        setIsOpen(false)
-    }
     return (
-        <div className="eduSection p-4">
+        <div className="eduSection project p-4">
             <img src={picture} alt="" className="img-fluid border rounded " />
-            <div className="d-flex justify-content-between py-4">
-                <small className="fs-6"><BiCategory className="me-1" /> {mainTag}</small>
-                <small className="fs-6"><MdOutlineCreate className="me-1" />{registered}</small>
+            <div className="cardBody">
+                <div className="d-flex justify-content-between py-4">
+                    <small className="fs-6"><BiCategory className="me-1" /> {mainTag}</small>
+                    <small className="fs-6"><MdOutlineCreate className="me-1" />{registered}</small>
+                </div>
+                <h3>{serviceName}</h3>
             </div>
-            <h3>{serviceName}</h3>
-            <div className="">
-                <div className='btnGroup mt-4'>
-                    <Link className="mt-3 mainBtn" onClick={openModal}> <AiOutlineEye className="me-1" />Preview</Link>
-                    <Link to="/" className="mt-3 mainBtn"> <AiOutlineLink className="me-1" />Visit Site</Link>
+            <div>
+                <div className="position-relative">
+                    <div className='btnGroup'>
+                        <Link className="mt-3 " onClick={openModal}> <AiOutlineEye className="me-1" />Preview</Link>
+                        <Link to="/" className="mt-3 "> <AiOutlineLink className="me-1" />Visit Site</Link>
+                    </div>
                 </div>
             </div>
             <Modal
@@ -46,7 +46,7 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                 contentLabel="Example Modal"
                 className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
             >
-                <p className="crossBtn" onClick={closeModal}> <RxCross1/> </p>
+                <p className="crossBtn" onClick={closeModal}> <RxCross1 /> </p>
                 <Row xs={1} md={2} className="">
                     <Col>
                         <img src={picture} alt="" className="img-fluid border rounded " />

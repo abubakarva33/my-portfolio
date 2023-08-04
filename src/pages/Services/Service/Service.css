@@ -1,3 +1,19 @@
 .service{
-    min-height: 492px !important;
+    min-height: 450px !important;
 }
+
+
+.eduSection:hover img{
+	transform: translateY(-15px);
+}
+.eduSection:hover .cardBody{
+	transform: translateY(-20px);
+}
+.eduSection .btnGroup{
+	position: absolute;
+    top: 1000px ;
+    overflow-y: hidden;
+	}
+.eduSection:hover .btnGroup{
+	top: 0;
+	}

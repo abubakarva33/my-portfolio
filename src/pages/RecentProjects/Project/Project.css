@@ -1,5 +1,8 @@
 .modalMain{
     position: relative;
+    transition: 0.5s ease-in-out;
+    height: calc(100vh - 200px);
+    overflow-y: scroll;
 }
 
 .crossBtn{
@@ -7,4 +10,8 @@
     font-size: 25px;
     top: 5px;
     right: 10px;
+}
+
+.project{
+    min-height: 415px !important;
 }

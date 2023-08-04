@@ -10,7 +10,11 @@ import { Link } from 'react-router-dom';
 const SideHeader = () => {
     return (
         <div className='sideHeader'>
-            <img src="/Images/userImg2.webp" alt="" />
+            {/* <p className='sideImg'><img src="/Images/userImg2.webp" alt="" /> </p> */}
+            <div className="profilePic">
+                <div className="profilePicInner">
+                </div>
+            </div>
             <div>
                 <h3>Abubakar Siddik</h3>
                 <h6>Professional web developer</h6>
@@ -25,7 +29,7 @@ const SideHeader = () => {
                 <Link to="/contacts" className=' mainBtn w-100 mt-3 p-2'><FiMail className='me-2' /><span className='mainBtnSpan'>HIRE ME</span></Link>
                 <hr className='w-100 bg-dark my-3 ms-2' />
                 <h6 className='ms-3 pb-2'>Find With Me</h6>
-                <div className='my-4'>
+                <div className='d-flex my-4'>
                     <Link to="https://www.facebook.com/abubakar.siddik.79219754" target="_blank" className='contactIcon'> <FiFacebook /></Link>
                     <Link to="mailto:abubakarsiddikl.info@gmail.com" target="_blank" className='contactIcon'><BiLogoGmail /></Link>
                     <Link to="https://github.com/abubakarva33" target="_blank" className='contactIcon'><AiOutlineGithub /></Link>

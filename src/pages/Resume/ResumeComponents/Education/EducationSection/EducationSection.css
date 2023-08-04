@@ -3,4 +3,9 @@
     background: var(--shadow-bg-primary);
     box-shadow:  var(--shadow-primary);
     min-height: 350px;
+    overflow: hidden;
+}
+
+.eduSection *{
+    transition: 0.5s ease-in-out;
 }

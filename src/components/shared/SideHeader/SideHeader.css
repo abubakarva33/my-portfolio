@@ -8,25 +8,51 @@
     border-right: 5px solid var(--border-color);
 }
 
-
-.sideHeader img {
+.profilePic{
     width: 200px;
-    margin-top: 10px;
     height: 200px;
+    margin-top: 10px;
     border-radius: 50%;
-    border: 5px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--btn-primary-shadow);
 }
-
+.profilePicInner{
+    background-image: url('/Images/userImg2.png');
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
 .contactIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
     font-size: 25px;
-    padding: 12px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-primary);
+    border-radius: 50%;
+    box-shadow: var(--icon-primary-shadow);
     background: var(--shadow-bg-primary);
-    transition: .2s ease-in-out;
+    position: relative;
+    margin-right: 10px;
+    color: #84858f;
+}
+.contactIcon::after {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    box-shadow: var(--icon-primary-shadow-hover);
+    background-color: transparent;
 }
 
+.contactIcon:hover{
+    color: #0091f8;
+}
 .sideHeader a {
     text-decoration: none;
 }
@@ -36,7 +62,7 @@
     font-size: 20px;
     font-weight: 500;
     border-radius: 50px;
-    box-shadow: var(--shadow-primary);
+    box-shadow: var(--btn-primary-shadow);
     background: var(--shadow-bg-primary);
     transition: all 0.3s;
     position: relative;
@@ -44,6 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
 .mainBtn span {
@@ -75,19 +102,12 @@
     letter-spacing: 2px;
 }
 
-.mainBtn:hover {
-    color: var(--color-bg-primary);
-}
-
 .mainBtn:hover::before {
     opacity: 1;
     transform: scale(1, 1);
-    /* background: var(--hover-gradient-light); */
     border-radius: 50px;
-    background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
-             
-
-     
+    box-shadow: var(--btn-primary-shadow-hover);
+    border: none;
 }
 
 .mainBtn::after {

@@ -32,7 +32,7 @@ const Contact = () => {
                         </div>
                         <hr className='w-100 bg-dark my-3' />
                         <h6 className='ms-3 pb-2'>Find Me In Marketplace</h6>
-                        <div className='my-4'>
+                        <div className=' d-flex contactIcons my-4'>
                             <Link to="https://www.facebook.com/abubakar.siddik.79219754" target="_blank" className='contactIcon'> <SiFiverr /></Link>
                             <Link to="mailto:abubakarsiddikl.info@gmail.com" target="_blank" className='contactIcon'><BiLogoUpwork /></Link>
                             <Link to="https://github.com/abubakarva33" target="_blank" className='contactIcon'><SiFreelancer /></Link>

@@ -6,6 +6,9 @@
 }
 
 .progress {
-    height: 10px !important;
-    /* background-color: rgb(213, 222, 232) !important; */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    height: 18px !important;
+    box-shadow: var(--progressbar);
 }

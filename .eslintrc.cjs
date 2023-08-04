@@ -16,5 +16,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "extends": ["eslint:all", "plugin:react/all"]
   },
 }
