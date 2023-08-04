@@ -1,2 +1,10 @@
-.modalMainl{
+.modalMain{
+    position: relative;
+}
+
+.crossBtn{
+    position: absolute;
+    font-size: 25px;
+    top: 5px;
+    right: 10px;
 }

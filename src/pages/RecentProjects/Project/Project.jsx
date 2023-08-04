@@ -1,6 +1,7 @@
 import "./Project.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
+import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineLink, AiOutlineDeploymentUnit, AiOutlineArrowRight, AiOutlineLike, AiOutlineCheckSquare } from 'react-icons/ai';
 import Modal from 'react-modal';
@@ -9,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
+
 
 const Project = ({ registered, mainTag, serviceName, picture, tags, about, shortDescription, cliant, keyFeatures, materials }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,7 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                 contentLabel="Example Modal"
                 className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
             >
+                <p className="crossBtn" onClick={closeModal}> <RxCross1/> </p>
                 <Row xs={1} md={2} className="">
                     <Col>
                         <img src={picture} alt="" className="img-fluid border rounded " />
