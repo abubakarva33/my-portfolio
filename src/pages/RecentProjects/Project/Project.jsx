@@ -7,9 +7,17 @@ import Modal from 'react-modal';
 import { useState } from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Toast from 'react-bootstrap/Toast';
+import ToastContainer from 'react-bootstrap/ToastContainer';
 
-const Project = ({ registered, mainTag, serviceName, picture, tags, about, shortDescription, cliant, keyFeatures ,materials}) => {
+const Project = ({ registered, mainTag, serviceName, picture, tags, about, shortDescription, cliant, keyFeatures, materials }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [show, setShow] = useState(false);
+    const [position, setPosition] = useState('middle-center');
+
+
+    const toggleShow = () => setShow(!show);
+
     const openModal = () => {
         setIsOpen(true)
     }
@@ -49,19 +57,19 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                                 <p> <AiOutlineDeploymentUnit /> {registered}</p>
                             </div>
                             <div className='btnGroup mt-3'>
-                                <Link className="mt-3 mainBtn" >Like This <AiOutlineLike className="ms-1" /></Link>
+                                <p className="mt-3 mainBtn" onClick={toggleShow}> Like This <AiOutlineLike className="ms-1" /></p>
                                 <Link to="/" className="mt-3 mainBtn">Visit Site <AiOutlineArrowRight className="ms-1" /></Link>
                             </div>
                         </div>
                     </Col>
                 </Row >
-                <p className="d-flex flex-row mt-4">
+                <p className="d-flex align-items-center mt-4">
                     <b>Tags:</b>
                     {tags.map((tag) => (
-                        <p key={tag.id} className="d-flex mx-3"> {tag} </p>
+                        <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 border rounded"> {tag} </p>
                     ))}
                 </p>
-                <Row xs={1} md={2} className="">
+                <Row xs={1} md={2} className="mx-5">
                     <Col className="border-right">
                         <p> <b>Materials Used:</b></p>
                         <p>
@@ -80,6 +88,19 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                     </Col>
                 </Row>
                 <p className=""> <b>Description:</b> {about}</p>
+
+                <ToastContainer
+                    className="p-3"
+                    position={position}
+                    style={{ zIndex: 1 }}
+                >
+                    <Toast show={show} onClose={toggleShow} delay={3000} autohide>
+                        <Toast.Header>
+                            <strong className="me-auto">Thanks!!! </strong>
+                        </Toast.Header>
+                        <Toast.Body>Thanks for like it</Toast.Body>
+                    </Toast>
+                </ToastContainer>
             </Modal>
         </div >
     );
