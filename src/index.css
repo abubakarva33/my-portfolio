@@ -12,6 +12,10 @@
   */
 
   /* ---------shadow----------- */
+
+  --input-shadow:inset 6px 6px 12px #c9cccf, inset -6px -6px 12px #ffffff;
+  /* --shadow-bg-primary: linear-gradient(315deg, #d4d8db, #fdffff);
+  --shadow-primary: -5px -5px 51px #c2c5c7, 5px 5px 51px #ffffff; */
   --shadow-bg-primary: linear-gradient(145deg, #e2e8ec, #ffffff);
   --shadow-primary: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
   /* ------------Hover---------- */
@@ -31,6 +35,7 @@
   --text-color: #cfcfcf;
   
   --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
+  --input-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
   
   /* ------------------------- */
   --imgShadow: #32363b;

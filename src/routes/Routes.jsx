@@ -35,10 +35,6 @@ export const routes = createBrowserRouter([
                 element: <Contact/>
             },
             {
-                path: '/pricing',
-                element: <Pricing/>
-            },
-            {
                 path: '/resume',
                 element: <Resume/>,
                 children:[
