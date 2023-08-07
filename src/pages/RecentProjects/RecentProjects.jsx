@@ -9,7 +9,7 @@ const RecentProjects = () => {
     return (
         <div className='mx-5'>
             <h1 className='resumeHeaderName py-4 '>My Recent Projects</h1>
-            <Row md={2} className='g-4'>
+            <Row md={2} xs={1} className='g-4'>
                 {recentProjectsData.map((project) =>
                     <Col key={project.id}>
                         <Project

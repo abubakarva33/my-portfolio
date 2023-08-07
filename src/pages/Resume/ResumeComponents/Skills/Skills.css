@@ -1,0 +1,13 @@
+.skillSection{
+    /* box-shadow: var(--icon-primary-shadow-hover); */
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.skillContainer{
+    box-shadow: var(--icon-primary-shadow);
+    background-color: var(--color-bg-primary);
+    border-radius: 10px;
+}

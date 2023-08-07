@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 const MainLayout = () => {
     return (
         <Row className='gx-0'>
-            <Col xs={3} > <SideHeader /></Col>
+            <Col xs={3} className='sideNav'> <SideHeader /></Col>
             <Col xs={9} className='mainNav'>
                 <Header />
                 <div className='mainNavView '>

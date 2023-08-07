@@ -6,7 +6,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Resume = () => {
     return (
         <div className='px-5 py-3'>
-            <div >
+            <div className='mb-3'>
                 <h1 className='resumeHeaderName py-4'>My Resume</h1>
                 <div className='resumeHeader w-100 '>
                     <NavLink to="/resume/skills" className=' w-100'> Skills </NavLink>

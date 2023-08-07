@@ -5,38 +5,42 @@ import { useLoaderData } from "react-router-dom";
 import ExperienceSection from "./ExperienceSection/ExperienceSection";
 
 const Experience = () => {
-    const experienceData=useLoaderData();
+    const experienceData = useLoaderData();
     return (
         <div>
-            <Row>
-                <Col>
-                    <h1>Job Experience</h1>
+            <Row xs={1} md={2} className="skillContainer mx-1 mt-0">
+                <Col className="skillSection">
                     <div>
-                        {(experienceData[0].academicEducation).map((skill) =>
-                            <ExperienceSection
-                                key={skill.id}
-                                range={skill.range}
-                                title={skill.title}
-                                institute={skill.institute}
-                                location={skill.location}
-                                details={skill.details}
-                            />
-                        )}
+                        <h1 className="resumeHeaderName ">Job Experience</h1>
+                        <div>
+                            {(experienceData[0].academicEducation).map((skill) =>
+                                <ExperienceSection
+                                    key={skill.id}
+                                    range={skill.range}
+                                    title={skill.title}
+                                    institute={skill.institute}
+                                    location={skill.location}
+                                    details={skill.details}
+                                />
+                            )}
+                        </div>
                     </div>
                 </Col>
                 <Col>
-                    <h1>Trainer Experience</h1>
-                    <div>
-                        {(experienceData[0].devEducation).map((skill) =>
-                            <ExperienceSection
-                                key={skill.id}
-                                range={skill.range}
-                                title={skill.title}
-                                institute={skill.institute}
-                                location={skill.location}
-                                details={skill.details}
-                            />
-                        )}
+                    <div className="skillSection">
+                        <h1 className="resumeHeaderName">Trainer Experience</h1>
+                        <div>
+                            {(experienceData[0].devEducation).map((skill) =>
+                                <ExperienceSection
+                                    key={skill.id}
+                                    range={skill.range}
+                                    title={skill.title}
+                                    institute={skill.institute}
+                                    location={skill.location}
+                                    details={skill.details}
+                                />
+                            )}
+                        </div>
                     </div>
                 </Col>
             </Row>

@@ -8,29 +8,33 @@ const Skills = () => {
     const skillsData = useLoaderData();
     return (
         <div>
-            <Row>
-                <Col>
-                    <h1>Design Skill</h1>
-                    <div>
-                        {(skillsData[0].devSkills).map((skill)=>
-                            <Skill
-                            key={skill.id}
-                            range={skill.range}
-                            title={skill.title}
-                            />
-                        )}
+            <Row xs={1} md={2} className="skillContainer mx-1">
+                <Col >
+                    <div className="skillSection">
+                        <h1 className="resumeHeaderName ">Design Skill</h1>
+                        <div>
+                            {(skillsData[0].devSkills).map((skill) =>
+                                <Skill
+                                    key={skill.id}
+                                    range={skill.range}
+                                    title={skill.title}
+                                />
+                            )}
+                        </div>
                     </div>
                 </Col>
-                <Col>
-                    <h1>Development Skill</h1>
-                    <div>
-                    {(skillsData[0].otherSkills).map((skill)=>
-                            <Skill
-                            key={skill.id}
-                            range={skill.range}
-                            title={skill.title}
-                            />
-                        )}
+                <Col >
+                    <div className="skillSection">
+                        <h1 className="resumeHeaderName ">Development Skill</h1>
+                        <div>
+                            {(skillsData[0].otherSkills).map((skill) =>
+                                <Skill
+                                    key={skill.id}
+                                    range={skill.range}
+                                    title={skill.title}
+                                />
+                            )}
+                        </div>
                     </div>
                 </Col>
             </Row>

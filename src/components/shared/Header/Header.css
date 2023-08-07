@@ -1,40 +1,56 @@
 .header {
     background: var(  --color-bg-primary);
-    box-shadow:  var(--header-shadow);
+    box-shadow:  var(--btn-primary-shadow);
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-.header a, 
-.offcanvas.offcanvas-end.show  a{
+.navlinkA{
     text-decoration: none ;
-    margin: 8px;
+    box-shadow: var(--icon-primary-shadow);
+    margin-bottom: 15px;
+    font-size: 17px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    color: var(--text-color);
 }
 
-.themeChangeBtn {
-    border: none;
+.offcanvas.offcanvas-end.show  a{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    background-color: var(--color-bg-primary);
+}
+.offcanvas.offcanvas-end.show h6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
     background-color: var(--color-bg-primary);
 }
 
-.theme {
-    font-size: 30px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    box-shadow: var(--shadow-primary);
-    background: var(--shadow-bg-primary);
+.navlinkA:hover{
+    box-shadow: var(--icon-primary-shadow-hover);
+}
+.navlinkA.active{
+    box-shadow: var(--btn-primary-shadow-hover);
+    border-radius: 10px;
 }
 
-
-.theme2 {
-    font-size: 30px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    box-shadow: var(--shadow-primary);
-    background: var(--shadow-bg-primary);
+.themechangeBtn {
+    height: 30px;
+    width: 30px;
+    box-shadow: var(--icon-primary-shadow-hover);
+    border-radius: 50%;
+    font-size: 17px;
 }
+
 .navToggle{
     display: flex;
     align-items: center;

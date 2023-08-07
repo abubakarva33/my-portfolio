@@ -9,7 +9,7 @@ const Services = () => {
     return (
         <div className='mx-5 mb-4'>
             <h1 className='resumeHeaderName py-4'>Services</h1>
-            <Row md={2} className='g-4'>
+            <Row md={2} xs={1} className='g-4'>
                 {serviceData.map((service) =>
                     <Col key={service.id}>
                         <Service

@@ -34,22 +34,22 @@ const Header = () => {
                     className=' ms-auto'
                 >
                     <Offcanvas.Header closeButton className='navToggle'>
-                        <img src="/Images/userImg2.webp" alt=""  />
+                        <img src="/Images/userImg2.webp" alt="" />
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <NavLink to="/">HOME</NavLink>
-                            <NavLink to="/services">SERVICES</NavLink>
-                            <NavLink to="/recent-works">RECENT WORKS</NavLink>
-                            <NavLink to="/resume/skills">RESUME</NavLink>
-                            <NavLink to="/blogs">BLOGS</NavLink>
-                            <NavLink to="/contacts">CONTACT</NavLink>
-                        </Nav>
-                        <Nav className="d-flex">
-                            <button onClick={handleDarkMode} className='themeChangeBtn '>
-                                <h6 className={`theme ${!isDarkModeActive ? 'bg-primary' : 'bg-secondary'}`} ><MdOutlineLightMode /> </h6>
-                                <h6 className='theme2' ><MdOutlineDarkMode /> </h6>
-                            </button>
+                            <NavLink to="/" className="navlinkA">HOME</NavLink>
+                            <NavLink to="/services" className="navlinkA">SERVICES</NavLink>
+                            <NavLink to="/recent-works" className="navlinkA">RECENT WORKS</NavLink>
+                            <NavLink to="/resume/skills" className="navlinkA">RESUME</NavLink>
+                            <NavLink to="/blogs" className="navlinkA">BLOGS</NavLink>
+                            <NavLink to="/contacts" className="navlinkA">CONTACT</NavLink>
+                            {isDarkModeActive === true ?
+                                <h6 onClick={handleDarkMode} className="navlinkA">Switch
+                                    <span> < MdOutlineLightMode /></span>
+                                </h6> :
+                                <h6 onClick={handleDarkMode} className="navlinkA"> Switch <span><MdOutlineDarkMode /></span> </h6>
+                            }
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>

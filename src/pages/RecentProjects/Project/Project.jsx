@@ -45,7 +45,7 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                     isOpen={isOpen}
                     onRequestClose={closeModal}
                     contentLabel="Example Modal"
-                    className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
+                    className={`w-75 p-4 m-auto my-5 modalMain`}
                 >
                     <p className="crossBtn" onClick={closeModal}> <RxCross1 /> </p>
                     <Row xs={1} md={2} className="">
@@ -62,18 +62,20 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                                 </div>
                                 <div className='btnGroup mt-3'>
                                     <p className="mt-3 mainBtn" onClick={toggleShow}> Like This <AiOutlineLike className="ms-1" /></p>
-                                    <Link to="/" className="mt-3 mainBtn">Visit Site <AiOutlineArrowRight className="ms-1" /></Link>
+                                    <p className="mt-3 mainBtn"><Link to="/">Visit Site <AiOutlineArrowRight className="ms-1" /></Link></p>
                                 </div>
                             </div>
                         </Col>
                     </Row >
                     <p className="d-flex align-items-center mt-4">
                         <b>Tags:</b>
-                        {tags.map((tag) => (
-                            <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 border rounded"> {tag} </p>
-                        ))}
+                        <div className="d-flex flex-wrap">
+                            {tags.map((tag) => (
+                                <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 tags"> {tag} </p>
+                            ))}
+                        </div>
                     </p>
-                    <Row xs={1} md={2} className="mx-5">
+                    <Row xs={1} md={2} className="">
                         <Col className="border-right">
                             <p> <b>Materials Used:</b></p>
                             <p>
@@ -98,11 +100,11 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
                         position={position}
                         style={{ zIndex: 1 }}
                     >
-                        <Toast show={show} onClose={toggleShow} delay={3000} autohide>
-                            <Toast.Header>
+                        <Toast show={show} onClose={toggleShow} delay={3000} autohide className="toastMain">
+                            <Toast.Header className="toastt">
                                 <strong className="me-auto">Thanks!!! </strong>
                             </Toast.Header>
-                            <Toast.Body>Thanks for like it</Toast.Body>
+                            <Toast.Body className="toastt">Thanks for like it</Toast.Body>
                         </Toast>
                     </ToastContainer>
                 </Modal>

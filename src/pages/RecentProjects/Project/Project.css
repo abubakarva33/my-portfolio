@@ -3,6 +3,8 @@
     transition: 0.5s ease-in-out;
     height: calc(100vh - 100px);
     overflow-y: scroll;
+    box-shadow: var(--btn-primary-shadow) !important;
+    background-color: var(--color-bg-primary) !important;
 }
 
 .crossBtn{
@@ -14,4 +16,20 @@
 
 .project{
     min-height: 415px !important;
+}
+.toastMain{
+    box-shadow: var(--btn-primary-shadow) !important;
+    background-color: var(--color-bg-primary) !important;
+    border-radius: 10px;
+    border: none !important;
+}
+.toastt{
+    background-color: var(--color-bg-primary) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+}
+.tags{
+    background-color: var(--color-bg-primary);
+    box-shadow: var(--icon-primary-shadow-hover);
+    border-radius: 10px;
 }

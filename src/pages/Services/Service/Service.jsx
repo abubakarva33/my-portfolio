@@ -30,7 +30,7 @@ const Service = ({ serviceName, picture, about }) => {
                 isOpen={isOpen}
                 onRequestClose={closeModal}
                 contentLabel="Example Modal"
-                className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
+                className={`w-75 p-4 m-auto my-5 modalMain`}
             >
                 <p className="crossBtn" onClick={closeModal}> <RxCross1 /> </p>
                 <div className="service p-3">

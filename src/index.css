@@ -55,6 +55,7 @@
 
   --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
   --input-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
+  --progressbar-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
   --btn-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
   --btn-primary-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
   --icon-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
