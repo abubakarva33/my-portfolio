@@ -17,3 +17,8 @@
 .eduSection:hover .btnGroup{
 	top: 0;
 	}
+.cardBorder{
+	padding: 8px;
+	border-radius: 10px;
+	box-shadow: var(  --icon-primary-shadow);
+}

@@ -23,89 +23,91 @@ const Project = ({ registered, mainTag, serviceName, picture, tags, about, short
     const closeModal = () => setIsOpen(false);
 
     return (
-        <div className="eduSection project p-4">
-            <img src={picture} alt="" className="img-fluid border rounded " />
-            <div className="cardBody">
-                <div className="d-flex justify-content-between py-4">
-                    <small className="fs-6"><BiCategory className="me-1" /> {mainTag}</small>
-                    <small className="fs-6"><MdOutlineCreate className="me-1" />{registered}</small>
+        <div className="cardBorder">
+            <div className="eduSection project p-4">
+                <img src={picture} alt="" className="img-fluid border rounded " />
+                <div className="cardBody">
+                    <div className="d-flex justify-content-between py-4">
+                        <small className="fs-6"><BiCategory className="me-1" /> {mainTag}</small>
+                        <small className="fs-6"><MdOutlineCreate className="me-1" />{registered}</small>
+                    </div>
+                    <h3>{serviceName}</h3>
                 </div>
-                <h3>{serviceName}</h3>
-            </div>
-            <div>
-                <div className="position-relative">
-                    <div className='btnGroup'>
-                        <Link className="mt-3 " onClick={openModal}> <AiOutlineEye className="me-1" />Preview</Link>
-                        <Link to="/" className="mt-3 "> <AiOutlineLink className="me-1" />Visit Site</Link>
+                <div>
+                    <div className="position-relative">
+                        <div className='btnGroup'>
+                            <Link className="mt-3 " onClick={openModal}> <AiOutlineEye className="me-1" />Preview</Link>
+                            <Link to="/" className="mt-3 "> <AiOutlineLink className="me-1" />Visit Site</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <Modal
-                isOpen={isOpen}
-                onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
-            >
-                <p className="crossBtn" onClick={closeModal}> <RxCross1 /> </p>
-                <Row xs={1} md={2} className="">
-                    <Col>
-                        <img src={picture} alt="" className="img-fluid border rounded " />
-                    </Col>
-                    <Col>
-                        <div>
-                            <h3>{serviceName}</h3>
-                            <h6 className="my-3">{shortDescription}</h6>
-                            <div className="d-flex justify-content-between">
-                                <p> <AiOutlineDeploymentUnit /> {cliant}</p>
-                                <p> <AiOutlineDeploymentUnit /> {registered}</p>
-                            </div>
-                            <div className='btnGroup mt-3'>
-                                <p className="mt-3 mainBtn" onClick={toggleShow}> Like This <AiOutlineLike className="ms-1" /></p>
-                                <Link to="/" className="mt-3 mainBtn">Visit Site <AiOutlineArrowRight className="ms-1" /></Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Row >
-                <p className="d-flex align-items-center mt-4">
-                    <b>Tags:</b>
-                    {tags.map((tag) => (
-                        <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 border rounded"> {tag} </p>
-                    ))}
-                </p>
-                <Row xs={1} md={2} className="mx-5">
-                    <Col className="border-right">
-                        <p> <b>Materials Used:</b></p>
-                        <p>
-                            {materials.map((material) => (
-                                <p key={material.id} className=" mb-1"> <AiOutlineCheckSquare /> {material} </p>
-                            ))}
-                        </p>
-                    </Col>
-                    <Col>
-                        <p><b>Key Features:</b></p>
-                        <p>
-                            {keyFeatures.map((feature) => (
-                                <p key={feature.id} className=" mb-1"> <AiOutlineCheckSquare /> {feature} </p>
-                            ))}
-                        </p>
-                    </Col>
-                </Row>
-                <p className=""> <b>Description:</b> {about}</p>
-
-                <ToastContainer
-                    className="p-3"
-                    position={position}
-                    style={{ zIndex: 1 }}
+                <Modal
+                    isOpen={isOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Example Modal"
+                    className={`w-75 p-4 m-auto bg-primary my-5 modalMain`}
                 >
-                    <Toast show={show} onClose={toggleShow} delay={3000} autohide>
-                        <Toast.Header>
-                            <strong className="me-auto">Thanks!!! </strong>
-                        </Toast.Header>
-                        <Toast.Body>Thanks for like it</Toast.Body>
-                    </Toast>
-                </ToastContainer>
-            </Modal>
-        </div >
+                    <p className="crossBtn" onClick={closeModal}> <RxCross1 /> </p>
+                    <Row xs={1} md={2} className="">
+                        <Col>
+                            <img src={picture} alt="" className="img-fluid border rounded " />
+                        </Col>
+                        <Col>
+                            <div>
+                                <h3>{serviceName}</h3>
+                                <h6 className="my-3">{shortDescription}</h6>
+                                <div className="d-flex justify-content-between">
+                                    <p> <AiOutlineDeploymentUnit /> {cliant}</p>
+                                    <p> <AiOutlineDeploymentUnit /> {registered}</p>
+                                </div>
+                                <div className='btnGroup mt-3'>
+                                    <p className="mt-3 mainBtn" onClick={toggleShow}> Like This <AiOutlineLike className="ms-1" /></p>
+                                    <Link to="/" className="mt-3 mainBtn">Visit Site <AiOutlineArrowRight className="ms-1" /></Link>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row >
+                    <p className="d-flex align-items-center mt-4">
+                        <b>Tags:</b>
+                        {tags.map((tag) => (
+                            <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 border rounded"> {tag} </p>
+                        ))}
+                    </p>
+                    <Row xs={1} md={2} className="mx-5">
+                        <Col className="border-right">
+                            <p> <b>Materials Used:</b></p>
+                            <p>
+                                {materials.map((material) => (
+                                    <p key={material.id} className=" mb-1"> <AiOutlineCheckSquare /> {material} </p>
+                                ))}
+                            </p>
+                        </Col>
+                        <Col>
+                            <p><b>Key Features:</b></p>
+                            <p>
+                                {keyFeatures.map((feature) => (
+                                    <p key={feature.id} className=" mb-1"> <AiOutlineCheckSquare /> {feature} </p>
+                                ))}
+                            </p>
+                        </Col>
+                    </Row>
+                    <p className=""> <b>Description:</b> {about}</p>
+
+                    <ToastContainer
+                        className="p-3"
+                        position={position}
+                        style={{ zIndex: 1 }}
+                    >
+                        <Toast show={show} onClose={toggleShow} delay={3000} autohide>
+                            <Toast.Header>
+                                <strong className="me-auto">Thanks!!! </strong>
+                            </Toast.Header>
+                            <Toast.Body>Thanks for like it</Toast.Body>
+                        </Toast>
+                    </ToastContainer>
+                </Modal>
+            </div >
+        </div>
     );
 };
 

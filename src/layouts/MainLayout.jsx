@@ -16,7 +16,7 @@ const MainLayout = () => {
                         <Outlet />
                     </div>
                     <footer className='footer'>
-                        <p> &copy; 2023. All rights reserved by Abubakar Siddik </p>
+                        <p> &copy; {new Date().getFullYear()}. All rights reserved by Abubakar Siddik </p>
                     </footer>
                 </div>
             </Col>
