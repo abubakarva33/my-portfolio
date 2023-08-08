@@ -4,13 +4,20 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Blogs from "../pages/Blogs/Blogs";
 import Contact from "../pages/Contact/Contact";
-import Pricing from "../pages/Pricing/Pricing";
 import Resume from "../pages/Resume/Resume";
 import Services from "../pages/Services/Services";
 import RecentProjects from "../pages/RecentProjects/RecentProjects";
 import Skills from "../pages/Resume/ResumeComponents/Skills/Skills";
 import Education from "../pages/Resume/ResumeComponents/Education/Education";
 import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
+import LayoutAdmin from "../components/adminPanel/layouts/LayoutAdmin";
+import HomeAdmin from "../components/adminPanel/components/pages/Home/HomeAdmin";
+import ServiceAdmin from "../components/adminPanel/components/pages/Service/ServiceAdmin";
+import ResumeAdmin from "../components/adminPanel/components/pages/Resume/ResumeAdmin";
+import BlogsAdmin from "../components/adminPanel/components/pages/Blogs/BlogsAdmin";
+import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
+import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
+import RecentWorksAdmin from "../components/adminPanel/components/pages/RecentWorks/RecentWorksAdmin";
 
 export const routes = createBrowserRouter([
     {
@@ -72,8 +79,41 @@ export const routes = createBrowserRouter([
                 element: <RecentProjects/>
             }
         ]
+    },
+    {
+        path: '/main-admin/private-route/abubakar/dashboard',
+        element: <LayoutAdmin/>,
+        children:[
+            {
+                path: '/main-admin/private-route/abubakar/dashboard',
+                element: <HomeAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/profile',
+                element: <ProfileAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/service',
+                element: <ServiceAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/recent-works',
+                element: <RecentWorksAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/resume',
+                element: <ResumeAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/blogs',
+                element: <BlogsAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/contact',
+                element: <ContactAdmin/>
+            },
+        ]
     }
-
 ])
 
 

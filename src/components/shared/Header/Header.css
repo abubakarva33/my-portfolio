@@ -1,14 +1,14 @@
 .header {
-    background: var(  --color-bg-primary);
-    box-shadow:  var(--btn-primary-shadow);
+    background: var(--color-bg-primary);
+    box-shadow: var(--btn-primary-shadow);
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-.navlinkA{
-    text-decoration: none ;
-    box-shadow: var(--icon-primary-shadow);
+.navlinkA {
+    text-decoration: none;
+    /* box-shadow: var(--icon-primary-shadow); */
     margin-bottom: 15px;
     font-size: 17px;
     padding: 5px 10px;
@@ -18,15 +18,7 @@
     color: var(--text-color);
 }
 
-.offcanvas.offcanvas-end.show  a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 15px;
-    background-color: var(--color-bg-primary);
-}
-.offcanvas.offcanvas-end.show h6{
+.offcanvas.offcanvas-end.show a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,12 +27,24 @@
     background-color: var(--color-bg-primary);
 }
 
-.navlinkA:hover{
-    box-shadow: var(--icon-primary-shadow-hover);
+.offcanvas.offcanvas-end.show h6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    background-color: var(--color-bg-primary);
 }
-.navlinkA.active{
-    box-shadow: var(--btn-primary-shadow-hover);
-    border-radius: 10px;
+
+.navlinkA:hover {
+    /* box-shadow: var(--icon-primary-shadow-hover); */
+    color: deepskyblue;
+}
+
+.navlinkA.active {
+    /* box-shadow: var(--btn-primary-shadow-hover); */
+    /* border-radius: 10px; */
+    color: deepskyblue;
 }
 
 .themechangeBtn {
@@ -51,19 +55,21 @@
     font-size: 17px;
 }
 
-.navToggle{
+.navToggle {
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
     justify-items: center;
 }
-.navToggle img{
+
+.navToggle img {
     height: 80px;
     width: 80px;
     border-radius: 50%;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     margin-left: auto;
+    background-color: var(--togolarBtn) !important;
 }
