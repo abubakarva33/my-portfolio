@@ -1,10 +1,18 @@
 import { useLoaderData } from 'react-router-dom';
 import './RecentWorksAdmin.css';
 import Table from 'react-bootstrap/Table';
-import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
+import { useState } from 'react';
+import TableProject from './Table/TableProject';
 
 const RecentWorksAdmin = () => {
     const tableData = useLoaderData();
+    const [isOpen, setIsOpen] = useState(false);
+    const [show, setShow] = useState(false);
+    const [position, setPosition] = useState('middle-center');
+
+    const toggleShow = () => setShow(!show);
+    const openModal = () => setIsOpen(true);
+    const closeModal = () => setIsOpen(false);
     return (
         <div>
             <div className=' pageBox'>
@@ -28,23 +36,26 @@ const RecentWorksAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            tableData.map((data, ind) =>
-                                <tr key={data.id}>
-                                    <td>{ind + 1}</td>
-                                    <td className='colspan-2'>{data.serviceName}</td>
-                                    <td>{data.mainTag}</td>
-                                    <td>{data.registered}</td>
-                                    <td>--</td>
-                                    <td className='d-flex' style={{ width: '135px' }}>
-                                        <h6 className='p-2 me-2 border rounded text-light bg-primary tableActionIcon'><AiOutlineEye /></h6>
-                                        <h6 className='p-2 me-2 border rounded text-light bg-success tableActionIcon'><AiOutlineEdit /></h6>
-                                        <h6 className='p-2 me-2 border rounded text-light bg-secondary tableActionIcon'><AiOutlineDelete /></h6>
-                                    </td>
-                                </tr>
+                            tableData.map((data, ind) => 
+                            <TableProject
+                            key={ind}
+                            ind={ind}
+                            picture={data.picture}
+                            serviceName={data.serviceName}
+                            mainTag={data.mainTag}
+                            registered={data.registered}
+                            cliant={data.cliant}
+                            shortDescription={data.shortDescription}
+                            tags={data.tags}
+                            about={data.about}
+                            keyFeatures={data.keyFeatures}
+                            materials={data.materials}
+                            />
                             )
                         }
                     </tbody>
                 </Table>
+
             </div>
         </div>
     );
