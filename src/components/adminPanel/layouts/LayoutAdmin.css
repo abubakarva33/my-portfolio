@@ -1,0 +1,12 @@
+.admin-layout{
+    height: 100vh;
+}
+.navbarAdmin{
+    height: 100vh;
+    border-right: 5px solid grey;
+}
+.navImg{
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
