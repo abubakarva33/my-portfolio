@@ -98,7 +98,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/main-admin/private-route/abubakar/dashboard/recent-works',
-                loader: async ()=>fetch("http://localhost:3000/recentProjects"),
+                // loader: async ()=>fetch("http://localhost:3000/recentProjects"),
                 element: <RecentWorksAdmin/>
             },
             {
