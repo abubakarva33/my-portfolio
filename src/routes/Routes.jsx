@@ -18,6 +18,8 @@ import BlogsAdmin from "../components/adminPanel/components/pages/Blogs/BlogsAdm
 import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
 import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
 import RecentWorksAdmin from "../components/adminPanel/components/pages/RecentWorks/RecentWorksAdmin";
+import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
+import ServiceEdit from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceEdit";
 
 export const routes = createBrowserRouter([
     {
@@ -93,12 +95,19 @@ export const routes = createBrowserRouter([
                 element: <ProfileAdmin/>
             },
             {
-                path: '/main-admin/private-route/abubakar/dashboard/service',
+                path: '/main-admin/private-route/abubakar/dashboard/services',
                 element: <ServiceAdmin/>
             },
             {
+                path: '/main-admin/private-route/abubakar/dashboard/services/:serviceId',
+                element: <ServiceEach/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/services/edit/:serviceId',
+                element: <ServiceEdit/>
+            },
+            {
                 path: '/main-admin/private-route/abubakar/dashboard/recent-works',
-                // loader: async ()=>fetch("http://localhost:3000/recentProjects"),
                 element: <RecentWorksAdmin/>
             },
             {

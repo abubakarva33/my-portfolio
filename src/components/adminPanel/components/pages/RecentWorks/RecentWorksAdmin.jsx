@@ -6,7 +6,6 @@ import TableProject from "./Table/TableProject";
 import axios from "axios";
 
 const RecentWorksAdmin = () => {
-  //   const tableData = useLoaderData();
   const fetcher = useFetcher();
   const [isOpen, setIsOpen] = useState(false);
   const [tableData, setTableData] = useState([]);

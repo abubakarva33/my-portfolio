@@ -51,8 +51,9 @@ const TableProject = ({ ind, data, setIsLoading }) => {
     mainFeatures: "",
   });
 
+
   const changeHandler = (e) => {
-    setFormData({ ...data, [e.target.name]: e.target.value });
+    setFormData({ ...data, [e.target.name]: e.target.value});
   };
 
   const getData = async () => {
