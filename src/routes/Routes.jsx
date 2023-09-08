@@ -20,6 +20,7 @@ import ContactAdmin from "../components/adminPanel/components/pages/Contact/Cont
 import RecentWorksAdmin from "../components/adminPanel/components/pages/RecentWorks/RecentWorksAdmin";
 import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
 import ServiceEdit from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceEdit";
+import ServiceCreate from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceCreate";
 
 export const routes = createBrowserRouter([
     {
@@ -105,6 +106,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/main-admin/private-route/abubakar/dashboard/services/edit/:serviceId',
                 element: <ServiceEdit/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/services/create',
+                element: <ServiceCreate/>
             },
             {
                 path: '/main-admin/private-route/abubakar/dashboard/recent-works',

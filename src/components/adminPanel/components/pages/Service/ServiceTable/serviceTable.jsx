@@ -1,23 +1,26 @@
 import "./serviceTable.css";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import moment from "moment";
+
+
 
 const ServiceTable = ({ ind, data }) => {
-  const { serviceName, about, registered, id } = data;
+  const {  title,  description, createdAt, updatedAt, _id } = data;
   return (
     <tr>
       <td>{ind + 1}</td>
-      <td className="colspan-2">{serviceName}</td>
-      <td>{about}</td>
-      <td>{registered}</td>
-      <td>--</td>
+      <td className="colspan-2">{title}</td>
+      <td>{description}</td>
+      <td>{moment(createdAt).format('DD/MM/YYYY')}</td>
+      <td>{moment(updatedAt).format('DD/MM/YYYY')}</td>
       <td className="d-flex" style={{ width: "135px" }}>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/services/${id}`}>
+        <Link to={`/main-admin/private-route/abubakar/dashboard/services/${_id}`}>
           <h6 className="p-2 me-2 border rounded text-light bg-primary tableActionIcon">
             <AiOutlineEye />
           </h6>
         </Link>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/services/edit/${id}`}>
+        <Link to={`/main-admin/private-route/abubakar/dashboard/services/edit/${_id}`}>
           <h6 className="p-2 me-2 border rounded text-light bg-success tableActionIcon">
             <AiOutlineEdit />
           </h6>

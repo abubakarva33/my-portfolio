@@ -9,14 +9,15 @@ const ServiceEach = () => {
   if (isLoading) {
     return;
   }
-  const { serviceName, about, registered, picture } = data;
+  const { title, description, createdAt, updatedAt, _id, img } = data;
+
   return (
     <div className="cardBorder">
       <div className="eduSection service p-4">
-        <img src={picture} alt="" className="img-fluid border rounded " />
+        <img src={img} alt="" className="img-fluid border rounded " />
         <div className="cardBody">
-          <h3 className="pt-4 pb-3">{serviceName}</h3>
-          <p className="mb-0">{about.length > 180 ? `${about.slice(0, 180)}...` : about}</p>
+          <h3 className="pt-4 pb-3">{title}</h3>
+          <p className="mb-0">{description?.length > 180 ? `${description.slice(0, 180)}...` : description}</p>
         </div>
         <div className="position-relative">
           <div className="btnGroup">

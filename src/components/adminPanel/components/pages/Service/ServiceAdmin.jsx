@@ -3,9 +3,15 @@ import "./ServiceAdmin.css";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
 import ServiceTable from "./serviceTable/serviceTable";
+import { Link } from "react-router-dom";
+import { Pagination } from "antd";
 
 const ServiceAdmin = () => {
-  const { data } = useGetServicesQuery();
+  const { data ,isLoading} = useGetServicesQuery();
+  if (isLoading) {
+    return 
+  }
+  const { total, size } = data?.meta;
   console.log(data);
   return (
     <div>
@@ -15,7 +21,10 @@ const ServiceAdmin = () => {
             <h4>MANAGE SERVICES</h4>
             <p>All Services</p>
           </div>
-          <button className="btn btn-primary"> Add Service</button>
+          <Link to="/main-admin/private-route/abubakar/dashboard/services/create">
+            {" "}
+            <button className="btn btn-primary"> Add Service</button>{" "}
+          </Link>
         </div>
         <Table hover className="">
           <thead>
@@ -29,11 +38,12 @@ const ServiceAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((data, ind) => (
-              <ServiceTable key={ind} ind={ind} data={data}/>
-            ))}
+            {Array.isArray(data?.data) &&
+              data?.data?.map((data, ind) => <ServiceTable key={ind} ind={ind} data={data} />)}
           </tbody>
         </Table>
+        {console.log(total > 1, total)}
+        {total > size && <Pagination defaultCurrent={1} total={total} />}
       </div>
     </div>
   );
