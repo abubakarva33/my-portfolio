@@ -5,11 +5,17 @@ const { Option } = Select;
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useGetAServiceQuery } from "../../../../../../redux/api";
+import {
+  useCreateServiceMutation,
+  useGetAServiceQuery,
+  useUpdateServiceMutation,
+} from "../../../../../../redux/api";
 import { useEffect } from "react";
 
 const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
+  const [updateService] = useUpdateServiceMutation();
+  const [createService] = useCreateServiceMutation();
 
   if (isLoading) {
     return <> loading </>;
@@ -19,6 +25,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const onFinish = async (values) => {
     form.resetFields();
     if (mode === "create") {
+      createService(values);
       Swal.fire({
         icon: "success",
         title: "Your book has been added successfully",
@@ -26,6 +33,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
         timer: 1500,
       });
     } else if (mode === "update") {
+      updateService({ _id, ...values });
       Swal.fire({
         icon: "success",
         title: "Your book has been updated successfully",
@@ -49,7 +57,10 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
         layout="vertical"
         className="my-4 border rounded p-4"
       >
-        <h3 className="bookCenter"> {mode === "create" ? 'Create a new book': "Update this book Now!" }</h3>
+        <h3 className="bookCenter">
+          {" "}
+          {mode === "create" ? "Create a new book" : "Update this book Now!"}
+        </h3>
         <Form.Item
           label="Service Title"
           name="title"
@@ -97,7 +108,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
 
         <div className="bookCenter ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
-            <span className="fs-5">{mode === "create" ? 'Add Book': "Edit Book" }</span>
+            <span className="fs-5">{mode === "create" ? "Add Book" : "Edit Book"}</span>
           </Button>
         </div>
       </Form>

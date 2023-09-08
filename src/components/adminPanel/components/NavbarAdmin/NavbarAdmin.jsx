@@ -3,7 +3,6 @@ import "./NavbarAdmin.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
 
-// onClick={() => setIsOpen(false)}
 
 const NavbarAdmin = () => {
   const [isOpen, setIsOpen] = useState(false);

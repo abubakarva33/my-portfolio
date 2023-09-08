@@ -7,11 +7,15 @@ import { Link } from "react-router-dom";
 import { Pagination } from "antd";
 
 const ServiceAdmin = () => {
-  const { data ,isLoading} = useGetServicesQuery();
+  const [page, setPage] = useState(1);
+  const { data, isLoading } = useGetServicesQuery(page);
   if (isLoading) {
-    return 
+    return;
   }
   const { total, size } = data?.meta;
+  const onChange = (current) => {
+    setPage(current);
+  };
   console.log(data);
   return (
     <div>
@@ -22,8 +26,7 @@ const ServiceAdmin = () => {
             <p>All Services</p>
           </div>
           <Link to="/main-admin/private-route/abubakar/dashboard/services/create">
-            {" "}
-            <button className="btn btn-primary"> Add Service</button>{" "}
+            <button className="btn btn-primary"> Add Service</button>
           </Link>
         </div>
         <Table hover className="">
@@ -43,7 +46,7 @@ const ServiceAdmin = () => {
           </tbody>
         </Table>
         {console.log(total > 1, total)}
-        {total > size && <Pagination defaultCurrent={1} total={total} />}
+        {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} />}
       </div>
     </div>
   );
