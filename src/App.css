@@ -2,3 +2,7 @@
 .ReactModal__Overlay.ReactModal__Overlay--after-open{
     z-index: 9;
 }
+
+table *{
+    background: transparent !important;
+}

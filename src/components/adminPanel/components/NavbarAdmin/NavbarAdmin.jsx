@@ -24,7 +24,7 @@ const NavbarAdmin = () => {
         Service
       </NavLink>
       <NavLink
-        to={"/main-admin/private-route/abubakar/dashboard/recent-works"}
+        to={"/main-admin/private-route/abubakar/dashboard/work"}
         onClick={() => setIsOpen(false)}
       >
         Recent Works
@@ -37,13 +37,13 @@ const NavbarAdmin = () => {
       </NavLink>
       {isOpen && (
         <>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/recent-works/skills"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/skills"}>
             Skills
           </NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/recent-works/education"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/education"}>
             Education
           </NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/recent-works/experience"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/experience"}>
             Experience
           </NavLink>
         </>

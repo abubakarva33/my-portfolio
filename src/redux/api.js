@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart"],
+  tagTypes: ["Post", "Service", "cart", "Work"],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -40,6 +40,42 @@ export const api = createApi({
       }),
       invalidatesTags: ["Service"],
     }),
+
+    getWorks: builder.query({
+      query: (page) => `work?page=${page}`,
+      providesTags: ["Work"],
+    }),
+
+    getAWork: builder.query({
+      query: (workId) => `work/${workId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Work"],
+    }),
+
+    updateWork: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `work/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Work"],
+    }),
+    createWork: builder.mutation({
+      query: (body) => ({
+        url: `work`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Work"],
+    }),
+
+    deleteWork: builder.mutation({
+      query: (_id) => ({
+        url: `work/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Work"],
+    }),
   }),
 });
 
@@ -49,4 +85,9 @@ export const {
   useUpdateServiceMutation,
   useDeleteServiceMutation,
   useCreateServiceMutation,
+  useGetWorksQuery,
+  useGetAWorkQuery,
+  useUpdateWorkMutation,
+  useDeleteWorkMutation,
+  useCreateWorkMutation,
 } = api;

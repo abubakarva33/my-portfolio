@@ -1,0 +1,15 @@
+.pageBox{
+
+}
+
+.pageBoxInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.table{
+    background-color: var(--color-bg-primary) !important;
+}
+.serviceTable{
+    background-color: var(--color-bg-primary) !important;
+}

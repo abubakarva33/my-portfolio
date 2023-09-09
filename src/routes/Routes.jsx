@@ -17,10 +17,13 @@ import ResumeAdmin from "../components/adminPanel/components/pages/Resume/Resume
 import BlogsAdmin from "../components/adminPanel/components/pages/Blogs/BlogsAdmin";
 import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
 import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
-import RecentWorksAdmin from "../components/adminPanel/components/pages/RecentWorks/RecentWorksAdmin";
 import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
 import ServiceEdit from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceEdit";
 import ServiceCreate from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceCreate";
+import WorkAdmin from "../components/adminPanel/components/pages/Works/WorkMain/WorkAdmin";
+import WorkEach from "../components/adminPanel/components/pages/Works/WorkEach/WorkEach";
+import WorkEdit from "../components/adminPanel/components/pages/Works/WorksEdit/WorksEdit";
+import WorkCreate from "../components/adminPanel/components/pages/Works/WorkForm/WorksCreate";
 
 export const routes = createBrowserRouter([
     {
@@ -95,6 +98,8 @@ export const routes = createBrowserRouter([
                 path: '/main-admin/private-route/abubakar/dashboard/profile',
                 element: <ProfileAdmin/>
             },
+
+
             {
                 path: '/main-admin/private-route/abubakar/dashboard/services',
                 element: <ServiceAdmin/>
@@ -111,10 +116,27 @@ export const routes = createBrowserRouter([
                 path: '/main-admin/private-route/abubakar/dashboard/services/create',
                 element: <ServiceCreate/>
             },
+
+
+
+
             {
-                path: '/main-admin/private-route/abubakar/dashboard/recent-works',
-                element: <RecentWorksAdmin/>
+                path: '/main-admin/private-route/abubakar/dashboard/work',
+                element: <WorkAdmin/>
             },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/work/:workId',
+                element: <WorkEach/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/work/edit/:workId',
+                element: <WorkEdit/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/work/create',
+                element: <WorkCreate/>
+            },
+
             {
                 path: '/main-admin/private-route/abubakar/dashboard/resume',
                 element: <ResumeAdmin/>
