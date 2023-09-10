@@ -1,4 +1,4 @@
-import "./WorksTable.css";
+import "./MessageTable.css";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import moment from "moment";
@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useDeleteServiceMutation, useDeleteWorkMutation } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
 
-const WorkTable = ({ ind, data }) => {
+const MessageTable = ({ ind, data }) => {
   const [deleteWork, res] = useDeleteWorkMutation();
   const {
     title,
@@ -67,4 +67,4 @@ const WorkTable = ({ ind, data }) => {
   );
 };
 
-export default WorkTable;
+export default MessageTable;

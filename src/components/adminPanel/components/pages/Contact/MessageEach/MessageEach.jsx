@@ -1,9 +1,9 @@
-import "./WorkEach.css";
+import "./MessageEach.css";
 import { useParams } from "react-router-dom";
 import { useGetAServiceQuery, useGetAWorkQuery } from "../../../../../../redux/api";
 import { GrLinkNext } from "react-icons/gr";
 
-const WorkEach = () => {
+const MessageEach = () => {
   const { workId } = useParams();
   const { data, isLoading } = useGetAWorkQuery(workId);
   if (isLoading) {
@@ -31,4 +31,4 @@ const WorkEach = () => {
   );
 };
 
-export default WorkEach;
+export default MessageEach;

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart", "Work"],
+  tagTypes: ["Post", "Service", "cart", "Work","Message"],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -68,13 +68,29 @@ export const api = createApi({
       }),
       invalidatesTags: ["Work"],
     }),
-
     deleteWork: builder.mutation({
       query: (_id) => ({
         url: `work/${_id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["Work"],
+    }),
+
+    getMessage: builder.query({
+      query: (page) => `contact?page=${page}`,
+      providesTags: ["Message"],
+    }),
+    getAMessage: builder.query({
+      query: (workId) => `contact/${workId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Message"],
+    }),
+    deleteMessage: builder.mutation({
+      query: (_id) => ({
+        url: `contact/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Message"],
     }),
   }),
 });
@@ -90,4 +106,7 @@ export const {
   useUpdateWorkMutation,
   useDeleteWorkMutation,
   useCreateWorkMutation,
+  useGetMessageQuery,
+  useGetAMessageQuery,
+  useDeleteMessageMutation
 } = api;

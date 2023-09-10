@@ -24,6 +24,7 @@ import WorkAdmin from "../components/adminPanel/components/pages/Works/WorkMain/
 import WorkEach from "../components/adminPanel/components/pages/Works/WorkEach/WorkEach";
 import WorkEdit from "../components/adminPanel/components/pages/Works/WorksEdit/WorksEdit";
 import WorkCreate from "../components/adminPanel/components/pages/Works/WorkForm/WorksCreate";
+import MessageEach from "../components/adminPanel/components/pages/Contact/MessageEach/MessageEach";
 
 export const routes = createBrowserRouter([
     {
@@ -148,6 +149,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/main-admin/private-route/abubakar/dashboard/contact',
                 element: <ContactAdmin/>
+            },
+            {
+                path: '/main-admin/private-route/abubakar/dashboard/contact/:contactId',
+                element: <MessageEach/>
             },
         ]
     }
