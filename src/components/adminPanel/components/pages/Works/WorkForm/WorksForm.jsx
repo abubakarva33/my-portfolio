@@ -11,17 +11,21 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
   const [tagsList, setTagsList] = useState([]);
   const [newTag, setNewTag] = useState("");
+  const [featuresList, setFeaturesList] = useState([]);
+  const [newFeature, setNewFeature] = useState("");
+  const [materialList, setMaterialList] = useState([]);
+  const [newMaterial, setNewMaterial] = useState("");
 
   const [updateWork] = useUpdateWorkMutation();
   const [createWork] = useCreateWorkMutation();
 
   useEffect(() => {
-    if (data?.tags) {
+    if (data) {
       setTagsList(data.tags);
+      setFeaturesList(data.keyFeatures)
+      setMaterialList(data.materialUsed)
     }
   }, [data]);
-
-  // till
 
   if (isLoading) {
     return <> loading </>;
@@ -43,6 +47,8 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
 
   const onFinish = async (values) => {
     values.tags = tagsList;
+    values.materialUsed = materialList;
+    values.keyFeatures = featuresList;
     form.resetFields();
     if (mode === "create") {
       createWork(values);
@@ -72,15 +78,20 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         initialValues={{
           title,
           description,
+          shortDescription,
+          link,
           img,
+          projectType,
           tags,
+          materialUsed,
+          keyFeatures,
+          _id,
         }}
         layout="vertical"
         className="my-4 border rounded p-4"
       >
         <h3 className="bookCenter">
-          {" "}
-          {mode === "create" ? "Create a new book" : "Update this book Now!"}
+          {mode === "create" ? "Create Recent Project" : "Update this Project Now!"}
         </h3>
         <Form.Item
           label="Service Title"
@@ -88,24 +99,48 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           rules={[
             {
               required: true,
-              message: "Book Title is required",
+              message: "Service title is required",
             },
           ]}
         >
-          <Input placeholder="Please input book title" />
+          <Input placeholder="Please enter service title here..." />
         </Form.Item>
 
         <Form.Item
-          label="Service Description"
+          label="Short Description"
+          name="shortDescription"
+          rules={[
+            {
+              required: true,
+              message: "Short description is required",
+            },
+          ]}
+        >
+          <Input placeholder="Please enter short description here..." />
+        </Form.Item>
+        <Form.Item
+          label="Description"
           name="description"
           rules={[
             {
               required: true,
-              message: "Book Title is required",
+              message: "Description is required",
             },
           ]}
         >
-          <Input placeholder="Please input book title" />
+          <Input placeholder="Please enter description here..." />
+        </Form.Item>
+        <Form.Item
+          label="Project Type"
+          name="projectType"
+          rules={[
+            {
+              required: true,
+              message: "Project Type is required",
+            },
+          ]}
+        >
+          <Input placeholder="Please enter project type here..." />
         </Form.Item>
         <Form.Item
           label="Select Picture"
@@ -127,7 +162,20 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           </Select>
         </Form.Item>
 
-        <Form.Item>
+        <Form.Item
+          label="Live Link"
+          name="link"
+          rules={[
+            {
+              required: true,
+              message: "Live Link is required",
+            },
+          ]}
+        >
+          <Input placeholder="Please enter live link here..." />
+        </Form.Item>
+
+        <Form.Item label="Tags">
           <Select
             mode="multiple"
             name="tags"
@@ -148,10 +196,54 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
               </>
             )}
             options={[{ label: newTag, value: newTag }]}
-            // options={items.map((item) => ({
-            //   label: item,
-            //   value: item,
-            // }))}
+          />
+        </Form.Item>
+
+        <Form.Item label="Key Features">
+          <Select
+            mode="multiple"
+            name="keyFeatures"
+            placeholder="Enter Key Features"
+            onSearch={(e) => setNewFeature(e)}
+            onChange={(e) => setFeaturesList(e)}
+            value={featuresList}
+            maxTagCount={5}
+            maxTagTextLength={20}
+            dropdownRender={(menu) => (
+              <>
+                {menu}
+                <Divider
+                  style={{
+                    margin: "8px 0",
+                  }}
+                />
+              </>
+            )}
+            options={[{ label: newFeature, value: newFeature }]}
+          />
+        </Form.Item>
+
+        <Form.Item label="Materials Used">
+          <Select
+            mode="multiple"
+            name="materialUsed"
+            placeholder="Enter Materials here..."
+            onSearch={(e) => setNewMaterial(e)}
+            onChange={(e) => setMaterialList(e)}
+            value={materialList}
+            maxTagCount={5}
+            maxTagTextLength={20}
+            dropdownRender={(menu) => (
+              <>
+                {menu}
+                <Divider
+                  style={{
+                    margin: "8px 0",
+                  }}
+                />
+              </>
+            )}
+            options={[{ label: newMaterial, value: newMaterial }]}
           />
         </Form.Item>
 

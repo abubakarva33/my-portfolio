@@ -1,12 +1,15 @@
-.admin-layout{
-    height: 100vh;
+.admin-layout {
+  height: 100vh;
 }
-.navbarAdmin{
-    height: 100vh;
-    border-right: 5px solid grey;
+.admin-layout-right {
+  border-bottom: 1px solid grey;
 }
-.navImg{
-    min-height: 50px;
-    width: 50px;
-    border-radius: 50%;
+.navbarAdmin {
+  height: 100vh;
+  border-right: 5px solid grey;
+}
+.navImg {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }

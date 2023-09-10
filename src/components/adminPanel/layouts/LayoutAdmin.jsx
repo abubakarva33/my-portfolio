@@ -21,7 +21,7 @@ const LayoutAdmin = () => {
       </Col>
       <Col xs={12} md={9}>
         <div className="mx-3">
-          <div className="d-flex align-items-center justify-content-between">
+          <div className="admin-layout-right d-flex align-items-center justify-content-between">
             <h3>WELCOME PORTFOLIO ADMIN</h3>
             <div className="d-flex  flex-column align-items-end mt-3">
               <img src="/Images/userImg2.webp" alt="" className="img-fluid navImg" />
