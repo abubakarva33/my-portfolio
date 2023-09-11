@@ -1,69 +1,110 @@
 import "./MessageTable.css";
+import React, { useState } from "react";
+import { ConfigProvider, Space, Table } from "antd";
+import { Col, Row } from "react-bootstrap";
+import { MdImportantDevices } from "react-icons/md";
+import { BiMessageDots } from "react-icons/bi";
+import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import moment from "moment";
-import { useDispatch } from "react-redux";
-import { useDeleteServiceMutation, useDeleteWorkMutation } from "../../../../../../redux/api";
-import Swal from "sweetalert2";
+import { useDeleteMessageMutation, useDeleteMultipleMessageMutation, useGetMessageQuery } from "../../../../../../redux/api";
 
-const MessageTable = ({ ind, data }) => {
-  const [deleteWork, res] = useDeleteWorkMutation();
-  const {
-    title,
-    description,
-    shortDescription,
-    link,
-    projectType,
-    tags,
-    materialUsed,
-    keyFeatures,
-    createdAt,
-    updatedAt,
-    _id,
-  } = data;
-  const deleteHandler = async () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        const res = await deleteWork(_id).unwrap();
-        console.log({ res });
-        if (res?.success) {
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        }
-      }
-    });
+const MessageTable = () => {
+  const [selectedIds, setSelectedIds] = useState([]);
+  const { data, isLoading } = useGetMessageQuery();
+  const [deleteMessage] = useDeleteMessageMutation();
+  const [allDelete]=useDeleteMultipleMessageMutation()
+  if (isLoading) {
+    return null;
+  }
+  console.log(data?.data);
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+    },
+    {
+      title: "Message",
+      dataIndex: "message",
+      render: (_, record) =>
+        record.message.length > 30 ? `${record.message.slice(0, 30)}...` : record.message,
+      align: "left",
+    },
+    {
+      title: "Time",
+      dataIndex: "createdAt",
+      render: (_, record) => moment(record.createdAt).format(" HH:MM A  DD/MM/YYYY"),
+      align: "right",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (_, record) => (
+        <Space size="middle">
+          <Link to={`/main-admin/private-route/abubakar/dashboard/contact/${record._id}`}>
+            <h6 className="p-2  border rounded text-light bg-primary tableActionIcon">
+              <AiOutlineEye />
+            </h6>
+          </Link>
+          <h6 className="p-2  border rounded text-light bg-secondary tableActionIcon bg-danger">
+            <AiOutlineDelete onClick={() => deleteMessage(record._id)} />
+          </h6>
+        </Space>
+      ),
+    },
+  ];
+  const onSelectChange = (selectedRowKeys) => {
+    setSelectedIds(selectedRowKeys);
   };
+
+  console.log(selectedIds);
+  const rowSelection = {
+    selections: [Table.SELECTION_ALL, Table.SELECTION_NONE],
+    selectedRowKeys: selectedIds,
+    onChange: onSelectChange,
+  };
+  const handleDelete = () => {
+    allDelete({ids: selectedIds})
+    // deleteMessage(selectedIds);
+  };
+  const handleSingleDelete = () => {
+    deleteMessage(data?.data?._id);
+  };
+  const clearSelection = () => {
+    setSelectedIds([]);
+  };
+
   return (
-    <tr>
-      <td>{ind + 1}</td>
-      <td className="colspan-2">{title.length > 25 ? `${title.slice(0, 25)}...` : title}</td>
-      <td>{shortDescription.length > 25 ? `${shortDescription.slice(0, 25)}...` : shortDescription}</td>
-      <td>{projectType}</td>
-      <td>{moment(createdAt).format("DD/MM/YYYY")}</td>
-      <td>{moment(updatedAt).format("DD/MM/YYYY")}</td>
-      <td className="d-flex" style={{ width: "135px" }}>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/work/${_id}`}>
-          <h6 className="p-2 me-2 border rounded text-light bg-primary tableActionIcon">
-            <AiOutlineEye />
-          </h6>
-        </Link>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/work/edit/${_id}`}>
-          <h6 className="p-2 me-2 border rounded text-light bg-success tableActionIcon">
-            <AiOutlineEdit />
-          </h6>
-        </Link>
-        <h6 className="p-2 me-2 border rounded text-light bg-secondary tableActionIcon bg-danger">
-          <AiOutlineDelete onClick={deleteHandler} />
-        </h6>
-      </td>
-    </tr>
+    <Row>
+      
+      <Col>
+        <div>
+          {selectedIds?.length > 0 ? (
+            <div>
+              <h6>{selectedIds.length} items selected</h6>
+              <button onClick={handleDelete}>Delete</button>
+              <button onClick={clearSelection}>Clear Selection</button>
+              <button onClick={clearSelection}>Mark Important</button>
+            </div>
+          ) : null}
+          <ConfigProvider
+            theme={{
+              token: {
+                colorBgContainer: "transparent",
+                rowHoverBg: "#708c12",
+              },
+            }}
+          >
+            <Table
+              rowSelection={rowSelection}
+              columns={columns}
+              dataSource={data?.data}
+              rowKey="_id"
+            />
+          </ConfigProvider>
+        </div>
+      </Col>
+    </Row>
   );
 };
 

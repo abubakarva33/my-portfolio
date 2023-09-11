@@ -92,6 +92,14 @@ export const api = createApi({
       }),
       invalidatesTags: ["Message"],
     }),
+    deleteMultipleMessage: builder.mutation({
+      query: (body) => ({
+        url: `contact/bulk`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Message"],
+    }),
   }),
 });
 
@@ -108,5 +116,6 @@ export const {
   useCreateWorkMutation,
   useGetMessageQuery,
   useGetAMessageQuery,
-  useDeleteMessageMutation
+  useDeleteMessageMutation,
+  useDeleteMultipleMessageMutation
 } = api;

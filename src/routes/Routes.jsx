@@ -25,137 +25,147 @@ import WorkEach from "../components/adminPanel/components/pages/Works/WorkEach/W
 import WorkEdit from "../components/adminPanel/components/pages/Works/WorksEdit/WorksEdit";
 import WorkCreate from "../components/adminPanel/components/pages/Works/WorkForm/WorksCreate";
 import MessageEach from "../components/adminPanel/components/pages/Contact/MessageEach/MessageEach";
+import MessageTable from "../components/adminPanel/components/pages/Contact/MessageTable/MessageTable";
+import ImportantMessage from "../components/adminPanel/components/pages/Contact/MessageTable/ImportantMessage";
 
 export const routes = createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout />,
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/blogs",
+        loader: async () => fetch("http://localhost:3000/blogs"),
+        element: <Blogs />,
+      },
+      {
+        path: "/contacts",
+        element: <Contact />,
+      },
+      {
+        path: "/resume",
+        element: <Resume />,
         children: [
-            {
-                path: '/',
-                element: <Home/>
-            },
-            {
-                path: '/about',
-                element: <About/>
-            },
-            {
-                path: '/blogs',
-                loader: async ()=>fetch("http://localhost:3000/blogs"),
-                element: <Blogs/>
-            },
-            {
-                path: '/contacts',
-                element: <Contact/>
-            },
-            {
-                path: '/resume',
-                element: <Resume/>,
-                children:[
-                    {
-                        path: '/resume',
-                        loader: async () => fetch("http://localhost:3000/resumes"),
-                        element: <Skills/>
-                    },
-                    {
-                        path: '/resume/skills',
-                        loader: async () => fetch("http://localhost:3000/resumes"),
-                        element: <Skills/>
-                    },
-                    {
-                        path: '/resume/educations',
-                        loader: async () => fetch("http://localhost:3000/resumes"),
-                        element: <Education/>
-                    },
-                    {
-                        path: '/resume/experience',
-                        loader: async () => fetch("http://localhost:3000/resumes"),
-                        element: <Experience/>
-                    }
+          {
+            path: "/resume",
+            loader: async () => fetch("http://localhost:3000/resumes"),
+            element: <Skills />,
+          },
+          {
+            path: "/resume/skills",
+            loader: async () => fetch("http://localhost:3000/resumes"),
+            element: <Skills />,
+          },
+          {
+            path: "/resume/educations",
+            loader: async () => fetch("http://localhost:3000/resumes"),
+            element: <Education />,
+          },
+          {
+            path: "/resume/experience",
+            loader: async () => fetch("http://localhost:3000/resumes"),
+            element: <Experience />,
+          },
+        ],
+      },
+      {
+        path: "/services",
+        loader: async () => fetch("http://localhost:3000/services"),
+        element: <Services />,
+      },
+      {
+        path: "/recent-works",
+        loader: async () => fetch("http://localhost:3000/recentProjects"),
+        element: <RecentProjects />,
+      },
+    ],
+  },
+  {
+    path: "/main-admin/private-route/abubakar/dashboard",
+    element: <LayoutAdmin />,
+    children: [
+      {
+        path: "/main-admin/private-route/abubakar/dashboard",
+        element: <HomeAdmin />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/profile",
+        element: <ProfileAdmin />,
+      },
 
-                ]
-            },
-            {
-                path: '/services',
-                loader: async ()=>fetch("http://localhost:3000/services"),
-                element: <Services/>
-            },
-            {
-                path: '/recent-works',
-                loader: async ()=>fetch("http://localhost:3000/recentProjects"),
-                element: <RecentProjects/>
-            }
-        ]
-    },
-    {
-        path: '/main-admin/private-route/abubakar/dashboard',
-        element: <LayoutAdmin/>,
-        children:[
-            {
-                path: '/main-admin/private-route/abubakar/dashboard',
-                element: <HomeAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/profile',
-                element: <ProfileAdmin/>
-            },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/services",
+        element: <ServiceAdmin />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/services/:serviceId",
+        element: <ServiceEach />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/services/edit/:serviceId",
+        element: <ServiceEdit />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/services/create",
+        element: <ServiceCreate />,
+      },
 
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/work",
+        element: <WorkAdmin />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/work/:workId",
+        element: <WorkEach />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/work/edit/:workId",
+        element: <WorkEdit />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/work/create",
+        element: <WorkCreate />,
+      },
 
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/services',
-                element: <ServiceAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/services/:serviceId',
-                element: <ServiceEach/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/services/edit/:serviceId',
-                element: <ServiceEdit/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/services/create',
-                element: <ServiceCreate/>
-            },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/resume",
+        element: <ResumeAdmin />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/blogs",
+        element: <BlogsAdmin />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/contact",
+        element: <ContactAdmin />,
+        children: [
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/contact",
+            element: <MessageTable />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/contact/all-message",
+            element: <MessageTable />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/contact/important-message",
+            element: <ImportantMessage />,
+          },
+        ],
+      },
 
-
-
-
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/work',
-                element: <WorkAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/work/:workId',
-                element: <WorkEach/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/work/edit/:workId',
-                element: <WorkEdit/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/work/create',
-                element: <WorkCreate/>
-            },
-
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/resume',
-                element: <ResumeAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/blogs',
-                element: <BlogsAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/contact',
-                element: <ContactAdmin/>
-            },
-            {
-                path: '/main-admin/private-route/abubakar/dashboard/contact/:contactId',
-                element: <MessageEach/>
-            },
-        ]
-    }
-])
-
-
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/contact/:contactId",
+        element: <MessageEach />,
+      },
+    ],
+  },
+]);
