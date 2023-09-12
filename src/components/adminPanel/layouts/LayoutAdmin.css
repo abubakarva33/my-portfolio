@@ -19,3 +19,10 @@
 /* .outlett{
   overflow-y: auto;
 } */
+
+.layout{
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+}

@@ -1,29 +1,65 @@
 import "./MessageEach.css";
-import { useParams } from "react-router-dom";
-import { useGetAServiceQuery, useGetAWorkQuery } from "../../../../../../redux/api";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDeleteMessageMutation, useGetAMessageQuery } from "../../../../../../redux/api";
 import { GrLinkNext } from "react-icons/gr";
+import { Button } from "antd";
+import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Swal from "sweetalert2";
 
 const MessageEach = () => {
-  const { workId } = useParams();
-  const { data, isLoading } = useGetAWorkQuery(workId);
+  const { contactId } = useParams();
+  const navigate = useNavigate();
+  const { data, isLoading } = useGetAMessageQuery(contactId);
+  const [deleteMessage] = useDeleteMessageMutation();
   if (isLoading) {
     return;
   }
-  const { title, description, createdAt, updatedAt, _id, img } = data;
+  const { name, email, message } = data;
 
+
+  const handleSingleDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const res = await deleteMessage(contactId).unwrap();
+        if (res?.success) {
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          navigate(-1)
+        }
+      }
+    });
+  };
   return (
-    <div className="cardBorder">
-      <div className="eduSection service p-4">
-        <img src={img} alt="" className="img-fluid border rounded " />
-        <div className="cardBody">
-          <h3 className="pt-4 pb-3">{title}</h3>
-          <p className="mb-0">{description?.length > 180 ? `${description.slice(0, 180)}...` : description}</p>
+    <div className="">
+      <div className=" pageBoxInner px-2">
+        <div>
+          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
         </div>
-        <div className="position-relative">
-          <div className="btnGroup">
-            <p className="fs-4">
-              <GrLinkNext />
-            </p>
+        <h4>Message from {name}</h4>
+        <button className="btn btn-primary" onClick={() => location.reload()}>
+          Reload
+        </button>
+      </div>
+      <div className="serviceTable">
+        <div className="px-3">
+          <h6 className="pt-4 pb-3 mb-0">Email: {email}</h6>
+          <p className="pt-4 pb-3">
+            <b> Full-Message: </b> {message}
+          </p>
+          <div className="d-flex justify-content-center pb-4">
+            <Button className="me-3" type="primary">
+              Mark as important
+            </Button>
+            <Button className="me-3" type="primary" danger onClick={handleSingleDelete}>
+              Delete
+            </Button>
           </div>
         </div>
       </div>

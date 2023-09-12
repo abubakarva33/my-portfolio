@@ -20,25 +20,25 @@ const LayoutAdmin = () => {
         </div>
       </Col>
       <Col xs={12} md={9}>
-        <div className="outlett">
-          <div className="adminHeader d-flex align-items-center justify-content-between px-3 mb-3">
-            <h3>WELCOME PORTFOLIO ADMIN</h3>
-            <div className="d-flex  flex-column align-items-end mt-3">
-              <img src="/Images/userImg2.webp" alt="" className="img-fluid navImg" />
-              <div>
-                <p>{time} | Admin Account</p>
+        <div className="layout">
+          <div>
+            <div className="adminHeader d-flex align-items-center justify-content-between px-3 mb-3">
+              <h3>WELCOME PORTFOLIO ADMIN</h3>
+              <div className="d-flex  flex-column align-items-end mt-3">
+                <img src="/Images/userImg2.webp" alt="" className="img-fluid navImg" />
+                <div>
+                  <p>{time} | Admin Account</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div>
             <div className="mx-5 mb-4">
               <Outlet />
             </div>
-            <footer className="footer">
-              <p> &copy; {new Date().getFullYear()}. All rights reserved by Abubakar Siddik </p>
-            </footer>
           </div>
+
+          <footer className="footer">
+            <p> &copy; {new Date().getFullYear()}. All rights reserved by Abubakar Siddik </p>
+          </footer>
         </div>
       </Col>
     </Row>

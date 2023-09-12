@@ -81,7 +81,7 @@ export const api = createApi({
       providesTags: ["Message"],
     }),
     getAMessage: builder.query({
-      query: (workId) => `contact/${workId}`,
+      query: (contactId) => `contact/${contactId}`,
       transformResponse: (response) => response.data,
       providesTags: ["Message"],
     }),
