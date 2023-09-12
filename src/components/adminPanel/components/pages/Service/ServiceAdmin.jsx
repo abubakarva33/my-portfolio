@@ -3,11 +3,13 @@ import "./ServiceAdmin.css";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
 import ServiceTable from "./serviceTable/serviceTable";
-import { Link } from "react-router-dom";
-import { Pagination } from "antd";
+import { Link, useNavigate } from "react-router-dom";
+import { Divider, Pagination } from "antd";
+import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const ServiceAdmin = () => {
   const [page, setPage] = useState(1);
+  const navigate = useNavigate();
   const { data, isLoading } = useGetServicesQuery(page);
   if (isLoading) {
     return;
@@ -20,11 +22,11 @@ const ServiceAdmin = () => {
   return (
     <div>
       <div className=" pageBox">
-        <div className=" pageBoxInner">
+        <div className=" pageBoxInner px-3">
           <div>
-            <h4>MANAGE SERVICES</h4>
-            <p>All Services</p>
+            <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
+          <h4>MANAGE SERVICES</h4>
           <Link to="/main-admin/private-route/abubakar/dashboard/services/create">
             <button className="btn btn-primary"> Add Service</button>
           </Link>
@@ -44,9 +46,8 @@ const ServiceAdmin = () => {
             {Array.isArray(data?.data) &&
               data?.data?.map((data, ind) => <ServiceTable key={ind} ind={ind} data={data} />)}
           </tbody>
+          {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} className="my-3" />}
         </Table>
-        {console.log(total > 1, total)}
-        {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} />}
       </div>
     </div>
   );

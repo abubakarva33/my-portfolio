@@ -148,7 +148,7 @@ export const routes = createBrowserRouter([
         element: <ContactAdmin />,
         children: [
           {
-            path: "/main-admin/private-route/abubakar/dashboard/contact",
+            path: "/main-admin/private-route/abubakar/dashboard/contact/",
             element: <MessageTable />,
           },
           {

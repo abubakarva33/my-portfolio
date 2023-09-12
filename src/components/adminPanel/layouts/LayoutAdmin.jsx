@@ -20,8 +20,8 @@ const LayoutAdmin = () => {
         </div>
       </Col>
       <Col xs={12} md={9}>
-        <div className="mx-3">
-          <div className="admin-layout-right d-flex align-items-center justify-content-between">
+        <div className="outlett">
+          <div className="adminHeader d-flex align-items-center justify-content-between px-3 mb-3">
             <h3>WELCOME PORTFOLIO ADMIN</h3>
             <div className="d-flex  flex-column align-items-end mt-3">
               <img src="/Images/userImg2.webp" alt="" className="img-fluid navImg" />
@@ -30,8 +30,14 @@ const LayoutAdmin = () => {
               </div>
             </div>
           </div>
+
           <div>
-            <Outlet />
+            <div className="mx-5 mb-4">
+              <Outlet />
+            </div>
+            <footer className="footer">
+              <p> &copy; {new Date().getFullYear()}. All rights reserved by Abubakar Siddik </p>
+            </footer>
           </div>
         </div>
       </Col>

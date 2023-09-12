@@ -1,3 +1,22 @@
 .ant-checkbox-input {
   opacity: 1 !important;
 }
+
+.short-message a{
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+}
+.short-message a.active{
+background-color: rgb(201, 212, 209);
+}
+
+.short-message a:hover{
+  background-color: rgb(145, 150, 148);
+}
+.short-message a.active:hover{
+  background-color: rgb(201, 212, 209);
+}

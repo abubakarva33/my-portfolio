@@ -10,38 +10,29 @@ import { Button, Form, Input } from "antd";
 const { TextArea } = Input;
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useCreateMessageMutation } from "../../redux/api";
 
 const Contact = () => {
   const [form] = Form.useForm();
-  const onFinish = ({name, email, message}) => {
+  const [sendMessage]= useCreateMessageMutation()
+  const onFinish = ({ name, email, message }) => {
     const templateParams = {
-        from_name: email,
-        to_name: "Abubakar",
-        message,
-        reply_to: email,
-        }
+      from_name: email,
+      to_name: "Abubakar",
+      message,
+      reply_to: email,
+    };
 
-    /* 
-    emailjs.send("service_iarwqio","template_brhcv54",{
-from_name: "123",
-to_name: "asd",
-message: "zxc",
-reply_to: "qwe",
-});
-    */
-
-    emailjs
-      .send("service_iarwqio", "template_brhcv54", templateParams, "TZpRx-J6FGuXMUput")
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    emailjs.send("service_iarwqio", "template_brhcv54", templateParams, "TZpRx-J6FGuXMUput").then(
+      (result) => {
+        console.log(result);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    sendMessage({name,email,message})
     form.resetFields();
-    // console.log(values);
   };
   return (
     <div className="px-5 pb-5">

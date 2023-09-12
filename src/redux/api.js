@@ -85,6 +85,14 @@ export const api = createApi({
       transformResponse: (response) => response.data,
       providesTags: ["Message"],
     }),
+    createMessage: builder.mutation({
+      query: (body) => ({
+        url: `contact`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Message"],
+    }),
     deleteMessage: builder.mutation({
       query: (_id) => ({
         url: `contact/${_id}`,
@@ -117,5 +125,6 @@ export const {
   useGetMessageQuery,
   useGetAMessageQuery,
   useDeleteMessageMutation,
-  useDeleteMultipleMessageMutation
+  useDeleteMultipleMessageMutation,
+  useCreateMessageMutation
 } = api;

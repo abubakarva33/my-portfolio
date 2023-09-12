@@ -55,7 +55,7 @@ const NavbarAdmin = () => {
         Blogs
       </NavLink>
       <NavLink
-        to={"/main-admin/private-route/abubakar/dashboard/contact"}
+        to={"/main-admin/private-route/abubakar/dashboard/contact/all-message"}
         onClick={() => setIsOpen(false)}
       >
         Contact

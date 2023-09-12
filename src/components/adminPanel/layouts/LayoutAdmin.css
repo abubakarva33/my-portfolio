@@ -1,9 +1,6 @@
 .admin-layout {
   height: 100vh;
 }
-.admin-layout-right {
-  border-bottom: 1px solid grey;
-}
 .navbarAdmin {
   height: 100vh;
   border-right: 5px solid grey;
@@ -13,3 +10,12 @@
   width: 50px;
   border-radius: 50%;
 }
+.adminHeader{
+  box-shadow: var(--btn-primary-shadow);
+  /* position: sticky;
+  top: 0; */
+  /* z-index: 1; */
+}
+/* .outlett{
+  overflow-y: auto;
+} */

@@ -1,15 +1,19 @@
-.pageBox{
-
-}
 
 .pageBoxInner{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: var(--btn-primary-shadow);
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 .table{
     background-color: var(--color-bg-primary) !important;
 }
 .serviceTable{
     background-color: var(--color-bg-primary) !important;
+    box-shadow: var(--icon-primary-shadow);
+    border-radius: 10px;
 }

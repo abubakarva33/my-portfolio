@@ -2,13 +2,15 @@
 import Table from "react-bootstrap/Table";
 import "./WorkAdmin.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Pagination } from "antd";
 import { useGetWorksQuery } from "../../../../../../redux/api";
 import WorkTable from "../WorksTable/WorksTable";
+import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const WorkAdmin = () => {
   const [page, setPage] = useState(1);
+  const navigate = useNavigate()
   const { data, isLoading } = useGetWorksQuery(page);
   if (isLoading) {
     return;
@@ -21,16 +23,17 @@ const WorkAdmin = () => {
   return (
     <div>
       <div className=" pageBox">
-        <div className=" pageBoxInner">
+
+      <div className=" pageBoxInner px-3">
           <div>
-            <h4>MANAGE RECENT WORKS</h4>
-            <p>All Recent-Works</p>
+            <HiOutlineArrowLeft className="fs-2 my-2" onClick={()=>navigate(-1)}/>
           </div>
+          <h4>MANAGE RECENT WORKS</h4>
           <Link to="/main-admin/private-route/abubakar/dashboard/work/create">
             <button className="btn btn-primary"> Add Works</button>
           </Link>
         </div>
-        <Table hover className="">
+        <Table hover className="serviceTable">
           <thead>
             <tr>
               <th>No.</th>
