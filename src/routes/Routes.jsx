@@ -30,6 +30,7 @@ import BlogAdmin from "../components/adminPanel/components/pages/Blogs/BlogMain/
 import BlogEach from "../components/adminPanel/components/pages/Blogs/BlogEach/BlogEach";
 import BlogEdit from "../components/adminPanel/components/pages/Blogs/BlogEdit/BlogEdit";
 import BlogCreate from "../components/adminPanel/components/pages/Blogs/BlogForm/BlogCreate";
+import Category from "../components/adminPanel/components/pages/Blogs/Category/Category";
 
 export const routes = createBrowserRouter([
   {
@@ -157,6 +158,10 @@ export const routes = createBrowserRouter([
       {
         path: "/main-admin/private-route/abubakar/dashboard/blog/create",
         element: <BlogCreate />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/blog/category",
+        element: <Category />,
       },
 
 
