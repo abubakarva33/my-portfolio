@@ -3,24 +3,25 @@ import { Button, Form, Input, InputNumber, Select } from "antd";
 import { DatePicker } from "antd";
 const { Option } = Select;
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
   useCreateServiceMutation,
   useGetAServiceQuery,
   useUpdateServiceMutation,
 } from "../../../../../../redux/api";
-import { useEffect } from "react";
+import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
   const [updateService] = useUpdateServiceMutation();
   const [createService] = useCreateServiceMutation();
 
   if (isLoading) {
     return <> loading </>;
   }
-  const { title, description, createdAt, updatedAt, _id, img } = data;
+  const { title, description, _id, img } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -32,6 +33,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
         showConfirmButton: false,
         timer: 1500,
       });
+      navigate(-1);
     } else if (mode === "update") {
       updateService({ _id, ...values });
       Swal.fire({
@@ -40,11 +42,21 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
         showConfirmButton: false,
         timer: 1500,
       });
+      navigate(-1);
     }
   };
 
   return (
-    <div className="w-75 mx-auto">
+    <div>
+      <div className=" pageBoxInner px-2">
+        <div>
+          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
+        </div>
+        <h4>{mode === "create" ? "CREATE NEW SERVICE" : "UPDATE SERVICE"} </h4>
+        <button className="btn btn-primary" onClick={() => location.reload()}>
+          Reload
+        </button>
+      </div>
       <Form
         name="complex-form"
         form={form}
@@ -55,12 +67,8 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
           img,
         }}
         layout="vertical"
-        className="my-4 border rounded p-4"
+        className=" serviceTable my-4 border rounded p-4"
       >
-        <h3 className="bookCenter">
-          {" "}
-          {mode === "create" ? "Create a new book" : "Update this book Now!"}
-        </h3>
         <Form.Item
           label="Service Title"
           name="title"
@@ -97,18 +105,15 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
           ]}
         >
           <Select placeholder="Select Picture">
-            <Option value="Thriller">Thriller</Option>
-            <Option value="Science Fiction">Science Fiction</Option>
-            <Option value="Religious">Religious</Option>
-            <Option value="Horor">Horor</Option>
-            <Option value="Romantic">Romantic</Option>
-            <Option value="others">Others</Option>
+            <Option value="service1">Service 1</Option>
+            <Option value="service2">Service 2</Option>
+            <Option value="service3">Service 3</Option>
           </Select>
         </Form.Item>
 
-        <div className="bookCenter ">
+        <div className="d-flex justify-content-center ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
-            <span className="fs-5">{mode === "create" ? "Add Book" : "Edit Book"}</span>
+            <span className="fs-5">{mode === "create" ? "Add Book" : "Update Book"}</span>
           </Button>
         </div>
       </Form>

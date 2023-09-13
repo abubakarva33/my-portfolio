@@ -1,10 +1,10 @@
 import React from "react";
 import ServiceForm from "./ServiceForm";
 import { useGetAServiceQuery } from "../../../../../../redux/api";
-import { useParams } from "react-router-dom";
-
+import {  useParams } from "react-router-dom";
 const ServiceEdit = () => {
   const { serviceId } = useParams();
+
   const { data, isLoading } = useGetAServiceQuery(serviceId);
 
   const props = {
@@ -14,6 +14,7 @@ const ServiceEdit = () => {
   };
   return (
     <div>
+      
       <ServiceForm {...props}> </ServiceForm>
     </div>
   );

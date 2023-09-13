@@ -43,23 +43,22 @@ const ServiceEach = () => {
         </div>
         <h4>SERVICE DETAILS</h4>
         <Link to={`/main-admin/private-route/abubakar/dashboard/services/edit/${serviceId}`}>
-          <button className="btn btn-primary">
-          Edit Service
-          </button>
+          <button className="btn btn-primary">Edit Service</button>
         </Link>
       </div>
       <div className="serviceTable">
         <div className="px-3">
+          <img src={`/Images/${img}.webp`} alt="" className="img-for-admin" />
           <h6 className="pt-4 pb-3 mb-0">Title: {title}</h6>
           <h6 className="pt-4 pb-3 mb-0">Details: {description}</h6>
           <h6 className="pt-4 pb-3 mb-0">Date Created: {createdAt}</h6>
           <h6 className="pt-4 pb-3 mb-0">Date Updated {updatedAt}</h6>
           <div className="d-flex justify-content-center pb-4">
-            <Button className="me-3" type="primary">
-              Mark as important
-            </Button>
             <Button className="me-3" type="primary" danger onClick={handleSingleDelete}>
               Delete
+            </Button>
+            <Button className="me-3" type="primary" onClick={() => location.reload()}>
+              Reload
             </Button>
           </div>
         </div>
