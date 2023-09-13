@@ -49,7 +49,7 @@ const NavbarAdmin = () => {
         </>
       )}
       <NavLink
-        to={"/main-admin/private-route/abubakar/dashboard/blogs"}
+        to={"/main-admin/private-route/abubakar/dashboard/blog"}
         onClick={() => setIsOpen(false)}
       >
         Blogs

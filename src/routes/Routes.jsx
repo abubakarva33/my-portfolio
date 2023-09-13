@@ -14,7 +14,6 @@ import LayoutAdmin from "../components/adminPanel/layouts/LayoutAdmin";
 import HomeAdmin from "../components/adminPanel/components/pages/Home/HomeAdmin";
 import ServiceAdmin from "../components/adminPanel/components/pages/Service/ServiceAdmin";
 import ResumeAdmin from "../components/adminPanel/components/pages/Resume/ResumeAdmin";
-import BlogsAdmin from "../components/adminPanel/components/pages/Blogs/BlogsAdmin";
 import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
 import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
 import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
@@ -27,6 +26,10 @@ import WorkCreate from "../components/adminPanel/components/pages/Works/WorkForm
 import MessageEach from "../components/adminPanel/components/pages/Contact/MessageEach/MessageEach";
 import MessageTable from "../components/adminPanel/components/pages/Contact/MessageTable/MessageTable";
 import ImportantMessage from "../components/adminPanel/components/pages/Contact/MessageTable/ImportantMessage";
+import BlogAdmin from "../components/adminPanel/components/pages/Blogs/BlogMain/BlogAdmin";
+import BlogEach from "../components/adminPanel/components/pages/Blogs/BlogEach/BlogEach";
+import BlogEdit from "../components/adminPanel/components/pages/Blogs/BlogEdit/BlogEdit";
+import BlogCreate from "../components/adminPanel/components/pages/Blogs/BlogForm/BlogCreate";
 
 export const routes = createBrowserRouter([
   {
@@ -140,9 +143,23 @@ export const routes = createBrowserRouter([
         element: <ResumeAdmin />,
       },
       {
-        path: "/main-admin/private-route/abubakar/dashboard/blogs",
-        element: <BlogsAdmin />,
+        path: "/main-admin/private-route/abubakar/dashboard/blog",
+        element: <BlogAdmin />,
       },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/blog/:blogId",
+        element: <BlogEach />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/blog/edit/:blogId",
+        element: <BlogEdit />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/blog/create",
+        element: <BlogCreate />,
+      },
+
+
       {
         path: "/main-admin/private-route/abubakar/dashboard/contact",
         element: <ContactAdmin />,

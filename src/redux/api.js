@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart", "Work","Message"],
+  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category"],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -108,6 +108,74 @@ export const api = createApi({
       }),
       invalidatesTags: ["Message"],
     }),
+
+    getBlogs: builder.query({
+      query: (page) => `blog?page=${page}`,
+      providesTags: ["Blog"],
+    }),
+    getABlog: builder.query({
+      query: (blogId) => `blog/${blogId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Blog"],
+    }),
+    createBlog: builder.mutation({
+      query: (body) => ({
+        url: `blog`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Blog"],
+    }),
+    updateBlog: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `blog/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Blog"],
+    }),
+    deleteBlog: builder.mutation({
+      query: (_id) => ({
+        url: `blog/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Blog"],
+    }),
+
+
+    getCategory: builder.query({
+      query: () => `category`,
+      providesTags: ["Category"],
+    }),
+    getACategory: builder.query({
+      query: (categoryId) => `category/${categoryId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Category"],
+    }),
+    createCategory: builder.mutation({
+      query: (body) => ({
+        url: `category`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Category"],
+    }),
+    updateCategory: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `category/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Category"],
+    }),
+    deleteCategory: builder.mutation({
+      query: (_id) => ({
+        url: `category/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Category"],
+    }),
+
   }),
 });
 
@@ -126,5 +194,15 @@ export const {
   useGetAMessageQuery,
   useDeleteMessageMutation,
   useDeleteMultipleMessageMutation,
-  useCreateMessageMutation
+  useCreateMessageMutation,
+  useGetBlogsQuery,
+  useGetABlogQuery,
+  useDeleteBlogMutation,
+  useCreateBlogMutation,
+  useUpdateBlogMutation,
+  useGetCategoryQuery,
+  useGetACategoryQuery,
+  useDeleteCategoryMutation,
+  useUpdateCategoryMutation,
+  useCreateCategoryMutation
 } = api;
