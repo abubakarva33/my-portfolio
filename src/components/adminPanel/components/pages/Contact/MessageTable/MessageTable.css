@@ -20,3 +20,11 @@ background-color: rgb(201, 212, 209);
 .short-message a.active:hover{
   background-color: rgb(201, 212, 209);
 }
+.ant-form-inline .ant-form-item{
+  margin-inline-end: 5px !important;
+}
+.ant-form-item-control-input-content{
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}

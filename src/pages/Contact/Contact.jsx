@@ -14,7 +14,7 @@ import { useCreateMessageMutation } from "../../redux/api";
 
 const Contact = () => {
   const [form] = Form.useForm();
-  const [sendMessage]= useCreateMessageMutation()
+  const [sendMessage] = useCreateMessageMutation();
   const onFinish = ({ name, email, message }) => {
     const templateParams = {
       from_name: email,
@@ -31,7 +31,7 @@ const Contact = () => {
         console.log(error);
       }
     );
-    sendMessage({name,email,message})
+    sendMessage({ name, email, message });
     form.resetFields();
   };
   return (
@@ -100,24 +100,6 @@ const Contact = () => {
           </div>
         </Col>
         <Col xs={12} md={6}>
-          {/* <form action="" className="d-flex flex-column">
-            <input type="text" name="" id="" className="inputBox" placeholder="Your Name" />
-            <input type="text" name="" id="" className="inputBox" placeholder="Your Email" />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Your Message"
-              className="inputBox"
-            ></textarea>
-            <Link
-              to="/"
-              className="mainBtn w-50 border-0 text-decoration-none align-self-center mt-4"
-            >
-              <span className="mainBtnSpan ">Send Message</span>
-            </Link>
-          </form> */}
           <Form
             name="complex-form"
             form={form}
@@ -168,10 +150,14 @@ const Contact = () => {
                 }}
               />
             </Form.Item>
-            <Form.Item className="mainBtn w-50 border-0 text-decoration-none align-self-center mt-4">
-              <Button type="primary" htmlType="submit" className="w-50 h-auto">
+            <Form.Item className="text-center">
+              <button
+                htmlType="submit"
+                to="/"
+                className="mainBtn w-50 border-0 text-decoration-none"
+              >
                 <span className="mainBtnSpan">Send Message</span>
-              </Button>
+              </button>
             </Form.Item>
           </Form>
         </Col>
