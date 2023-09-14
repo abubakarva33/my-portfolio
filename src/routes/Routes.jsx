@@ -13,7 +13,6 @@ import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
 import LayoutAdmin from "../components/adminPanel/layouts/LayoutAdmin";
 import HomeAdmin from "../components/adminPanel/components/pages/Home/HomeAdmin";
 import ServiceAdmin from "../components/adminPanel/components/pages/Service/ServiceAdmin";
-import ResumeAdmin from "../components/adminPanel/components/pages/Resume/ResumeAdmin";
 import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
 import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
 import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
@@ -31,6 +30,10 @@ import BlogEach from "../components/adminPanel/components/pages/Blogs/BlogEach/B
 import BlogEdit from "../components/adminPanel/components/pages/Blogs/BlogEdit/BlogEdit";
 import BlogCreate from "../components/adminPanel/components/pages/Blogs/BlogForm/BlogCreate";
 import Category from "../components/adminPanel/components/pages/Blogs/Category/Category";
+import ResumeEach from "../components/adminPanel/components/pages/Education/ResumeEach/ResumeEach";
+import ResumeEdit from "../components/adminPanel/components/pages/Education/ResumeEdit/ResumeEdit";
+import ResumeCreate from "../components/adminPanel/components/pages/Education/ResumeForm/ResumeCreate";
+import ResumeAdmin from "../components/adminPanel/components/pages/Education/ResumeMain/ResumeAdmin";
 
 export const routes = createBrowserRouter([
   {
@@ -144,6 +147,21 @@ export const routes = createBrowserRouter([
         element: <ResumeAdmin />,
       },
       {
+        path: "/main-admin/private-route/abubakar/dashboard/resume/:resumeId",
+        element: <ResumeEach />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/resume/edit/:resumeId",
+        element: <ResumeEdit />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/resume/create",
+        element: <ResumeCreate />,
+      },
+
+
+      // blog //
+      {
         path: "/main-admin/private-route/abubakar/dashboard/blog",
         element: <BlogAdmin />,
       },
@@ -164,7 +182,7 @@ export const routes = createBrowserRouter([
         element: <Category />,
       },
 
-
+// message//
       {
         path: "/main-admin/private-route/abubakar/dashboard/contact",
         element: <ContactAdmin />,
@@ -183,7 +201,6 @@ export const routes = createBrowserRouter([
           },
         ],
       },
-
       {
         path: "/main-admin/private-route/abubakar/dashboard/contact/:contactId",
         element: <MessageEach />,

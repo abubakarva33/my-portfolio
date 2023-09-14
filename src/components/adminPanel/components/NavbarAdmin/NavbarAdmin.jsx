@@ -40,11 +40,11 @@ const NavbarAdmin = () => {
       </NavLink>
       {isOpen && (
         <>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/skills"}>Skills</NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/education"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume/skills"}>Skills</NavLink>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume/education"}>
             Education
           </NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/work/experience"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume"}>
             Experience
           </NavLink>
         </>

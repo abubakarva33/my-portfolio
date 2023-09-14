@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category"],
+  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category", "Resume"],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -143,6 +143,42 @@ export const api = createApi({
     }),
 
 
+    getResume: builder.query({
+      query: () => `/education?type=programming`,
+      providesTags: ["Resume"],
+    }),
+    getAResume: builder.query({
+      query: (educationId) => `education/${educationId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Resume"],
+    }),
+    createResume: builder.mutation({
+      query: (body) => ({
+        url: `education`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Resume"],
+    }),
+    updateResume: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `education/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Resume"],
+    }),
+    deleteResume: builder.mutation({
+      query: (_id) => ({
+        url: `education/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Resume"],
+    }),
+
+
+
+
     getCategory: builder.query({
       query: () => `category`,
       providesTags: ["Category"],
@@ -204,5 +240,10 @@ export const {
   useGetACategoryQuery,
   useDeleteCategoryMutation,
   useUpdateCategoryMutation,
-  useCreateCategoryMutation
+  useCreateCategoryMutation,
+  useGetResumeQuery,
+  useGetAResumeQuery,
+  useCreateResumeMutation,
+  useDeleteResumeMutation,
+  useUpdateResumeMutation
 } = api;
