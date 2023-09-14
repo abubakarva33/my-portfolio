@@ -13,14 +13,17 @@ import {
   useGetMessageQuery,
 } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
 
 const MessageTable = () => {
   const [page, setPage] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [deleteId, setDeleteId] = useState();
-  const { data, isLoading } = useGetMessageQuery(page);
+  const { filter } = useSelector((state) => state.recentWork);
+  const { data, isLoading } = useGetMessageQuery({page, filter});
   const [deleteMessage] = useDeleteMessageMutation();
   const [allDelete] = useDeleteMultipleMessageMutation();
+  console.log(filter);
   if (isLoading) {
     return null;
   }

@@ -77,7 +77,7 @@ export const api = createApi({
     }),
 
     getMessage: builder.query({
-      query: (page) => `contact?page=${page}`,
+      query: ({page, filter}) => `contact?page=${page}&query=${filter}`,
       providesTags: ["Message"],
     }),
     getAMessage: builder.query({

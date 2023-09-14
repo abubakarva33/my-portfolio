@@ -8,7 +8,7 @@ import persistStore from "redux-persist/es/persistStore";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["recentWork"],
+  whitelist: [""],
 };
 
 const rootReducer = combineReducers({
