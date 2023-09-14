@@ -2,10 +2,13 @@ import { NavLink } from "react-router-dom";
 import "./NavbarAdmin.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
+import { filterResume } from "../../../../redux/features/worksSlice";
+import { useDispatch } from "react-redux";
 
 const NavbarAdmin = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const dispatch =useDispatch();
   return (
     <div className="d-flex flex-column">
       <NavLink
@@ -40,11 +43,19 @@ const NavbarAdmin = () => {
       </NavLink>
       {isOpen && (
         <>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume/skills"}>Skills</NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume/education"}>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume/skill"}>
+            Skills
+          </NavLink>
+          <NavLink
+            to={"/main-admin/private-route/abubakar/dashboard/resume"}
+            onClick={() => dispatch(filterResume("type=programming&type=academic"))}
+          >
             Education
           </NavLink>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/resume"}>
+          <NavLink
+            to={"/main-admin/private-route/abubakar/dashboard/resume"}
+            onClick={() => dispatch(filterResume("type=training&type=job"))}
+          >
             Experience
           </NavLink>
         </>
@@ -57,7 +68,9 @@ const NavbarAdmin = () => {
       </NavLink>
       {isClicked ? (
         <>
-          <NavLink to={"/main-admin/private-route/abubakar/dashboard/blog/category"}>Category</NavLink>
+          <NavLink to={"/main-admin/private-route/abubakar/dashboard/blog/category"}>
+            Category
+          </NavLink>
         </>
       ) : undefined}
       <NavLink

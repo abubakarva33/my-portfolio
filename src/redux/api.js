@@ -144,7 +144,7 @@ export const api = createApi({
 
 
     getResume: builder.query({
-      query: (filter) => `/education?${filter}`,
+      query: (filterResumeData) => `/education?${filterResumeData}`,
       providesTags: ["Resume"],
     }),
     getAResume: builder.query({

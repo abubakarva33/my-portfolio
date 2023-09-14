@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  filter : ""
+  filter : "",
+  filterResumeData: "",
 };
 
 export const recentWorksSlice = createSlice({
@@ -11,9 +12,12 @@ export const recentWorksSlice = createSlice({
     filterData: (state, action) => {
       state.filter = action.payload;
     },
+    filterResume: (state, action) => {
+      state.filterResumeData = action.payload;
+    },
   },
 });
 
-export const { filterData } = recentWorksSlice.actions;
+export const { filterData ,filterResume } = recentWorksSlice.actions;
 const recentWorkReducer = recentWorksSlice.reducer;
 export default recentWorkReducer;

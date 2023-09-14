@@ -34,6 +34,8 @@ import ResumeEach from "../components/adminPanel/components/pages/Education/Resu
 import ResumeEdit from "../components/adminPanel/components/pages/Education/ResumeEdit/ResumeEdit";
 import ResumeCreate from "../components/adminPanel/components/pages/Education/ResumeForm/ResumeCreate";
 import ResumeAdmin from "../components/adminPanel/components/pages/Education/ResumeMain/ResumeAdmin";
+import ResumeLayout from "../components/adminPanel/components/pages/ResumeLayout/ResumeLayout";
+import SkillAdmin from "../components/adminPanel/components/pages/Skills/SkillMain/SkillAdmin";
 
 export const routes = createBrowserRouter([
   {
@@ -144,21 +146,30 @@ export const routes = createBrowserRouter([
 
       {
         path: "/main-admin/private-route/abubakar/dashboard/resume",
-        element: <ResumeAdmin />,
+        element: <ResumeLayout />,
+        children: [
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume",
+            element: <SkillAdmin />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/:resumeId",
+            element: <ResumeEach />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/edit/:resumeId",
+            element: <ResumeEdit />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/create",
+            element: <ResumeCreate />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/skill",
+            element: <SkillAdmin />,
+          },
+        ],
       },
-      {
-        path: "/main-admin/private-route/abubakar/dashboard/resume/:resumeId",
-        element: <ResumeEach />,
-      },
-      {
-        path: "/main-admin/private-route/abubakar/dashboard/resume/edit/:resumeId",
-        element: <ResumeEdit />,
-      },
-      {
-        path: "/main-admin/private-route/abubakar/dashboard/resume/create",
-        element: <ResumeCreate />,
-      },
-
 
       // blog //
       {
@@ -182,7 +193,7 @@ export const routes = createBrowserRouter([
         element: <Category />,
       },
 
-// message//
+      // message//
       {
         path: "/main-admin/private-route/abubakar/dashboard/contact",
         element: <ContactAdmin />,

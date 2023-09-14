@@ -16,7 +16,6 @@ const ContactAdmin = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
     dispatch(filterData(values.target.value));
-    // dispatch(filterData(values.search));
   };
   return (
     <div>
