@@ -1,12 +1,12 @@
 
 import "./ResumeEdit.css";
-import { useGetABlogQuery } from "../../../../../../redux/api";
+import { useGetAResumeQuery } from "../../../../../../redux/api";
 import { useParams } from "react-router-dom";
 import ResumeForm from "../ResumeForm/ResumeForm";
 
 const ResumeEdit = () => {
-  const {blogId } = useParams();
-  const { data, isLoading } = useGetABlogQuery(blogId);
+  const {resumeId } = useParams();
+  const { data, isLoading } = useGetAResumeQuery(resumeId);
 
   const props = {
     data,

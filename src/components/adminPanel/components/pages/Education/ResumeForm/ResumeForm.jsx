@@ -2,33 +2,26 @@ import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
 const { Option } = Select;
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import {
-  useCreateBlogMutation,
-  useCreateCategoryMutation,
-  useGetCategoryQuery,
-  useUpdateBlogMutation,
-} from "../../../../../../redux/api";
+import { useCreateResumeMutation, useUpdateResumeMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [updateBlog] = useUpdateBlogMutation();
-  const [createBlog] = useCreateBlogMutation();
-  const categories = useGetCategoryQuery();
-  const [addCategorys] = useCreateCategoryMutation();
+  const [updateResume] = useUpdateResumeMutation();
+  const [createResume] = useCreateResumeMutation();
 
-  if (isLoading && categories.isLoading) {
+  if (isLoading) {
     return <> loading </>;
   }
 
-  const { title, description, img, category, createdAt, updatedAt, _id } = data;
+  const { title, details, institute, startYear, endYear, type, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
     if (mode === "create") {
-      createBlog(values);
+      createResume(values);
       Swal.fire({
         icon: "success",
         title: "Your book has been added successfully",
@@ -37,7 +30,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
       });
       navigate(-1);
     } else if (mode === "update") {
-      updateBlog({ _id, ...values });
+      updateResume({ _id, ...values });
       Swal.fire({
         icon: "success",
         title: "Your book has been updated successfully",
@@ -47,24 +40,6 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
       navigate(-1);
     }
   };
-  const addCategory = async () => {
-    const { value: text } = await Swal.fire({
-      input: "text",
-      inputLabel: "Category",
-      inputPlaceholder: "Enter category here...",
-      inputAttributes: {
-        "aria-label": "Enter Category here",
-      },
-      showCancelButton: true,
-    });
-
-    if (text) {
-      const res = await addCategorys({ name: text }).unwrap();
-      if (res?.success) {
-        Swal.fire("Created!", "Category has been deleted.", "success");
-      }
-    }
-  };
 
   return (
     <div>
@@ -72,7 +47,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         <div>
           <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
         </div>
-        <h4>{mode === "create" ? "Create New Blog" : "Update This Blog"} </h4>
+        <h4>{mode === "create" ? "Create New Resume Part" : "Update This"} </h4>
         <button className="btn btn-primary" onClick={() => location.reload()}>
           Reload
         </button>
@@ -83,30 +58,31 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         onFinish={onFinish}
         initialValues={{
           title,
-          description,
-          img,
-          category: category?.name,
-          _id,
+          details,
+          institute,
+          startYear,
+          endYear,
+          type,
         }}
         layout="vertical"
         className=" serviceTable my-4 border rounded p-4"
       >
         <Form.Item
-          label="Blog Title"
+          label="Title"
           name="title"
           rules={[
             {
               required: true,
-              message: "Service title is required",
+              message: "title is required",
             },
           ]}
         >
-          <Input placeholder="Please enter blog title here..." />
+          <Input placeholder="Please enter title here..." />
         </Form.Item>
 
         <Form.Item
           label="Description"
-          name="description"
+          name="details"
           rules={[
             {
               required: true,
@@ -116,55 +92,80 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         >
           <Input placeholder="Please enter description here..." />
         </Form.Item>
+
         <Form.Item
-          label="Select Picture"
-          name="img"
+          label="Institute Name"
+          name="institute"
           rules={[
             {
               required: true,
-              message: "Picture is required",
+              message: "Institute name is required",
             },
           ]}
         >
-          <Select placeholder="Select Picture">
-            <Option value="blog1">Blog 1</Option>
-            <Option value="blog2">Blog 2</Option>
-            <Option value="blog3">Blog 3</Option>
-          </Select>
+          <Input placeholder="Please enter institute name here..." />
         </Form.Item>
 
-        <p className="mb-2"> Select Category</p>
         <Space.Compact block>
           <Form.Item
-            name="category"
+            name="startYear"
+            label="Start Year"
             style={{
-              width: "70%",
+              width: "100%",
             }}
             rules={[
               {
                 required: true,
-                message: "Picture is required",
+                message: "Institute name is required",
               },
             ]}
           >
-            <Select placeholder="Select Category">
-              {categories?.data?.data.map((category) => (
-                <Option key={category._id} value={category._id}>
-                  {category?.name}
-                </Option>
-              ))}
-            </Select>
+            <Input
+              placeholder="Please enter institute name here..."
+              style={{
+                width: "100%",
+              }}
+            />
           </Form.Item>
-
-          <Button
-            onClick={addCategory}
+          <Form.Item
+            name="endYear"
+            label="End Year"
             style={{
-              width: "30%",
+              width: "100%",
             }}
+            rules={[
+              {
+                required: true,
+                message: "Institute name is required",
+              },
+            ]}
           >
-            Add Category
-          </Button>
+            <Input
+              placeholder="Please enter institute name here..."
+              style={{
+                width: "100%",
+              }}
+            />
+          </Form.Item>
         </Space.Compact>
+
+        <Form.Item
+          label="Select Category"
+          name="type"
+          rules={[
+            {
+              required: true,
+              message: "Category is required",
+            },
+          ]}
+        >
+          <Select placeholder="Select Category">
+            <Option value="academic">Academic</Option>
+            <Option value="programming">Programming</Option>
+            <Option value="job">Job</Option>
+            <Option value="training">Training</Option>
+          </Select>
+        </Form.Item>
 
         <div className="d-flex justify-content-center  ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">

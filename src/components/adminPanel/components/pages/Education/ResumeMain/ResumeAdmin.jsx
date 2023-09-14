@@ -8,7 +8,8 @@ import { Table } from "react-bootstrap";
 
 const ResumeAdmin = () => {
   const navigate = useNavigate();
-  const { data, isLoading } = useGetResumeQuery();
+  const [filter, setFilter] = useState("");
+  const { data, isLoading } = useGetResumeQuery(filter);
   if (isLoading) {
     return;
   }
@@ -20,10 +21,18 @@ const ResumeAdmin = () => {
           <NavLink to="/resume/skills" className=" w-100">
             Skills
           </NavLink>
-          <NavLink to="/main-admin/private-route/abubakar/dashboard/resume" className=" w-100">
+          <NavLink
+            to="/main-admin/private-route/abubakar/dashboard/resume"
+            className=" w-100"
+            onClick={() => setFilter("type=programming&type=academic")}
+          >
             Education
           </NavLink>
-          <NavLink to="/resume/experience" className=" w-100">
+          <NavLink
+            to="/main-admin/private-route/abubakar/dashboard/resume"
+            className=" w-100"
+            onClick={() => setFilter("type=training&type=job")}
+          >
             Experience
           </NavLink>
         </div>
@@ -33,9 +42,11 @@ const ResumeAdmin = () => {
           <div>
             <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
-          <h4>MANAGE BLOGS</h4>
+          <h4>MANAGE {filter === "type=training&type=job" ? "EXPERIENCE" : "EDUCATION"}</h4>
           <Link to="/main-admin/private-route/abubakar/dashboard/resume/create">
-            <button className="btn btn-primary"> Add Blog</button>
+            <button className="btn btn-primary">
+              Add {filter === "type=training&type=job" ? "Experience" : "Education"}
+            </button>
           </Link>
         </div>
         <Table hover className="serviceTable">
@@ -44,6 +55,7 @@ const ResumeAdmin = () => {
               <th>No.</th>
               <th>Title</th>
               <th>Description</th>
+              <th>Category</th>
               <th>Date Created</th>
               <th>Date Edited</th>
               <th style={{ width: "135px" }}>Action</th>

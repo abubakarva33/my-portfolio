@@ -9,7 +9,7 @@ const ResumeTable = ({ ind, data }) => {
   const [deleteResume] = useDeleteResumeMutation();
   console.log(data);
 
-  const { title, details, category, img, createdAt, updatedAt, _id } = data;
+  const { title, details, type, createdAt, updatedAt, _id } = data;
   const deleteHandler = async () => {
     Swal.fire({
       title: "Are you sure?",
@@ -31,8 +31,9 @@ const ResumeTable = ({ ind, data }) => {
   return (
     <tr>
       <td>{ind + 1}</td>
-      <td className="colspan-2">{title.length > 25 ? `${title.slice(0, 25)}...` : title}</td>
-      <td>{details.length > 25 ? `${details.slice(0, 25)}...` : details}</td>
+      <td className="colspan-2">{title.length > 20 ? `${title.slice(0, 20)}...` : title}</td>
+      <td>{details.length > 20 ? `${details.slice(0, 20)}...` : details}</td>
+      <td>{type}</td>
       <td>{moment(createdAt).format("DD/MM/YYYY")}</td>
       <td>{moment(updatedAt).format("DD/MM/YYYY")}</td>
       <td className="d-flex" style={{ width: "135px" }}>
