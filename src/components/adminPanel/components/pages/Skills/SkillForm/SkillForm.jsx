@@ -2,28 +2,21 @@ import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
 const { Option } = Select;
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import {
-  useCreateBlogMutation,
-  useCreateCategoryMutation,
-  useGetCategoryQuery,
-  useUpdateBlogMutation,
-} from "../../../../../../redux/api";
+import { useCreateSkillMutation, useUpdateSkillMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [updateBlog] = useUpdateBlogMutation();
-  const [createBlog] = useCreateBlogMutation();
-  const categories = useGetCategoryQuery();
-  const [addCategorys] = useCreateCategoryMutation();
+  const [updateBlog] = useUpdateSkillMutation();
+  const [createBlog] = useCreateSkillMutation();
 
-  if (isLoading && categories.isLoading) {
+  if (isLoading) {
     return <> loading </>;
   }
 
-  const { title, description, img, category, createdAt, updatedAt, _id } = data;
+  const { title, value, type, createdAt, updatedAt, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -72,7 +65,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         <div>
           <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
         </div>
-        <h4>{mode === "create" ? "Create New Blog" : "Update This Blog"} </h4>
+        <h4>{mode === "create" ? "Create New Skill" : "Update This Skill"} </h4>
         <button className="btn btn-primary" onClick={() => location.reload()}>
           Reload
         </button>
@@ -83,9 +76,8 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         onFinish={onFinish}
         initialValues={{
           title,
-          description,
-          img,
-          category: category?.name,
+          type,
+          value,
           _id,
         }}
         layout="vertical"
@@ -105,70 +97,36 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         </Form.Item>
 
         <Form.Item
-          label="Description"
-          name="description"
+          label="Link"
+          name="value"
           rules={[
             {
               required: true,
-              message: "Description is required",
+              message: "Link is required",
             },
           ]}
         >
-          <Input placeholder="Please enter description here..." />
+          <Input placeholder="Please enter link here..." />
         </Form.Item>
         <Form.Item
-          label="Select Picture"
-          name="img"
+          label="Select Category"
+          name="type"
           rules={[
             {
               required: true,
-              message: "Picture is required",
+              message: "Category is required",
             },
           ]}
         >
-          <Select placeholder="Select Picture">
-            <Option value="blog1">Blog 1</Option>
-            <Option value="blog2">Blog 2</Option>
-            <Option value="blog3">Blog 3</Option>
+          <Select placeholder="Select Category">
+            <Option value="development">Development</Option>
+            <Option value="design">Design</Option>
           </Select>
         </Form.Item>
 
-        <p className="mb-2"> Select Category</p>
-        <Space.Compact block>
-          <Form.Item
-            name="category"
-            style={{
-              width: "70%",
-            }}
-            rules={[
-              {
-                required: true,
-                message: "Picture is required",
-              },
-            ]}
-          >
-            <Select placeholder="Select Category">
-              {categories?.data?.data.map((category) => (
-                <Option key={category._id} value={category._id}>
-                  {category?.name}
-                </Option>
-              ))}
-            </Select>
-          </Form.Item>
-
-          <Button
-            onClick={addCategory}
-            style={{
-              width: "30%",
-            }}
-          >
-            Add Category
-          </Button>
-        </Space.Compact>
-
         <div className="d-flex justify-content-center  ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
-            <span className="fs-5">{mode === "create" ? "Add Blog" : "Edit Blog"}</span>
+            <span className="fs-5">{mode === "create" ? "Add Skill" : "Edit Skill"}</span>
           </Button>
         </div>
       </Form>

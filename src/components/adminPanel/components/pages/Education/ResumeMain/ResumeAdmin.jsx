@@ -22,7 +22,7 @@ const ResumeAdmin = () => {
             <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
           <h4>MANAGE {filterResumeData === "type=training&type=job" ? "EXPERIENCE" : "EDUCATION"}</h4>
-          <Link to="/main-admin/private-route/abubakar/dashboard/resume/create">
+          <Link to="/main-admin/private-route/abubakar/dashboard/resume/type/create">
             <button className="btn btn-primary">
               Add {filterResumeData === "type=training&type=job" ? "Experience" : "Education"}
             </button>

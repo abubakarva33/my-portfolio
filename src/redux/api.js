@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category", "Resume"],
+  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category", "Resume", "Skill"],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -177,6 +177,40 @@ export const api = createApi({
     }),
 
 
+    getSkill: builder.query({
+      query: () => `/skill`,
+      providesTags: ["Skill"],
+    }),
+    getASkill: builder.query({
+      query: (skillId) => `skill/${skillId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Skill"],
+    }),
+    createSkill: builder.mutation({
+      query: (body) => ({
+        url: `skill`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Skill"],
+    }),
+    updateSkill: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `skill/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Skill"],
+    }),
+    deleteSkill: builder.mutation({
+      query: (_id) => ({
+        url: `skill/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Skill"],
+    }),
+
+
 
 
     getCategory: builder.query({
@@ -245,5 +279,10 @@ export const {
   useGetAResumeQuery,
   useCreateResumeMutation,
   useDeleteResumeMutation,
-  useUpdateResumeMutation
+  useUpdateResumeMutation,
+  useGetSkillQuery,
+  useGetASkillQuery,
+  useDeleteSkillMutation,
+  useCreateSkillMutation,
+  useUpdateSkillMutation
 } = api;

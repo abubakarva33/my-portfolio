@@ -1,12 +1,12 @@
 
 import "./SkillEdit.css";
-import { useGetABlogQuery } from "../../../../../../redux/api";
+import { useGetABlogQuery, useGetASkillQuery } from "../../../../../../redux/api";
 import { useParams } from "react-router-dom";
-import BlogForm from "../BlogForm/BlogForm";
+import SkillForm from "../SkillForm/SkillForm";
 
 const SkillEdit = () => {
-  const {blogId } = useParams();
-  const { data, isLoading } = useGetABlogQuery(blogId);
+  const {skillId } = useParams();
+  const { data, isLoading } = useGetASkillQuery(skillId);
 
   const props = {
     data,

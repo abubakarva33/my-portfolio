@@ -1,23 +1,16 @@
 import Table from "react-bootstrap/Table";
 import "./SkillAdmin.css";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Pagination } from "antd";
-import { useGetBlogsQuery } from "../../../../../../redux/api";
+import { useGetSkillQuery } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import SkillTable from "../SkillTable/SkillTable";
 
 const SkillAdmin = () => {
-  const [page, setPage] = useState(1);
   const navigate = useNavigate();
-  const { data, isLoading } = useGetBlogsQuery(page);
+  const { data, isLoading } = useGetSkillQuery();
   if (isLoading) {
     return;
   }
-  const { total, size } = data?.meta;
-  const onChange = (current) => {
-    setPage(current);
-  };
   return (
     <div>
       <div className=" pageBox">
@@ -25,9 +18,9 @@ const SkillAdmin = () => {
           <div>
             <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
-          <h4>MANAGE BLOGS</h4>
-          <Link to="/main-admin/private-route/abubakar/dashboard/blog/create">
-            <button className="btn btn-primary"> Add Blog</button>
+          <h4>MANAGE SKILLS</h4>
+          <Link to="/main-admin/private-route/abubakar/dashboard/resume/skill/create">
+            <button className="btn btn-primary"> Add Skill</button>
           </Link>
         </div>
         <Table hover className="serviceTable">
@@ -35,7 +28,6 @@ const SkillAdmin = () => {
             <tr>
               <th>No.</th>
               <th>Title</th>
-              <th>Description</th>
               <th>Category</th>
               <th>Date Created</th>
               <th>Date Edited</th>
@@ -47,7 +39,6 @@ const SkillAdmin = () => {
               data?.data?.map((data, ind) => <SkillTable key={ind} ind={ind} data={data} />)}
           </tbody>
         </Table>
-        {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} />}
       </div>
     </div>
   );

@@ -36,6 +36,9 @@ import ResumeCreate from "../components/adminPanel/components/pages/Education/Re
 import ResumeAdmin from "../components/adminPanel/components/pages/Education/ResumeMain/ResumeAdmin";
 import ResumeLayout from "../components/adminPanel/components/pages/ResumeLayout/ResumeLayout";
 import SkillAdmin from "../components/adminPanel/components/pages/Skills/SkillMain/SkillAdmin";
+import SkillEach from "../components/adminPanel/components/pages/Skills/SkillEach/SkillEach";
+import SkillEdit from "../components/adminPanel/components/pages/Skills/SkillEdit/SkillEdit";
+import SkillCreate from "../components/adminPanel/components/pages/Skills/SkillForm/SkillCreate";
 
 export const routes = createBrowserRouter([
   {
@@ -153,20 +156,36 @@ export const routes = createBrowserRouter([
             element: <SkillAdmin />,
           },
           {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/:resumeId",
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type",
+            element: <ResumeAdmin />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/:resumeId",
             element: <ResumeEach />,
           },
           {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/edit/:resumeId",
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/edit/:resumeId",
             element: <ResumeEdit />,
           },
           {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/create",
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/create",
             element: <ResumeCreate />,
           },
           {
             path: "/main-admin/private-route/abubakar/dashboard/resume/skill",
             element: <SkillAdmin />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/skill/:skillId",
+            element: <SkillEach />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/skill/edit/:skillId",
+            element: <SkillEdit />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/skill/create",
+            element: <SkillCreate />,
           },
         ],
       },

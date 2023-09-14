@@ -36,12 +36,12 @@ const ResumeTable = ({ ind, data }) => {
       <td>{moment(createdAt).format("DD/MM/YYYY")}</td>
       <td>{moment(updatedAt).format("DD/MM/YYYY")}</td>
       <td className="d-flex" style={{ width: "135px" }}>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/resume/${_id}`}>
+        <Link to={`/main-admin/private-route/abubakar/dashboard/resume/type/${_id}`}>
           <h6 className="p-2 me-2 border rounded text-light bg-primary tableActionIcon">
             <AiOutlineEye />
           </h6>
         </Link>
-        <Link to={`/main-admin/private-route/abubakar/dashboard/resume/edit/${_id}`}>
+        <Link to={`/main-admin/private-route/abubakar/dashboard/resume/type/edit/${_id}`}>
           <h6 className="p-2 me-2 border rounded text-light bg-success tableActionIcon">
             <AiOutlineEdit />
           </h6>
