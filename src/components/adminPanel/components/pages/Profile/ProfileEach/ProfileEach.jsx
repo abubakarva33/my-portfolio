@@ -14,7 +14,7 @@ const ProfileEach = () => {
   if (isLoading) {
     return;
   }
-  const { name, email, createdAt, anotherNumber, number, updatedAt, _id } = data;
+  const { name, email, createdAt, anotherNumber, description, number, updatedAt, _id } = data;
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -52,8 +52,9 @@ const ProfileEach = () => {
           <h6 className="pt-4 pb-3 mb-0">Email: {email}</h6>
           <h6 className="pt-4 pb-3 mb-0">Number: {number}</h6>
           <h6 className="pt-4 pb-3 mb-0">Alternative Number: {anotherNumber}</h6>
+          <h6 className="pt-4 pb-3 mb-0">Description: {description}</h6>
           <h6 className="pt-4 pb-3 mb-0">Date Created: {createdAt}</h6>
-          <h6 className="pt-4 pb-3 mb-0">Date Updated {updatedAt}</h6>
+          <h6 className="pt-4 pb-3 mb-0">Date Updated :{updatedAt}</h6>
           <div className="d-flex justify-content-center pb-4">
             <Button className="me-3" type="primary" danger onClick={handleSingleDelete}>
               Delete

@@ -1,5 +1,5 @@
 import Table from "react-bootstrap/Table";
-import "./ProfileAdmin.css"
+import "./ProfileAdmin.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetProfileQuery } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
@@ -18,9 +18,9 @@ const ProfileAdmin = () => {
           <div>
             <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
-          <h4>MANAGE PROFILE</h4>
-          <Link to="/main-admin/private-route/abubakar/dashboard/resume/skill/create">
-            <button className="btn btn-primary"> Add Skill</button>
+          <h4>MANAGE ADMIN PROFILE</h4>
+          <Link to="/main-admin/private-route/abubakar/dashboard/profile/create">
+            <button className="btn btn-primary"> Add Admin</button>
           </Link>
         </div>
         <Table hover className="serviceTable">

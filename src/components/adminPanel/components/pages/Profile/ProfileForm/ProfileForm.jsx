@@ -16,7 +16,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
     return <> loading </>;
   }
 
-  const { name, email, createdAt, anotherNumber, number, updatedAt, _id } = data;
+  const { name, email, description, anotherNumber, number, password, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -65,7 +65,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
         <div>
           <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
         </div>
-        <h4>{mode === "create" ? "Create New Skill" : "Update This Skill"} </h4>
+        <h4>{mode === "create" ? "Create New Admin" : "Update Profile"} </h4>
         <button className="btn btn-primary" onClick={() => location.reload()}>
           Reload
         </button>
@@ -79,6 +79,8 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
           email,
           number,
           anotherNumber,
+          password,
+          description,
           _id,
         }}
         layout="vertical"
@@ -123,6 +125,18 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
           <Input placeholder="Please enter number here..." />
         </Form.Item>
         <Form.Item
+          label="Description"
+          name="description"
+          rules={[
+            {
+              required: true,
+              message: "Description is required",
+            },
+          ]}
+        >
+          <Input placeholder="Please enter description here..." />
+        </Form.Item>
+        <Form.Item
           label="Alternative Number"
           name="anotherNumber"
           rules={[
@@ -134,22 +148,38 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
         >
           <Input placeholder="Please enter alternative number here..." />
         </Form.Item>
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Password  is required",
-            },
-          ]}
-        >
-          <Input placeholder="Please enter password  here..." />
-        </Form.Item>
+
+        {mode === "create" ? (
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: "Password  is required",
+              },
+            ]}
+          >
+            <Input placeholder="Please enter password  here..." />
+          </Form.Item>
+        ) : (
+          <Form.Item
+            label="Password"
+            name="password"
+            // rules={[
+            //   {
+            //     required: true,
+            //     message: "Password  is required",
+            //   },
+            // ]}
+          >
+            <Input placeholder="Please enter password  here..." />
+          </Form.Item>
+        )}
 
         <div className="d-flex justify-content-center  ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
-            <span className="fs-5">{mode === "create" ? "Add Skill" : "Update Skill"}</span>
+            <span className="fs-5">{mode === "create" ? "Add Admin" : "Update Profile"}</span>
           </Button>
         </div>
       </Form>
