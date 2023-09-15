@@ -11,6 +11,7 @@ import {
   useUpdateServiceMutation,
 } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
@@ -19,7 +20,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const [createService] = useCreateServiceMutation();
 
   if (isLoading) {
-    return <> loading </>;
+    return <Spinner/>
   }
   const { title, description, _id, img } = data;
 

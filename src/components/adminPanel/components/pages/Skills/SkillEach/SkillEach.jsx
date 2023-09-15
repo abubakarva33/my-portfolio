@@ -9,6 +9,7 @@ import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
+import Spinner from "../../../Spinner/Spinner";
 
 const SkillEach = () => {
   const { skillId } = useParams();
@@ -16,7 +17,7 @@ const SkillEach = () => {
   const [deleteSkill] = useDeleteSkillMutation();
   const { data, isLoading } = useGetASkillQuery(skillId);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   console.log(data);
   const { title, value, createdAt, updatedAt, type, _id } = data;

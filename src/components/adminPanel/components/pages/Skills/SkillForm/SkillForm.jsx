@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useCreateSkillMutation, useUpdateSkillMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
@@ -13,7 +14,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [createBlog] = useCreateSkillMutation();
 
   if (isLoading) {
-    return <> loading </>;
+    return <Spinner/>
   }
 
   const { title, value, type, createdAt, updatedAt, _id } = data;

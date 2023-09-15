@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGetSkillQuery } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import SkillTable from "../SkillTable/SkillTable";
+import Spinner from "../../../Spinner/Spinner";
 
 const SkillAdmin = () => {
   const navigate = useNavigate();
   const { data, isLoading } = useGetSkillQuery();
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   return (
     <div>

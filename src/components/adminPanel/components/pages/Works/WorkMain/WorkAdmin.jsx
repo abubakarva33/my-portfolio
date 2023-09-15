@@ -7,13 +7,14 @@ import { Pagination } from "antd";
 import { useGetWorksQuery } from "../../../../../../redux/api";
 import WorkTable from "../WorksTable/WorksTable";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const WorkAdmin = () => {
   const [page, setPage] = useState(1);
   const navigate = useNavigate()
   const { data, isLoading } = useGetWorksQuery(page);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const { total, size } = data?.meta;
   const onChange = (current) => {

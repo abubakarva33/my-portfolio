@@ -11,6 +11,8 @@ import { AiOutlineAntDesign } from "react-icons/ai";
 import { MdDesignServices, MdOutlineLocalPostOffice } from "react-icons/md";
 import { BsSignpost2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from "recharts";
+import Spinner from "../../Spinner/Spinner";
 
 const HomeAdmin = () => {
   const works = useGetWorksQuery(1);
@@ -19,7 +21,7 @@ const HomeAdmin = () => {
   const messages = useGetMessageQuery({ page: 1, filter: "" });
 
   if (works?.isFetching && blogs.isLoading) {
-    return "Loading";
+    return <Spinner />;
   }
   const totalWorks = works?.data?.meta?.total;
   const totalBlogs = blogs?.data?.meta?.total;
@@ -91,6 +93,18 @@ const HomeAdmin = () => {
           </div>
         </Col>
       </Row>
+      {/* <LineChart
+        width={400}
+        height={400}
+        data={works?.data?.data}
+        margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+      >
+        <XAxis dataKey="title" />
+        <Tooltip />
+        <CartesianGrid stroke="#f5f5f5" />
+        <Line type="monotone" dataKey="createdAt" stroke="#ff7300" yAxisId={0} />
+        <Line type="monotone" dataKey="createdAt" stroke="#387908" yAxisId={1} />
+      </LineChart> */}
     </div>
   );
 };

@@ -12,6 +12,7 @@ import { Table } from "react-bootstrap";
 import moment from "moment";
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 import Swal from "sweetalert2";
+import Spinner from "../../../Spinner/Spinner";
 
 const Category = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Category = () => {
   const [updateCategory] = useUpdateCategoryMutation();
   const [createCategory]=useCreateCategoryMutation()
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
 
   const deleteHandler = async (id) => {

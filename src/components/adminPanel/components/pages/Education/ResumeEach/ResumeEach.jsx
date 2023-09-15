@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
+import Spinner from "../../../Spinner/Spinner";
 
 const ResumeEach = () => {
   const { resumeId } = useParams();
@@ -12,7 +13,7 @@ const ResumeEach = () => {
   const [deleteResume] = useDeleteResumeMutation();
   const { data, isLoading } = useGetAResumeQuery(resumeId);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const {
     title,

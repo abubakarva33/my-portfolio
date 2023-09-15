@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
+import Spinner from "../../../Spinner/Spinner";
 
 const ProfileEach = () => {
   const { profileId } = useParams();
@@ -12,7 +13,7 @@ const ProfileEach = () => {
   const [deleteProfile] = useDeleteProfileMutation();
   const { data, isLoading } = useGetAProfileQuery(profileId);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const { name, email, createdAt, anotherNumber, description, number, updatedAt, _id } = data;
   const handleSingleDelete = () => {

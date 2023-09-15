@@ -6,13 +6,14 @@ import { useGetResumeQuery } from "../../../../../../redux/api";
 import ResumeTable from "../ResumeTable/ResumeTable";
 import { Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import Spinner from "../../../Spinner/Spinner";
 
 const ResumeAdmin = () => {
   const navigate = useNavigate();
-  const {filterResumeData}= useSelector(state=>state.recentWork)
+  const { filterResumeData } = useSelector((state) => state.recentWork);
   const { data, isLoading } = useGetResumeQuery(filterResumeData);
   if (isLoading) {
-    return;
+    return <Spinner />;
   }
   return (
     <div>
@@ -21,7 +22,9 @@ const ResumeAdmin = () => {
           <div>
             <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
           </div>
-          <h4>MANAGE {filterResumeData === "type=training&type=job" ? "EXPERIENCE" : "EDUCATION"}</h4>
+          <h4>
+            MANAGE {filterResumeData === "type=training&type=job" ? "EXPERIENCE" : "EDUCATION"}
+          </h4>
           <Link to="/main-admin/private-route/abubakar/dashboard/resume/type/create">
             <button className="btn btn-primary">
               Add {filterResumeData === "type=training&type=job" ? "Experience" : "Education"}

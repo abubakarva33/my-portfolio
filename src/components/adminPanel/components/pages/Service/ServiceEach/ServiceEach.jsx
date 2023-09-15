@@ -5,6 +5,7 @@ import { Button } from "antd";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Swal from "sweetalert2";
 import { useDeleteServiceMutation, useGetAServiceQuery } from "../../../../../../redux/api";
+import Spinner from "../../../Spinner/Spinner";
 
 const ServiceEach = () => {
   const { serviceId } = useParams();
@@ -12,7 +13,7 @@ const ServiceEach = () => {
   const navigate = useNavigate();
   const [deleteService] = useDeleteServiceMutation();
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const { title, description, createdAt, updatedAt, _id, img } = data;
 

@@ -2,17 +2,18 @@ import { useGetServicesQuery } from "../../../../../redux/api";
 import "./ServiceAdmin.css";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
-import ServiceTable from "./serviceTable/serviceTable";
 import { Link, useNavigate } from "react-router-dom";
 import { Divider, Pagination } from "antd";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import ServiceTable from "./ServiceTable/serviceTable";
+import Spinner from "../../Spinner/Spinner";
 
 const ServiceAdmin = () => {
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
   const { data, isLoading } = useGetServicesQuery(page);
   if (isLoading) {
-    return;
+    return <Spinner />;
   }
   const { total, size } = data?.meta;
   const onChange = (current) => {
@@ -46,7 +47,9 @@ const ServiceAdmin = () => {
             {Array.isArray(data?.data) &&
               data?.data?.map((data, ind) => <ServiceTable key={ind} ind={ind} data={data} />)}
           </tbody>
-          {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} className="my-3" />}
+          {total > size && (
+            <Pagination defaultCurrent={1} total={total} onChange={onChange} className="my-3" />
+          )}
         </Table>
       </div>
     </div>

@@ -6,13 +6,14 @@ import { Pagination } from "antd";
 import { useGetBlogsQuery } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import BlogTable from "../BlogTable/BlogTable";
+import Spinner from "../../../Spinner/Spinner";
 
 const BlogAdmin = () => {
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
   const { data, isLoading } = useGetBlogsQuery(page);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const { total, size } = data?.meta;
   const onChange = (current) => {

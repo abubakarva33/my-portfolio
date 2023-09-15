@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
+import Spinner from "../../../Spinner/Spinner";
 
 const BlogEach = () => {
   const { blogId } = useParams();
@@ -12,7 +13,7 @@ const BlogEach = () => {
   const [deleteBlog] = useDeleteBlogMutation();
   const { data, isLoading } = useGetABlogQuery(blogId);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   console.log(data);
   const { title, description, createdAt, updatedAt,category, _id, img } = data;

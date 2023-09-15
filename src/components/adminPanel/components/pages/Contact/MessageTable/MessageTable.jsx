@@ -14,18 +14,18 @@ import {
 } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
+import Spinner from "../../../Spinner/Spinner";
 
 const MessageTable = () => {
   const [page, setPage] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [deleteId, setDeleteId] = useState();
   const { filter } = useSelector((state) => state.recentWork);
-  const { data, isLoading } = useGetMessageQuery({page, filter});
+  const { data, isLoading, isFetching } = useGetMessageQuery({ page, filter });
   const [deleteMessage] = useDeleteMessageMutation();
   const [allDelete] = useDeleteMultipleMessageMutation();
-  console.log(filter);
-  if (isLoading) {
-    return null;
+  if (isLoading && isFetching) {
+    return <Spinner />;
   }
   const { total, size } = data?.meta;
   const onChange = (current) => {

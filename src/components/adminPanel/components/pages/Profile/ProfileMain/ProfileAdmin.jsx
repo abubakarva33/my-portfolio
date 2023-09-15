@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGetProfileQuery } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import ProfileTable from "../ProfileTable/ProfileTable";
+import Spinner from "../../../Spinner/Spinner";
 
 const ProfileAdmin = () => {
   const navigate = useNavigate();
   const { data, isLoading } = useGetProfileQuery();
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   return (
     <div>

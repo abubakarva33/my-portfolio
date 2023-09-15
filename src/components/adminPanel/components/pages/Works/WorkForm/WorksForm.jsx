@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useCreateWorkMutation, useUpdateWorkMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
@@ -29,7 +30,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   }, [data]);
 
   if (isLoading) {
-    return <> loading </>;
+    return <Spinner/>
   }
   const {
     title,

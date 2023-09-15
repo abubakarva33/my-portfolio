@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useCreateProfileMutation, useUpdateProfileMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
@@ -13,7 +14,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
   const [createProfile] = useCreateProfileMutation();
 
   if (isLoading) {
-    return <> loading </>;
+    return <Spinner/>
   }
 
   const { name, email, description, anotherNumber, number, password, _id } = data;

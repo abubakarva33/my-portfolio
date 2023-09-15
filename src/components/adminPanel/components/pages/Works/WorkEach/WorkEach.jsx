@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
+import Spinner from "../../../Spinner/Spinner";
 
 const WorkEach = () => {
   const { workId } = useParams();
@@ -12,7 +13,7 @@ const WorkEach = () => {
   const [deleteWork] = useDeleteWorkMutation();
   const { data, isLoading } = useGetAWorkQuery(workId);
   if (isLoading) {
-    return;
+    return <Spinner/>
   }
   const { title, description, createdAt,updatedAt, _id, img } = data;
   console.log(img);

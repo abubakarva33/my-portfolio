@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useCreateResumeMutation, useUpdateResumeMutation } from "../../../../../../redux/api";
 import { memo, useEffect, useRef, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import Spinner from "../../../Spinner/Spinner";
 
 const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [form] = Form.useForm();
@@ -13,7 +14,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [createResume] = useCreateResumeMutation();
 
   if (isLoading) {
-    return <> loading </>;
+    return <Spinner/>
   }
 
   const { title, details, institute, startYear, endYear, type, _id } = data;
