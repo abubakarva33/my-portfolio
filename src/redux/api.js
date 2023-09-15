@@ -3,7 +3,18 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1/" }),
-  tagTypes: ["Post", "Service", "cart", "Work","Message", "Blog", "Category", "Resume", "Skill"],
+  tagTypes: [
+    "Post",
+    "Service",
+    "cart",
+    "Work",
+    "Message",
+    "Blog",
+    "Category",
+    "Resume",
+    "Skill",
+    "Profile",
+  ],
   endpoints: (builder) => ({
     getServices: builder.query({
       query: (page) => `service?page=${page}`,
@@ -41,6 +52,7 @@ export const api = createApi({
       invalidatesTags: ["Service"],
     }),
 
+    // recent works //
     getWorks: builder.query({
       query: (page) => `work?page=${page}`,
       providesTags: ["Work"],
@@ -76,8 +88,9 @@ export const api = createApi({
       invalidatesTags: ["Work"],
     }),
 
+    // messages section //
     getMessage: builder.query({
-      query: ({page, filter}) => `contact?page=${page}&query=${filter}`,
+      query: ({ page, filter }) => `contact?page=${page}&query=${filter}`,
       providesTags: ["Message"],
     }),
     getAMessage: builder.query({
@@ -109,6 +122,7 @@ export const api = createApi({
       invalidatesTags: ["Message"],
     }),
 
+    // blog section //
     getBlogs: builder.query({
       query: (page) => `blog?page=${page}`,
       providesTags: ["Blog"],
@@ -142,7 +156,7 @@ export const api = createApi({
       invalidatesTags: ["Blog"],
     }),
 
-
+    // resume section //
     getResume: builder.query({
       query: (filterResumeData) => `/education?${filterResumeData}`,
       providesTags: ["Resume"],
@@ -176,7 +190,7 @@ export const api = createApi({
       invalidatesTags: ["Resume"],
     }),
 
-
+    // skill section //
     getSkill: builder.query({
       query: () => `/skill`,
       providesTags: ["Skill"],
@@ -210,9 +224,41 @@ export const api = createApi({
       invalidatesTags: ["Skill"],
     }),
 
+    // profile section //
+    getProfile: builder.query({
+      query: () => `/auth`,
+      providesTags: ["Profile"],
+    }),
+    getAProfile: builder.query({
+      query: (authId) => `auth/${authId}`,
+      transformResponse: (response) => response.data,
+      providesTags: ["Profile"],
+    }),
+    createProfile: builder.mutation({
+      query: (body) => ({
+        url: `auth`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Profile"],
+    }),
+    updateProfile: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `auth/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Profile"],
+    }),
+    deleteProfile: builder.mutation({
+      query: (_id) => ({
+        url: `auth/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Profile"],
+    }),
 
-
-
+    // category section //
     getCategory: builder.query({
       query: () => `category`,
       providesTags: ["Category"],
@@ -245,7 +291,6 @@ export const api = createApi({
       }),
       invalidatesTags: ["Category"],
     }),
-
   }),
 });
 
@@ -284,5 +329,10 @@ export const {
   useGetASkillQuery,
   useDeleteSkillMutation,
   useCreateSkillMutation,
-  useUpdateSkillMutation
+  useUpdateSkillMutation,
+  useGetProfileQuery,
+  useGetAProfileQuery,
+  useDeleteProfileMutation,
+  useUpdateProfileMutation,
+  useCreateProfileMutation,
 } = api;

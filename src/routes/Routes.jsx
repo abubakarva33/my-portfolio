@@ -13,7 +13,6 @@ import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
 import LayoutAdmin from "../components/adminPanel/layouts/LayoutAdmin";
 import HomeAdmin from "../components/adminPanel/components/pages/Home/HomeAdmin";
 import ServiceAdmin from "../components/adminPanel/components/pages/Service/ServiceAdmin";
-import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileAdmin";
 import ContactAdmin from "../components/adminPanel/components/pages/Contact/ContactAdmin";
 import ServiceEach from "../components/adminPanel/components/pages/Service/ServiceEach/ServiceEach";
 import ServiceEdit from "../components/adminPanel/components/pages/Service/ServiceEdit/ServiceEdit";
@@ -39,6 +38,10 @@ import SkillAdmin from "../components/adminPanel/components/pages/Skills/SkillMa
 import SkillEach from "../components/adminPanel/components/pages/Skills/SkillEach/SkillEach";
 import SkillEdit from "../components/adminPanel/components/pages/Skills/SkillEdit/SkillEdit";
 import SkillCreate from "../components/adminPanel/components/pages/Skills/SkillForm/SkillCreate";
+import ProfileAdmin from "../components/adminPanel/components/pages/Profile/ProfileMain/ProfileAdmin";
+import ProfileEach from "../components/adminPanel/components/pages/Profile/ProfileEach/ProfileEach";
+import ProfileEdit from "../components/adminPanel/components/pages/Profile/ProfileEdit/ProfileEdit";
+import ProfileCreate from "../components/adminPanel/components/pages/Profile/ProfileForm/ProfileCreate";
 
 export const routes = createBrowserRouter([
   {
@@ -100,6 +103,9 @@ export const routes = createBrowserRouter([
       },
     ],
   },
+
+
+  // admin section routing //
   {
     path: "/main-admin/private-route/abubakar/dashboard",
     element: <LayoutAdmin />,
@@ -112,7 +118,21 @@ export const routes = createBrowserRouter([
         path: "/main-admin/private-route/abubakar/dashboard/profile",
         element: <ProfileAdmin />,
       },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/profile/:profileId",
+        element: <ProfileEach />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/profile/edit/:profileId",
+        element: <ProfileEdit />,
+      },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/profile/create",
+        element: <ProfileCreate />,
+      },
 
+
+      // service section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/services",
         element: <ServiceAdmin />,
@@ -129,7 +149,8 @@ export const routes = createBrowserRouter([
         path: "/main-admin/private-route/abubakar/dashboard/services/create",
         element: <ServiceCreate />,
       },
-
+ 
+      // recent work section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/work",
         element: <WorkAdmin />,
@@ -147,6 +168,7 @@ export const routes = createBrowserRouter([
         element: <WorkCreate />,
       },
 
+      // resume section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/resume",
         element: <ResumeLayout />,
