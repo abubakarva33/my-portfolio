@@ -54,7 +54,7 @@ const SkillEach = () => {
       <div className="serviceTable">
         <div className="px-3">
           <h6 className="pt-4 pb-3 mb-0">Title: {title}</h6>
-          <h6 className="pt-4 pb-3 mb-0">Details: {value}</h6>
+          <h6 className="pt-4 pb-3 mb-0">Value: {value}</h6>
           <h6 className="pt-4 pb-3 mb-0">Category: {type}</h6>
           <h6 className="pt-4 pb-3 mb-0">Date Created: {createdAt}</h6>
           <h6 className="pt-4 pb-3 mb-0">Date Updated {updatedAt}</h6>

@@ -30,6 +30,7 @@ const SkillTable = ({ ind, data }) => {
     <tr>
       <td>{ind + 1}</td>
       <td className="colspan-2">{title.length > 25 ? `${title.slice(0, 25)}...` : title}</td>
+      <td>{value}</td>
       <td>{type}</td>
       <td>{moment(createdAt).format("DD/MM/YYYY")}</td>
       <td>{moment(updatedAt).format("DD/MM/YYYY")}</td>

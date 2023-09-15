@@ -17,14 +17,14 @@ const ResumeLayout = () => {
             Skills
           </NavLink>
           <NavLink
-            to="/main-admin/private-route/abubakar/dashboard/resume/type"
+            to="/main-admin/private-route/abubakar/dashboard/resume/type/education"
             className=" w-100"
             onClick={() => dispatch(filterResume("type=programming&type=academic"))}
           >
             Education
           </NavLink>
           <NavLink
-            to="/main-admin/private-route/abubakar/dashboard/resume/type"
+            to="/main-admin/private-route/abubakar/dashboard/resume/type/experience"
             className=" w-100"
             onClick={() => dispatch(filterResume("type=training&type=job"))}
           >

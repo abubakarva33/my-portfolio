@@ -84,29 +84,29 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
         className=" serviceTable my-4 border rounded p-4"
       >
         <Form.Item
-          label="Blog Title"
+          label="Title"
           name="title"
           rules={[
             {
               required: true,
-              message: "Service title is required",
+              message: "title is required",
             },
           ]}
         >
-          <Input placeholder="Please enter blog title here..." />
+          <Input placeholder="Please enter title here..." />
         </Form.Item>
 
         <Form.Item
-          label="Link"
+          label="Value"
           name="value"
           rules={[
             {
               required: true,
-              message: "Link is required",
+              message: "Value is required",
             },
           ]}
         >
-          <Input placeholder="Please enter link here..." />
+          <Input placeholder="Please enter value here..." />
         </Form.Item>
         <Form.Item
           label="Select Category"
@@ -126,7 +126,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
 
         <div className="d-flex justify-content-center  ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
-            <span className="fs-5">{mode === "create" ? "Add Skill" : "Edit Skill"}</span>
+            <span className="fs-5">{mode === "create" ? "Add Skill" : "Update Skill"}</span>
           </Button>
         </div>
       </Form>

@@ -28,6 +28,7 @@ const SkillAdmin = () => {
             <tr>
               <th>No.</th>
               <th>Title</th>
+              <th>Value</th>
               <th>Category</th>
               <th>Date Created</th>
               <th>Date Edited</th>

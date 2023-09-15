@@ -37,7 +37,7 @@ const NavbarAdmin = () => {
       </NavLink>
       <NavLink
         onClick={() => (setIsOpen(true), setIsClicked(false))}
-        to={"/main-admin/private-route/abubakar/dashboard/resume"}
+        to={"/main-admin/private-route/abubakar/dashboard/resume/skill"}
       >
         Resume
       </NavLink>
@@ -47,13 +47,13 @@ const NavbarAdmin = () => {
             Skills
           </NavLink>
           <NavLink
-            to={"/main-admin/private-route/abubakar/dashboard/resume/type"}
+            to={"/main-admin/private-route/abubakar/dashboard/resume/type/education"}
             onClick={() => dispatch(filterResume("type=programming&type=academic"))}
           >
             Education
           </NavLink>
           <NavLink
-            to={"/main-admin/private-route/abubakar/dashboard/resume/type"}
+            to={"/main-admin/private-route/abubakar/dashboard/resume/type/experience"}
             onClick={() => dispatch(filterResume("type=training&type=job"))}
           >
             Experience

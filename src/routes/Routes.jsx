@@ -156,22 +156,6 @@ export const routes = createBrowserRouter([
             element: <SkillAdmin />,
           },
           {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/type",
-            element: <ResumeAdmin />,
-          },
-          {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/type/:resumeId",
-            element: <ResumeEach />,
-          },
-          {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/type/edit/:resumeId",
-            element: <ResumeEdit />,
-          },
-          {
-            path: "/main-admin/private-route/abubakar/dashboard/resume/type/create",
-            element: <ResumeCreate />,
-          },
-          {
             path: "/main-admin/private-route/abubakar/dashboard/resume/skill",
             element: <SkillAdmin />,
           },
@@ -186,6 +170,26 @@ export const routes = createBrowserRouter([
           {
             path: "/main-admin/private-route/abubakar/dashboard/resume/skill/create",
             element: <SkillCreate />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/education",
+            element: <ResumeAdmin />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/experience",
+            element: <ResumeAdmin />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/:resumeId",
+            element: <ResumeEach />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/edit/:resumeId",
+            element: <ResumeEdit />,
+          },
+          {
+            path: "/main-admin/private-route/abubakar/dashboard/resume/type/create",
+            element: <ResumeCreate />,
           },
         ],
       },
