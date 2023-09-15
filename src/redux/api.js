@@ -90,7 +90,7 @@ export const api = createApi({
 
     // messages section //
     getMessage: builder.query({
-      query: ({ page, filter }) => `contact?page=${page}&query=${filter}`,
+      query: ({ page, filter }) => `contact?page=${page}&query?=${filter}`,
       providesTags: ["Message"],
     }),
     getAMessage: builder.query({
