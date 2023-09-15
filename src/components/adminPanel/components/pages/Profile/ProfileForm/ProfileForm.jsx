@@ -40,24 +40,6 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
       navigate(-1);
     }
   };
-  const addCategory = async () => {
-    const { value: text } = await Swal.fire({
-      input: "text",
-      inputLabel: "Category",
-      inputPlaceholder: "Enter category here...",
-      inputAttributes: {
-        "aria-label": "Enter Category here",
-      },
-      showCancelButton: true,
-    });
-
-    if (text) {
-      const res = await addCategorys({ name: text }).unwrap();
-      if (res?.success) {
-        Swal.fire("Created!", "Category has been deleted.", "success");
-      }
-    }
-  };
 
   return (
     <div>
@@ -163,18 +145,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             <Input placeholder="Please enter password  here..." />
           </Form.Item>
         ) : (
-          <Form.Item
-            label="Password"
-            name="password"
-            // rules={[
-            //   {
-            //     required: true,
-            //     message: "Password  is required",
-            //   },
-            // ]}
-          >
-            <Input placeholder="Please enter password  here..." />
-          </Form.Item>
+          null
         )}
 
         <div className="d-flex justify-content-center  ">
