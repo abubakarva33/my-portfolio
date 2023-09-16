@@ -42,6 +42,7 @@ import ProfileAdmin from "../components/adminPanel/components/pages/Profile/Prof
 import ProfileEach from "../components/adminPanel/components/pages/Profile/ProfileEach/ProfileEach";
 import ProfileEdit from "../components/adminPanel/components/pages/Profile/ProfileEdit/ProfileEdit";
 import ProfileCreate from "../components/adminPanel/components/pages/Profile/ProfileForm/ProfileCreate";
+import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
 
 export const routes = createBrowserRouter([
   {
@@ -93,12 +94,18 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/services",
-        loader: async () => fetch("http://localhost:3000/services"),
-        element: <Services />,
+        element: <Services />
+      },
+      {
+        path: "/services/:serviceId",
+        element: <ServiceDetails />
       },
       {
         path: "/recent-works",
-        loader: async () => fetch("http://localhost:3000/recentProjects"),
+        element: <RecentProjects />,
+      },
+      {
+        path: "/recent-works/:workId",
         element: <RecentProjects />,
       },
     ],

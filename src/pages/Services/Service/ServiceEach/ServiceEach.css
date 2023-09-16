@@ -1,0 +1,13 @@
+.serviceEachImg {
+  min-height: 50vh;
+  width: 100%;
+}
+.serviceBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--icon-primary-shadow);
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

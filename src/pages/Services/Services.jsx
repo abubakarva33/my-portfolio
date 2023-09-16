@@ -10,7 +10,6 @@ const Services = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  console.log(data.data);
   return (
     <div className="mx-5 mb-4">
       <h1 className="resumeHeaderName py-4">Services</h1>
