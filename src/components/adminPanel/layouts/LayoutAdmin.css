@@ -8,7 +8,7 @@
 .navImg {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 50%; 
 }
 .adminHeader{
   box-shadow: var(--btn-primary-shadow);

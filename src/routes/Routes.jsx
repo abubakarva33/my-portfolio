@@ -110,10 +110,18 @@ export const routes = createBrowserRouter([
     path: "/main-admin/private-route/abubakar/dashboard",
     element: <LayoutAdmin />,
     children: [
+
+      // home section  ///
       {
         path: "/main-admin/private-route/abubakar/dashboard",
         element: <HomeAdmin />,
       },
+      {
+        path: "/main-admin/private-route/abubakar/dashboard/home",
+        element: <HomeAdmin />,
+      },
+
+      // profile section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/profile",
         element: <ProfileAdmin />,
@@ -174,7 +182,7 @@ export const routes = createBrowserRouter([
         element: <ResumeLayout />,
         children: [
           {
-            path: "/main-admin/private-route/abubakar/dashboard/resume",
+            path: "/main-admin/private-route/abubakar/dashboard/resume/main",
             element: <SkillAdmin />,
           },
           {
@@ -218,7 +226,7 @@ export const routes = createBrowserRouter([
 
       // blog //
       {
-        path: "/main-admin/private-route/abubakar/dashboard/blog",
+        path: "/main-admin/private-route/abubakar/dashboard/blog/main",
         element: <BlogAdmin />,
       },
       {
