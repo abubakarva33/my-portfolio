@@ -12,7 +12,6 @@ const ServiceDetails = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  console.log(serviceId, data);
   const { title, description, img, createdAt, _id } = data; 
   return (
     <div className="mx-5 mb-4">

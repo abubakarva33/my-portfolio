@@ -43,6 +43,7 @@ import ProfileEach from "../components/adminPanel/components/pages/Profile/Profi
 import ProfileEdit from "../components/adminPanel/components/pages/Profile/ProfileEdit/ProfileEdit";
 import ProfileCreate from "../components/adminPanel/components/pages/Profile/ProfileForm/ProfileCreate";
 import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
+import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -106,7 +107,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/recent-works/:workId",
-        element: <RecentProjects />,
+        element: <ProjectDetails />,
       },
     ],
   },

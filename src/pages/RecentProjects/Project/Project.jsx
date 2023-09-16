@@ -33,11 +33,10 @@ const Project = ({ data }) => {
     createdAt,
     _id,
   } = data;
-  console.log(description);
 
   return (
     <div className="cardBorder">
-      <Link to="">
+      <Link to={`/recent-works/${_id}`} className="text-decoration-none">
         <div className="eduSection service p-4">
           <img src={`/Images/${img}.webp`} alt="" className="serviceImg" />
           <div className="cardBody">
