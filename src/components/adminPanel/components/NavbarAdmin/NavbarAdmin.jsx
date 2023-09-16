@@ -102,7 +102,7 @@ const NavbarAdmin = () => {
       ) : undefined}
       <NavLink
         to={"/main-admin/private-route/abubakar/dashboard/contact/all-message"}
-        onClick={() => (setIsOpen(false) ,setIsMainRoute(false))}
+        onClick={() => (setIsOpen(false) ,setIsClicked(false) ,setIsMainRoute(false))}
         className="adminNav"
       >
         <BiMessageDots className="me-1" /> Contact
