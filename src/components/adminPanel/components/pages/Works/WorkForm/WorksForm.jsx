@@ -21,13 +21,13 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
 
   const [updateWork] = useUpdateWorkMutation();
   const [createWork] = useCreateWorkMutation();
-  useEffect(() => {
-    if (data) {
-      setTagsList(data.tags);
-      setFeaturesList(data.keyFeatures);
-      setMaterialList(data.materialUsed);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setTagsList(data.tags);
+  //     setFeaturesList(data.keyFeatures);
+  //     setMaterialList(data.materialUsed);
+  //   }
+  // }, [data]);
 
   if (isLoading) {
     return <Spinner/>
