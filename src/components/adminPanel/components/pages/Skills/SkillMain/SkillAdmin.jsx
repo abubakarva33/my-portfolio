@@ -8,7 +8,7 @@ import Spinner from "../../../Spinner/Spinner";
 
 const SkillAdmin = () => {
   const navigate = useNavigate();
-  const { data, isLoading } = useGetSkillQuery();
+  const { data, isLoading } = useGetSkillQuery("design&type=development");
   if (isLoading) {
     return <Spinner/>
   }

@@ -9,7 +9,7 @@ import Spinner from "../../../../components/adminPanel/components/Spinner/Spinne
 const Skills = () => {
   const devData = useGetSkillQuery("development");
   const designData = useGetSkillQuery("design");
-  if (devData?.data?.isLoading && designData?.data?.isLoading) {
+  if (devData?.isLoading && designData?.isLoading) {
     return <Spinner />;
   }
   return (
