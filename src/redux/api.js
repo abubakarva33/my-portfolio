@@ -192,7 +192,7 @@ export const api = createApi({
 
     // skill section //
     getSkill: builder.query({
-      query: () => `/skill`,
+      query: (type) => `/skill?type=${type}`,
       providesTags: ["Skill"],
     }),
     getASkill: builder.query({

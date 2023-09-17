@@ -11,6 +11,8 @@ import {
 } from "react-icons/ai";
 import moment from "moment";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import { ImShare } from "react-icons/im";
+import Swal from "sweetalert2";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -32,6 +34,22 @@ const ProjectDetails = () => {
     createdAt,
     _id,
   } = data;
+
+  const likeHandler = () => {
+    Swal.fire({
+      title: "Custom width, padding, color, background.",
+      width: 600,
+      padding: "3em",
+      color: "#716add",
+      background: "#fff url(/images/trees.png)",
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("/images/thanks.gif")
+        left top
+        no-repeat
+      `,
+    });
+  };
   return (
     <div className="mx-5 mb-4">
       <div className=" serviceBox px-2 my-4">
@@ -43,10 +61,11 @@ const ProjectDetails = () => {
           Reload
         </button>
       </div>
-      <div className="serviceTable">
-        <Row xs={1} md={2} >
+
+      <div className="serviceTable p-3">
+        <Row xs={1} md={2}>
           <Col>
-            <img src={`/Images/${img}.webp`} alt="" className="img-fluid border rounded " />
+            <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
           </Col>
           <Col>
             <div>
@@ -61,12 +80,12 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div className="btnGroup mt-3">
-                <p className="mt-3 mainBtn">
+                <p className="mt-3 mainBtn" onClick={likeHandler}>
                   Like This <AiOutlineLike className="ms-1" />
                 </p>
                 <p className="mt-3 mainBtn">
                   <Link to={link}>
-                    Visit Site <AiOutlineArrowRight className="ms-1" />
+                    <ImShare/> Live Preview
                   </Link>
                 </p>
               </div>

@@ -5,7 +5,7 @@ import EducationSection from "./EducationSection/EducationSection";
 import { useLoaderData } from "react-router-dom";
 
 const Education = () => {
-    const educationData = useLoaderData();
+    const 
     return (
         <div>
             <Row xs={1} md={2} className="skillContainer mx-1">

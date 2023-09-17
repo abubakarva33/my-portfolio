@@ -73,22 +73,18 @@ export const routes = createBrowserRouter([
         children: [
           {
             path: "/resume",
-            loader: async () => fetch("http://localhost:3000/resumes"),
             element: <Skills />,
           },
           {
             path: "/resume/skills",
-            loader: async () => fetch("http://localhost:3000/resumes"),
             element: <Skills />,
           },
           {
             path: "/resume/educations",
-            loader: async () => fetch("http://localhost:3000/resumes"),
             element: <Education />,
           },
           {
             path: "/resume/experience",
-            loader: async () => fetch("http://localhost:3000/resumes"),
             element: <Experience />,
           },
         ],
