@@ -6,7 +6,7 @@ import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Service = ({ data }) => {
-  const { title, description, img, createdAt, _id } = data;
+  const { title, description, img, createdAt, _id } = data; 
 
   return (
     <div>

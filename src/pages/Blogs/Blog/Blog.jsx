@@ -2,32 +2,44 @@ import "./Blog.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
 import { GrLinkNext } from "react-icons/gr";
-import Modal from 'react-modal';
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import moment from "moment";
+import { Link } from "react-router-dom";
 
-const Blog = ({ registered, mainTag, serviceName, picture, about }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const openModal = () => setIsOpen(true);
-    const closeModal = () => setIsOpen(false);
-    return (
-        <div className="eduSection blog p-4">
-            <img src={picture} alt="" className="img-fluid border rounded " />
-            <div className="cardBody">
-                <div className="d-flex justify-content-between py-4">
-                    <small className="fs-6"><BiCategory className="me-1" /> {mainTag}</small>
-                    <small className="fs-6"><MdOutlineCreate className="me-1" />{registered}</small>
-                </div>
-                <h3>{serviceName}</h3>
-                <p className="mb-0">{(about.length) > 180 ? `${(about).slice(0, 180)}...` : about}</p>
-            </div>
-            <div className="position-relative">
-                <div className="btnGroup">
-                    <p className="fs-4" onClick={openModal}><GrLinkNext /></p>
-                </div>
-            </div>
+const Blog = ({ data }) => {
+  const { title, description, category, img, createdAt, _id } = data;
+  return (
+    <div className="cardBorder">
+      <div className="eduSection service p-4">
+        <img src={`/Images/${img}.webp`} alt="" className="serviceImg" />
+        <div className="cardBody">
+          <div className="d-flex justify-content-between py-4">
+            <small className="fs-6">
+              <BiCategory className="me-1" /> {category?.name}
+            </small>
+            <small className="fs-6">
+              <MdOutlineCreate className="me-1" />
+              {moment(createdAt).format("DD/MM/YYYY")}
+            </small>
+          </div>
+          <h3>{title}</h3>
+          <p className="mb-0">
+            {description.length > 180 ? `${description.slice(0, 180)}...` : description}
+          </p>
+        </div>
+        <div className="position-relative">
+          <div className="btnGroup">
+            <Link to={`/blogs/${_id}`}>
+              <p className="fs-4">
+                <GrLinkNext />
+              </p>
+            </Link>
+          </div>
+        </div>
+      </div>
 
-            <Modal
+      {/* <Modal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
                 contentLabel="Example Modal"
@@ -43,9 +55,9 @@ const Blog = ({ registered, mainTag, serviceName, picture, about }) => {
                     <h3 className="pt-4 pb-3">{serviceName}</h3>
                     <p>{about}</p>
                 </div>
-            </Modal>
-        </div>
-    );
+            </Modal> */}
+    </div>
+  );
 };
 
 export default Blog;

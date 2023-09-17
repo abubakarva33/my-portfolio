@@ -44,6 +44,7 @@ import ProfileEdit from "../components/adminPanel/components/pages/Profile/Profi
 import ProfileCreate from "../components/adminPanel/components/pages/Profile/ProfileForm/ProfileCreate";
 import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
 import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
+import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -60,8 +61,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/blogs",
-        loader: async () => fetch("http://localhost:3000/blogs"),
         element: <Blogs />,
+      },
+      {
+        path: "/blogs/:blogId",
+        element: <BlogDetails />,
       },
       {
         path: "/contacts",
@@ -91,11 +95,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Services />
+        element: <Services />,
       },
       {
         path: "/services/:serviceId",
-        element: <ServiceDetails />
+        element: <ServiceDetails />,
       },
       {
         path: "/recent-works",
@@ -108,13 +112,11 @@ export const routes = createBrowserRouter([
     ],
   },
 
-
   // admin section routing //
   {
     path: "/main-admin/private-route/abubakar/dashboard",
     element: <LayoutAdmin />,
     children: [
-
       // home section  ///
       {
         path: "/main-admin/private-route/abubakar/dashboard",
@@ -143,7 +145,6 @@ export const routes = createBrowserRouter([
         element: <ProfileCreate />,
       },
 
-
       // service section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/services",
@@ -161,7 +162,7 @@ export const routes = createBrowserRouter([
         path: "/main-admin/private-route/abubakar/dashboard/services/create",
         element: <ServiceCreate />,
       },
- 
+
       // recent work section //
       {
         path: "/main-admin/private-route/abubakar/dashboard/work",
