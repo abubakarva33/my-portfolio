@@ -3,8 +3,14 @@ import "./ProjectDetails.css";
 import { useGetAWorkQuery } from "../../../redux/api";
 import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
 import { Col, Row } from "react-bootstrap";
-import { AiOutlineArrowRight, AiOutlineCheckSquare, AiOutlineDeploymentUnit, AiOutlineLike } from "react-icons/ai";
+import {
+  AiOutlineArrowRight,
+  AiOutlineCheckSquare,
+  AiOutlineDeploymentUnit,
+  AiOutlineLike,
+} from "react-icons/ai";
 import moment from "moment";
+import { HiOutlineArrowLeft } from "react-icons/hi2";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -27,75 +33,86 @@ const ProjectDetails = () => {
     _id,
   } = data;
   return (
-    <div>
-      <Row xs={1} md={2} className="">
-        <Col>
-          <img src={`/Images/${img}.webp`} alt="" className="img-fluid border rounded " />
-        </Col>
-        <Col>
-          <div>
-            <h3>{title}</h3>
-            <h6 className="my-3">{shortDescription}</h6>
-            <div className="d-flex justify-content-between">
-              <p>
-                <AiOutlineDeploymentUnit /> {projectType}
-              </p>
-              <p>
-                <AiOutlineDeploymentUnit /> {moment(createdAt).format("DD/MM/YYYY")}
-              </p>
-            </div>
-            <div className="btnGroup mt-3">
-              <p className="mt-3 mainBtn">
-                Like This <AiOutlineLike className="ms-1" />
-              </p>
-              <p className="mt-3 mainBtn">
-                <Link to={link}>
-                  Visit Site <AiOutlineArrowRight className="ms-1" />
-                </Link>
-              </p>
-            </div>
-          </div>
-        </Col>
-      </Row>
-      <p className="d-flex align-items-center mt-4">
-        <b>Tags:</b>
-        <div className="d-flex flex-wrap">
-          {tags.map((tag) => (
-            <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 tags">
-              {tag}
-            </p>
-          ))}
+    <div className="mx-5 mb-4">
+      <div className=" serviceBox px-2 my-4">
+        <div>
+          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
         </div>
-      </p>
-      <Row xs={1} md={2} className="">
-        <Col className="border-right">
-          <p>
-            <b>Materials Used:</b>
-          </p>
-          <p>
-            {materialUsed.map((material) => (
-              <p key={material.id} className=" mb-1">
-                <AiOutlineCheckSquare /> {material}
+        <h4>PROJECT DETAILS</h4>
+        <button className="btn btn-primary" onClick={() => location.reload()}>
+          Reload
+        </button>
+      </div>
+      <div className="serviceTable">
+        <Row xs={1} md={2} >
+          <Col>
+            <img src={`/Images/${img}.webp`} alt="" className="img-fluid border rounded " />
+          </Col>
+          <Col>
+            <div>
+              <h3>{title}</h3>
+              <h6 className="my-3">{shortDescription}</h6>
+              <div className="d-flex justify-content-between">
+                <p>
+                  <AiOutlineDeploymentUnit /> {projectType}
+                </p>
+                <p>
+                  <AiOutlineDeploymentUnit /> {moment(createdAt).format("DD/MM/YYYY")}
+                </p>
+              </div>
+              <div className="btnGroup mt-3">
+                <p className="mt-3 mainBtn">
+                  Like This <AiOutlineLike className="ms-1" />
+                </p>
+                <p className="mt-3 mainBtn">
+                  <Link to={link}>
+                    Visit Site <AiOutlineArrowRight className="ms-1" />
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <p className="d-flex align-items-center mt-4">
+          <b>Tags:</b>
+          <div className="d-flex flex-wrap">
+            {tags.map((tag) => (
+              <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 tags">
+                {tag}
               </p>
             ))}
-          </p>
-        </Col>
-        <Col>
-          <p>
-            <b>Key Features:</b>
-          </p>
-          <p>
-            {keyFeatures.map((feature) => (
-              <p key={feature.id} className=" mb-1">
-                <AiOutlineCheckSquare /> {feature}
-              </p>
-            ))}
-          </p>
-        </Col>
-      </Row>
-      <p className="">
-        <b>Description:</b> {description}
-      </p>
+          </div>
+        </p>
+        <Row xs={1} md={2} className="">
+          <Col className="border-right">
+            <p>
+              <b>Materials Used:</b>
+            </p>
+            <p>
+              {materialUsed.map((material) => (
+                <p key={material.id} className=" mb-1">
+                  <AiOutlineCheckSquare /> {material}
+                </p>
+              ))}
+            </p>
+          </Col>
+          <Col>
+            <p>
+              <b>Key Features:</b>
+            </p>
+            <p>
+              {keyFeatures.map((feature) => (
+                <p key={feature.id} className=" mb-1">
+                  <AiOutlineCheckSquare /> {feature}
+                </p>
+              ))}
+            </p>
+          </Col>
+        </Row>
+        <p className="">
+          <b>Description:</b> {description}
+        </p>
+      </div>
 
       {/* <ToastContainer className="p-3" position={position} style={{ zIndex: 1 }}>
         <Toast show={show} onClose={toggleShow} delay={3000} autohide className="toastMain">
