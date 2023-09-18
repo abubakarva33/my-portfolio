@@ -12,22 +12,26 @@
 }
 .inputBox {
   background: var(--color-bg-primary);
-  box-shadow: var(--btn-primary-shadow-hover);
+  box-shadow: var(--icon-primary-shadow-hover);
   border: none;
   margin: 15px 0px;
   padding: 15px 20px;
   border-radius: 10px;
+  color: var(--text-color);
 }
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 1px solid grey;
+input::placeholder ,textarea:focus,
+::placeholder {
+  color: var(--text-color) !important;
 }
+
 .ant-input:focus {
-  box-shadow: var(--btn-primary-shadow-hover) !important;
+  box-shadow: var(--icon-primary-shadow-hover) !important;
   background: var(--color-bg-primary) !important;
   outline: 1px solid rgb(167, 165, 165) !important;
 }
 .mainBtnSpan {
   color: rgba(var(--bs-link-color-rgb));
+}
+.ant-form-item-control-input-content {
+  background: var(--color-bg-primary) !important;
 }
