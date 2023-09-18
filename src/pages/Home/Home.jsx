@@ -3,6 +3,7 @@ import "./Home.css";
 import Typed from "react-typed";
 import { useGetProfileQuery } from "../../redux/api";
 import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const Home = () => {
   const { data, isLoading } = useGetProfileQuery();
@@ -30,9 +31,17 @@ const Home = () => {
           </div>
         </div>
         <p className="fs-5">{description}</p>
-        <Link to="/contacts" className="mainBtn w-25 mt-4">
-          <span className="mainBtnSpan">Contact Me</span>
-        </Link>
+        <div className="d-flex align-items-center justify-content-center">
+          <Link to="/contacts" className="mainBtn btnWidth mt-4 me-4">
+            <span className="mainBtnSpan">Contact Me</span>
+          </Link>
+          <Link to="/contacts" className="mainBtn btnWidth mt-4">
+            <span className="mainBtnSpan">
+              {" "}
+              <AiOutlineDownload /> Resume
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

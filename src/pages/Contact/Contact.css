@@ -1,23 +1,33 @@
 .contactsection {
-    background: var(--shadow-bg-primary);
-    box-shadow: var(--shadow-primary);
-    border-radius: 10px;
+  background: var(--shadow-bg-primary);
+  box-shadow: var(--shadow-primary);
+  border-radius: 10px;
 }
-.contactsection a{
-    text-decoration: none;
-    font-size: 17px;
+.contactsection a {
+  text-decoration: none;
+  font-size: 17px;
 }
-.contactIcons a{
-    font-size: 25px;
+.contactIcons a {
+  font-size: 25px;
 }
-.inputBox{
-    background: var(--color-bg-primary);
-    box-shadow: var(--btn-primary-shadow-hover);
-    border: none;
-    margin: 15px 0px;
-    padding: 15px 20px;
-    border-radius: 10px;
+.inputBox {
+  background: var(--color-bg-primary);
+  box-shadow: var(--btn-primary-shadow-hover);
+  border: none;
+  margin: 15px 0px;
+  padding: 15px 20px;
+  border-radius: 10px;
 }
-  input:focus, textarea:focus, select:focus{
-    outline: 1px solid grey;
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 1px solid grey;
+}
+.ant-input:focus {
+  box-shadow: var(--btn-primary-shadow-hover) !important;
+  background: var(--color-bg-primary) !important;
+  outline: 1px solid rgb(167, 165, 165) !important;
+}
+.mainBtnSpan {
+  color: rgba(var(--bs-link-color-rgb));
 }

@@ -22,3 +22,7 @@
 .home a{
     text-decoration: none;
 }
+
+.btnWidth{
+    width: 30%;
+}

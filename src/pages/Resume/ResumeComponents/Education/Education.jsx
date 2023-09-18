@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import EducationSection from "./EducationSection/EducationSection";
 import { useGetResumeQuery, useGetSkillQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
+import { useState } from "react";
 
 const Education = () => {
   const academicData = useGetResumeQuery("academic");
@@ -12,11 +13,12 @@ const Education = () => {
   if (progData?.isLoading && academicData?.isLoading) {
     return <Spinner />;
   }
+
   return (
     <div>
-      <Row xs={1} md={2} className="skillContainer mx-1">
+      <Row xs={1} md={2} className="">
         <Col>
-          <div className="skillSection">
+          <div className="">
             <h1 className="resumeHeaderName ">Educational Quality</h1>
             <div>
               {Array.isArray(academicData?.data?.data) &&
@@ -27,7 +29,7 @@ const Education = () => {
           </div>
         </Col>
         <Col>
-          <div className="skillSection">
+          <div className="">
             <h1 className="resumeHeaderName ">Developer Quality</h1>
             <div>
               {Array.isArray(progData?.data?.data) &&

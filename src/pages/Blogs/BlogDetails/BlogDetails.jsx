@@ -28,7 +28,6 @@ const BlogDetails = () => {
       <div className=" serviceTable mt-3">
         <div className="p-3">
           <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
-
           <p className="pt-4 pb-3"> Category : {category?.name}</p>
           <h3 className="pt-4 pb-3">{title}</h3>
           <p>{description}</p>

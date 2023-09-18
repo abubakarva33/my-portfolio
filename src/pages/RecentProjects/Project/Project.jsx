@@ -35,39 +35,37 @@ const Project = ({ data }) => {
   } = data;
 
   return (
-    <div className="cardBorder">
-      <Link to={`/recent-works/${_id}`} className="text-decoration-none">
-        <div className="eduSection service p-4">
-          <img src={`/Images/${img}.webp`} alt="" className="serviceImg" />
-          <div className="cardBody">
-            <div className="d-flex justify-content-between py-4">
-              <small className="fs-6">
-                <BiCategory className="me-1" /> {projectType}
-              </small>
-              <small className="fs-6">
-                <MdOutlineCreate className="me-1" />
-                {moment(createdAt).format("DD/MM/YYYY")}
-              </small>
-            </div>
-            <h3 className="pt-4 pb-3">{title}</h3>
-            <p className="mb-0">
-              {description.length > 180 ? `${description.slice(0, 180)}...` : description}
-            </p>
+    <div className="cardBorder ">
+      <div className="eduSection service p-4">
+        <img src={`/Images/${img}.webp`} alt="" className="serviceImg" />
+        <div className="cardBody">
+          <div className="d-flex justify-content-between pt-3">
+            <small className="fs-6">
+              <BiCategory className="me-1" /> {projectType}
+            </small>
+            <small className="fs-6">
+              <MdOutlineCreate className="me-1" />
+              {moment(createdAt).format("DD/MM/YYYY")}
+            </small>
+          </div>
+          <h3 className="pt-3 pb-2">{title}</h3>
+          <p className="mb-0">
+            {description.length > 180 ? `${description.slice(0, 180)}...` : description}
+          </p>
+        </div>
+        <div className="position-relative">
+          <div className="btnGroup">
+            <Link to={`/recent-works/${_id}`} className=" ">
+              <AiOutlineEye className="me-1" />
+              Preview
+            </Link>
+            <Link to={link} className=" ">
+              <AiOutlineLink className="me-1" />
+              Visit Site
+            </Link>
           </div>
         </div>
-      </Link>
-      {/* <div className="position-relative">
-        <div className="btnGroup">
-          <Link className="mt-3 ">
-            <AiOutlineEye className="me-1" />
-            Preview
-          </Link>
-          <Link to={link} className="mt-3 ">
-            <AiOutlineLink className="me-1" />
-            Visit Site
-          </Link>
-        </div>
-      </div> */}
+      </div>
     </div>
 
     // <Modal
