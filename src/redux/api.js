@@ -158,7 +158,7 @@ export const api = createApi({
 
     // resume section //
     getResume: builder.query({
-      query: (filterResumeData) => `/education?type=${filterResumeData}`,
+      query: (filterResumeData) => `education?type=${filterResumeData}`,
       providesTags: ["Resume"],
     }),
     getAResume: builder.query({
@@ -192,7 +192,7 @@ export const api = createApi({
 
     // skill section //
     getSkill: builder.query({
-      query: (type) => `/skill?type=${type}`,
+      query: (type) => `skill?type=${type}`,
       providesTags: ["Skill"],
     }),
     getASkill: builder.query({
