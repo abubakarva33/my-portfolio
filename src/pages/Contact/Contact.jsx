@@ -35,10 +35,10 @@ const Contact = () => {
     form.resetFields();
   };
   return (
-    <div className="px-5 pb-5">
-      <h1 className="resumeHeaderName py-4">Let's Discuss</h1>
-      <Row xs={1} md={2} className="g-4 d-flex align-items-center">
-        <Col xs={12} md={6}>
+    <div className="px-1 pb-5">
+      <h2 className="resumeHeaderName mx-2 py-3">LET'S DISCUSS</h2>
+      <Row xs={1} md={2} className="gx-0 d-flex align-items-center">
+        <Col xs={12} md={6} className="gx-2">
           <div className="contactsection p-4">
             <img src="/Images/contactHand.avif" alt="" className="img-fluid rounded" />
             <h3 className="pt-3">Abubakar Siddik</h3>
@@ -99,7 +99,7 @@ const Contact = () => {
             </div>
           </div>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={6} className="gx-2">
           <Form
             name="complex-form"
             form={form}

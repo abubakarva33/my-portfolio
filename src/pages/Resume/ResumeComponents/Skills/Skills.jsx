@@ -17,7 +17,7 @@ const Skills = () => {
       <Row xs={1} md={2} className="skillContainer mx-1">
         <Col>
           <div className="skillSection">
-            <h1 className="resumeHeaderName ">Design Skill</h1>
+            <h3 className="resumeHeaderName ">Design Skill</h3>
             <div>
               {Array.isArray(designData?.data?.data) &&
                 designData?.data?.data?.map((skill) => (
@@ -28,7 +28,7 @@ const Skills = () => {
         </Col>
         <Col>
           <div className="skillSection">
-            <h1 className="resumeHeaderName ">Development Skill</h1>
+            <h3 className="resumeHeaderName ">Development Skill</h3>
             <div>
               {Array.isArray(devData?.data?.data) &&
                 devData?.data?.data?.map((skill) => (

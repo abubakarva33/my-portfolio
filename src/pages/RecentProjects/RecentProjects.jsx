@@ -11,12 +11,12 @@ const RecentProjects = () => {
     return <Spinner />;
   }
   return (
-    <div className="mx-5 mb-4">
-      <h1 className="resumeHeaderName py-4">RECENT PROJECTS</h1>
-      <Row md={2} xs={1} className="g-4">
+    <div className="mx-1 mb-4">
+      <h2 className="resumeHeaderName mx-2 py-3">RECENT PROJECTS</h2>
+      <Row md={2} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (
-            <Col>
+            <Col className="gx-2">
               <Project key={ind} ind={ind} data={data} />
             </Col>
           ))}
