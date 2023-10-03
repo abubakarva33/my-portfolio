@@ -11,6 +11,7 @@ const { TextArea } = Input;
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useCreateMessageMutation } from "../../redux/api";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -33,6 +34,13 @@ const Contact = () => {
     );
     sendMessage({ name, email, message });
     form.resetFields();
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Thanks for you message!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   };
   return (
     <div className="px-1 pb-5">

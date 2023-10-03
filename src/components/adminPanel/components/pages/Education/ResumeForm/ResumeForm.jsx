@@ -14,7 +14,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [createResume] = useCreateResumeMutation();
 
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
 
   const { title, details, institute, startYear, endYear, type, _id } = data;
@@ -105,6 +105,18 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           ]}
         >
           <Input placeholder="Please enter institute name here..." />
+        </Form.Item>
+        <Form.Item
+          label="Institute location"
+          name="location"
+          rules={[
+            {
+              required: true,
+              message: "Institute location is required",
+            },
+          ]}
+        >
+          <Input placeholder="Please enter institute location here..." />
         </Form.Item>
 
         <Space.Compact block>
