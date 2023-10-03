@@ -13,7 +13,7 @@ const Blogs = () => {
   }
   return (
     <div className="mx-1 mb-4">
-      <h2 className="resumeHeaderName mx-2 py-3">BLOGS</h2>
+      <h2 className="resumeHeaderName mx-1 py-3">BLOGS</h2>
       <Row md={2} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (

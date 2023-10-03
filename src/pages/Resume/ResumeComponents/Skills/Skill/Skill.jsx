@@ -5,7 +5,7 @@ const Skill = ({title,range}) => {
     return (
         <div>
             <div className="py-2">
-                <h6 className="fs-5">{title}</h6>
+                <p className="fs-5 mb-1">{title}</p>
                 <ProgressBar now={range} />
             </div>
         </div>

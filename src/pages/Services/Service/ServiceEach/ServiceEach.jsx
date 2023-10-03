@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetAServiceQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
+import { MdOutlineRefresh } from "react-icons/md";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
@@ -12,17 +13,17 @@ const ServiceDetails = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  const { title, description, img, createdAt, _id } = data; 
+  const { title, description, img, createdAt, _id } = data;
   return (
-    <div className="mx-5 mb-4">
+    <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 mt-4">
         <div>
-          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
+          <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
         </div>
         <h4>SERVICE DETAILS</h4>
-        <button className="btn btn-primary" onClick={() => location.reload()}>
-          Reload
-        </button>
+        <div>
+          <MdOutlineRefresh className="fs-2 my-2 me-2" onClick={() => location.reload()} />
+        </div>
       </div>
 
       <div className=" serviceTable mt-3">

@@ -13,6 +13,7 @@ import moment from "moment";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
 import Swal from "sweetalert2";
+import { MdOutlineRefresh } from "react-icons/md";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -51,15 +52,15 @@ const ProjectDetails = () => {
     });
   };
   return (
-    <div className="mx-5 mb-4">
+    <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 my-4">
         <div>
-          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
+          <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
         </div>
         <h4>PROJECT DETAILS</h4>
-        <button className="btn btn-primary" onClick={() => location.reload()}>
-          Reload
-        </button>
+        <div>
+          <MdOutlineRefresh className="fs-2 my-2 me-2" onClick={() => location.reload()} />
+        </div>
       </div>
 
       <div className="serviceTable p-3">
@@ -68,7 +69,7 @@ const ProjectDetails = () => {
             <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
           </Col>
           <Col>
-            <div>
+            <div className="mt-2">
               <h3>{title}</h3>
               <h6 className="my-3">{shortDescription}</h6>
               <div className="d-flex justify-content-between">
@@ -79,12 +80,12 @@ const ProjectDetails = () => {
                   <AiOutlineDeploymentUnit /> {moment(createdAt).format("DD/MM/YYYY")}
                 </p>
               </div>
-              <div className="btnGroup mt-3">
-                <p className="mt-3 mainBtn" onClick={likeHandler}>
+              <div className="btnGroup">
+                <p className="mt-3 itemLink likebtn" onClick={likeHandler}>
                   Like This <AiOutlineLike className="ms-1" />
                 </p>
-                <p className="mt-3 mainBtn">
-                  <Link to={link}>
+                <p className="mt-3">
+                  <Link to={link} className="itemLink">
                     <ImShare/> Live Preview
                   </Link>
                 </p>
@@ -92,9 +93,9 @@ const ProjectDetails = () => {
             </div>
           </Col>
         </Row>
-        <p className="d-flex align-items-center mt-4">
+        <p className="d-flex mt-4">
           <b>Tags:</b>
-          <div className="d-flex flex-wrap">
+          <div className="tagMenu">
             {tags.map((tag) => (
               <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 tags">
                 {tag}

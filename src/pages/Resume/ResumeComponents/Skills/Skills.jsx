@@ -13,11 +13,11 @@ const Skills = () => {
     return <Spinner />;
   }
   return (
-    <div>
+    <div className="mb-3">
       <Row xs={1} md={2} className="skillContainer mx-1">
-        <Col>
+        <Col className="gx-0">
           <div className="skillSection">
-            <h3 className="resumeHeaderName ">Design Skill</h3>
+            <h3 className="eachResumeSection">Design Skill</h3>
             <div>
               {Array.isArray(designData?.data?.data) &&
                 designData?.data?.data?.map((skill) => (
@@ -26,9 +26,9 @@ const Skills = () => {
             </div>
           </div>
         </Col>
-        <Col>
+        <Col className="gx-0">
           <div className="skillSection">
-            <h3 className="resumeHeaderName ">Development Skill</h3>
+            <h3 className="eachResumeSection">Development Skill</h3>
             <div>
               {Array.isArray(devData?.data?.data) &&
                 devData?.data?.data?.map((skill) => (

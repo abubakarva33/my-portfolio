@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <div className="home p-5">
-        <h6>WELCOME TO MY WORLD</h6>
+        <h6 className="welcome">WELCOME TO MY WORLD</h6>
         <div className="homeHeading">
           <p>
             Hi, I’m <span className="homeHeadingSpan">{name.toUpperCase()}</span>
@@ -30,7 +30,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <p className="fs-5">{description}</p>
+        <p className="description">{description}</p>
         <div className="d-flex align-items-center justify-content-center">
           <Link to="/contacts" className="mainBtn btnWidth mt-4 me-4">
             <span className="mainBtnSpan">Contact Me</span>

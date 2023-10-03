@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { useGetABlogQuery } from "../../../redux/api";
 import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
+import { MdOutlineRefresh } from "react-icons/md";
 
 const BlogDetails = () => {
   const { blogId } = useParams();
@@ -14,15 +15,15 @@ const BlogDetails = () => {
   }
   const { title, description, category, img, createdAt, _id } = data;
   return (
-    <div className="mx-5 mb-4">
+    <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 mt-4">
         <div>
-          <HiOutlineArrowLeft className="fs-2 my-2" onClick={() => navigate(-1)} />
+          <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
         </div>
         <h4>BLOG DETAILS</h4>
-        <button className="btn btn-primary" onClick={() => location.reload()}>
-          Reload
-        </button>
+        <div>
+          <MdOutlineRefresh className="fs-2 my-2 me-2" onClick={() => location.reload()} />
+        </div>
       </div>
 
       <div className=" serviceTable mt-3">

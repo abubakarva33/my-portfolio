@@ -1,5 +1,4 @@
 .home{
-    /* background-image: image-set('/Images/homebg.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 90vh;
@@ -26,3 +25,24 @@
 .btnWidth{
     width: 30%;
 }
+.description{
+    font-size: 20px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .homeHeading{
+        font-size: 25px;
+        font-weight: bold !important;
+        color: var(--color-heading-bold);
+        margin-bottom: 30px;
+    }
+    .btnWidth{
+        width: 100%;
+    }
+    .description{
+        font-size: 16px !important;
+    }
+    .welcome{
+        font-size: 12px;
+    }
+  }
