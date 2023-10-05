@@ -1,8 +1,22 @@
-
-.ReactModal__Overlay.ReactModal__Overlay--after-open{
-    z-index: 9;
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 9;
 }
 
-table *{
-    background: transparent !important;
+table * {
+  background: transparent !important;
+}
+.navbar-toggler:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.navbar-toggler {
+  border: none !important;
+}
+.navbar > .navbar-toggler {
+  background-color: var(--color-bg-primary) !important;
+}
+.navbar-toggler-icon {
+    background-image: var(--bar-image) !important;
+    /* background-image: url(/Images/barwhite.webp) !important; */
 }

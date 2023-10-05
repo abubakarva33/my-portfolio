@@ -6,6 +6,7 @@
   --text-color: #3c3e41;
   --border-color: #636363;
   --togolarBtn:  #ecf0f3;
+  --bar-image: url(/Images/barwhite.webp)
 
 
   /* 
@@ -53,6 +54,7 @@
   --color-heading-bold: #ffffff;
   --color-body: #878e99;
   --text-color: #cfcfcf;
+  --bar-image: url(/Images/bardark.webp)
 
   --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
   --input-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
