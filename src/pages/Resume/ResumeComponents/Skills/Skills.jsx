@@ -16,7 +16,7 @@ const Skills = () => {
     <div className="mb-3">
       <Row xs={1} md={2} className="skillContainer mx-1">
         <Col className="gx-0">
-          <div className="skillSection">
+          <div className="skillSection mt-3">
             <h3 className="eachResumeSection">Design Skill</h3>
             <div>
               {Array.isArray(designData?.data?.data) &&
@@ -27,7 +27,7 @@ const Skills = () => {
           </div>
         </Col>
         <Col className="gx-0">
-          <div className="skillSection">
+          <div className="skillSection mt-3">
             <h3 className="eachResumeSection">Development Skill</h3>
             <div>
               {Array.isArray(devData?.data?.data) &&

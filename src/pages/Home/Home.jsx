@@ -14,7 +14,7 @@ const Home = () => {
   const { name, email, description } = data?.data[0];
   return (
     <div>
-      <div className="home p-5">
+      <div className="home p-3 p-md-5">
         <h6 className="welcome">WELCOME TO MY WORLD</h6>
         <div className="homeHeading">
           <p>

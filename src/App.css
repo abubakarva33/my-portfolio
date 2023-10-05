@@ -17,6 +17,6 @@ table * {
   background-color: var(--color-bg-primary) !important;
 }
 .navbar-toggler-icon {
-    background-image: var(--bar-image) !important;
+    /* background-image: var(--bar-image) !important; */
     /* background-image: url(/Images/barwhite.webp) !important; */
 }

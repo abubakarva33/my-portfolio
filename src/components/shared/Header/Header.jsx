@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Header.css";
 import { mainContext } from "../../../contexts/UserContext";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { FiFacebook, FiLinkedin } from "react-icons/fi";
 import { BiLogoGmail } from "react-icons/bi";
@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Navbar expand="lg">
+      <Navbar expand="lg" data-bs-theme={isDarkModeActive ? "dark" : "light"}>
         {/* <NavLink to="/">My Portfolio</NavLink> */}
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
         <Navbar.Offcanvas
@@ -35,7 +35,11 @@ const Header = () => {
           placement="end"
           className=" ms-auto"
         >
-          <Offcanvas.Header closeButton className="navToggle">
+          <Offcanvas.Header
+            closeButton
+            className="navToggle"
+            data-bs-theme={isDarkModeActive ? "dark" : "light"}
+          >
             <img src="/Images/profile.webp" alt="" className="" />
           </Offcanvas.Header>
           <Offcanvas.Body>
@@ -67,8 +71,8 @@ const Header = () => {
               />
               <div className="navIcons">
                 <div className="navColor">
-                  <hr className="w-100  my-1 ms-2" />
-                  <h6 className="mb-0">Find With Me</h6>
+                  <hr className="w-100  mt-3 ms-2" />
+                  <h6 className="mb-0 p-0 ms-2 pb-2">Find With Me</h6>
                 </div>
                 <div className="d-flex ms-2 my-2">
                   <Link

@@ -16,9 +16,9 @@ const Education = () => {
 
   return (
     <div>
-      <Row xs={1} md={2} className="">
-        <Col>
-          <div className="">
+      <Row xs={1} md={2} className="gx-0">
+        <Col className="gx-0">
+          <div className="skillSection">
             <h3 className="resumeHeaderName ">Educational Quality</h3>
             <div>
               {Array.isArray(academicData?.data?.data) &&
@@ -28,8 +28,8 @@ const Education = () => {
             </div>
           </div>
         </Col>
-        <Col>
-          <div className="">
+        <Col className="gx-0">
+          <div className="skillSection">
             <h3 className="resumeHeaderName ">Developer Quality</h3>
             <div>
               {Array.isArray(progData?.data?.data) &&
