@@ -11,7 +11,6 @@ const MainLayout = () => {
   if (isLoading) {
     return;
   }
-  console.log(data);
   const { name } = data?.data[0];
   return (
     <Row className="gx-0">

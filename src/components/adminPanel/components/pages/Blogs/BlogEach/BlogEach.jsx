@@ -15,7 +15,6 @@ const BlogEach = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  console.log(data);
   const { title, description, createdAt, updatedAt,category, _id, img } = data;
   const handleSingleDelete = () => {
     Swal.fire({

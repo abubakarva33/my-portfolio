@@ -16,7 +16,7 @@ const WorkEach = () => {
     return <Spinner/>
   }
   const { title, description, createdAt,updatedAt, _id, img } = data;
-  console.log(img);
+
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",

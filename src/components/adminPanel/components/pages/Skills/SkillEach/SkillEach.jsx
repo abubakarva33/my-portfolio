@@ -19,7 +19,6 @@ const SkillEach = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  console.log(data);
   const { title, value, createdAt, updatedAt, type, _id } = data;
   const handleSingleDelete = () => {
     Swal.fire({

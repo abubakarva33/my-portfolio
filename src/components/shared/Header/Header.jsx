@@ -27,7 +27,9 @@ const Header = () => {
   return (
     <div className="header">
       <Navbar expand="lg" data-bs-theme={isDarkModeActive ? "dark" : "light"}>
-        {/* <NavLink to="/">My Portfolio</NavLink> */}
+        <Navbar.Brand href="/">
+          <img src="/Images/logo.webp" alt="" className="navLogo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-lg`}
@@ -66,7 +68,8 @@ const Header = () => {
               <DarkModeToggle
                 onChange={handleDarkMode}
                 checked={isDarkModeActive}
-                size={90}
+                size={80}
+                speed={1}
                 className="themeToggler navlinkA"
               />
               <div className="navIcons">

@@ -21,7 +21,6 @@ const ServiceTable = ({ ind, data }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await deleteService(_id).unwrap();
-        console.log({ res });
         if (res?.success) {
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
         }

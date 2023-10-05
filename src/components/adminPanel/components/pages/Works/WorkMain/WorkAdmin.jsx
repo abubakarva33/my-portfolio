@@ -50,7 +50,6 @@ const WorkAdmin = () => {
               data?.data?.map((data, ind) => <WorkTable key={ind} ind={ind} data={data} />)}
           </tbody>
         </Table>
-        {console.log(total > 1, total)}
         {total > size && <Pagination defaultCurrent={1} total={total} onChange={onChange} />}
       </div>
     </div>

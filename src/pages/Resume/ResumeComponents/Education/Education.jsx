@@ -9,7 +9,6 @@ import { useState } from "react";
 const Education = () => {
   const academicData = useGetResumeQuery("academic");
   const progData = useGetResumeQuery("programming");
-  console.log(progData?.data);
   if (progData?.isLoading && academicData?.isLoading) {
     return <Spinner />;
   }

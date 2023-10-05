@@ -19,7 +19,6 @@ const ServiceAdmin = () => {
   const onChange = (current) => {
     setPage(current);
   };
-  console.log(data);
   return (
     <div>
       <div className=" pageBox">
