@@ -53,7 +53,7 @@ const ProjectDetails = () => {
   };
   return (
     <div className="mx-2 mb-4">
-      <div className=" serviceBox px-2 my-4">
+      <div className=" serviceBox px-2 mb-3">
         <div>
           <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
         </div>
@@ -71,7 +71,7 @@ const ProjectDetails = () => {
           <Col>
             <div className="mt-2">
               <h3>{title}</h3>
-              <h6 className="my-3">{shortDescription}</h6>
+              <p className="my-3">{shortDescription}</p>
               <div className="d-flex justify-content-between">
                 <p>
                   <AiOutlineDeploymentUnit /> {projectType}
@@ -82,10 +82,10 @@ const ProjectDetails = () => {
               </div>
               <div className="btnGroup">
                 <p className="mt-3 itemLink likebtn" onClick={likeHandler}>
-                  Like This <AiOutlineLike className="ms-1" />
+                <AiOutlineLike className="me-1" />Like This
                 </p>
                 <p className="mt-3">
-                  <Link to={link} className="itemLink">
+                  <Link to={link} className="itemLink previewBtn">
                     <ImShare/> Live Preview
                   </Link>
                 </p>
@@ -97,7 +97,7 @@ const ProjectDetails = () => {
           <b>Tags:</b>
           <div className="tagMenu">
             {tags.map((tag) => (
-              <p key={tag.id} className="d-flex mx-2 mb-0 px-3 py-1 tags">
+              <p key={tag.id} className="d-flex mx-2 px-3 py-1 tags">
                 {tag}
               </p>
             ))}

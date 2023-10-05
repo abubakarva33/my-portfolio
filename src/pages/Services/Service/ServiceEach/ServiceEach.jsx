@@ -16,7 +16,7 @@ const ServiceDetails = () => {
   const { title, description, img, createdAt, _id } = data;
   return (
     <div className="mx-2 mb-4">
-      <div className=" serviceBox px-2 mt-4">
+      <div className=" serviceBox px-2">
         <div>
           <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
         </div>

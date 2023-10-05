@@ -10,18 +10,22 @@ import { FiFacebook, FiLinkedin } from "react-icons/fi";
 import { BiLogoGmail } from "react-icons/bi";
 import { AiOutlineGithub } from "react-icons/ai";
 import DarkModeToggle from "react-dark-mode-toggle";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../../redux/features/themeSlice";
 
 const Header = () => {
-  const { isDarkModeActive, setIsDarkModeActive } = useContext(mainContext);
+  const { isDarkModeActive } = useSelector((state) => state.theme);
+  const dispatch = useDispatch();
 
-  const handleDarkMode = () => {
-    setIsDarkModeActive(!isDarkModeActive);
-    const body = document.querySelector("body");
-    if (!isDarkModeActive) {
+  const body = document.querySelector("body");
+    if (isDarkModeActive) {
       body.setAttribute("class", "darkTheme");
     } else {
       body.setAttribute("class", "lightTheme");
     }
+
+  const handleDarkMode = () => {
+    dispatch(toggleTheme());
   };
 
   return (

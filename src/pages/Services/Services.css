@@ -25,6 +25,7 @@ z-index: 0 !important;
 .btnGroup{
 display: flex;
 justify-content: space-between;
+align-items: center;
 width: 100%;
 }
 .btnGroup a{

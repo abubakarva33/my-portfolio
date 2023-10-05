@@ -4,10 +4,17 @@ import Typed from "react-typed";
 import { useGetProfileQuery } from "../../redux/api";
 import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
 import { AiOutlineDownload } from "react-icons/ai";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const { data, isLoading } = useGetProfileQuery();
-  if (isLoading) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    return setLoading(false);
+  }, []);
+
+  if (loading || isLoading) {
     return <Spinner />;
   }
 
