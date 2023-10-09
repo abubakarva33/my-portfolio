@@ -55,14 +55,15 @@ const Project = ({ data }) => {
         </div>
         <div className="position-relative">
           <div className="btnGroup">
-            <Link to={`/recent-works/${_id}`} className=" ">
+            <Link to={`/recent-works/${_id}`} className="itemLink previewBtn">
               <AiOutlineEye className="me-1" />
               Preview
             </Link>
-            <Link to={link} className=" ">
-              <AiOutlineLink className="me-1" />
-              Visit Site
-            </Link>
+            <p className="mt-3">
+              <Link to={link} className="itemLink previewBtn">
+                <AiOutlineLink /> Visit Site
+              </Link>
+            </p>
           </div>
         </div>
       </div>
