@@ -1,7 +1,6 @@
 import "./Blogs.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useLoaderData } from "react-router-dom";
 import Blog from "./Blog/Blog";
 import { useGetBlogsQuery } from "../../redux/api";
 import Spinner from "../../components/adminPanel/components/Spinner/Spinner";

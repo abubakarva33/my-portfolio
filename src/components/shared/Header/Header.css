@@ -22,7 +22,9 @@
   height: 30px;
   margin-left: 20px;
 }
-
+.offcanvas{
+  height: 100vh;
+}
 .offcanvas.offcanvas-end.show a {
   display: flex;
   align-items: center;

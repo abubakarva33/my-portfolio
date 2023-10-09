@@ -8,16 +8,6 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   const { data, isLoading } = useGetProfileQuery();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    return setLoading(false);
-  }, []);
-
-  if (loading || isLoading) {
-    return <Spinner />;
-  }
-
   const { name, email, description } = data?.data[0];
   return (
     <div>
