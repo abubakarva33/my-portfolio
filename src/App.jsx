@@ -1,4 +1,4 @@
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter, RouterProvider, useLocation } from "react-router-dom";
 import "./App.css";
 import { routes } from "./routes/Routes";
 import { useEffect, useState } from "react";
@@ -16,9 +16,11 @@ function App() {
   return (
     <div>
       {loading ? (
-        <MainSpinner/>
+        <MainSpinner />
       ) : (
-        <RouterProvider router={routes}></RouterProvider>
+        <RouterProvider
+          router={routes}
+        ></RouterProvider>
       )}
     </div>
   );

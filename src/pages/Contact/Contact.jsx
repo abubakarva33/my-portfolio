@@ -12,6 +12,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useCreateMessageMutation } from "../../redux/api";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -35,15 +36,21 @@ const Contact = () => {
     sendMessage({ name, email, message });
     form.resetFields();
     Swal.fire({
-      position: 'top-center',
-      icon: 'success',
-      title: 'Thanks for you message!',
+      position: "top-center",
+      icon: "success",
+      title: "Thanks for you message!",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
   };
   return (
-    <div className="px-1 pb-5">
+    <motion.div
+      className="px-1 pb-5"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+      exit={{ opacity: 0 }}
+    >
       <h2 className="resumeHeaderName mx-2 py-3">LET'S DISCUSS</h2>
       <Row xs={1} md={2} className="gx-0 d-flex align-items-center">
         <Col xs={12} md={6} className="gx-2">
@@ -170,7 +177,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
-    </div>
+    </motion.div>
   );
 };
 
