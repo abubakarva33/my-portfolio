@@ -45,6 +45,7 @@ import ProfileCreate from "../components/adminPanel/components/pages/Profile/Pro
 import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
 import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
 import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
+import Game from "../components/adminPanel/components/Game/Game";
 
 export const routes = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/game",
+        element: <Game />,
       },
       {
         path: "/about",
