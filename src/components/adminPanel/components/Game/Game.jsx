@@ -30,26 +30,28 @@ const Game = () => {
     return "Computer wins!";
   };
 
-  const playAgainHandler =()=>{
+  const playAgainHandler = () => {
     setUserChoice(null);
     setComputerChoice(null);
     setResult("");
-  }
+  };
 
   return (
     <div>
       <h1>Chose Any Option</h1>
-      <div className="gameIcon">
-        <div onClick={() => handleUserChoice("rock")}>
-          <img src="/public/Images/rock.png" alt="" className="rock" />
+      {!result ? (
+        <div className="gameIcon">
+          <div onClick={() => handleUserChoice("rock")}>
+            <img src="/public/Images/rock.png" alt="" className="rock" />
+          </div>
+          <div onClick={() => handleUserChoice("paper")}>
+            <img src="/public/Images/paper.png" alt="" className="paper" />
+          </div>
+          <div onClick={() => handleUserChoice("scissors")}>
+            <img src="/public/Images/scissor.png" alt="" className="scissor" />
+          </div>
         </div>
-        <div onClick={() => handleUserChoice("paper")}>
-          <img src="/public/Images/paper.png" alt="" className="paper" />
-        </div>
-        <div onClick={() => handleUserChoice("scissors")}>
-          <img src="/public/Images/scissor.png" alt="" className="scissor" />
-        </div>
-      </div>
+      ) : undefined}
       <div className="gameIcon">
         {userChoice && (
           <div className="d-flex flex-column">
@@ -82,16 +84,19 @@ const Game = () => {
       </div>
       {result && (
         <div>
-          {" "}
           <h1>{result}</h1>
           <div>
-          <button onClick={playAgainHandler}> Play Again</button>
-          <button>visit portfolio</button>
+            <button onClick={playAgainHandler}> Play Again</button>
+            <button>visit portfolio</button>
           </div>
         </div>
       )}
       <button>Rules</button>
-      {!result? <div> Busy now? <Link to="/"> Go to portfolio</Link></div>: undefined}
+      {!result ? (
+        <div>
+          Busy now? <Link to="/"> Go to portfolio</Link>
+        </div>
+      ) : undefined}
     </div>
   );
 };
