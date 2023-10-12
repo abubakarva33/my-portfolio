@@ -57,10 +57,6 @@ export const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/game",
-        element: <Game />,
-      },
-      {
         path: "/about",
         element: <About />,
       },
@@ -280,5 +276,9 @@ export const routes = createBrowserRouter([
         element: <MessageEach />,
       },
     ],
+  },
+  {
+    path: "/game",
+    element: <Game />,
   },
 ]);

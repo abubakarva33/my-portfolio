@@ -1,0 +1,13 @@
+
+.gameIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameIcon img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    rotate: 270deg;
+}
