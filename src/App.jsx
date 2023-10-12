@@ -4,13 +4,16 @@ import { routes } from "./routes/Routes";
 import { useEffect, useState } from "react";
 import { useGetProfileQuery } from "./redux/api";
 import MainSpinner from "./components/utilities/MainSpinner";
+import { motion } from "framer-motion";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const { data, isLoading } = useGetProfileQuery();
   useEffect(() => {
     if (!isLoading) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   }, [isLoading]);
   return (
@@ -18,9 +21,14 @@ function App() {
       {loading ? (
         <MainSpinner />
       ) : (
-        <RouterProvider
-          router={routes}
-        ></RouterProvider>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+          exit={{ opacity: 0 }}
+        >
+          <RouterProvider router={routes}></RouterProvider>
+        </motion.div>
       )}
     </div>
   );
