@@ -56,14 +56,14 @@ const Game = () => {
         <div className="d-flex align-items-center justify-content-center flex-column">
           {!result ? <h2 className="my-5">PICK ANY OPTION</h2> : undefined}
           {!result ? (
-            <div className="d-flex">
+            <div className="gameImages">
               <div onClick={() => handleUserChoice("rock")} className="gameIcon">
                 <img src="/Images/rock.webp" alt="" className="rock " />
               </div>
               <div onClick={() => handleUserChoice("paper")} className="gameIcon">
                 <img src="/Images/paper.webp" alt="" className="paper" />
               </div>
-              <div onClick={() => handleUserChoice("scissors")} className="gameIcon">
+              <div onClick={() => handleUserChoice("scissors")} className="gameIcon lastImg">
                 <img src="/Images/scissor.webp" alt="" className="scissor" />
               </div>
             </div>
@@ -85,7 +85,7 @@ const Game = () => {
             )}
             {computerChoice && (
               <div className="d-flex align-items-center justify-content-center flex-column">
-                <div className="gameIcon">
+                <div className="gameIcon lastImg">
                   {computerChoice === "rock" ? (
                     <img src="/Images/rock.webp" alt="" className="rock" />
                   ) : computerChoice === "paper" ? (
@@ -94,7 +94,7 @@ const Game = () => {
                     <img src="/Images/scissor.webp" alt="" className="rock" />
                   )}
                 </div>
-                <h5 className="gameIconName mt-3">COMPUTER PICKED</h5>
+                <h5 className="gameIconName mt-3 lastImg">COMPUTER PICKED</h5>
               </div>
             )}
           </div>
@@ -102,7 +102,7 @@ const Game = () => {
             <div className="d-flex align-items-center justify-content-center flex-column w-100">
               <h1 className="my-4">{result}</h1>
               <div className="gameBtn gameBtnGroup ">
-                <button onClick={playAgainHandler} className="me-3 linkBtn">
+                <button onClick={playAgainHandler} className="linkBtn playAgainBtn">
                   PLAY AGAIN
                 </button>
                 <button className="linkBtn ">
