@@ -37,31 +37,31 @@ const Game = () => {
   };
 
   return (
-    <div>
-      <h1>Chose Any Option</h1>
+    <div className="gameSection">
+      {!result ? <h1>Chose Any Option</h1> : undefined}
       {!result ? (
-        <div className="gameIcon">
-          <div onClick={() => handleUserChoice("rock")}>
-            <img src="/public/Images/rock.png" alt="" className="rock" />
+        <div className="d-flex">
+          <div onClick={() => handleUserChoice("rock")} className="gameIcon">
+            <img src="/Images/rock.webp" alt="" className="rock " />
           </div>
-          <div onClick={() => handleUserChoice("paper")}>
-            <img src="/public/Images/paper.png" alt="" className="paper" />
+          <div onClick={() => handleUserChoice("paper")} className="gameIcon">
+            <img src="/Images/paper.webp" alt="" className="paper" />
           </div>
-          <div onClick={() => handleUserChoice("scissors")}>
-            <img src="/public/Images/scissor.png" alt="" className="scissor" />
+          <div onClick={() => handleUserChoice("scissors")} className="gameIcon">
+            <img src="/Images/scissor.webp" alt="" className="scissor" />
           </div>
         </div>
       ) : undefined}
-      <div className="gameIcon">
+      <div className="">
         {userChoice && (
           <div className="d-flex flex-column">
             <div>
               {userChoice === "rock" ? (
-                <img src="/public/Images/rock.png" alt="" className="rock" />
+                <img src="/Images/rock.webp" alt="" className="rock" />
               ) : userChoice === "paper" ? (
-                <img src="/public/Images/paper.png" alt="" className="paper" />
+                <img src="/Images/paper.webp" alt="" className="paper" />
               ) : (
-                <img src="/public/Images/scissor.png" alt="" className="scissor" />
+                <img src="/Images/scissor.webp" alt="" className="scissor" />
               )}
             </div>
             <h3> Your choice</h3>
@@ -71,11 +71,11 @@ const Game = () => {
           <div>
             <div>
               {computerChoice === "rock" ? (
-                <img src="/public/Images/rock.png" alt="" className="rock" />
+                <img src="/Images/rock.webp" alt="" className="rock" />
               ) : computerChoice === "paper" ? (
-                <img src="/public/Images/paper.png" alt="" className="paper" />
+                <img src="/Images/paper.webp" alt="" className="paper" />
               ) : (
-                <img src="/public/Images/scissor.png" alt="" className="scissor" />
+                <img src="/Images/scissor.webp" alt="" className="scissor" />
               )}
             </div>
             <h3>Computer's choice</h3>
@@ -87,15 +87,15 @@ const Game = () => {
           <h1>{result}</h1>
           <div>
             <button onClick={playAgainHandler}> Play Again</button>
-            <button>visit portfolio</button>
+            <Link to="/"> <button>visit portfolio</button> </Link>
           </div>
         </div>
       )}
       <button>Rules</button>
       {!result ? (
-        <div>
+        <button>
           Busy now? <Link to="/"> Go to portfolio</Link>
-        </div>
+        </button>
       ) : undefined}
     </div>
   );

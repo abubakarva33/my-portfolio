@@ -3,11 +3,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.gameIcon img{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background-color: rgb(27, 27, 27);
-    rotate: 270deg;
+    margin-right: 20px;
+    /* box-shadow: var(--icon-primary-shadow); */
+    box-shadow: var(--icon-primary-shadow-hover);
+    /* background: var(--shadow-bg-primary); */
+}
+.gameIcon img{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    box-shadow: var(--icon-primary-shadow);
+}
+.gameSection{
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
