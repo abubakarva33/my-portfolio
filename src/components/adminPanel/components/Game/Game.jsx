@@ -6,6 +6,7 @@ const Game = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [result, setResult] = useState("");
+  const [score, setScore] = useState(0);
 
   const handleUserChoice = (choice) => {
     const choices = ["rock", "paper", "scissors"];
@@ -19,15 +20,16 @@ const Game = () => {
   };
 
   const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) return "It's a tie!";
+    if (userChoice === computerChoice) return "OPPS! MATCH TIE";
     if (
       (userChoice === "rock" && computerChoice === "scissors") ||
       (userChoice === "scissors" && computerChoice === "paper") ||
       (userChoice === "paper" && computerChoice === "rock")
     ) {
-      return "You win!";
+      setScore((prevScore) => prevScore + 1);
+      return "YOU WIN!";
     }
-    return "Computer wins!";
+    return "YOU LOSE!";
   };
 
   const playAgainHandler = () => {
@@ -38,65 +40,96 @@ const Game = () => {
 
   return (
     <div className="gameSection">
-      {!result ? <h1>Chose Any Option</h1> : undefined}
-      {!result ? (
-        <div className="d-flex">
-          <div onClick={() => handleUserChoice("rock")} className="gameIcon">
-            <img src="/Images/rock.webp" alt="" className="rock " />
+      <div className="scoreContainer">
+        <div className="scoreBoard">
+          <div>
+            <p className="my-0 p-0 lh-1">FUN WITH</p>
+            <h5 className="my-0 p-0 lh-1">ROCK</h5>
+            <h5 className="my-0 p-0 lh-1">PAPER</h5>
+            <h5 className="my-0 p-0 lh-1">SCISSORS</h5>
           </div>
-          <div onClick={() => handleUserChoice("paper")} className="gameIcon">
-            <img src="/Images/paper.webp" alt="" className="paper" />
-          </div>
-          <div onClick={() => handleUserChoice("scissors")} className="gameIcon">
-            <img src="/Images/scissor.webp" alt="" className="scissor" />
+          <div className="d-flex align-items-center justify-content-center flex-column">
+            <h5 className="my-0 p-0">SCORE</h5>
+            <h1 className="my-0 p-0">{score}</h1>
           </div>
         </div>
-      ) : undefined}
-      <div className="">
-        {userChoice && (
-          <div className="d-flex flex-column">
-            <div>
-              {userChoice === "rock" ? (
-                <img src="/Images/rock.webp" alt="" className="rock" />
-              ) : userChoice === "paper" ? (
+        <div className="d-flex align-items-center justify-content-center flex-column">
+          {!result ? <h2 className="my-5">PICK ANY OPTION</h2> : undefined}
+          {!result ? (
+            <div className="d-flex">
+              <div onClick={() => handleUserChoice("rock")} className="gameIcon">
+                <img src="/Images/rock.webp" alt="" className="rock " />
+              </div>
+              <div onClick={() => handleUserChoice("paper")} className="gameIcon">
                 <img src="/Images/paper.webp" alt="" className="paper" />
-              ) : (
+              </div>
+              <div onClick={() => handleUserChoice("scissors")} className="gameIcon">
                 <img src="/Images/scissor.webp" alt="" className="scissor" />
-              )}
+              </div>
             </div>
-            <h3> Your choice</h3>
+          ) : undefined}
+          <div className="d-flex mt-5">
+            {userChoice && (
+              <div className="d-flex align-items-center justify-content-center flex-column">
+                <div className="gameIcon">
+                  {userChoice === "rock" ? (
+                    <img src="/Images/rock.webp" alt="" className="rock" />
+                  ) : userChoice === "paper" ? (
+                    <img src="/Images/paper.webp" alt="" className="rock" />
+                  ) : (
+                    <img src="/Images/scissor.webp" alt="" className="rock" />
+                  )}
+                </div>
+                <h5 className="gameIconName mt-3"> YOU PICKED</h5>
+              </div>
+            )}
+            {computerChoice && (
+              <div className="d-flex align-items-center justify-content-center flex-column">
+                <div className="gameIcon">
+                  {computerChoice === "rock" ? (
+                    <img src="/Images/rock.webp" alt="" className="rock" />
+                  ) : computerChoice === "paper" ? (
+                    <img src="/Images/paper.webp" alt="" className="rock" />
+                  ) : (
+                    <img src="/Images/scissor.webp" alt="" className="rock" />
+                  )}
+                </div>
+                <h5 className="gameIconName mt-3">COMPUTER PICKED</h5>
+              </div>
+            )}
           </div>
-        )}
-        {computerChoice && (
-          <div>
-            <div>
-              {computerChoice === "rock" ? (
-                <img src="/Images/rock.webp" alt="" className="rock" />
-              ) : computerChoice === "paper" ? (
-                <img src="/Images/paper.webp" alt="" className="paper" />
-              ) : (
-                <img src="/Images/scissor.webp" alt="" className="scissor" />
-              )}
+          {result && (
+            <div className="d-flex align-items-center justify-content-center flex-column w-100">
+              <h1 className="my-4">{result}</h1>
+              <div className="gameBtn gameBtnGroup ">
+                <button onClick={playAgainHandler} className="me-3 linkBtn">
+                  PLAY AGAIN
+                </button>
+                <button className="linkBtn ">
+                  <Link to="/" className="portfolioBtn">
+                    BROWSE <span className="browseBtn"> PORTFOLIO</span>
+                  </Link>
+                </button>
+              </div>
             </div>
-            <h3>Computer's choice</h3>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-      {result && (
-        <div>
-          <h1>{result}</h1>
-          <div>
-            <button onClick={playAgainHandler}> Play Again</button>
-            <Link to="/"> <button>visit portfolio</button> </Link>
-          </div>
-        </div>
-      )}
-      <button>Rules</button>
-      {!result ? (
-        <button>
-          Busy now? <Link to="/"> Go to portfolio</Link>
-        </button>
-      ) : undefined}
+
+      <div className="d-flex align-items-center justify-content-center flex-column">
+        {!result ? (
+          <button className="linkBtn">
+            {" "}
+            <Link to="/">
+              Busy Now?
+              <span className="browseBtn">
+                <b> Browse Portfolio</b>
+              </span>
+            </Link>
+          </button>
+        ) : undefined}
+        <button className="rulesBtn"> RULES </button>
+      </div>
     </div>
   );
 };

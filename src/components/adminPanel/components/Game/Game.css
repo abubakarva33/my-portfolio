@@ -1,27 +1,80 @@
+.gameIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-right: 50px;
+  /* box-shadow: var(--icon-primary-shadow); */
+  box-shadow: var(--icon-primary-shadow-hover);
+  /* background: var(--shadow-bg-primary); */
+}
+.gameIconName{
+    margin-right: 50px;
+}
+.gameIcon img {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  box-shadow: var(--icon-primary-shadow);
+}
+.gameSection {
+  height: 100dvh;
+  width: dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.scoreBoard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  padding: 10px 20px;
+  border: 3px solid #c4c4c4;
+  border-radius: 10px;
+}
+.scoreContainer {
+  width: 60%;
+}
 
-.gameIcon{
+.gameBtn{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin-right: 20px;
-    /* box-shadow: var(--icon-primary-shadow); */
-    box-shadow: var(--icon-primary-shadow-hover);
-    /* background: var(--shadow-bg-primary); */
 }
-.gameIcon img{
-    height: 170px;
-    width: 170px;
-    border-radius: 50%;
-    box-shadow: var(--icon-primary-shadow);
+.browseBtn{
+    color: rgb(244,199,166);
 }
-.gameSection{
-    height: 100dvh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.linkBtn{
+    text-decoration: none;
+    padding: 10px 40px;
+    font-size: 20px;
+    box-shadow: var(--btn-primary-shadow);
+    background: var(--shadow-bg-primary);
+    border-radius: 50px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+.rulesBtn{
+    border-radius: 50px;
+    font-size: 17px;
+    padding: 5px 20px;
+    color: var(--text-color);
+    box-shadow: var(--btn-primary-shadow);
+    background: var(--shadow-bg-primary);
+}
+.playAginBtn{
+    background: var(--shadow-bg-primary);
+}
+.linkBtn a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+.gameBtnGroup{
+    width: 70%;
+}
+.gameBtnGroup button {
+    width: 50%;
 }

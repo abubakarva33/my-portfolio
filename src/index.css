@@ -1,4 +1,29 @@
 :root {
+  --color-bg-primary: #212428;
+  --color-primary: #ff014f;
+  --color-heading-bold: #ffffff;
+  --color-body: #878e99;
+  --text-color: #cfcfcf;
+
+  --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
+  --input-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
+  --progressbar-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
+  --btn-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  --btn-primary-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
+  --icon-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  --icon-primary-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
+
+  /* ------------------------- */
+  --imgShadow: #32363b;
+  --border-color: #636363;
+
+  --shadow-bg-primary: linear-gradient(145deg, #1e2024, #23272b);
+  --shadow-primary: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+
+.lightTheme {
   --color-bg-primary: #ecf0f3;
   --color-primary: #ff014f;
   --color-heading-bold: #1e2125;
@@ -50,31 +75,6 @@
   );
   /* ------------------------- */
   --header-shadow: -8px 8px 16px #dee2e4, 8px -8px 16px #fafeff;
-}
-
-.darkTheme {
-  --color-bg-primary: #212428;
-  --color-primary: #ff014f;
-  --color-heading-bold: #ffffff;
-  --color-body: #878e99;
-  --text-color: #cfcfcf;
-
-  --header-shadow: 8px 8px 16px #1d1f23, -8px -8px 16px #25292d;
-  --input-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
-  --progressbar-shadow: inset 9px 9px 18px #0d0e10, inset -9px -9px 18px #353a40;
-  --btn-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
-  --btn-primary-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
-  --icon-primary-shadow-hover: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
-  --icon-primary-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
-
-  /* ------------------------- */
-  --imgShadow: #32363b;
-  --border-color: #636363;
-
-  --shadow-bg-primary: linear-gradient(145deg, #1e2024, #23272b);
-  --shadow-primary: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
 }
 
 body {
