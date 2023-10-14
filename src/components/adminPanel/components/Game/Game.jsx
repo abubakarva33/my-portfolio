@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Game.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Game = () => {
   const [userChoice, setUserChoice] = useState(null);
@@ -58,60 +59,150 @@ const Game = () => {
           {!result ? (
             <div className="gameImages">
               <div onClick={() => handleUserChoice("rock")} className="gameIcon">
-                <img src="/Images/rock.webp" alt="" className="rock " />
+                <motion.img
+                  src="/Images/rock.webp"
+                  alt=""
+                  className="rock "
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
               </div>
               <div onClick={() => handleUserChoice("paper")} className="gameIcon">
-                <img src="/Images/paper.webp" alt="" className="paper" />
+                <motion.img
+                  src="/Images/paper.webp"
+                  alt=""
+                  className="paper"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
               </div>
               <div onClick={() => handleUserChoice("scissors")} className="gameIcon lastImg">
-                <img src="/Images/scissor.webp" alt="" className="scissor" />
+                <motion.img
+                  src="/Images/scissor.webp"
+                  alt=""
+                  className="scissor"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
               </div>
             </div>
           ) : undefined}
           <div className="d-flex mt-5">
             {userChoice && (
-              <div className="d-flex align-items-center justify-content-center flex-column">
+              <motion.div
+                className="d-flex align-items-center justify-content-center flex-column"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                exit={{ opacity: 0 }}
+              >
                 <div className="gameIcon">
                   {userChoice === "rock" ? (
-                    <img src="/Images/rock.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/rock.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   ) : userChoice === "paper" ? (
-                    <img src="/Images/paper.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/paper.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   ) : (
-                    <img src="/Images/scissor.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/scissor.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   )}
                 </div>
                 <h5 className="gameIconName mt-3"> YOU PICKED</h5>
-              </div>
+              </motion.div>
             )}
             {computerChoice && (
-              <div className="d-flex align-items-center justify-content-center flex-column">
+              <motion.div
+                className="d-flex align-items-center justify-content-center flex-column"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+                exit={{ opacity: 0 }}
+              >
                 <div className="gameIcon lastImg">
                   {computerChoice === "rock" ? (
-                    <img src="/Images/rock.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/rock.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   ) : computerChoice === "paper" ? (
-                    <img src="/Images/paper.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/paper.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   ) : (
-                    <img src="/Images/scissor.webp" alt="" className="rock" />
+                    <motion.img
+                      src="/Images/scissor.webp"
+                      alt=""
+                      className="rock"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      exit={{ opacity: 0 }}
+                    />
                   )}
                 </div>
                 <h5 className="gameIconName mt-3 lastImg">COMPUTER PICKED</h5>
-              </div>
+              </motion.div>
             )}
           </div>
           {result && (
-            <div className="d-flex align-items-center justify-content-center flex-column w-100">
+            <motion.div
+              className="d-flex align-items-center justify-content-center flex-column w-100"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+              exit={{ opacity: 0 }}
+            >
               <h1 className="my-4">{result}</h1>
               <div className="gameBtn gameBtnGroup ">
                 <button onClick={playAgainHandler} className="linkBtn playAgainBtn">
                   PLAY AGAIN
                 </button>
                 <button className="linkBtn ">
-                  <Link to="/" className="portfolioBtn">
+                  <Link to="/main/home" className="portfolioBtn">
                     BROWSE <span className="browseBtn"> PORTFOLIO</span>
                   </Link>
                 </button>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -120,7 +211,7 @@ const Game = () => {
         {!result ? (
           <button className="linkBtn">
             {" "}
-            <Link to="/">
+            <Link to="/main/home">
               Busy Now?
               <span className="browseBtn">
                 <b> Browse Portfolio</b>

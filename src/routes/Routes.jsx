@@ -50,64 +50,68 @@ import Game from "../components/adminPanel/components/Game/Game";
 export const routes = createBrowserRouter([
   {
     path: "/",
+    element: <Game />,
+  },
+  {
+    path: "/main",
     element: <MainLayout />,
     children: [
       {
-        path: "/",
+        path: "/main/home",
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "/main/about",
         element: <About />,
       },
       {
-        path: "/blogs",
+        path: "/main/blogs",
         element: <Blogs />,
       },
       {
-        path: "/blogs/:blogId",
+        path: "/main/blogs/:blogId",
         element: <BlogDetails />,
       },
       {
-        path: "/contacts",
+        path: "/main/contacts",
         element: <Contact />,
       },
       {
-        path: "/resume",
+        path: "/main/resume",
         element: <Resume />,
         children: [
           {
-            path: "/resume",
+            path: "/main/resume",
             element: <Skills />,
           },
           {
-            path: "/resume/skills",
+            path: "/main/resume/skills",
             element: <Skills />,
           },
           {
-            path: "/resume/educations",
+            path: "/main/resume/educations",
             element: <Education />,
           },
           {
-            path: "/resume/experience",
+            path: "/main/resume/experience",
             element: <Experience />,
           },
         ],
       },
       {
-        path: "/services",
+        path: "/main/services",
         element: <Services />,
       },
       {
-        path: "/services/:serviceId",
+        path: "/main/services/:serviceId",
         element: <ServiceDetails />,
       },
       {
-        path: "/recent-works",
+        path: "/main/recent-works",
         element: <RecentProjects />,
       },
       {
-        path: "/recent-works/:workId",
+        path: "/main/recent-works/:workId",
         element: <ProjectDetails />,
       },
     ],
@@ -276,9 +280,5 @@ export const routes = createBrowserRouter([
         element: <MessageEach />,
       },
     ],
-  },
-  {
-    path: "/game",
-    element: <Game />,
   },
 ]);

@@ -33,7 +33,7 @@ const SideHeader = () => {
         </Link>
       </div>
       <div>
-        <Link to="/contacts" className=" mainBtn w-100 mt-3 p-2">
+        <Link to="/main/contacts" className=" mainBtn w-100 mt-3 p-2">
           <FiMail className="me-2" />
           <span className="mainBtnSpan">HIRE ME</span>
         </Link>

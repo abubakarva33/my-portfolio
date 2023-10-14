@@ -70,7 +70,7 @@ const Project = ({ data }) => {
         </motion.div>
         <div className="position-relative">
           <div className="btnGroup">
-            <Link to={`/recent-works/${_id}`} className="itemLink previewBtn">
+            <Link to={`/main/recent-works/${_id}`} className="itemLink previewBtn">
               <AiOutlineEye className="me-1" />
               Preview
             </Link>

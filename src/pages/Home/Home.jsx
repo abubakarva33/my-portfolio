@@ -33,10 +33,10 @@ const Home = () => {
         </div>
         <p className="description">{description}</p>
         <div className="d-flex align-items-center justify-content-center">
-          <Link to="/contacts" className="mainBtn btnWidth mt-4 me-4">
+          <Link to="/main/contacts" className="mainBtn btnWidth mt-4 me-4">
             <span className="mainBtnSpan">Contact Me</span>
           </Link>
-          <Link to="/contacts" className="mainBtn btnWidth mt-4">
+          <Link to="/main/contacts" className="mainBtn btnWidth mt-4">
             <span className="mainBtnSpan">
               {" "}
               <AiOutlineDownload /> Resume

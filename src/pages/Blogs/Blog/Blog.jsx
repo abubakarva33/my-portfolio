@@ -45,7 +45,7 @@ const Blog = ({ data }) => {
         </motion.div>
         <div className="position-relative">
           <div className="btnGroup">
-            <Link to={`/blogs/${_id}`}>
+            <Link to={`/main/blogs/${_id}`}>
               <p className="fs-4">
                 <GrLinkNext />
               </p>

@@ -1,5 +1,4 @@
 import "./MainSpinner.css";
-import { ThreeDots } from "react-loader-spinner";
 import { motion } from "framer-motion";
 
 const MainSpinner = () => {

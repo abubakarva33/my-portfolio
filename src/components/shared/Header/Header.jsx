@@ -50,22 +50,22 @@ const Header = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <NavLink to="/" className="navlinkA">
+              <NavLink to="/main/home" className="navlinkA">
                 HOME
               </NavLink>
-              <NavLink to="/services" className="navlinkA">
+              <NavLink to="/main/services" className="navlinkA">
                 SERVICES
               </NavLink>
-              <NavLink to="/recent-works" className="navlinkA">
+              <NavLink to="/main/recent-works" className="navlinkA">
                 RECENT WORKS
               </NavLink>
-              <NavLink to="/resume/skills" className="navlinkA">
+              <NavLink to="/main/resume/skills" className="navlinkA">
                 RESUME
               </NavLink>
-              <NavLink to="/blogs" className="navlinkA">
+              <NavLink to="/main/blogs" className="navlinkA">
                 BLOGS
               </NavLink>
-              <NavLink to="/contacts" className="navlinkA">
+              <NavLink to="/main/contacts" className="navlinkA">
                 CONTACT
               </NavLink>
 

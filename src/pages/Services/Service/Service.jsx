@@ -37,7 +37,7 @@ const Service = ({ data }) => {
         </div>
         <div className="position-relative">
           <div className="btnGroup">
-            <Link to={`/services/${_id}`}>
+            <Link to={`/main/services/${_id}`}>
               <p className="fs-4">
                 <GrLinkNext />
               </p>
