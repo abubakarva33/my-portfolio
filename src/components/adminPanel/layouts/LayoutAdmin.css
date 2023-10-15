@@ -1,16 +1,16 @@
 .admin-layout {
-  height: 100vh;
+  height: 100dvh;
 }
 .navbarAdmin {
-  height: 100vh;
+  height: 100dvh;
   border-right: 5px solid grey;
 }
 .navImg {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
-.adminHeader{
+.adminHeader {
   box-shadow: var(--btn-primary-shadow);
   /* position: sticky;
   top: 0; */
@@ -20,9 +20,9 @@
   overflow-y: auto;
 } */
 
-.layout{
+.layout {
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   justify-content: space-between;
   flex-direction: column;
 }

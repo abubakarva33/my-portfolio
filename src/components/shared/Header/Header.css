@@ -22,8 +22,8 @@
   height: 30px;
   margin-left: 20px;
 }
-.offcanvas{
-  height: 100vh;
+.offcanvas {
+  height: 100dvh;
 }
 .offcanvas.offcanvas-end.show a {
   display: flex;
@@ -102,7 +102,7 @@
   }
 }
 @media only screen and (max-width: 986px) {
-    .navLogo {
-      display: block;
-    }
+  .navLogo {
+    display: block;
   }
+}

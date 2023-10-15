@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import "./Game.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Modal from "react-bootstrap/Modal";
+import ModalDialog from 'react-bootstrap/ModalDialog'
 
 const Game = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [result, setResult] = useState("");
   const [score, setScore] = useState(0);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleUserChoice = (choice) => {
     const choices = ["rock", "paper", "scissors"];
     const computerChoice = choices[Math.floor(Math.random() * 3)];
-
+    userSelectSound();
     const result = determineWinner(choice, computerChoice);
-
     setUserChoice(choice);
     setComputerChoice(computerChoice);
     setResult(result);
@@ -37,6 +42,21 @@ const Game = () => {
     setUserChoice(null);
     setComputerChoice(null);
     setResult("");
+    ButtonClickSound();
+  };
+
+  const userSelectSound = () => {
+    const audio = new Audio("/sounds/win.wav");
+    audio.play();
+  };
+  const ButtonClickSound = () => {
+    const audio = new Audio("/sounds/click.wav");
+    audio.play();
+  };
+
+  const rulesHandler = () => {
+    ButtonClickSound();
+    handleShow();
   };
 
   return (
@@ -196,7 +216,7 @@ const Game = () => {
                 <button onClick={playAgainHandler} className="linkBtn playAgainBtn">
                   PLAY AGAIN
                 </button>
-                <button className="linkBtn ">
+                <button className="linkBtn " onClick={ButtonClickSound}>
                   <Link to="/main/home" className="portfolioBtn">
                     BROWSE <span className="browseBtn"> PORTFOLIO</span>
                   </Link>
@@ -209,7 +229,7 @@ const Game = () => {
 
       <div className="d-flex align-items-center justify-content-center flex-column">
         {!result ? (
-          <button className="linkBtn">
+          <button className="linkBtn" onClick={ButtonClickSound}>
             {" "}
             <Link to="/main/home">
               Busy Now?
@@ -219,8 +239,81 @@ const Game = () => {
             </Link>
           </button>
         ) : undefined}
-        <button className="rulesBtn"> RULES </button>
+        <button className="rulesBtn" onClick={rulesHandler}>
+          {" "}
+          RULES{" "}
+        </button>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        size="lg"
+        fullscreen={'lg-down md-down sm-down '}
+        className="bg-transparent"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>RULES FOR GAME</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className=" d-flex align-items-center justify-content-center flex-column">
+            <div className="modalBody align-items-center justify-content-center">
+              <div className="gameIcon">
+                <motion.img
+                  src="/Images/paper.webp"
+                  alt=""
+                  className="rock "
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
+              </div>
+
+              <div className="rotateItem0">
+                <img
+                  src="/Images/arrow.webp"
+                  alt=""
+                  className="arrow1"
+                  style={{ rotate: "180deg" }}
+                />
+                <p>BEATS</p>
+              </div>
+              <div className="gameIcon">
+                <motion.img
+                  src="/Images/scissor.webp"
+                  alt=""
+                  className="paper"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
+              </div>
+            </div>
+            <div className="d-flex ">
+              <div className="rotateItem1">
+                <img src="/Images/arrow.webp" alt="" className="arrow1" />
+                <p>BEATS</p>
+              </div>
+              <div className="gameIcon lastImg ruleImg3">
+                <motion.img
+                  src="/Images/rock.webp"
+                  alt=""
+                  className="scissor"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                />
+              </div>
+              <div className="rotateItem2">
+                <img src="/Images/arrow.webp" alt="" className="arrow1" />
+                <p>BEATS</p>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

@@ -85,16 +85,69 @@
 .lastImg {
   margin-right: 0 !important;
 }
-.playAgainBtn{
-    margin-right: 15px;
+.playAgainBtn {
+  margin-right: 15px;
 }
 
+.modalBody {
+  display: flex;
+}
+.modalBody .gameIcon {
+  margin-right: 0 !important;
+}
+.rotateItem0 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px;
+  /* rotate: 180deg; */
+}
+.gameModal {
+  width: 90vw !important;
+}
+.rotateItem1 {
+  rotate: 408deg;
+  margin-right: 55px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.rotateItem2 {
+  rotate: -408deg;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ruleImg3 {
+  margin-top: 100px;
+}
+.arrow1 {
+  width: 120px;
+  height: 20px;
+}
+.modal-content {
+  background-color: var(--color-bg-primary) !important;
+  box-shadow: var(--shadow-bg-primary) !important;
+  border: none !important;
+  /* height: 90dvh !important; */
+  /* width: 90vw !important; */
+}
+.modal-header {
+  border-bottom: none !important;
+}
+.btn-close {
+  background-image: url(/Images/crossIcon.webp) !important;
+}
+.modal-body {
+  /* overflow-y: hidden; */
+}
 
 @media only screen and (max-width: 1000px) {
-    .gameBtnGroup {
-        width: 90%;
-      }
+  .gameBtnGroup {
+    width: 90%;
   }
+}
 
 @media only screen and (max-width: 800px) {
   .scoreContainer {
@@ -128,17 +181,32 @@
     .gameImages {
       flex-wrap: wrap;
     }
-    
+
     .gameBtnGroup {
-        width: 100%;
+      width: 100%;
       flex-wrap: wrap;
     }
     .linkBtn {
-        padding: 8px 15px;
-      }
-      .gameBtnGroup button {
-        width: 70%;
-      }
+      padding: 8px 15px;
+    }
+    .gameBtnGroup button {
+      width: 70%;
+    }
+    .rotateItem0 {
+      margin: 0 10px;
+    }
+    .arrow1 {
+      width: 80px;
+    }
+    .rotateItem1 {
+      margin-right: 50px;
+    }
+    .rotateItem2 {
+      margin-left: 50px;
+    }
+    .ruleImg3 {
+      margin-top: 75px;
+    }
   }
 
   @media only screen and (max-width: 450px) {
@@ -151,14 +219,14 @@
       margin-right: 17px;
     }
     .gameIconName {
-        margin-right: 17px;
-        font-size: 15px;
-      }
+      margin-right: 17px;
+      font-size: 15px;
+    }
     .gameIcon img {
-        height: 100px;
-        width: 100px;
-      }
-      
+      height: 100px;
+      width: 100px;
+    }
+
     .linkBtn {
       padding: 5px 10px;
       font-size: 18px;
@@ -167,7 +235,13 @@
       font-size: 14px;
     }
     .gameBtnGroup button {
-        width: 70%;
-      }
+      width: 70%;
+    }
+    .rotateItem0 {
+      margin: 0 7px;
+    }
+    .arrow1 {
+      width: 50px;
+    }
   }
 }
