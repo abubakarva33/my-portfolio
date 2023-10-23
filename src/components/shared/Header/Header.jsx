@@ -18,11 +18,11 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const body = document.querySelector("body");
-    if (isDarkModeActive) {
-      body.setAttribute("class", "darkTheme");
-    } else {
-      body.setAttribute("class", "lightTheme");
-    }
+  if (isDarkModeActive) {
+    body.setAttribute("class", "darkTheme");
+  } else {
+    body.setAttribute("class", "lightTheme");
+  }
 
   const handleDarkMode = () => {
     dispatch(toggleTheme());
@@ -97,7 +97,7 @@ const Header = () => {
                     <AiOutlineGithub />
                   </Link>
                   <Link
-                    to="https://www.linkedin.com/in/abubakar-siddik-93a1261ab/"
+                    to="https://www.linkedin.com/in/abubakar375/"
                     target="_blank"
                     className="contactIcon newIcon"
                   >
