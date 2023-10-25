@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-right: 5px solid var(--border-color);
+  border-right: 5px solid var(--color-bg-primary);
+  border-right-style: groove;
   overflow-y: auto;
 }
 

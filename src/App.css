@@ -20,3 +20,20 @@ table * {
     /* background-image: var(--bar-image) !important; */
     /* background-image: url(/Images/barwhite.webp) !important; */
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
