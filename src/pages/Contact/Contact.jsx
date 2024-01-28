@@ -49,11 +49,10 @@ const Contact = () => {
       <h2 className="resumeHeaderName mx-2 py-3">LET&apos;S DISCUSS</h2>
       <Row xs={1} md={2} className="gx-0 d-flex align-items-center">
         <Col xs={12} md={6} className="gx-2">
-          <div className="contactsection p-4">
+          <div className="contactsection mt-3 p-4">
             <img src="/Images/contactHand.avif" alt="" className="img-fluid rounded" />
             <h3 className="pt-3">Abubakar Siddik</h3>
             <small className="fs-6">
-              {" "}
               <MdWork /> Web Developer
             </small>
             <p className="fs-5 mt-3">
@@ -71,17 +70,14 @@ const Contact = () => {
             </div>
             <div className="d-flex  flex-column">
               <Link to="tel:+8801580743409" target="_blank" className="">
-                {" "}
                 <AiOutlinePhone /> +8801580743409
               </Link>
               <Link to="tel:+8801750891998" target="_blank" className="">
-                {" "}
                 <AiOutlinePhone /> +8801750891998
               </Link>
             </div>
             <div>
               <Link to="mailto:abubakarsiddikl.info@gmail.com" target="_blank" className="">
-                {" "}
                 <AiOutlineMail /> abubakarsiddikl.info@gmail.com
               </Link>
             </div>
@@ -93,7 +89,6 @@ const Contact = () => {
                 target="_blank"
                 className="contactIcon"
               >
-                {" "}
                 <SiFiverr />
               </Link>
               <Link

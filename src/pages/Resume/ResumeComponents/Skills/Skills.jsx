@@ -2,7 +2,7 @@ import "./Skills.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Skill from "./Skill/Skill";
-import {  useGetSkillQuery } from "../../../../redux/api";
+import { useGetSkillQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 
 const Skills = () => {

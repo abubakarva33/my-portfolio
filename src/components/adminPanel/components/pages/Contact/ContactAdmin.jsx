@@ -1,11 +1,11 @@
-import {  Form,  } from "antd";
+import { Form } from "antd";
 import { Col, Row } from "react-bootstrap";
 import { BiMessageDots } from "react-icons/bi";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { MdImportantDevices } from "react-icons/md";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { filterData } from "../../../../../redux/features/worksSlice";
-import { useDispatch,  } from "react-redux";
+import { useDispatch } from "react-redux";
 import Search from "antd/es/input/Search";
 
 const ContactAdmin = () => {
@@ -24,12 +24,12 @@ const ContactAdmin = () => {
         <h4>MANAGE MESSAGES</h4>
         {/* 
         <button className="btn btn-primary" onClick={() => location.reload()}>
-          {" "}
+          
           Reload
         </button> */}
         <Form name="customized_form_controls" layout="inline" form={form}>
-          <Form.Item name="search" onChange={onFinish} >
-          <Search placeholder="input search text" allowClear/>
+          <Form.Item name="search" onChange={onFinish}>
+            <Search placeholder="input search text" allowClear />
           </Form.Item>
         </Form>
       </div>

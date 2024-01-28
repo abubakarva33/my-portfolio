@@ -42,8 +42,6 @@ const Game = () => {
     setResult("");
   };
 
-
-
   const rulesHandler = () => {
     handleShow();
   };
@@ -219,7 +217,6 @@ const Game = () => {
       <div className="d-flex align-items-center justify-content-center flex-column">
         {!result ? (
           <button className="linkBtn">
-            {" "}
             <Link to="/main/home">
               Busy Now?
               <span className="browseBtn">
@@ -229,15 +226,14 @@ const Game = () => {
           </button>
         ) : undefined}
         <button className="rulesBtn" onClick={rulesHandler}>
-          {" "}
-          RULES{" "}
+          RULES
         </button>
       </div>
       <Modal
         show={show}
         onHide={handleClose}
         size="lg"
-        fullscreen={'lg-down md-down sm-down '}
+        fullscreen={"lg-down md-down sm-down "}
         className="bg-transparent"
       >
         <Modal.Header closeButton>

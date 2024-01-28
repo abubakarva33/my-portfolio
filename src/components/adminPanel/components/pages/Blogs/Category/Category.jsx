@@ -2,14 +2,14 @@ import { HiOutlineArrowLeft } from "react-icons/hi2";
 import "./Category.css";
 import { useNavigate } from "react-router-dom";
 import {
-    useCreateCategoryMutation,
+  useCreateCategoryMutation,
   useDeleteCategoryMutation,
   useGetCategoryQuery,
   useUpdateCategoryMutation,
 } from "../../../../../../redux/api";
 import { Table } from "react-bootstrap";
 import moment from "moment";
-import { AiOutlineDelete, AiOutlineEdit,  } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import Swal from "sweetalert2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -18,9 +18,9 @@ const Category = () => {
   const { data, isLoading } = useGetCategoryQuery();
   const [deleteCategory] = useDeleteCategoryMutation();
   const [updateCategory] = useUpdateCategoryMutation();
-  const [createCategory]=useCreateCategoryMutation()
+  const [createCategory] = useCreateCategoryMutation();
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
 
   const deleteHandler = async (id) => {
@@ -86,7 +86,6 @@ const Category = () => {
         </div>
         <h4>MANAGE BLOGS</h4>
         <button className="btn btn-primary" onClick={createHandler}>
-          {" "}
           Add Category
         </button>
       </div>
