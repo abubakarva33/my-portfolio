@@ -1,15 +1,9 @@
 import "./ServiceEdit.css";
-import { Button, Form, Input, InputNumber, Select } from "antd";
-import { DatePicker } from "antd";
+import { Button, Form, Input, Select } from "antd";
 const { Option } = Select;
-import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import {
-  useCreateServiceMutation,
-  useGetAServiceQuery,
-  useUpdateServiceMutation,
-} from "../../../../../../redux/api";
+import { useCreateServiceMutation, useUpdateServiceMutation } from "../../../../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -20,7 +14,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
   const [createService] = useCreateServiceMutation();
 
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
   const { title, description, _id, img } = data;
 

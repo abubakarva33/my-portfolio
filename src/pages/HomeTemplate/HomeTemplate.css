@@ -4,7 +4,7 @@
     height: 80dvh;
     align-items: center;
     padding: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 
@@ -14,8 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    /* margin: 10px; */
     overflow: hidden;
+    padding: 20px;
 
 
 }
@@ -24,12 +25,12 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    /* background-color: aqua; */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     animation: designationRotate 13s ease-out infinite ;
+
 }
 
 .designationInnerContainer h4{
@@ -66,23 +67,23 @@
 .overlay{
     position: absolute;
     top: 90px;
-    right: 20px;
+    right: 10px;
     height: 0;
     width: 0;
-    border-right: 250px solid rgb(99,99,99);
-    border-top: 250px solid rgb(99,99,99);
-    border-bottom: 250px solid rgb(99,99,99);
+    border-right: 250px solid  #212428;
+    border-top: 250px solid  #212428;
+    border-bottom: 250px solid  #212428;
     border-left: 250px solid transparent;
-    /* border-right-style: inset; */
+    filter: drop-shadow(-2px 4px 8px black);
 
 }
 .homeImg{
     position: absolute;
-    bottom: 0;
-    right: -50px;
-    height: 100%;
-    width: auto;
+    /* top: 95px; */
+    height: 90%;
+    width: 500px;
     overflow-x: hidden;
+    filter: drop-shadow(-2px 4px 8px black);
 }
 @keyframes designationRotate {
     0%,20%{
@@ -101,3 +102,30 @@
         transform: rotate(-360deg);
     }
 }
+
+
+
+@media only screen and (max-width: 400px) {
+    .homeImg{
+        rotate: 90deg;
+        bottom: 0 !important;
+    }
+    .homeContainer{
+        grid-template-columns: 12fr 12fr;
+
+    }
+    .overlay{
+        position: absolute;
+        rotate: 90deg;
+        bottom: 0px;
+        right: 20px;
+        height: 0;
+        width: 0;
+        border-right: 150px solid  #212428;
+        border-top: 150px solid  #212428;
+        border-bottom: 150px solid  #212428;
+        border-left: 150px solid transparent;
+        filter: drop-shadow(-2px 4px 8px black);
+    
+    }
+  }

@@ -1,18 +1,46 @@
+import { Link } from "react-router-dom";
+import { useGetProfileQuery } from "../../redux/api";
 import "./HomeTemplate.css";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const HomeTemplate = () => {
+  const { data } = useGetProfileQuery();
+  const { name, description } = data?.data[0] || {};
+
+  const handleDownload = () => {
+    try {
+      const publicFilePath = "/Resume.pdf";
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = publicFilePath;
+      a.download = "Resume.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch (error) {
+      /* empty */
+    }
+  };
   return (
-    <div className="homeContainer">
-      <div className="ms-5">
-        <h1>Abubakar Siddik</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque saepe deleniti, enim
-          temporibus est iste inventore, magnam sunt repudiandae quam eos possimus exercitationem
-          distinctio libero aliquam sapiente atque velit? Officiis optio dicta, nam iure officia
-          unde ut, dolorum veritatis voluptatum doloribus vel corporis modi, porro nihil? Eligendi
-          dolorem quia ipsa?
-        </p>
-        <button>download</button>
+    <div className="homeContainer mb-3">
+      <div className="home ms-2 me-3">
+        <h6 className="welcome">WELCOME TO MY WORLD</h6>
+        <div className="homeHeading">
+          <p>
+            Hi, I’m <span className="homeHeadingSpan">{name.toUpperCase()}</span>
+          </p>
+        </div>
+        <p className="description">{description}</p>
+        <div className="d-flex align-items-center justify-content-center">
+          <Link to="/main/contacts" className="mainBtn btnWidth mt-4 me-4">
+            <span className="mainBtnSpan">Contact Me</span>
+          </Link>
+          <button className="mainBtn btnWidth mt-4" onClick={handleDownload}>
+            <span className="mainBtnSpan">
+              <AiOutlineDownload /> Resume
+            </span>
+          </button>
+        </div>
       </div>
       <div className="designationContainer">
         <div className="designationInnerContainer">
@@ -23,7 +51,7 @@ const HomeTemplate = () => {
           <div className="designationCircle"></div>
         </div>
         <div className="overlay"></div>
-        {/* <img src="/Images/profile.webp" alt="" className="homeImg"/> */}
+        {/* <img src="/Images/shape4.png" alt="" className="homeImg"/> */}
       </div>
     </div>
   );

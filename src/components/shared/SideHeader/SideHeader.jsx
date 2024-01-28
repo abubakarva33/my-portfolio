@@ -5,7 +5,6 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useGetProfileQuery } from "../../../redux/api";
-import Spinner from "../../adminPanel/components/Spinner/Spinner";
 
 const SideHeader = () => {
   const { data, isLoading } = useGetProfileQuery();
@@ -13,7 +12,7 @@ const SideHeader = () => {
     return
   }
 
-  const { name, email, description } = data?.data[0];
+  const { name,  } = data?.data[0] || {};
   return (
     <div className="sideHeader">
       <div className="profilePic">

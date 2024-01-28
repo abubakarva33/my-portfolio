@@ -2,8 +2,6 @@ import "./Blog.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
 import { GrLinkNext } from "react-icons/gr";
-import { useState } from "react";
-import { RxCross1 } from "react-icons/rx";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";

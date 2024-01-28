@@ -1,6 +1,5 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./ResumeAdmin.css";
-import { useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { useGetResumeQuery } from "../../../../../../redux/api";
 import ResumeTable from "../ResumeTable/ResumeTable";

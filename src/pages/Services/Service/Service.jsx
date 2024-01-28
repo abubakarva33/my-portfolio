@@ -1,13 +1,11 @@
-import { useState } from "react";
+
 import "./Service.css";
 import { GrLinkNext } from "react-icons/gr";
-import Modal from "react-modal";
-import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Service = ({ data }) => {
-  const { title, description, img, createdAt, _id } = data;
+  const { title, description, img,  _id } = data;
 
   return (
     <div className="cardBorder">

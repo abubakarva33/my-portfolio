@@ -1,7 +1,7 @@
 
 import Table from "react-bootstrap/Table";
 import "./WorkAdmin.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Pagination } from "antd";
 import { useGetWorksQuery } from "../../../../../../redux/api";
@@ -16,7 +16,7 @@ const WorkAdmin = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  const { total, size } = data?.meta;
+  const { total, size } = data?.meta || {};
   const onChange = (current) => {
     setPage(current);
   };

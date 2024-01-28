@@ -1,9 +1,9 @@
 import { useGetServicesQuery } from "../../../../../redux/api";
 import "./ServiceAdmin.css";
 import Table from "react-bootstrap/Table";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Divider, Pagination } from "antd";
+import { Pagination } from "antd";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import ServiceTable from "./ServiceTable/serviceTable";
 import Spinner from "../../Spinner/Spinner";
@@ -15,7 +15,7 @@ const ServiceAdmin = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  const { total, size } = data?.meta;
+  const { total, size } = data?.meta || {};
   const onChange = (current) => {
     setPage(current);
   };

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Game.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Modal from "react-bootstrap/Modal";
-import ModalDialog from 'react-bootstrap/ModalDialog'
 
 const Game = () => {
   const [userChoice, setUserChoice] = useState(null);
@@ -18,7 +17,6 @@ const Game = () => {
   const handleUserChoice = (choice) => {
     const choices = ["rock", "paper", "scissors"];
     const computerChoice = choices[Math.floor(Math.random() * 3)];
-    userSelectSound();
     const result = determineWinner(choice, computerChoice);
     setUserChoice(choice);
     setComputerChoice(computerChoice);
@@ -42,20 +40,11 @@ const Game = () => {
     setUserChoice(null);
     setComputerChoice(null);
     setResult("");
-    ButtonClickSound();
   };
 
-  const userSelectSound = () => {
-    const audio = new Audio("/sounds/win.wav");
-    audio.play();
-  };
-  const ButtonClickSound = () => {
-    const audio = new Audio("/sounds/click.wav");
-    audio.play();
-  };
+
 
   const rulesHandler = () => {
-    ButtonClickSound();
     handleShow();
   };
 
@@ -216,7 +205,7 @@ const Game = () => {
                 <button onClick={playAgainHandler} className="linkBtn playAgainBtn">
                   PLAY AGAIN
                 </button>
-                <button className="linkBtn " onClick={ButtonClickSound}>
+                <button className="linkBtn ">
                   <Link to="/main/home" className="portfolioBtn">
                     BROWSE <span className="browseBtn"> PORTFOLIO</span>
                   </Link>
@@ -229,7 +218,7 @@ const Game = () => {
 
       <div className="d-flex align-items-center justify-content-center flex-column">
         {!result ? (
-          <button className="linkBtn" onClick={ButtonClickSound}>
+          <button className="linkBtn">
             {" "}
             <Link to="/main/home">
               Busy Now?

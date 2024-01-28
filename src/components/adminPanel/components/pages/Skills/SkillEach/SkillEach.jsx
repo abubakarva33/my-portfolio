@@ -1,11 +1,6 @@
 import "./SkillEach.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import {
-  useDeleteSkillMutation,
-  useGetABlogQuery,
-  useGetASkillQuery,
-} from "../../../../../../redux/api";
-import { GrLinkNext } from "react-icons/gr";
+import { useDeleteSkillMutation, useGetASkillQuery } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
@@ -17,9 +12,9 @@ const SkillEach = () => {
   const [deleteSkill] = useDeleteSkillMutation();
   const { data, isLoading } = useGetASkillQuery(skillId);
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
-  const { title, value, createdAt, updatedAt, type, _id } = data;
+  const { title, value, createdAt, updatedAt, type } = data;
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",

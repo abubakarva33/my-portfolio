@@ -1,7 +1,6 @@
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import "./Category.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Pagination } from "antd";
+import { useNavigate } from "react-router-dom";
 import {
     useCreateCategoryMutation,
   useDeleteCategoryMutation,
@@ -10,7 +9,7 @@ import {
 } from "../../../../../../redux/api";
 import { Table } from "react-bootstrap";
 import moment from "moment";
-import { AiOutlineDelete, AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineEdit,  } from "react-icons/ai";
 import Swal from "sweetalert2";
 import Spinner from "../../../Spinner/Spinner";
 

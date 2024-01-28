@@ -2,7 +2,7 @@ import "./ProfileTable.css";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import moment from "moment";
-import { useDeleteBlogMutation, useDeleteProfileMutation, useDeleteSkillMutation } from "../../../../../../redux/api";
+import { useDeleteProfileMutation } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
 
 const ProfileTable = ({ ind, data }) => {

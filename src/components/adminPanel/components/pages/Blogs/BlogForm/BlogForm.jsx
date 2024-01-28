@@ -1,6 +1,6 @@
-import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
+import { Button, Form, Input, Select, Space } from "antd";
 const { Option } = Select;
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
   useCreateBlogMutation,
@@ -8,7 +8,7 @@ import {
   useGetCategoryQuery,
   useUpdateBlogMutation,
 } from "../../../../../../redux/api";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -21,10 +21,10 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [addCategorys] = useCreateCategoryMutation();
 
   if (isLoading && categories.isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
 
-  const { title, description, img, category, createdAt, updatedAt, _id } = data;
+  const { title, description, img, category, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -176,5 +176,7 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     </div>
   );
 });
+
+BlogForm.displayName = "BlogForm";
 
 export default BlogForm;

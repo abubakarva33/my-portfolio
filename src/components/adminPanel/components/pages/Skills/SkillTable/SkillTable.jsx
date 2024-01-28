@@ -2,7 +2,7 @@ import "./SkillTable.css";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import moment from "moment";
-import { useDeleteBlogMutation, useDeleteSkillMutation } from "../../../../../../redux/api";
+import {  useDeleteSkillMutation } from "../../../../../../redux/api";
 import Swal from "sweetalert2";
 
 const SkillTable = ({ ind, data }) => {

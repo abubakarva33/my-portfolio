@@ -15,7 +15,7 @@ const BlogAdmin = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  const { total, size } = data?.meta;
+  const { total, size } = data?.meta || {};
   const onChange = (current) => {
     setPage(current);
   };

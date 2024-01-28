@@ -1,9 +1,9 @@
-import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
+import { Button,  Form, Input,  Select, Space } from "antd";
 const { Option } = Select;
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateResumeMutation, useUpdateResumeMutation } from "../../../../../../redux/api";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo,  } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -190,4 +190,5 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   );
 });
 
+ResumeForm.displayName = 'ResumeForm';
 export default ResumeForm;

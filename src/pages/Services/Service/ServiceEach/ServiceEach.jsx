@@ -1,6 +1,5 @@
-import { RxCross1 } from "react-icons/rx";
 import "./ServiceEach.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { useGetAServiceQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
@@ -13,7 +12,7 @@ const ServiceDetails = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  const { title, description, img, createdAt, _id } = data;
+  const { title, description, img, } = data;
   return (
     <div className="mx-2 mb-4">
       <div className=" serviceBox px-2">

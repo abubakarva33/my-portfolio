@@ -1,9 +1,8 @@
-import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
-const { Option } = Select;
-import { useNavigate, useParams } from "react-router-dom";
+import { Button, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateProfileMutation, useUpdateProfileMutation } from "../../../../../../redux/api";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -14,7 +13,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
   const [createProfile] = useCreateProfileMutation();
 
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
 
   const { name, email, description, anotherNumber, number, password, _id } = data;
@@ -145,9 +144,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
           >
             <Input placeholder="Please enter password  here..." />
           </Form.Item>
-        ) : (
-          null
-        )}
+        ) : null}
 
         <div className="d-flex justify-content-center  ">
           <Button type="primary" htmlType="submit" className="w-50 h-auto">
@@ -158,5 +155,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
     </div>
   );
 });
+
+ProfileForm.displayName = "ProfileForm";
 
 export default ProfileForm;

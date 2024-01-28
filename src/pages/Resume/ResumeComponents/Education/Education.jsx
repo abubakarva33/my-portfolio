@@ -2,9 +2,8 @@ import "./Education.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import EducationSection from "./EducationSection/EducationSection";
-import { useGetResumeQuery, useGetSkillQuery } from "../../../../redux/api";
+import { useGetResumeQuery,  } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
-import { useState } from "react";
 
 const Education = () => {
   const academicData = useGetResumeQuery("academic");

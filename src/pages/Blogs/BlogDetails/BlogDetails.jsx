@@ -1,6 +1,5 @@
-import { RxCross1 } from "react-icons/rx";
 import "./BlogDetails.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { useGetABlogQuery } from "../../../redux/api";
 import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
@@ -13,7 +12,7 @@ const BlogDetails = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  const { title, description, category, img, createdAt, _id } = data;
+  const { title, description, category, img, } = data;
   return (
     <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 mt-4">

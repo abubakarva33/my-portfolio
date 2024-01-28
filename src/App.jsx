@@ -1,4 +1,4 @@
-import { BrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import {  RouterProvider } from "react-router-dom";
 import "./App.css";
 import { routes } from "./routes/Routes";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const { data, isLoading } = useGetProfileQuery();
+  const {  isLoading } = useGetProfileQuery();
   useEffect(() => {
     if (!isLoading) {
       setTimeout(() => {

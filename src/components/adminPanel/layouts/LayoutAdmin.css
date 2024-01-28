@@ -12,13 +12,8 @@
 }
 .adminHeader {
   box-shadow: var(--btn-primary-shadow);
-  /* position: sticky;
-  top: 0; */
-  /* z-index: 1; */
 }
-/* .outlett{
-  overflow-y: auto;
-} */
+
 
 .layout {
   display: flex;

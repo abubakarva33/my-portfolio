@@ -1,13 +1,9 @@
-import { useContext, useEffect, useState } from "react";
 import "./Header.css";
-import { mainContext } from "../../../contexts/UserContext";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { Link, NavLink } from "react-router-dom";
 import { FiFacebook, FiLinkedin } from "react-icons/fi";
-import { BiLogoGmail } from "react-icons/bi";
 import { AiOutlineGithub } from "react-icons/ai";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,7 +26,11 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Navbar expand="lg" data-bs-theme={isDarkModeActive ? "dark" : "light"}>
+      <Navbar
+        collapseOnSelect={true}
+        expand="lg"
+        data-bs-theme={isDarkModeActive ? "dark" : "light"}
+      >
         <Navbar.Brand href="/">
           <img src="/Images/logo.webp" alt="" className="navLogo" />
         </Navbar.Brand>

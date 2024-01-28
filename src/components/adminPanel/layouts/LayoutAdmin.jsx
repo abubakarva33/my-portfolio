@@ -4,10 +4,8 @@ import "./LayoutAdmin.css";
 import { Col, Row } from "react-bootstrap";
 import moment from "moment";
 import { useState } from "react";
-import { LiaFacebookMessenger } from "react-icons/lia";
 import { Avatar, Badge } from "antd";
 import { useGetMessageQuery } from "../../../redux/api";
-import { SiMessenger } from "react-icons/si";
 import { MessageOutlined } from "@ant-design/icons";
 
 const LayoutAdmin = () => {

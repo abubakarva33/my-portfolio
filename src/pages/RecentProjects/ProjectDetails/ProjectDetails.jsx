@@ -3,12 +3,7 @@ import "./ProjectDetails.css";
 import { useGetAWorkQuery } from "../../../redux/api";
 import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
 import { Col, Row } from "react-bootstrap";
-import {
-  AiOutlineArrowRight,
-  AiOutlineCheckSquare,
-  AiOutlineDeploymentUnit,
-  AiOutlineLike,
-} from "react-icons/ai";
+import { AiOutlineCheckSquare, AiOutlineDeploymentUnit, AiOutlineLike } from "react-icons/ai";
 import moment from "moment";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
@@ -33,7 +28,6 @@ const ProjectDetails = () => {
     keyFeatures,
     img,
     createdAt,
-    _id,
   } = data;
 
   const likeHandler = () => {
@@ -82,11 +76,12 @@ const ProjectDetails = () => {
               </div>
               <div className="btnGroup">
                 <p className="mt-3 itemLink likebtn" onClick={likeHandler}>
-                <AiOutlineLike className="me-1" />Like This
+                  <AiOutlineLike className="me-1" />
+                  Like This
                 </p>
                 <p className="mt-3">
                   <Link to={link} className="itemLink previewBtn">
-                    <ImShare/> Live Preview
+                    <ImShare /> Live Preview
                   </Link>
                 </p>
               </div>

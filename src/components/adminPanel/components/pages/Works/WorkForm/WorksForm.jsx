@@ -1,11 +1,9 @@
-import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
-import { DatePicker } from "antd";
+import { Button, Divider, Form, Input,  Select,  } from "antd";
 const { Option } = Select;
-import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateWorkMutation, useUpdateWorkMutation } from "../../../../../../redux/api";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo,  useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -18,16 +16,8 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [newFeature, setNewFeature] = useState("");
   const [materialList, setMaterialList] = useState([]);
   const [newMaterial, setNewMaterial] = useState("");
-
   const [updateWork] = useUpdateWorkMutation();
   const [createWork] = useCreateWorkMutation();
-  // useEffect(() => {
-  //   if (data) {
-  //     setTagsList(data.tags);
-  //     setFeaturesList(data.keyFeatures);
-  //     setMaterialList(data.materialUsed);
-  //   }
-  // }, [data]);
 
   if (isLoading) {
     return <Spinner/>
@@ -42,8 +32,6 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     tags,
     materialUsed,
     keyFeatures,
-    createdAt,
-    updatedAt,
     _id,
   } = data;
 
@@ -263,5 +251,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     </div>
   );
 });
+
+WorkForm.displayName= "WorkForm"
 
 export default WorkForm;

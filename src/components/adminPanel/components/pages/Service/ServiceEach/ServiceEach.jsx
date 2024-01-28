@@ -1,6 +1,5 @@
 import "./ServiceEach.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { GrLinkNext } from "react-icons/gr";
 import { Button } from "antd";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Swal from "sweetalert2";
@@ -15,7 +14,7 @@ const ServiceEach = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  const { title, description, createdAt, updatedAt, _id, img } = data;
+  const { title, description, createdAt, updatedAt,  img } = data;
 
   const handleSingleDelete = () => {
     Swal.fire({

@@ -1,9 +1,7 @@
 import "./MessageTable.css";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Button, ConfigProvider, Pagination, Space, Table } from "antd";
-import { Col, Row } from "react-bootstrap";
-import { MdImportantDevices } from "react-icons/md";
-import { BiMessageDots } from "react-icons/bi";
+
 import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -19,7 +17,7 @@ import Spinner from "../../../Spinner/Spinner";
 const MessageTable = () => {
   const [page, setPage] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
-  const [deleteId, setDeleteId] = useState();
+  // const [deleteId, setDeleteId] = useState();
   const { filter } = useSelector((state) => state.recentWork);
   const { data, isLoading, isFetching } = useGetMessageQuery({ page, filter });
   const [deleteMessage] = useDeleteMessageMutation();
@@ -27,7 +25,7 @@ const MessageTable = () => {
   if (isLoading && isFetching) {
     return <Spinner />;
   }
-  const { total, size } = data?.meta;
+  const { total, size } = data?.meta || {};
   const onChange = (current) => {
     setPage(current);
   };

@@ -1,7 +1,6 @@
 import "./BlogEach.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDeleteBlogMutation, useGetABlogQuery } from "../../../../../../redux/api";
-import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
@@ -15,7 +14,7 @@ const BlogEach = () => {
   if (isLoading) {
     return <Spinner/>
   }
-  const { title, description, createdAt, updatedAt,category, _id, img } = data;
+  const { title, description, createdAt, updatedAt,category,  img } = data;
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",

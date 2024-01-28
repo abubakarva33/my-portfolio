@@ -11,7 +11,6 @@ import { AiOutlineAntDesign } from "react-icons/ai";
 import { MdDesignServices, MdOutlineLocalPostOffice } from "react-icons/md";
 import { BsSignpost2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from "recharts";
 import Spinner from "../../Spinner/Spinner";
 
 const HomeAdmin = () => {

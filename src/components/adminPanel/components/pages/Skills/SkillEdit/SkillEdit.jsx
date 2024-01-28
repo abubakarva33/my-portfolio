@@ -1,6 +1,6 @@
 
 import "./SkillEdit.css";
-import { useGetABlogQuery, useGetASkillQuery } from "../../../../../../redux/api";
+import {  useGetASkillQuery } from "../../../../../../redux/api";
 import { useParams } from "react-router-dom";
 import SkillForm from "../SkillForm/SkillForm";
 

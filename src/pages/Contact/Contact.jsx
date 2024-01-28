@@ -6,9 +6,8 @@ import { MdOutlineLocationOn, MdWork } from "react-icons/md";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { SiFiverr, SiFreelancer } from "react-icons/si";
 import { BiLogoUpwork } from "react-icons/bi";
-import { Button, Form, Input } from "antd";
+import { Form, Input } from "antd";
 const { TextArea } = Input;
-import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useCreateMessageMutation } from "../../redux/api";
 import Swal from "sweetalert2";
@@ -26,12 +25,8 @@ const Contact = () => {
     };
 
     emailjs.send("service_iarwqio", "template_brhcv54", templateParams, "TZpRx-J6FGuXMUput").then(
-      (result) => {
-        console.log(result);
-      },
-      (error) => {
-        console.log(error);
-      }
+      () => {},
+      () => {}
     );
     sendMessage({ name, email, message });
     form.resetFields();
@@ -51,7 +46,7 @@ const Contact = () => {
       transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="resumeHeaderName mx-2 py-3">LET'S DISCUSS</h2>
+      <h2 className="resumeHeaderName mx-2 py-3">LET&apos;S DISCUSS</h2>
       <Row xs={1} md={2} className="gx-0 d-flex align-items-center">
         <Col xs={12} md={6} className="gx-2">
           <div className="contactsection p-4">
@@ -166,11 +161,7 @@ const Contact = () => {
               />
             </Form.Item>
             <Form.Item className="text-center">
-              <button
-                htmlType="submit"
-                to="/"
-                className="mainBtn w-50 border-0 text-decoration-none"
-              >
+              <button type="submit" to="/" className="mainBtn w-50 border-0 text-decoration-none">
                 <span className="mainBtnSpan">Send Message</span>
               </button>
             </Form.Item>

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const BlogTable = ({ ind, data }) => {
   const [deleteBlog] = useDeleteBlogMutation();
-  const { title, description, category, img, createdAt, updatedAt, _id } = data;
+  const { title, description, category,  createdAt, updatedAt, _id } = data;
   const deleteHandler = async () => {
     Swal.fire({
       title: "Are you sure?",

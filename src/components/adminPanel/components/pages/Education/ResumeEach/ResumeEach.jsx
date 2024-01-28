@@ -1,7 +1,6 @@
 import "./ResumeEach.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDeleteResumeMutation, useGetAResumeQuery } from "../../../../../../redux/api";
-import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
@@ -13,19 +12,9 @@ const ResumeEach = () => {
   const [deleteResume] = useDeleteResumeMutation();
   const { data, isLoading } = useGetAResumeQuery(resumeId);
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
-  const {
-    title,
-    details,
-    institute,
-    startYear,
-    endYear,
-    type,
-    createdAt,
-    updatedAt,
-    _id,
-  } = data;
+  const { title, details, institute, startYear, endYear, type, createdAt, updatedAt } = data;
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",

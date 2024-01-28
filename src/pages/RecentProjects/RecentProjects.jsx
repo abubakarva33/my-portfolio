@@ -31,7 +31,7 @@ const RecentProjects = () => {
       <Row md={2} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (
-            <Col className="gx-2">
+            <Col className="gx-2" key={ind}>
               <Project key={ind} ind={ind} data={data} />
             </Col>
           ))}

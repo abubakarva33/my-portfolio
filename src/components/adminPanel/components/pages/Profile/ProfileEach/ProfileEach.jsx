@@ -1,7 +1,6 @@
 import "./ProfileEach.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDeleteProfileMutation, useGetAProfileQuery } from "../../../../../../redux/api";
-import { GrLinkNext } from "react-icons/gr";
 import Swal from "sweetalert2";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { Button } from "antd";
@@ -13,9 +12,9 @@ const ProfileEach = () => {
   const [deleteProfile] = useDeleteProfileMutation();
   const { data, isLoading } = useGetAProfileQuery(profileId);
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
-  const { name, email, createdAt, anotherNumber, description, number, updatedAt, _id } = data;
+  const { name, email, createdAt, anotherNumber, description, number, updatedAt } = data;
   const handleSingleDelete = () => {
     Swal.fire({
       title: "Are you sure?",

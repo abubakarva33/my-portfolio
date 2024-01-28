@@ -1,9 +1,9 @@
-import { Button, Divider, Form, Input, InputNumber, Select, Space } from "antd";
+import { Button, Form, Input, Select,  } from "antd";
 const { Option } = Select;
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateSkillMutation, useUpdateSkillMutation } from "../../../../../../redux/api";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -17,7 +17,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     return <Spinner/>
   }
 
-  const { title, value, type, createdAt, updatedAt, _id } = data;
+  const { title, value, type, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -41,24 +41,24 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
       navigate(-1);
     }
   };
-  const addCategory = async () => {
-    const { value: text } = await Swal.fire({
-      input: "text",
-      inputLabel: "Category",
-      inputPlaceholder: "Enter category here...",
-      inputAttributes: {
-        "aria-label": "Enter Category here",
-      },
-      showCancelButton: true,
-    });
+  // const addCategory = async () => {
+  //   const { value: text } = await Swal.fire({
+  //     input: "text",
+  //     inputLabel: "Category",
+  //     inputPlaceholder: "Enter category here...",
+  //     inputAttributes: {
+  //       "aria-label": "Enter Category here",
+  //     },
+  //     showCancelButton: true,
+  //   });
 
-    if (text) {
-      const res = await addCategorys({ name: text }).unwrap();
-      if (res?.success) {
-        Swal.fire("Created!", "Category has been deleted.", "success");
-      }
-    }
-  };
+  //   if (text) {
+  //     const res = await addCategorys({ name: text }).unwrap();
+  //     if (res?.success) {
+  //       Swal.fire("Created!", "Category has been deleted.", "success");
+  //     }
+  //   }
+  // };
 
   return (
     <div>
@@ -134,5 +134,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     </div>
   );
 });
+
+SkillForm.displayName="SkillForm"
 
 export default SkillForm;
