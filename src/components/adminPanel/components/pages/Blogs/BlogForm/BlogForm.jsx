@@ -90,7 +90,7 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           _id,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4 rounded p-4"
       >
         <Form.Item
           label="Blog Title"
@@ -102,7 +102,7 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter blog title here..." />
+          <Input placeholder="Please enter blog title here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -115,7 +115,7 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter description here..." />
+          <Input placeholder="Please enter description here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Select Picture"
@@ -162,6 +162,7 @@ const BlogForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             style={{
               width: "30%",
             }}
+            className="bg-warning"
           >
             Add Category
           </Button>

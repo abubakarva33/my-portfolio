@@ -33,9 +33,13 @@ const LayoutAdmin = () => {
               <div className="d-flex  flex-column align-items-end mt-3">
                 <div>
                   <Link to="/main-admin/private-route/abubakar/dashboard/contact" className="me-3">
-                    <Badge count={data?.meta?.total} >
-                      <Avatar size="large" shape="square" className="bg-secondary" icon={<MessageOutlined />} />
-                      {/* <Avatar shape="square" size="large" icon={<SiMessenger />} /> */}
+                    <Badge count={data?.meta?.total}>
+                      <Avatar
+                        size="large"
+                        shape="square"
+                        className="bg-secondary"
+                        icon={<MessageOutlined />}
+                      />
                     </Badge>
                   </Link>
                   <Link to="/main-admin/private-route/abubakar/dashboard/profile">

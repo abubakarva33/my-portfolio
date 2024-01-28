@@ -11,7 +11,14 @@
   border-radius: 50%;
 }
 .adminHeader {
+  background-color: var(--color-bg-primary);
+  position: sticky;
+  top: o;
+  left: 0;
+  right: 0;
   box-shadow: var(--btn-primary-shadow);
+  overflow-y: auto;
+  z-index: 1;
 }
 
 
@@ -20,4 +27,5 @@
   height: 100dvh;
   justify-content: space-between;
   flex-direction: column;
+  overflow-y: auto;
 }

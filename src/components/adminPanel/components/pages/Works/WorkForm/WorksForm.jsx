@@ -89,7 +89,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           _id,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4  rounded p-4"
       >
         <Form.Item
           label="Service Title"
@@ -101,7 +101,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter service title here..." />
+          <Input placeholder="Please enter service title here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -114,7 +114,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter short description here..." />
+          <Input placeholder="Please enter short description here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Description"
@@ -126,7 +126,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter description here..." />
+          <Input placeholder="Please enter description here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Project Type"
@@ -138,7 +138,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter project type here..." />
+          <Input placeholder="Please enter project type here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Select Picture"
@@ -167,7 +167,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter live link here..." />
+          <Input placeholder="Please enter live link here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item label="Tags">

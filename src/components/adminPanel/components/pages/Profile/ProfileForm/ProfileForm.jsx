@@ -66,7 +66,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
           _id,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4  rounded p-4"
       >
         <Form.Item
           label="Name"
@@ -78,7 +78,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             },
           ]}
         >
-          <Input placeholder="Please enter name here..." />
+          <Input placeholder="Please enter name here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -91,7 +91,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             },
           ]}
         >
-          <Input placeholder="Please enter email here..." />
+          <Input placeholder="Please enter email here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -104,7 +104,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             },
           ]}
         >
-          <Input placeholder="Please enter number here..." />
+          <Input placeholder="Please enter number here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Description"
@@ -116,7 +116,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             },
           ]}
         >
-          <Input placeholder="Please enter description here..." />
+          <Input placeholder="Please enter description here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Alternative Number"
@@ -128,7 +128,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
             },
           ]}
         >
-          <Input placeholder="Please enter alternative number here..." />
+          <Input placeholder="Please enter alternative number here..." className="inputBox" />
         </Form.Item>
 
         {mode === "create" ? (
@@ -142,7 +142,7 @@ const ProfileForm = memo(({ mode = "create", data = {}, isLoading = false }) => 
               },
             ]}
           >
-            <Input placeholder="Please enter password  here..." />
+            <Input placeholder="Please enter password  here..." className="inputBox" />
           </Form.Item>
         ) : null}
 

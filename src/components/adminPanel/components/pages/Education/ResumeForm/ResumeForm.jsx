@@ -66,7 +66,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           type,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4  rounded p-4"
       >
         <Form.Item
           label="Title"
@@ -78,7 +78,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter title here..." />
+          <Input placeholder="Please enter title here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -91,7 +91,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter description here..." />
+          <Input placeholder="Please enter description here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -104,7 +104,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter institute name here..." />
+          <Input placeholder="Please enter institute name here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Institute location"
@@ -116,7 +116,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter institute location here..." />
+          <Input placeholder="Please enter institute location here..." className="inputBox" />
         </Form.Item>
 
         <Space.Compact block>
@@ -138,6 +138,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
               style={{
                 width: "100%",
               }}
+              className="inputBox" 
             />
           </Form.Item>
           <Form.Item
@@ -158,6 +159,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
               style={{
                 width: "100%",
               }}
+              className="inputBox" 
             />
           </Form.Item>
         </Space.Compact>

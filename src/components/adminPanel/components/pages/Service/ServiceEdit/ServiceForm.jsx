@@ -62,7 +62,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
           img,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4  rounded p-4"
       >
         <Form.Item
           label="Service Title"
@@ -74,7 +74,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please input book title" />
+          <Input placeholder="Please input book title" className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -87,7 +87,7 @@ const ServiceForm = ({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please input book title" />
+          <Input placeholder="Please input book title" className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Select Picture"

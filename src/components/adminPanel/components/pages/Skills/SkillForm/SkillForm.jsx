@@ -1,9 +1,9 @@
-import { Button, Form, Input, Select,  } from "antd";
+import { Button, Form, Input, Select } from "antd";
 const { Option } = Select;
-import { useNavigate,  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateSkillMutation, useUpdateSkillMutation } from "../../../../../../redux/api";
-import { memo, } from "react";
+import { memo } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -14,7 +14,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [createBlog] = useCreateSkillMutation();
 
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
 
   const { title, value, type, _id } = data;
@@ -82,7 +82,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           _id,
         }}
         layout="vertical"
-        className=" serviceTable my-4 border rounded p-4"
+        className=" serviceTable my-4  rounded p-4"
       >
         <Form.Item
           label="Title"
@@ -94,7 +94,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter title here..." />
+          <Input placeholder="Please enter title here..." className="inputBox" />
         </Form.Item>
 
         <Form.Item
@@ -107,7 +107,7 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             },
           ]}
         >
-          <Input placeholder="Please enter value here..." />
+          <Input placeholder="Please enter value here..." className="inputBox" />
         </Form.Item>
         <Form.Item
           label="Select Category"
@@ -135,6 +135,6 @@ const SkillForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   );
 });
 
-SkillForm.displayName="SkillForm"
+SkillForm.displayName = "SkillForm";
 
 export default SkillForm;

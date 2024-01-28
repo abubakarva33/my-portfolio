@@ -16,11 +16,27 @@ table * {
 .navbar > .navbar-toggler {
   background-color: var(--color-bg-primary) !important;
 }
-.navbar-toggler-icon {
-    /* background-image: var(--bar-image) !important; */
-    /* background-image: url(/Images/barwhite.webp) !important; */
-}
 
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  color: var(--text-color) !important;
+}
+.ant-form-item .ant-form-item-label > label {
+  color: var(--text-color);
+}
+.ant-select-selector {
+  background-color: var(--color-bg-primary) !important;
+  min-height: 45px !important;
+  box-shadow: var( --icon-primary-shadow-hover) !important;
+  border: none !important;
+}
+.ant-select .ant-select-selection-placeholder {
+  color: var(--text-color) !important;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
@@ -28,7 +44,7 @@ table * {
 
 /* Track */
 ::-webkit-scrollbar-track {
- background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
 }
 

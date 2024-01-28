@@ -1,20 +1,11 @@
-/* .adminNav{
-    text-decoration: none;
-    font-size: 20px;
-    margin: 10px 15px; 
-    display: flex;
-    align-items: center;
-    color: #5d5d61;
-} */
 
 .adminNavItem a{
     text-decoration: none;
     font-size: 20px;
-    /* margin: 10px 15px;  */
     padding: 10px 15px;
     display: flex;
     align-items: center;
-    color: #5d5d61;
+    color: var(--text-primary);
 }
 .adminNavItem a.active{
 box-shadow: var(--icon-primary-shadow);
@@ -24,6 +15,3 @@ color: rgb(92, 153, 177);
 .adminNavItem a:hover{
     box-shadow:  var(--icon-primary-shadow);
 }
-/* .adminNavItem a.active:hover{
-    box-shadow: var(--icon-primary-shadow-hover);
-} */
