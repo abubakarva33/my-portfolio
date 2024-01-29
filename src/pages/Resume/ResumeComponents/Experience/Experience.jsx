@@ -13,9 +13,9 @@ const Experience = () => {
   }
   return (
     <div>
-      <Row xs={1} md={2} className="">
+      <Row xs={1} md={2} className="gx-0 gy-2 mx-2">
         <Col>
-          <div className="">
+          <div className="exFirst">
             <h3 className="resumeHeaderName ">Training Experience</h3>
             <div>
               {Array.isArray(jobData?.data?.data) &&
@@ -26,7 +26,7 @@ const Experience = () => {
           </div>
         </Col>
         <Col>
-          <div className="">
+          <div className="exSecond">
             <h3 className="resumeHeaderName ">Job Experience</h3>
             <div>
               {Array.isArray(trainData?.data?.data) &&

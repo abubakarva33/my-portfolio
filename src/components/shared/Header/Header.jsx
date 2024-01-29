@@ -8,11 +8,12 @@ import { AiOutlineGithub } from "react-icons/ai";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../../redux/features/themeSlice";
+import { useState } from "react";
 
 const Header = () => {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
   const { isDarkModeActive } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
-
   const body = document.querySelector("body");
   if (isDarkModeActive) {
     body.setAttribute("class", "darkTheme");
@@ -23,6 +24,8 @@ const Header = () => {
   const handleDarkMode = () => {
     dispatch(toggleTheme());
   };
+  const handleClose = () => setShowOffcanvas(false);
+  const handleToggle = () => setShowOffcanvas((prev) => !prev);
 
   return (
     <div className="header">
@@ -34,12 +37,13 @@ const Header = () => {
         <Navbar.Brand href="/">
           <img src="/Images/logo.webp" alt="" className="navLogo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+        <Navbar.Toggle onClick={handleToggle} aria-controls={`offcanvasNavbar-expand-lg`} />
         <Navbar.Offcanvas
-          id={`offcanvasNavbar-expand-lg`}
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="end"
           className=" ms-auto"
+          show={showOffcanvas}
+          onHide={handleClose}
         >
           <Offcanvas.Header
             closeButton
@@ -50,22 +54,22 @@ const Header = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <NavLink to="/main/home" className="navlinkA">
+              <NavLink to="/main/home" className="navlinkA" onClick={handleClose}>
                 HOME
               </NavLink>
-              <NavLink to="/main/services" className="navlinkA">
+              <NavLink to="/main/services" className="navlinkA" onClick={handleClose}>
                 SERVICES
               </NavLink>
-              <NavLink to="/main/recent-works" className="navlinkA">
+              <NavLink to="/main/recent-works" className="navlinkA" onClick={handleClose}>
                 RECENT WORKS
               </NavLink>
-              <NavLink to="/main/resume/skills" className="navlinkA">
+              <NavLink to="/main/resume/skills" className="navlinkA" onClick={handleClose}>
                 RESUME
               </NavLink>
-              <NavLink to="/main/blogs" className="navlinkA">
+              <NavLink to="/main/blogs" className="navlinkA" onClick={handleClose}>
                 BLOGS
               </NavLink>
-              <NavLink to="/main/contacts" className="navlinkA">
+              <NavLink to="/main/contacts" className="navlinkA" onClick={handleClose}>
                 CONTACT
               </NavLink>
 

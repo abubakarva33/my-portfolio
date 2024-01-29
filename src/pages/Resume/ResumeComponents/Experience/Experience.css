@@ -1,0 +1,15 @@
+.exFirst{
+    margin-right: 7px;
+}
+.exSecond{
+    margin-left: 7px;
+}
+
+@media only screen and (max-width: 576px) {
+    .exFirst{
+        margin-right: 0px;
+    }
+    .exSecond{
+        margin-left: 0px;
+    }
+  }

@@ -6,9 +6,7 @@
   width: 200px;
   border-radius: 50%;
   margin-right: 50px;
-  /* box-shadow: var(--icon-primary-shadow); */
   box-shadow: var(--icon-primary-shadow-hover);
-  /* background: var(--shadow-bg-primary); */
 }
 .gameIconName {
   margin-right: 50px;
@@ -100,7 +98,6 @@
   align-items: center;
   flex-direction: column;
   margin: 0 20px;
-  /* rotate: 180deg; */
 }
 .gameModal {
   width: 90vw !important;
@@ -130,8 +127,6 @@
   background-color: var(--color-bg-primary) !important;
   box-shadow: var(--shadow-bg-primary) !important;
   border: none !important;
-  /* height: 90dvh !important; */
-  /* width: 90vw !important; */
 }
 .modal-header {
   border-bottom: none !important;
@@ -139,9 +134,7 @@
 .btn-close {
   background-image: url(/Images/crossIcon.webp) !important;
 }
-.modal-body {
-  /* overflow-y: hidden; */
-}
+
 
 @media only screen and (max-width: 1000px) {
   .gameBtnGroup {

@@ -10,8 +10,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 90vh; */
-  /* height: 100%; */
 }
 .footer {
   background: var(--color-bg-primary);
@@ -30,7 +28,6 @@
     display: none;
   }
   .mainNav {
-    display: block;
     width: 100vw !important;
   }
 }
