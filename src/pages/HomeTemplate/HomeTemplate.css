@@ -1,7 +1,7 @@
 .homeContainer{
     display: grid;
     grid-template-columns: 6fr 6fr;
-    height: 80dvh;
+    /* height: 80dvh; */
     align-items: center;
     padding: 5px;
     /* overflow: hidden; */

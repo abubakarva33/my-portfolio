@@ -4,6 +4,7 @@ import Typed from "react-typed";
 import { useGetProfileQuery } from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
+import HomeTemplate from "../HomeTemplate/HomeTemplate";
 
 const Home = () => {
   const { data } = useGetProfileQuery();
@@ -18,7 +19,9 @@ const Home = () => {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-    } catch (error) { /* empty */ }
+    } catch (error) {
+      /* empty */
+    }
   };
   return (
     <div>
@@ -57,7 +60,7 @@ const Home = () => {
           </div>
         </div>
       </motion.div>
-      {/* <HomeTemplate /> */}
+      {/* <HomeTemplate data={data} handleDownload={handleDownload} /> */}
     </div>
   );
 };

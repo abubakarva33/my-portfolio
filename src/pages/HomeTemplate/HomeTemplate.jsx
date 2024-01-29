@@ -1,34 +1,28 @@
 import { Link } from "react-router-dom";
-import { useGetProfileQuery } from "../../redux/api";
 import "./HomeTemplate.css";
 import { AiOutlineDownload } from "react-icons/ai";
+import Typed from "react-typed";
 
-const HomeTemplate = () => {
-  const { data } = useGetProfileQuery();
+const HomeTemplate = ({ data, handleDownload }) => {
   const { name, description } = data?.data[0] || {};
 
-  const handleDownload = () => {
-    try {
-      const publicFilePath = "/Resume.pdf";
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = publicFilePath;
-      a.download = "Resume.pdf";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } catch (error) {
-      /* empty */
-    }
-  };
   return (
     <div className="homeContainer mb-3">
-      <div className="home ms-2 me-3">
+      <div className="home p-3 p-md-5">
         <h6 className="welcome">WELCOME TO MY WORLD</h6>
         <div className="homeHeading">
           <p>
-            Hi, I’m <span className="homeHeadingSpan">{name.toUpperCase()}</span>
+            Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
           </p>
+          <div className="d-flex">
+            <p className="homeHeadingSpan pe-3">a</p>
+            <Typed
+              strings={["Developer", "FrontEnd Developer", "Designer"]}
+              typeSpeed={40}
+              backSpeed={50}
+              loop
+            />
+          </div>
         </div>
         <p className="description">{description}</p>
         <div className="d-flex align-items-center justify-content-center">
