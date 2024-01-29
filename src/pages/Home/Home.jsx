@@ -35,7 +35,7 @@ const Home = () => {
           <h6 className="welcome">WELCOME TO MY WORLD</h6>
           <div className="homeHeading">
             <p>
-              Hi, I’m <span className="homeHeadingSpan">{name.toUpperCase()}</span>
+              Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
             <div className="d-flex">
               <p className="homeHeadingSpan pe-3">a</p>
