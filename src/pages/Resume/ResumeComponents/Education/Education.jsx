@@ -17,7 +17,7 @@ const Education = () => {
       <Row xs={1} md={2} className="gx-0">
         <Col className="gx-0">
           <div className="skillSection">
-            <h3 className="resumeHeaderName ">Educational Quality</h3>
+            <h3 className="resumeHeaderName ">Basic</h3>
             <div>
               {Array.isArray(academicData?.data?.data) &&
                 academicData?.data?.data?.map((skill) => (
@@ -28,7 +28,7 @@ const Education = () => {
         </Col>
         <Col className="gx-0">
           <div className="skillSection">
-            <h3 className="resumeHeaderName ">Developer Quality</h3>
+            <h3 className="resumeHeaderName ">Professional</h3>
             <div>
               {Array.isArray(progData?.data?.data) &&
                 progData?.data?.data?.map((skill) => (
