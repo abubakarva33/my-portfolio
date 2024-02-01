@@ -13,13 +13,13 @@ const Skills = () => {
   }
   return (
     <div className="mb-3">
-      <Row xs={1} md={2} className="skillContainer mx-1">
-        <Col className="gx-0">
+      <Row xs={1} md={2} className="skillContainer mx-1 ">
+        <Col className="gx-0" >
           <div className="skillSection mt-3">
-            <h3 className="eachResumeSection">Design Skill</h3>
+            <h3 className="eachResumeSection">Technologies</h3>
             <div>
-              {Array.isArray(designData?.data?.data) &&
-                designData?.data?.data?.map((skill) => (
+              {Array.isArray(devData?.data?.data) &&
+                devData?.data?.data?.map((skill) => (
                   <Skill key={skill.id} range={skill.value} title={skill.title} />
                 ))}
             </div>
@@ -27,10 +27,10 @@ const Skills = () => {
         </Col>
         <Col className="gx-0">
           <div className="skillSection mt-3">
-            <h3 className="eachResumeSection">Development Skill</h3>
+            <h3 className="eachResumeSection">Expertise</h3>
             <div>
-              {Array.isArray(devData?.data?.data) &&
-                devData?.data?.data?.map((skill) => (
+              {Array.isArray(designData?.data?.data) &&
+                designData?.data?.data?.map((skill) => (
                   <Skill key={skill.id} range={skill.value} title={skill.title} />
                 ))}
             </div>

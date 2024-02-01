@@ -13,3 +13,9 @@
     border-bottom: 1px solid rgb(51, 51, 51);
     padding-bottom: 7px;
 }
+
+@media only screen and (max-width: 600px) {
+    .eachResumeSection{
+        font-size: 25px;
+    }
+  }
