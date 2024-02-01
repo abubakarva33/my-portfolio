@@ -91,8 +91,8 @@ const ProjectDetails = () => {
         <p className="d-flex mt-4">
           <b>Tags:</b>
           <div className="tagMenu">
-            {tags.map((tag) => (
-              <p key={tag.id} className="d-flex mx-2 px-3 py-1 tags">
+            {tags.map((tag, ind) => (
+              <p key={ind} className="d-flex mx-2 px-3 py-1 tags">
                 {tag}
               </p>
             ))}
@@ -104,8 +104,8 @@ const ProjectDetails = () => {
               <b>Materials Used:</b>
             </p>
             <p>
-              {materialUsed.map((material) => (
-                <p key={material.id} className=" mb-1">
+              {materialUsed.map((material, ind) => (
+                <p key={ind} className=" mb-1">
                   <AiOutlineCheckSquare /> {material}
                 </p>
               ))}
@@ -116,8 +116,8 @@ const ProjectDetails = () => {
               <b>Key Features:</b>
             </p>
             <p>
-              {keyFeatures.map((feature) => (
-                <p key={feature.id} className=" mb-1">
+              {keyFeatures.map((feature, ind) => (
+                <p key={ind} className=" mb-1">
                   <AiOutlineCheckSquare /> {feature}
                 </p>
               ))}
@@ -128,15 +128,6 @@ const ProjectDetails = () => {
           <b>Description:</b> {description}
         </p>
       </div>
-
-      {/* <ToastContainer className="p-3" position={position} style={{ zIndex: 1 }}>
-        <Toast show={show} onClose={toggleShow} delay={3000} autohide className="toastMain">
-          <Toast.Header className="toastt">
-            <strong className="me-auto">Thanks!!! </strong>
-          </Toast.Header>
-          <Toast.Body className="toastt">Thanks for like it</Toast.Body>
-        </Toast>
-      </ToastContainer> */}
     </div>
   );
 };

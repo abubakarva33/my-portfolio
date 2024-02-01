@@ -19,8 +19,8 @@ const Experience = () => {
             <h3 className="resumeHeaderName "> Training Experience </h3>
             <div>
               {Array.isArray(trainData?.data?.data) &&
-                trainData?.data?.data?.map((skill) => (
-                  <ExperienceSection key={skill.id} data={skill} />
+                trainData?.data?.data?.map((skill, ind) => (
+                  <ExperienceSection key={ind} data={skill} />
                 ))}
             </div>
           </div>
@@ -30,8 +30,8 @@ const Experience = () => {
             <h3 className="resumeHeaderName ">Job Experience</h3>
             <div>
               {Array.isArray(jobData?.data?.data) &&
-                jobData?.data?.data?.map((skill) => (
-                  <ExperienceSection key={skill.id} data={skill} />
+                jobData?.data?.data?.map((skill, ind) => (
+                  <ExperienceSection key={ind} data={skill} />
                 ))}
             </div>
           </div>
