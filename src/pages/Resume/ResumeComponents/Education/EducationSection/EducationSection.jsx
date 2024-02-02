@@ -13,11 +13,11 @@ const EducationSection = ({ data }) => {
         </p>
         <div className="d-flex border-bottom pb-4 flex-wrap">
           <small className="fs-6">
-            <MdOutlineSchool /> {`${institute} (${startYear}-${endYear})`}
+            <MdOutlineSchool /> {`${institute} | ${startYear}-${endYear}`}
           </small>
         </div>
       </div>
-      <p className="pt-4">{details.length > 180 ? `${details.slice(0, 180)}...` : details}</p>
+      <p className="pt-4">{details.length > 225 ? `${details.slice(0, 225)}...` : details}</p>
     </div>
   );
 };

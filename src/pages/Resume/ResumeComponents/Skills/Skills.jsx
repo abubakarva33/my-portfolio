@@ -6,8 +6,8 @@ import { useGetSkillQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 
 const Skills = () => {
-  const devData = useGetSkillQuery("development");
   const designData = useGetSkillQuery("design");
+  const devData = useGetSkillQuery("development");
   if (devData?.isLoading && designData?.isLoading) {
     return <Spinner />;
   }

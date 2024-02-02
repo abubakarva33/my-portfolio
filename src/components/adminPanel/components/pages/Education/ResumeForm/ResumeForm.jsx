@@ -1,9 +1,9 @@
-import { Button,  Form, Input,  Select, Space } from "antd";
+import { Button, Form, Input, Select, Space } from "antd";
 const { Option } = Select;
-import { useNavigate,  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateResumeMutation, useUpdateResumeMutation } from "../../../../../../redux/api";
-import { memo,  } from "react";
+import { memo } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -17,7 +17,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
     return <Spinner />;
   }
 
-  const { title, details, institute, startYear, endYear, type, _id } = data;
+  const { title, details, location, institute, startYear, endYear, type, _id } = data;
 
   const onFinish = async (values) => {
     form.resetFields();
@@ -61,6 +61,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
           title,
           details,
           institute,
+          location,
           startYear,
           endYear,
           type,
@@ -138,7 +139,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
               style={{
                 width: "100%",
               }}
-              className="inputBox" 
+              className="inputBox"
             />
           </Form.Item>
           <Form.Item
@@ -159,7 +160,7 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
               style={{
                 width: "100%",
               }}
-              className="inputBox" 
+              className="inputBox"
             />
           </Form.Item>
         </Space.Compact>
@@ -192,5 +193,5 @@ const ResumeForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   );
 });
 
-ResumeForm.displayName = 'ResumeForm';
+ResumeForm.displayName = "ResumeForm";
 export default ResumeForm;

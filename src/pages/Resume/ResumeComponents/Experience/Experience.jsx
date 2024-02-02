@@ -6,8 +6,8 @@ import { useGetResumeQuery } from "../../../../redux/api";
 import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 
 const Experience = () => {
-  const jobData = useGetResumeQuery("job");
   const trainData = useGetResumeQuery("training");
+  const jobData = useGetResumeQuery("job");
   if (trainData?.isLoading && jobData?.isLoading) {
     return <Spinner />;
   }
