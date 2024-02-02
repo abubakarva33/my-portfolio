@@ -59,7 +59,7 @@ const Project = ({ data }) => {
               Preview
             </Link>
             <p className="mt-3">
-              <Link to={link} className="itemLink previewBtn">
+              <Link to={link} target="_blank" className="itemLink previewBtn">
                 <AiOutlineLink /> Visit Site
               </Link>
             </p>

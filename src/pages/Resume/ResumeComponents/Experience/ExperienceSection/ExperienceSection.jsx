@@ -17,7 +17,7 @@ const ExperienceSection = ({ data }) => {
           </small>
         </div>
       </div>
-      <p className="pt-4">{details.length > 180 ? `${details.slice(0, 180)}...` : details}</p>
+      <p className="pt-4">{details.length > 225 ? `${details.slice(0, 225)}...` : details}</p>
     </div>
   );
 };

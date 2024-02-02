@@ -3,11 +3,10 @@ import "./ProjectDetails.css";
 import { useGetAWorkQuery } from "../../../redux/api";
 import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
 import { Col, Row } from "react-bootstrap";
-import { AiOutlineCheckSquare, AiOutlineDeploymentUnit, AiOutlineLike } from "react-icons/ai";
+import { AiOutlineCheckSquare, AiOutlineDeploymentUnit } from "react-icons/ai";
 import moment from "moment";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
-import Swal from "sweetalert2";
 import { MdOutlineRefresh } from "react-icons/md";
 
 const ProjectDetails = () => {
@@ -30,21 +29,6 @@ const ProjectDetails = () => {
     createdAt,
   } = data;
 
-  const likeHandler = () => {
-    Swal.fire({
-      title: "Custom width, padding, color, background.",
-      width: 600,
-      padding: "3em",
-      color: "#716add",
-      background: "#fff url(/images/trees.png)",
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/thanks.gif")
-        left top
-        no-repeat
-      `,
-    });
-  };
   return (
     <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 mb-3">
@@ -75,9 +59,13 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div className="btnGroup">
-                <p className="mt-3 itemLink likebtn" onClick={likeHandler}>
-                  <AiOutlineLike className="me-1" />
-                  Like This
+                <p className="mt-3">
+                  <Link
+                    to="https://github.com/abubakarva33/mess-metrics"
+                    className="itemLink previewBtn"
+                  >
+                    <ImShare /> Github Preview
+                  </Link>
                 </p>
                 <p className="mt-3">
                   <Link to={link} className="itemLink previewBtn">
