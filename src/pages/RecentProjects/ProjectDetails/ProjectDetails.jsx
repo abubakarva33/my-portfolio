@@ -9,7 +9,7 @@ import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
 import ReactPlayer from "react-player";
-import Swal from "sweetalert2";
+import { nullLinkWarning } from "../../../components/utilities/utilities";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -30,14 +30,6 @@ const ProjectDetails = () => {
     img,
     createdAt,
   } = data;
-  const nullLinkWarning = async ({ title, text }) => {
-    await Swal.fire({
-      icon: "error",
-      title: title,
-      text: text,
-      confirmButtonText: "Got it",
-    });
-  };
 
   return (
     <div className="mx-2 mb-4">
@@ -98,7 +90,7 @@ const ProjectDetails = () => {
                       (() =>
                         nullLinkWarning({
                           title: "Live Link Unavailable",
-                          text: "This project only for games, not working on web",
+                          text: "Exclusively developed for games, this project does not have web functionality..",
                         }))
                     }
                   >

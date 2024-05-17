@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineLink } from "react-icons/ai";
 import moment from "moment";
 import { motion } from "framer-motion";
+import { nullLinkWarning } from "../../../components/utilities/utilities";
 
 const Project = ({ data }) => {
   const {
     title,
     description,
-
     link,
     projectType,
-
     img,
     createdAt,
     _id,
@@ -59,7 +58,19 @@ const Project = ({ data }) => {
               Preview
             </Link>
             <p className="mt-3">
-              <Link to={link} target="_blank" className="itemLink previewBtn">
+              <Link
+                to={link != "null" && link}
+                target={link != "null" && "_blank"}
+                className="itemLink previewBtn"
+                onClick={
+                  link === "null" &&
+                  (() =>
+                    nullLinkWarning({
+                      title: "Repository Access Restricted",
+                      text: "Due to client confidentiality, access to the GitHub repository is not available.",
+                    }))
+                }
+              >
                 <AiOutlineLink /> Visit Site
               </Link>
             </p>
