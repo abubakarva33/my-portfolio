@@ -8,15 +8,7 @@ import { motion } from "framer-motion";
 import { nullLinkWarning } from "../../../components/utilities/utilities";
 
 const Project = ({ data }) => {
-  const {
-    title,
-    description,
-    link,
-    projectType,
-    img,
-    createdAt,
-    _id,
-  } = data;
+  const { title, description, link, projectType, img, createdAt, _id } = data;
 
   return (
     <div className="cardBorder ">
@@ -66,8 +58,8 @@ const Project = ({ data }) => {
                   link === "null" &&
                   (() =>
                     nullLinkWarning({
-                      title: "Repository Access Restricted",
-                      text: "Due to client confidentiality, access to the GitHub repository is not available.",
+                      title: "Live Link Unavailable",
+                      text: "Exclusively developed for games, this project does not have web functionality..",
                     }))
                 }
               >

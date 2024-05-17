@@ -31,6 +31,14 @@ const ProjectDetails = () => {
     createdAt,
   } = data;
 
+  const gitRepo = {
+    project1: "https://github.com/abubakarva33/mess-metrics",
+    project2: "",
+    project3: "",
+    project4: "",
+    project5: "",
+  };
+
   return (
     <div className="mx-2 mb-4">
       <div className=" serviceBox px-2 mb-3">
@@ -75,8 +83,17 @@ const ProjectDetails = () => {
               <div className="btnGroup">
                 <p className="mt-3">
                   <Link
-                    to="https://github.com/abubakarva33/mess-metrics"
+                    to={link != "null" && gitRepo[img]}
                     className="itemLink previewBtn"
+                    target={link != "null" && "_blank"}
+                    onClick={
+                      link === "null" &&
+                      (() =>
+                        nullLinkWarning({
+                          title: "Repository Access Restricted",
+                          text: "Due to client confidentiality, access to the GitHub repository is not available.",
+                        }))
+                    }
                   >
                     <ImShare /> Github Preview
                   </Link>
@@ -85,6 +102,7 @@ const ProjectDetails = () => {
                   <Link
                     to={link != "null" && link}
                     className="itemLink previewBtn"
+                    target={link != "null" && "_blank"}
                     onClick={
                       link === "null" &&
                       (() =>
