@@ -1,9 +1,9 @@
-import { Button, Divider, Form, Input,  Select,  } from "antd";
+import { Button, Divider, Form, Input, Select } from "antd";
 const { Option } = Select;
-import { useNavigate,  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCreateWorkMutation, useUpdateWorkMutation } from "../../../../../../redux/api";
-import { memo,  useState } from "react";
+import { memo, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import Spinner from "../../../Spinner/Spinner";
 
@@ -20,7 +20,7 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   const [createWork] = useCreateWorkMutation();
 
   if (isLoading) {
-    return <Spinner/>
+    return <Spinner />;
   }
   const {
     title,
@@ -154,6 +154,13 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
             <Option value="project1">Project 1</Option>
             <Option value="project2">Project 2</Option>
             <Option value="project3">Project 3</Option>
+            <Option value="project4">Project 4</Option>
+            <Option value="project5">Project 5</Option>
+            <Option value="videoProject1">Video Project 1</Option>
+            <Option value="videoProject2">Video Project 2</Option>
+            <Option value="videoProject3">Video Project 3</Option>
+            <Option value="videoProject4">Video Project 4</Option>
+            <Option value="videoProject5">Video Project 5</Option>
           </Select>
         </Form.Item>
 
@@ -252,6 +259,6 @@ const WorkForm = memo(({ mode = "create", data = {}, isLoading = false }) => {
   );
 });
 
-WorkForm.displayName= "WorkForm"
+WorkForm.displayName = "WorkForm";
 
 export default WorkForm;

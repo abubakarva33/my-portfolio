@@ -17,7 +17,7 @@ const RecentProjects = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
-      exit={{ opacity: 0}}
+      exit={{ opacity: 0 }}
     >
       <motion.h2
         className="resumeHeaderName mx-1 py-3"

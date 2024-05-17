@@ -8,6 +8,8 @@ import moment from "moment";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
+import ReactPlayer from "react-player";
+import Swal from "sweetalert2";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -28,6 +30,14 @@ const ProjectDetails = () => {
     img,
     createdAt,
   } = data;
+  const nullLinkWarning = async ({ title, text }) => {
+    await Swal.fire({
+      icon: "error",
+      title: title,
+      text: text,
+      confirmButtonText: "Got it",
+    });
+  };
 
   return (
     <div className="mx-2 mb-4">
@@ -44,7 +54,19 @@ const ProjectDetails = () => {
       <div className="serviceTable p-3">
         <Row xs={1} md={2}>
           <Col>
-            <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
+            {img?.includes("videoProject") ? (
+              <ReactPlayer
+                url="/Images/videoProject1.mp4"
+                width="100%"
+                height="100%"
+                loop={true}
+                playing={true}
+                muted={true}
+                controls={true}
+              />
+            ) : (
+              <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
+            )}
           </Col>
           <Col>
             <div className="mt-2">
@@ -68,7 +90,18 @@ const ProjectDetails = () => {
                   </Link>
                 </p>
                 <p className="mt-3">
-                  <Link to={link} className="itemLink previewBtn">
+                  <Link
+                    to={link != "null" && link}
+                    className="itemLink previewBtn"
+                    onClick={
+                      link === "null" &&
+                      (() =>
+                        nullLinkWarning({
+                          title: "Live Link Unavailable",
+                          text: "This project only for games, not working on web",
+                        }))
+                    }
+                  >
                     <ImShare /> Live Preview
                   </Link>
                 </p>
