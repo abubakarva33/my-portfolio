@@ -1,3 +1,7 @@
+.mainArea {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
 .mainNav {
   display: flex;
   flex-direction: column;
@@ -12,18 +16,16 @@
   justify-content: space-between;
 }
 .footer {
-  background: var(--color-bg-primary);
-  box-shadow: var(--header-shadow);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 2px 10px;
 }
 .sideNav {
   display: block;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
   .sideNav {
     display: none;
   }

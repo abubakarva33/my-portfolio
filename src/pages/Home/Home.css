@@ -1,76 +1,75 @@
-.home{
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.home {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.homeHeading{
-    font-size: 30px;
-    font-weight: bold !important;
-    color: var(--color-heading-bold);
-    margin-bottom: 30px;
+.homeHeading {
+  font-size: 30px;
+  font-weight: bold !important;
+  color: var(--color-heading-bold);
+  margin-bottom: 30px;
 }
-.homeHeadingSpan{
-    color: var(--color-primary);
+.homeHeadingSpan {
+  color: var(--color-primary);
 }
-.home p{
-    margin-bottom: 0;
+.home p {
+  margin-bottom: 0;
 }
-.home a{
-    text-decoration: none;
+.home a {
+  text-decoration: none;
 }
 
-.btnWidth{
-    width: 30%;
+.btnWidth {
+  width: 38%;
 }
-.description{
-    font-size: 20px !important;
+.description {
+  font-size: 20px !important;
 }
 
 @media only screen and (max-width: 600px) {
-    .homeHeading{
-        font-size: 25px;
-        font-weight: bold !important;
-        color: var(--color-heading-bold);
-        margin-bottom: 30px;
-    }
-    .btnWidth{
-        width: 100%;
-    }
-    .description{
-        font-size: 16px !important;
-    }
-    .welcome{
-        font-size: 12px;
-    }
-    .offcanvas{
-        max-width: 80% !important;
-        background-color: var(--color-bg-primary) !important;
-    }
+  .homeHeading {
+    font-size: 25px;
+    font-weight: bold !important;
+    color: var(--color-heading-bold);
+    margin-bottom: 30px;
   }
+  .btnWidth {
+    width: 100%;
+  }
+  .description {
+    font-size: 16px !important;
+  }
+  .welcome {
+    font-size: 12px;
+  }
+  .offcanvas {
+    max-width: 80% !important;
+    background-color: var(--color-bg-primary) !important;
+  }
+}
 
-  @media only screen and (max-width: 400px) {
-    .homeHeading{
-        font-size: 18px;
-        font-weight: bold !important;
-        color: var(--color-heading-bold);
-        margin-bottom: 20px;
-    }
-    .btnWidth{
-        width: 100%;
-    }
-    .description{
-        font-size: 14px !important;
-    }
-    .welcome{
-        font-size: 10px;
-    }
-    .mainBtn{
-        padding: 5px 8px;
-        font-size: 17px;
-    }
-    .offcanvas{
-        max-width: 80% !important;
-    }
+@media only screen and (max-width: 400px) {
+  .homeHeading {
+    font-size: 18px;
+    font-weight: bold !important;
+    color: var(--color-heading-bold);
+    margin-bottom: 20px;
   }
+  .btnWidth {
+    width: 100%;
+  }
+  .description {
+    font-size: 14px !important;
+  }
+  .welcome {
+    font-size: 10px;
+  }
+  .mainBtn {
+    font-size: 16px;
+  }
+  .offcanvas {
+    max-width: 80% !important;
+  }
+}

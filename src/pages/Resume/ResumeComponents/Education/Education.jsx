@@ -13,7 +13,7 @@ const Education = () => {
   }
 
   return (
-    <div>
+    <div className="mx-3">
       <Row xs={1} md={2} className="gx-0">
         <Col className="gx-0">
           <div className="skillSection">

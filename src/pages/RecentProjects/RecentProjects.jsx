@@ -5,6 +5,7 @@ import Project from "./Project/Project";
 import { useGetWorksQuery } from "../../redux/api";
 import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
 import { motion } from "framer-motion";
+import SectionHeader from "../../components/Utilities/SectionHeader";
 
 const RecentProjects = () => {
   const { data, isLoading } = useGetWorksQuery();
@@ -19,15 +20,7 @@ const RecentProjects = () => {
       transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
       exit={{ opacity: 0 }}
     >
-      <motion.h2
-        className="resumeHeaderName mx-1 py-3"
-        initial={{ x: "-100px" }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
-        exit={{ x: "-100px" }}
-      >
-        RECENT PROJECTS
-      </motion.h2>
+      <SectionHeader title={"RECENT PROJECTS"} />
       <Row md={2} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (

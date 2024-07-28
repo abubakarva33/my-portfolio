@@ -1,0 +1,21 @@
+.sectionHeader {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: var(--icon-primary-shadow);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sectionHeader {
+    padding: 5px 0px;
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .sectionHeader {
+    font-size: 20px;
+  }
+}

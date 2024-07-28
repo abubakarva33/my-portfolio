@@ -12,6 +12,7 @@ import emailjs from "@emailjs/browser";
 import { useCreateMessageMutation } from "../../redux/api";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
+import SectionHeader from "../../components/Utilities/SectionHeader";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -46,10 +47,10 @@ const Contact = () => {
       transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="resumeHeaderName mx-2 py-3">LET&apos;S DISCUSS</h2>
-      <Row xs={1} md={2} className="gx-0 d-flex align-items-center">
-        <Col xs={12} md={6} className="gx-2">
-          <div className="contactsection mt-3 p-4">
+      <SectionHeader title={`LET'S DISCUSS`} />
+      <Row xs={1} md={2} className="mx-2 gx-3 d-flex align-items-center">
+        <Col xs={12} md={6}>
+          <div className="contactSection mt-2 p-3">
             <img src="/Images/contactHand.avif" alt="" className="img-fluid rounded" />
             <h3 className="pt-3">Abubakar Siddik</h3>
             <small className="fs-6">
@@ -104,7 +105,7 @@ const Contact = () => {
             </div>
           </div>
         </Col>
-        <Col xs={12} md={6} className="gx-2">
+        <Col xs={12} md={6}>
           <Form
             name="complex-form"
             form={form}

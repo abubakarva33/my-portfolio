@@ -1,6 +1,7 @@
 import "./Resume.css";
 import { NavLink, Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
+import SectionHeader from "../../components/Utilities/SectionHeader";
 
 const Resume = () => {
   return (
@@ -11,8 +12,8 @@ const Resume = () => {
       transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >
-      <div className="mb-3 mx-1">
-        <h2 className="resumeHeaderName py-3">MY RESUME</h2>
+      <SectionHeader title={"MY RESUME"} />
+      <div className="mb-3 mx-3">
         <div className="resumeHeader w-100">
           <NavLink to="/main/resume/skills" className=" w-100">
             Skills

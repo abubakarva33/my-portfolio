@@ -1,14 +1,14 @@
-import {  RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import { routes } from "./routes/Routes";
 import { useEffect, useState } from "react";
 import { useGetProfileQuery } from "./redux/api";
-import MainSpinner from "./components/utilities/MainSpinner";
 import { motion } from "framer-motion";
+import PreLoader from "./components/Utilities/PreLoader/PreLoader";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const {  isLoading } = useGetProfileQuery();
+  const { isLoading } = useGetProfileQuery();
   useEffect(() => {
     if (!isLoading) {
       setTimeout(() => {
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       {loading ? (
-        <MainSpinner />
+        <PreLoader />
       ) : (
         <motion.div
           initial={{ opacity: 0 }}

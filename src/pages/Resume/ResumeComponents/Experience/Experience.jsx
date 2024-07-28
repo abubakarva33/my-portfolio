@@ -12,7 +12,7 @@ const Experience = () => {
     return <Spinner />;
   }
   return (
-    <div>
+    <div className="mx-3">
       <Row xs={1} md={2} className="gx-0 gy-2 mx-2">
         <Col>
           <div className="exFirst">

@@ -1,20 +1,18 @@
 import "./MainLayout.css";
 import { Outlet } from "react-router-dom";
-import Header from "../components/shared/Header/Header";
-import SideHeader from "../components/shared/SideHeader/SideHeader";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { useGetProfileQuery } from "../redux/api";
+import SideHeader from "../components/SideHeader/SideHeader";
+import Header from "../components/Header/Header";
 
 const MainLayout = () => {
   const { data } = useGetProfileQuery();
 
   return (
-    <Row className="gx-0">
-      <Col xs={3} className="sideNav">
+    <div className="gx-0 mainArea">
+      <div className="sideNav">
         <SideHeader />
-      </Col>
-      <Col xs={9} className="mainNav">
+      </div>
+      <div className="mainNav">
         <div>
           <Header />
           <Outlet />
@@ -25,8 +23,8 @@ const MainLayout = () => {
             {data?.data?.[0].name ? data?.data?.[0].name : `Abubakar Siddik`}
           </p>
         </footer>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 

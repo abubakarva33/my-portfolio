@@ -1,7 +1,7 @@
-import "./MainSpinner.css";
+import "./PreLoader.css";
 import { motion } from "framer-motion";
 
-const MainSpinner = () => {
+const PreLoader = () => {
   return (
     <motion.div
       className="spinnerMain"
@@ -40,4 +40,4 @@ const MainSpinner = () => {
   );
 };
 
-export default MainSpinner;
+export default PreLoader;

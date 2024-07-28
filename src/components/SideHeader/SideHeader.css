@@ -4,32 +4,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 1rem;
   border-right: 5px solid var(--color-bg-primary);
   border-right-style: groove;
   overflow-y: auto;
 }
 
 .profilePic {
-  width: 200px;
-  height: 200px;
-  min-height: 200px;
+  width: 12vw;
+  min-height: 12vw;
   margin-top: 10px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--icon-primary-shadow);
+  border: 5px solid var(--color-bg-primary);
+  border-style: outset;
   overflow: hidden;
-  border: 10px solid var(--color-bg-primary);
 }
 
 .profilePicInner {
-  background-image: url("/Images/profile.webp");
   background-size: cover;
   background-position: center;
-  width: 180px;
-  height: 180px;
+  width: 12vw;
+  height: 12vw;
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -37,19 +35,21 @@
 .profilePicInner:hover {
   transform: scale(1.2);
 }
+.profilePic:hover {
+  border-style: inset;
+}
 
 .contactIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  width: 50px;
-  font-size: 25px;
+  height: 3.8vw;
+  width: 3.8vw;
   border-radius: 50%;
   box-shadow: var(--icon-primary-shadow);
   background: var(--shadow-bg-primary);
   position: relative;
-  margin-right: 10px;
+  margin-right: 0.5rem;
   color: #84858f;
 }
 .contactIcon::after {
@@ -65,16 +65,18 @@
 .contactIcon:hover {
   color: #0091f8;
 }
+.contactIcon:last-child {
+  margin-right: 0;
+}
 .sideHeader a {
   text-decoration: none;
 }
 
 .mainBtn {
-  padding: 10px 15px;
-  font-size: 20px;
+  padding: 5px;
   font-weight: 500;
   border-radius: 50px;
-  box-shadow: var(--btn-primary-shadow);
+  box-shadow: var(--icon-primary-shadow);
   background: var(--shadow-bg-primary);
   transition: all 0.3s;
   position: relative;
@@ -99,12 +101,6 @@
   z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.5);
-  border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
   color: var(--text-color);
   z-index: -1;
@@ -136,4 +132,62 @@
 .mainBtn:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+@media screen and (max-width: 4000px) {
+  .contactIcon {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 2560px) {
+  .contactIcon {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 2048px) {
+  .contactIcon {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 1921px) {
+  .contactIcon {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .contactIcon {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contactIcon {
+    height: 5.5vw;
+    width: 5.5vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .contactIcon {
+    height: 7vw;
+    width: 7vw;
+  }
+}
+@media screen and (max-width: 580px) {
+  .contactIcon {
+    height: 9vw;
+    width: 9vw;
+  }
+}
+@media screen and (max-width: 470px) {
+  .contactIcon {
+    height: 10vw;
+    width: 10vw;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contactIcon {
+    height: 12vw;
+    width: 12vw;
+    font-size: 20px;
+  }
 }

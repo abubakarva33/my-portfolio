@@ -5,6 +5,7 @@ import Service from "./Service/Service";
 import { useGetServicesQuery } from "../../redux/api";
 import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
 import { motion } from "framer-motion";
+import SectionHeader from "../../components/Utilities/SectionHeader";
 
 const Services = () => {
   const { data, isLoading } = useGetServicesQuery();
@@ -19,15 +20,7 @@ const Services = () => {
       transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
       // exit={{ opacity: 0 }}
     >
-      <motion.h2
-        className="resumeHeaderName mx-1 py-3"
-        initial={{ x: "-100px" }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
-        exit={{ x: "-100px" }}
-      >
-        SERVICES
-      </motion.h2>
+      <SectionHeader title={"SERVICES"} />
       <Row md={2} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (

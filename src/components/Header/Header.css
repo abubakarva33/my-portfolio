@@ -1,6 +1,7 @@
 .header {
   background: var(--color-bg-primary);
-  box-shadow: var(--btn-primary-shadow);
+  border-bottom: 5px solid var(--color-bg-primary);
+  border-bottom-style: groove;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -9,12 +10,10 @@
 
 .navlinkA {
   text-decoration: none;
-  margin-bottom: 15px;
+  margin: 5px 0;
   font-size: 17px;
   padding: 5px 10px;
   border-radius: 10px;
-  margin-right: 10px;
-  margin-top: 15px;
   color: var(--text-color);
 }
 .navLogo {
@@ -75,12 +74,6 @@
   justify-items: center;
 }
 
-.navToggle img {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-}
-
 .navbar-toggler {
   margin-left: auto;
   background-color: var(--togolarBtn) !important;
@@ -95,13 +88,15 @@
     padding: 5px;
   }
   .navIcons {
-    display: block;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
   }
   .navLogo {
     display: block;
   }
 }
-@media only screen and (max-width: 986px) {
+@media only screen and (max-width: 991px) {
   .navLogo {
     display: block;
   }

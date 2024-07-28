@@ -1,3 +1,4 @@
+import "./Utilities.css";
 import Swal from "sweetalert2";
 
 export const nullLinkWarning = async ({ title, text }) => {
@@ -7,4 +8,8 @@ export const nullLinkWarning = async ({ title, text }) => {
     text: text,
     confirmButtonText: "Got it",
   });
+};
+
+export const dynamicSize = (percentage) => {
+  return `${(window.innerWidth * 100) / 100 / percentage}px`;
 };

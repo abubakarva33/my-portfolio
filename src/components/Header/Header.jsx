@@ -7,8 +7,9 @@ import { FiFacebook, FiLinkedin } from "react-icons/fi";
 import { AiOutlineGithub } from "react-icons/ai";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../../../redux/features/themeSlice";
 import { useState } from "react";
+import { BiLogoGmail } from "react-icons/bi";
+import { toggleTheme } from "../../redux/features/themeSlice";
 
 const Header = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -50,10 +51,12 @@ const Header = () => {
             className="navToggle"
             data-bs-theme={isDarkModeActive ? "dark" : "light"}
           >
-            <img src="/Images/profile.webp" alt="" className="" />
+            <img src="/Images/logo.webp" style={{ height: 20 }} />
+
+            {/* <img src="/Images/profile.webp" alt="" className="" /> */}
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav className="justify-content-end align-items-center flex-grow-1 pe-3">
               <NavLink to="/main/home" className="navlinkA" onClick={handleClose}>
                 HOME
               </NavLink>
@@ -76,7 +79,7 @@ const Header = () => {
               <DarkModeToggle
                 onChange={handleDarkMode}
                 checked={isDarkModeActive}
-                size={80}
+                size={60}
                 speed={1}
                 className="themeToggler navlinkA"
               />
@@ -92,6 +95,13 @@ const Header = () => {
                     className="contactIcon newIcon"
                   >
                     <FiFacebook />
+                  </Link>
+                  <Link
+                    to="mailto:abubakarsiddikl.info@gmail.com"
+                    target="_blank"
+                    className="contactIcon newIcon"
+                  >
+                    <BiLogoGmail />
                   </Link>
                   <Link
                     to="https://github.com/abubakarva33"

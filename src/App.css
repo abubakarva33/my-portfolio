@@ -31,7 +31,7 @@ tr {
 .ant-select-selector {
   background-color: var(--color-bg-primary) !important;
   min-height: 45px !important;
-  box-shadow: var( --icon-primary-shadow-hover) !important;
+  box-shadow: var(--icon-primary-shadow-hover) !important;
   border: none !important;
 }
 .ant-select .ant-select-selection-placeholder {
@@ -52,4 +52,7 @@ tr {
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 10px;
+}
+a {
+  text-decoration: none !important;
 }
