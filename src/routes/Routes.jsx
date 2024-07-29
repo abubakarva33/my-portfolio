@@ -10,8 +10,8 @@ import Education from "../pages/Resume/ResumeComponents/Education/Education";
 import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
 import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
 import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
-import Game from "../components/adminPanel/components/Game/Game";
 import { adminRoutes } from "./adminRoutes";
+import Game from "../components/Game/Game";
 
 export const routes = createBrowserRouter([
   {
