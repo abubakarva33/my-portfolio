@@ -69,9 +69,6 @@ const Header = () => {
               <NavLink to="/main/resume/skills" className="navlinkA" onClick={handleClose}>
                 RESUME
               </NavLink>
-              <NavLink to="/main/blogs" className="navlinkA" onClick={handleClose}>
-                BLOGS
-              </NavLink>
               <NavLink to="/main/contacts" className="navlinkA" onClick={handleClose}>
                 CONTACT
               </NavLink>
