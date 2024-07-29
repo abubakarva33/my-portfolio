@@ -1,9 +1,9 @@
 import "./ServiceEach.css";
 import {  useNavigate, useParams } from "react-router-dom";
 import { useGetAServiceQuery } from "../../../../redux/api";
-import Spinner from "../../../../components/adminPanel/components/Spinner/Spinner";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { MdOutlineRefresh } from "react-icons/md";
+import Spinner from "../../../../components/Utilities/Spinner/Spinner";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();

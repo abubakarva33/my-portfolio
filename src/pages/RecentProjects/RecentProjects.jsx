@@ -3,9 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Project from "./Project/Project";
 import { useGetWorksQuery } from "../../redux/api";
-import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
 import { motion } from "framer-motion";
 import SectionHeader from "../../components/Utilities/SectionHeader";
+import Spinner from "../../components/Utilities/Spinner/Spinner";
 
 const RecentProjects = () => {
   const { data, isLoading } = useGetWorksQuery();

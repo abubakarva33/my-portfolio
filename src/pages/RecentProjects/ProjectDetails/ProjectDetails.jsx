@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./ProjectDetails.css";
 import { useGetAWorkQuery } from "../../../redux/api";
-import Spinner from "../../../components/adminPanel/components/Spinner/Spinner";
 import { Col, Row } from "react-bootstrap";
 import { AiOutlineCheckSquare, AiOutlineDeploymentUnit } from "react-icons/ai";
 import moment from "moment";
@@ -10,6 +9,7 @@ import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
 import ReactPlayer from "react-player";
 import { nullLinkWarning } from "../../../components/utilities/utilities";
+import Spinner from "../../../components/Utilities/Spinner/Spinner";
 
 const ProjectDetails = () => {
   const { workId } = useParams();

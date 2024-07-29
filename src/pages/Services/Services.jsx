@@ -3,9 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Service from "./Service/Service";
 import { useGetServicesQuery } from "../../redux/api";
-import Spinner from "../../components/adminPanel/components/Spinner/Spinner";
 import { motion } from "framer-motion";
 import SectionHeader from "../../components/Utilities/SectionHeader";
+import Spinner from "../../components/Utilities/Spinner/Spinner";
 
 const Services = () => {
   const { data, isLoading } = useGetServicesQuery();
