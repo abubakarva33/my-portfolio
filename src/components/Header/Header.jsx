@@ -9,7 +9,7 @@ import DarkModeToggle from "react-dark-mode-toggle";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
-import { toggleTheme } from "../../redux/features/themeSlice";
+import { toggleTheme } from "../../redux/themeSlice";
 
 const Header = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);

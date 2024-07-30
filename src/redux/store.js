@@ -1,10 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import recentWorkReducer from "./features/worksSlice";
 import { api } from "./api";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
-import themeReducer from "./features/themeSlice";
+import themeReducer from "./themeSlice";
 
 const persistConfig = {
   key: "root",
@@ -14,7 +13,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   theme: themeReducer,
-  recentWork: recentWorkReducer,
 
   [api.reducerPath]: api.reducer,
 });
