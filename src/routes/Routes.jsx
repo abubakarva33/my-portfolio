@@ -11,6 +11,7 @@ import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
 import ServiceDetails from "../pages/Services/Service/ServiceEach/ServiceEach";
 import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
 import Game from "../components/Game/Game";
+import MinimalView from "../minimalView/MinimalView/MinimalView";
 
 export const routes = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const routes = createBrowserRouter([
   },
   {
     path: "/minimal",
-    element: <Game />,
+    element: <MinimalView />,
   },
   {
     path: "/main",
@@ -77,5 +78,4 @@ export const routes = createBrowserRouter([
       },
     ],
   },
-
 ]);
