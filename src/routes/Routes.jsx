@@ -18,6 +18,10 @@ export const routes = createBrowserRouter([
     element: <Game />,
   },
   {
+    path: "/minimal",
+    element: <Game />,
+  },
+  {
     path: "/main",
     element: <MainLayout />,
     children: [
