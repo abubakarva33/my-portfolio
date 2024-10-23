@@ -56,7 +56,7 @@ const ProjectDetails = () => {
           <Col>
             {img?.includes("videoProject") ? (
               <ReactPlayer
-                url="/Images/videoProject1.mp4"
+                url={`/Images/${img}.mp4`}
                 width="100%"
                 height="100%"
                 loop={true}
