@@ -14,7 +14,7 @@ const Project = ({ data }) => {
     <div className="cardBorder ">
       <div className="eduSection service p-4">
         <motion.img
-          src={`/Images/${img}.webp`}
+          src={img}
           alt=""
           className="serviceImg"
           initial={{ opacity: 0, scale: 0.8 }}

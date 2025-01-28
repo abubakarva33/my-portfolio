@@ -65,7 +65,7 @@ const ProjectDetails = () => {
                 controls={true}
               />
             ) : (
-              <img src={`/Images/${img}.webp`} alt="" className="serviceEachImg rounded " />
+              <img src={img} alt="" className="serviceEachImg rounded " />
             )}
           </Col>
           <Col>
