@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineLink } from "react-icons/ai";
 import moment from "moment";
 import { motion } from "framer-motion";
-import { nullLinkWarning } from "../../../components/utilities/utilities";
 
 const Project = ({ data }) => {
   const { title, description, link, projectType, img, createdAt, _id } = data;
@@ -38,7 +37,7 @@ const Project = ({ data }) => {
               {moment(createdAt).format("DD/MM/YYYY")}
             </small>
           </div>
-          <h3 className="pt-3 pb-2">{title}</h3>
+          <h4 className="pt-3 pb-2">{title}</h4>
           <p className="mb-0">
             {description.length > 180 ? `${description.slice(0, 180)}...` : description}
           </p>
@@ -51,17 +50,9 @@ const Project = ({ data }) => {
             </Link>
             <p className="mt-3">
               <Link
-                to={link != "null" && link}
-                target={link != "null" && "_blank"}
+                to={link }
+                target="_blank"
                 className="itemLink previewBtn"
-                onClick={
-                  link === "null" &&
-                  (() =>
-                    nullLinkWarning({
-                      title: "Live Link Unavailable",
-                      text: "Exclusively developed for games, this project does not have web functionality..",
-                    }))
-                }
               >
                 <AiOutlineLink /> Visit Site
               </Link>

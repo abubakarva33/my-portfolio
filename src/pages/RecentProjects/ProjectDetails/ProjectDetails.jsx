@@ -23,21 +23,15 @@ const ProjectDetails = () => {
     description,
     shortDescription,
     link,
+    gitLink,
     projectType,
     tags,
     materialUsed,
     keyFeatures,
     img,
+    video,
     createdAt,
   } = data;
-
-  const gitRepo = {
-    project1: "https://github.com/abubakarva33/mess-metrics",
-    project2: "",
-    project3: "",
-    project4: "",
-    project5: "",
-  };
 
   return (
     <div className="mx-2 mb-4">
@@ -54,9 +48,9 @@ const ProjectDetails = () => {
       <div className="serviceTable p-3">
         <Row xs={1} md={2}>
           <Col>
-            {img?.includes("videoProject") ? (
+            {video ? (
               <ReactPlayer
-                url={`/Images/${img}.mp4`}
+                url={video}
                 width="100%"
                 height="100%"
                 loop={true}
@@ -81,37 +75,15 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div className="btnGroup">
+                {gitLink && (
+                  <p className="mt-3">
+                    <Link to={gitLink} className="itemLink previewBtn" target="_blank">
+                      <ImShare /> Github Preview
+                    </Link>
+                  </p>
+                )}
                 <p className="mt-3">
-                  <Link
-                    to={link != "null" && gitRepo[img]}
-                    className="itemLink previewBtn"
-                    target={link != "null" && "_blank"}
-                    onClick={
-                      link === "null" &&
-                      (() =>
-                        nullLinkWarning({
-                          title: "Repository Access Restricted",
-                          text: "Due to client confidentiality, access to the GitHub repository is not available.",
-                        }))
-                    }
-                  >
-                    <ImShare /> Github Preview
-                  </Link>
-                </p>
-                <p className="mt-3">
-                  <Link
-                    to={link != "null" && link}
-                    className="itemLink previewBtn"
-                    target={link != "null" && "_blank"}
-                    onClick={
-                      link === "null" &&
-                      (() =>
-                        nullLinkWarning({
-                          title: "Live Link Unavailable",
-                          text: "Exclusively developed for games, this project does not have web functionality..",
-                        }))
-                    }
-                  >
+                  <Link to={link} className="itemLink previewBtn" target="_blank">
                     <ImShare /> Live Preview
                   </Link>
                 </p>

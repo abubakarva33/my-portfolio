@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import { routes } from "./routes/Routes";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useGetProfileQuery } from "./redux/api";
 import { motion } from "framer-motion";
 import PreLoader from "./components/Utilities/PreLoader/PreLoader";
