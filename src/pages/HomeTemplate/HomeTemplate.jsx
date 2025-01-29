@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./HomeTemplate.css";
 import { AiOutlineDownload } from "react-icons/ai";
-import Typed from "react-typed";
+
 
 const HomeTemplate = ({ data, handleDownload }) => {
   const { name, description } = data?.data[0] || {};
@@ -16,12 +16,7 @@ const HomeTemplate = ({ data, handleDownload }) => {
           </p>
           <div className="d-flex">
             <p className="homeHeadingSpan pe-3">a</p>
-            <Typed
-              strings={["Developer", "FrontEnd Developer", "Designer"]}
-              typeSpeed={40}
-              backSpeed={50}
-              loop
-            />
+            
           </div>
         </div>
         <p className="description">{description}</p>

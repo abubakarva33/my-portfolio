@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import Typed from "react-typed";
 import { useGetProfileQuery } from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
-import HomeTemplate from "../HomeTemplate/HomeTemplate";
 
 const Home = () => {
   const { data } = useGetProfileQuery();
@@ -38,13 +36,13 @@ const Home = () => {
               Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
             <div className="d-flex">
-              <p className="homeHeadingSpan pe-3">a</p>
-              <Typed
+              <p className="homeHeadingSpan pe-3">a FrontEnd Developer</p>
+              {/* <Typed
                 strings={["Developer", "FrontEnd Developer", "Designer"]}
                 typeSpeed={40}
                 backSpeed={50}
                 loop
-              />
+              /> */}
             </div>
           </div>
           <p className="description">{description}</p>
