@@ -9,7 +9,6 @@ import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
 import ReactPlayer from "react-player";
 import Spinner from "../../../components/Utilities/Spinner/Spinner";
-import { nullLinkWarning } from "../../../components/Utilities/Utilities";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
