@@ -8,14 +8,12 @@ import PreLoader from "./components/Utilities/PreLoader/PreLoader";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const { isLoading } = useGetProfileQuery();
-  useEffect(() => {
-    if (!isLoading) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1800);
-    }
-  }, [isLoading]);
+
+  // lazy loading and preloader //
+  useGetProfileQuery();
+  setTimeout(() => {
+    setLoading(false);
+  }, 1800);
   return (
     <div>
       {loading ? (
