@@ -3,6 +3,7 @@ import "./Home.css";
 import { useGetProfileQuery } from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
+import NeomorphicWord from "../../components/utilities/utilities";
 
 const Home = () => {
   const { data } = useGetProfileQuery();
@@ -30,8 +31,57 @@ const Home = () => {
         exit={{ opacity: 0 }}
       >
         <div className="home p-3 p-md-5">
-          <h6 className="welcome">WELCOME TO MY WORLD</h6>
+          {/* <div
+            style={{
+              display: "flex",
+              // justifyContent: "center",
+              // alignItems: "center",
+              gap: "5px",
+            }}
+          >
+            {"WELCOME  TO  MY  WORLD".split("").map((letter, index) => (
+              <NeomorphicWord
+                key={index}
+                word={letter}
+                styleProps={{
+                  textColor: "#ffffff",
+                }}
+              />
+            ))}
+          </div> */}
           <div className="homeHeading">
+            <div
+              style={{
+                display: "flex",
+                gap: "5px",
+              }}
+            >
+              {"Hi, I’m".split("").map((letter, index) => (
+                <NeomorphicWord
+                  key={index}
+                  word={letter}
+                  styleProps={{
+                    textColor: "#ffffff",
+                  }}
+                />
+              ))}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                gap: "5px",
+              }}
+            >
+              {name?.toUpperCase().split("").map((letter, index) => (
+                <NeomorphicWord
+                  key={index}
+                  word={letter}
+                  styleProps={{
+                    // textColor: "#ffffff",
+                  }}
+                />
+              ))}
+            </div>
             <p>
               Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
