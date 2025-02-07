@@ -3,6 +3,7 @@ import "./Home.css";
 import { useGetProfileQuery } from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
+import ThreeDText from "../../components/utilities/utilities";
 
 const Home = () => {
   const { data } = useGetProfileQuery();
@@ -30,6 +31,49 @@ const Home = () => {
         exit={{ opacity: 0 }}
       >
         <div className="home p-3 p-md-5">
+          <div
+            style={{
+              // backgroundColor: "#212428",
+              height: "100px",
+              display: "flex",
+              // justifyContent: "center",
+              // alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            {"Hi, I’m".split("").map((letter, index) => (
+              <ThreeDText
+                key={index}
+                word={letter}
+                styleProps={{
+                  textColor: "#ffffff",
+                  fontSize: "35px",
+                  fontWeight: "900",
+                  depth: 15,
+                  perspective: 600,
+                  rotateX: 15,
+                  rotateY: -15,
+                  shadowColor: "#000000aa",
+                }}
+              />
+            ))}
+            {`${name?.toUpperCase()}`.split("").map((letter, index) => (
+              <ThreeDText
+                key={index}
+                word={letter}
+                styleProps={{
+                  textColor: "var(--color-primary)",
+                  fontSize: "35px",
+                  fontWeight: "900",
+                  depth: 15,
+                  perspective: 600,
+                  rotateX: 15,
+                  rotateY: -15,
+                  shadowColor: "#000000aa",
+                }}
+              />
+            ))}
+          </div>
           <h6 className="welcome">WELCOME TO MY WORLD</h6>
           <div className="homeHeading">
             <p>
