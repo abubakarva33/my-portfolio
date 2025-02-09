@@ -2,6 +2,14 @@
   z-index: 9;
 }
 
+@font-face {
+  font-family: 'jungleFont';
+  src: local('jungleFont'), 
+       url('/Fonts/jungleFont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 table * {
   background: transparent !important;
 }

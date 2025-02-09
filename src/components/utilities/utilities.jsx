@@ -33,6 +33,7 @@ const get3DTextStyle = ({
     position: 'relative',
     display: 'inline-block',
     letterSpacing: '-2px',
+    fontFamily: 'jungleFont',
     transformStyle: 'preserve-3d',
     perspective: `${perspective}px`,
     transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,

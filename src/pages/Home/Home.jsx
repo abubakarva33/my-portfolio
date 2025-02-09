@@ -65,6 +65,7 @@ const Home = () => {
                   textColor: "var(--color-primary)",
                   fontSize: "35px",
                   fontWeight: "900",
+                  fontFamily: "jungleFont",
                   depth: 15,
                   perspective: 600,
                   rotateX: 15,
@@ -76,7 +77,7 @@ const Home = () => {
           </div>
           <h6 className="welcome">WELCOME TO MY WORLD</h6>
           <div className="homeHeading">
-            <p>
+            <p style={{ fontFamily: "jungleFont" }}>
               Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
             <div className="d-flex">
