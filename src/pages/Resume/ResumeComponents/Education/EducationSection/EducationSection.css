@@ -1,5 +1,5 @@
 .eduSection{
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background: var(--shadow-bg-primary);
     box-shadow:  var(--icon-primary-shadow);
     min-height: 350px;

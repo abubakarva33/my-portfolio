@@ -1,37 +1,36 @@
-.service{
-    min-height: 510px !important;
+.service {
+  min-height: 510px !important;
 }
 
-
-.eduSection:hover img{
-	transform: translateY(-15px);
+.eduSection:hover img {
+  transform: translateY(-15px);
 }
-.eduSection:hover .cardBody{
-	transform: translateY(-20px);
+.eduSection:hover .cardBody {
+  transform: translateY(-20px);
 }
-.eduSection .btnGroup{
-	position: absolute;
-    top: 1000px ;
-    overflow-y: hidden;
-	}
-.eduSection:hover .btnGroup{
-	top: 0;
-	}
-.cardBorder{
-	padding: 8px;
-	border-radius: 10px;
+.eduSection .btnGroup {
+  /* position: absolute; */
+  /* top: 1000px ; */
+  /* top: 0px;
+  overflow-y: hidden; */
 }
-
-.serviceImg{
-	width: 100%;
-	height: 220px;
-	border-radius: 10px;
+/* .eduSection:hover .btnGroup {
+  top: 0;
+} */
+.cardBorder {
+  padding: 8px;
+  /* border-radius: 10px; */
 }
 
-
+.serviceImg {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 5px;
+  /* border-radius: 10px; */
+}
 
 @media only screen and (max-width: 600px) {
-    .service{
-		min-height: 555px !important;
-	}
+  .service {
+    min-height: 555px !important;
   }
+}

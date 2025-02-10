@@ -10,8 +10,8 @@ const Project = ({ data }) => {
   const { title, description, link, projectType, img, createdAt, _id } = data;
 
   return (
-    <div className="cardBorder ">
-      <div className="eduSection service p-4">
+    <div className="cardBorder test h-100">
+      <div className="eduSection" style={{ minHeight: 450 }}>
         <motion.img
           src={img}
           alt=""
@@ -41,24 +41,21 @@ const Project = ({ data }) => {
           <p className="mb-0">
             {description.length > 180 ? `${description.slice(0, 180)}...` : description}
           </p>
-        </motion.div>
-        <div className="position-relative">
           <div className="btnGroup">
             <Link to={`/main/recent-works/${_id}`} className="itemLink previewBtn">
               <AiOutlineEye className="me-1" />
               Preview
             </Link>
             <p className="mt-3">
-              <Link
-                to={link }
-                target="_blank"
-                className="itemLink previewBtn"
-              >
+              <Link to={link} target="_blank" className="itemLink previewBtn">
                 <AiOutlineLink /> Visit Site
               </Link>
             </p>
           </div>
-        </div>
+        </motion.div>
+        {/* <div className="position-relative test">
+          
+        </div> */}
       </div>
     </div>
   );

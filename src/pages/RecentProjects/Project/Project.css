@@ -33,3 +33,8 @@
     box-shadow: var(--icon-primary-shadow-hover);
     border-radius: 10px;
 }
+
+.test{
+    background-color: var(--color-bg-primary);
+    box-shadow: var(--icon-primary-shadow-hover);
+}
