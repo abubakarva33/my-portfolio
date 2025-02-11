@@ -38,3 +38,17 @@
     background-color: var(--color-bg-primary);
     box-shadow: var(--icon-primary-shadow-hover);
 }
+.testt{
+    position: relative;
+
+}
+.testt::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+    background: linear-gradient(180deg, rgb(29 36 244 / 0%) 60%, rgb(35 38 42) 100%);
+}

@@ -10,7 +10,7 @@ const Project = ({ data }) => {
   const { title, description, link, projectType, img, createdAt, _id } = data;
 
   return (
-    <div className="cardBorder test h-100">
+    <div className="cardBorder h-100">
       <div className="eduSection" style={{ minHeight: 450 }}>
         <motion.img
           src={img}
@@ -38,24 +38,20 @@ const Project = ({ data }) => {
             </small>
           </div>
           <h4 className="pt-3 pb-2">{title}</h4>
-          <p className="mb-0">
+          <p style={{ borderBottom: "5px black groove" }} className="testt">
             {description.length > 180 ? `${description.slice(0, 180)}...` : description}
           </p>
-          <div className="btnGroup">
-            <Link to={`/main/recent-works/${_id}`} className="itemLink previewBtn">
+          <div className="d-flex items-center justify-content-between">
+            <Link to={`/main/recent-works/${_id}`} className="w-100 text-center">
               <AiOutlineEye className="me-1" />
               Preview
             </Link>
-            <p className="mt-3">
-              <Link to={link} target="_blank" className="itemLink previewBtn">
-                <AiOutlineLink /> Visit Site
-              </Link>
-            </p>
+            <div style={{ borderRight: "5px black groove" }}></div>
+            <Link to={link} target="_blank" className="w-100 text-center">
+              <AiOutlineLink /> Visit Site
+            </Link>
           </div>
         </motion.div>
-        {/* <div className="position-relative test">
-          
-        </div> */}
       </div>
     </div>
   );
