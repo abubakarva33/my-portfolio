@@ -41,14 +41,14 @@ const Contact = () => {
   };
   return (
     <motion.div
-      className="px-1 pb-5"
+      className="pb-5 mx-3"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={`LET'S DISCUSS`} />
-      <Row xs={1} md={2} className="mx-2 gx-3 d-flex align-items-center">
+      <Row xs={1} md={2} className="gx-3 d-flex align-items-center">
         <Col xs={12} md={6}>
           <div className="contactSection mt-2 p-3">
             <img src="/Images/contactHand.avif" alt="" className="img-fluid rounded" />

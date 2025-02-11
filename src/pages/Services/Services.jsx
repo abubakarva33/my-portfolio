@@ -14,14 +14,14 @@ const Services = () => {
   }
   return (
     <motion.div
-      className="mx-1 mb-4"
+      className="mx-3 mb-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
       // exit={{ opacity: 0 }}
     >
       <SectionHeader title={"SERVICES"} />
-      <Row md={2} xs={1} className="gx-0">
+      <Row md={2} xs={1}>
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (
             <Col className="gx-2" key={ind}>

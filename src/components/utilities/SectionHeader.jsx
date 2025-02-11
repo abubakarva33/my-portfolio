@@ -7,7 +7,7 @@ const SectionHeader = ({ title, Children }) => {
         animate={{ x: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
         exit={{ x: "-100px" }}
-        className="sectionHeader mx-3 mt-3"
+        className="sectionHeader mt-3"
       >
         {title}
       </motion.h3>

@@ -6,14 +6,14 @@ import SectionHeader from "../../components/Utilities/SectionHeader";
 const Resume = () => {
   return (
     <motion.div
-      className="mx-1 mb-4"
+      className="mx-3 mb-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={"MY RESUME"} />
-      <div className="mb-3 mx-3">
+      <div className="mb-3">
         <div className="resumeHeader w-100">
           <NavLink to="/main/resume/skills" className=" w-100">
             Skills

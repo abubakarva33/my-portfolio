@@ -12,7 +12,7 @@ const Skills = () => {
     return <Spinner />;
   }
   return (
-    <div className="mb-3 mx-3">
+    <div className="mb-3 ">
       <Row xs={1} md={2} className="skillContainer mx-1 ">
         <Col className="gx-0">
           <div className="skillSection mt-1">

@@ -37,8 +37,8 @@ const Project = ({ data }) => {
               {moment(createdAt).format("DD/MM/YYYY")}
             </small>
           </div>
-          <h4 className="pt-3 pb-2">{title}</h4>
-          <p style={{ borderBottom: "5px black groove" }} className="testt">
+          <h4 className="pt-3 pb-2 workTitle">{title}</h4>
+          <p className="workDetails">
             {description.length > 180 ? `${description.slice(0, 180)}...` : description}
           </p>
           <div className="d-flex items-center justify-content-between">
@@ -46,7 +46,7 @@ const Project = ({ data }) => {
               <AiOutlineEye className="me-1" />
               Preview
             </Link>
-            <div style={{ borderRight: "5px black groove" }}></div>
+            <div style={{ borderRight: "5px var(--color-bg-primary) groove" }}></div>
             <Link to={link} target="_blank" className="w-100 text-center">
               <AiOutlineLink /> Visit Site
             </Link>

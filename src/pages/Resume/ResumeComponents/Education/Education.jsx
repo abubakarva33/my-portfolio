@@ -13,8 +13,8 @@ const Education = () => {
   }
 
   return (
-    <div className="mx-3">
-      <Row xs={1} md={2} className="gx-0">
+    <div>
+      <Row xs={1} md={2}>
         <Col className="gx-0">
           <div className="skillSection">
             <h3 className="resumeHeaderName ">Basic</h3>
