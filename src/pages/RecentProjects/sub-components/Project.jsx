@@ -1,4 +1,3 @@
-import "./Project.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";

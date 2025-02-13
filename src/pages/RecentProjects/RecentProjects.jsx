@@ -1,7 +1,7 @@
 import "./RecentProjects.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Project from "./Project/Project";
+import Project from "./sub-components/Project";
 import { useGetWorksQuery } from "../../redux/api";
 import { motion } from "framer-motion";
 import SectionHeader from "../../components/Utilities/SectionHeader";

@@ -4,13 +4,13 @@ import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact";
 import Resume from "../pages/Resume/Resume";
 import Services from "../pages/Services/Services";
-import RecentProjects from "../pages/RecentProjects/RecentProjects";
 import Skills from "../pages/Resume/ResumeComponents/Skills/Skills";
 import Education from "../pages/Resume/ResumeComponents/Education/Education";
 import Experience from "../pages/Resume/ResumeComponents/Experience/Experience";
-import ProjectDetails from "../pages/RecentProjects/ProjectDetails/ProjectDetails";
 import Game from "../components/Game/Game";
 import MinimalView from "../minimalView/MinimalView/MinimalView";
+import ProjectDetails from "../pages/RecentProjects/sub-components/ProjectDetails";
+import RecentProjects from "../pages/RecentProjects/RecentProjects";
 
 export const routes = createBrowserRouter([
   {
@@ -63,10 +63,6 @@ export const routes = createBrowserRouter([
         path: "/main/services",
         element: <Services />,
       },
-      // {
-      //   path: "/main/services/:serviceId",
-      //   element: <ServiceDetails />,
-      // },
       {
         path: "/main/recent-works",
         element: <RecentProjects />,

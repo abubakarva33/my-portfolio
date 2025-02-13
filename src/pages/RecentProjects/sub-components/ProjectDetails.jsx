@@ -1,5 +1,4 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import "./ProjectDetails.css";
 import { useGetAWorkQuery } from "../../../redux/api";
 import { Col, Row } from "react-bootstrap";
 import { AiOutlineCheckSquare, AiOutlineDeploymentUnit } from "react-icons/ai";
