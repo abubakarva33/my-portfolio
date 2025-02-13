@@ -2,7 +2,6 @@ import "./Project.css";
 import { MdOutlineCreate } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { AiOutlineEye, AiOutlineLink } from "react-icons/ai";
 import moment from "moment";
 import { motion } from "framer-motion";
 
@@ -44,13 +43,12 @@ const Project = ({ data }) => {
             className="d-flex items-center justify-content-between"
             style={{ borderTop: "5px var(--color-bg-primary) groove", padding: 0 }}
           >
-            <Link to={`/main/recent-works/${_id}`} className="w-100 text-center">
-              <AiOutlineEye className="me-1" />
-              Preview
+            <Link to={`/main/recent-works/${_id}`} className="navlinkA p-0 w-100 text-center">
+              PREVIEW
             </Link>
             <div style={{ borderRight: "5px var(--color-bg-primary) groove" }}></div>
-            <Link to={link} target="_blank" className="w-100 text-center">
-              <AiOutlineLink /> Visit Site
+            <Link to={link} target="_blank" className="navlinkA p-0 w-100 text-center">
+              VISIT
             </Link>
           </div>
         </motion.div>

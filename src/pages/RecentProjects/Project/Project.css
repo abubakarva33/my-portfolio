@@ -38,8 +38,9 @@
   background-color: var(--color-bg-primary);
   box-shadow: var(--icon-primary-shadow-hover);
 }
-.workDetailsContainer{
+.workDetailsContainer {
   padding: 0 8px;
+  font-style: italic;
 }
 .workTitle {
   height: 46px;
@@ -66,6 +67,7 @@
   overflow: hidden;
   font-size: 18px;
   line-height: 20px;
+  font-weight: 100;
 }
 .workDetails::after {
   content: "";

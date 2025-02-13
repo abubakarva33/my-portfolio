@@ -10,11 +10,12 @@
 
 .navlinkA {
   text-decoration: none;
-  margin: 5px 0;
+  margin: 2px 0;
   font-size: 17px;
   padding: 5px 10px;
   border-radius: 10px;
   color: var(--text-color);
+  font-style: italic;
 }
 .navLogo {
   display: none;

@@ -21,7 +21,7 @@ const RecentProjects = () => {
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={"RECENT PROJECTS"} />
-      <Row md={3} xs={1} className="">
+      <Row md={3} xs={1} className="gx-0">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (
             <Col className="g-2"  key={ind}>

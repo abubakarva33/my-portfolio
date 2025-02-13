@@ -5,6 +5,7 @@
   box-shadow: var(--icon-primary-shadow);
   margin-bottom: 10px;
   padding: 10px 0px;
+  font-style: italic;
 }
 
 @media only screen and (max-width: 600px) {
