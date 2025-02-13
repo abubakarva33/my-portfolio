@@ -18,7 +18,7 @@ export const api = createApi({
     }),
 
     getWorks: builder.query({
-      query: (page) => `work?page=${page}`,
+      query: (page) => `work?sortBy=preferredIndex&sortOrder=asc&page=${page}`,
     }),
     getAWork: builder.query({
       query: (workId) => `work/${workId}`,
