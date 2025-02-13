@@ -1,7 +1,7 @@
 import "./Services.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Service from "./Service/Service";
+import Service from "./sub-components/Service";
 import { useGetServicesQuery } from "../../redux/api";
 import { motion } from "framer-motion";
 import SectionHeader from "../../components/Utilities/SectionHeader";
@@ -18,7 +18,7 @@ const Services = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
-      // exit={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
     >
       <SectionHeader title={"SERVICES"} />
       <Row md={3} sm={2} xs={1} className="gx-3">

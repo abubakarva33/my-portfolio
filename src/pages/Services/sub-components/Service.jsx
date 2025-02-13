@@ -1,17 +1,14 @@
-import "./Service.css";
-import { GrLinkNext } from "react-icons/gr";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Service = ({ data }) => {
-  const { title, description, img, _id } = data;
+  const { title, description, img } = data;
 
   return (
     <div className="cardContainer pb-2">
       <div>
         <motion.img
-          src={`/Images/${img}.webp`}
-          alt=""
+          src={img}
+          alt={title}
           className="cardImg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

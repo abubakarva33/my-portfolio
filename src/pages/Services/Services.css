@@ -33,3 +33,30 @@
   text-decoration: none;
   font-size: 20px;
 }
+
+.cardImg {
+  width: 100%;
+  height: 180px;
+  border-bottom: 5px var(--color-bg-primary) groove;
+  padding-top: 2px;
+}
+.serviceCardDetails > .cardDetails::after {
+  background: transparent !important;
+}
+.serviceCardDetails > .cardDetails {
+  display: block;
+}
+
+.serviceEachImg {
+  min-height: 50vh;
+  width: 100%;
+}
+.serviceBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--icon-primary-shadow);
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

@@ -1,9 +1,8 @@
-import "./ServiceEach.css";
-import {  useNavigate, useParams } from "react-router-dom";
-import { useGetAServiceQuery } from "../../../../redux/api";
+import { useNavigate, useParams } from "react-router-dom";
+import { useGetAServiceQuery } from "../../../redux/api";
 import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { MdOutlineRefresh } from "react-icons/md";
-import Spinner from "../../../../components/Utilities/Spinner/Spinner";
+import Spinner from "../../../components/Utilities/Spinner/Spinner";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
@@ -12,7 +11,7 @@ const ServiceDetails = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  const { title, description, img, } = data;
+  const { title, description, img } = data;
   return (
     <div className="mx-2 mb-4">
       <div className=" serviceBox px-2">
