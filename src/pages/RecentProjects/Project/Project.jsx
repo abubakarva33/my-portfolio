@@ -10,11 +10,11 @@ const Project = ({ data }) => {
 
   return (
     <div className="h-100">
-      <div className="eduSection">
+      <div className="cardContainer">
         <motion.img
           src={img}
           alt=""
-          className="serviceImg"
+          className="cardImg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
@@ -26,7 +26,7 @@ const Project = ({ data }) => {
           transition={{ duration: 0.2, ease: "easeInOut" }}
           exit={{ y: "100px", opacity: 0.5 }}
         >
-          <div className="workDetailsContainer">
+          <div className="cardDetailsContainer">
             <div className="d-flex justify-content-between pt-3">
               <small className="fs-6">
                 <BiCategory className="me-1" /> {projectType}
@@ -36,8 +36,8 @@ const Project = ({ data }) => {
                 {moment(createdAt).format("DD/MM/YYYY")}
               </small>
             </div>
-            <p className="workTitle">{title}</p>
-            <p className="workDetails">{description}</p>
+            <p className="cardTitle">{title}</p>
+            <p className="cardDetails">{description}</p>
           </div>
           <div
             className="d-flex items-center justify-content-between"

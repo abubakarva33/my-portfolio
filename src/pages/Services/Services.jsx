@@ -21,10 +21,10 @@ const Services = () => {
       // exit={{ opacity: 0 }}
     >
       <SectionHeader title={"SERVICES"} />
-      <Row md={2} xs={1}>
+      <Row md={3} sm={2} xs={1} className="gx-3">
         {Array.isArray(data?.data) &&
           data?.data?.map((data, ind) => (
-            <Col className="gx-2" key={ind}>
+            <Col className="g-3" key={ind}>
               <Service key={ind} ind={ind} data={data} />
             </Col>
           ))}

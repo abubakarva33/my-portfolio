@@ -48,7 +48,7 @@ const Contact = () => {
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={`LET'S DISCUSS`} />
-      <Row xs={1} md={2} className="gx-3 d-flex align-items-center">
+      <Row xs={1} md={2} style={{ marginTop: "10px" }} className="gx-3 d-flex align-items-center">
         <Col xs={12} md={6}>
           <div className="contactSection mt-2 p-3">
             <img src="/Images/contactHand.avif" alt="" className="img-fluid rounded" />

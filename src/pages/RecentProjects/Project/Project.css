@@ -38,11 +38,11 @@
   background-color: var(--color-bg-primary);
   box-shadow: var(--icon-primary-shadow-hover);
 }
-.workDetailsContainer {
+.cardDetailsContainer {
   padding: 0 8px;
   font-style: italic;
 }
-.workTitle {
+.cardTitle {
   height: 46px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -54,12 +54,13 @@
   overflow: hidden;
   font-size: 22px;
   line-height: 22px;
+  font-style: italic;
 }
-.workDetails {
+.cardDetails {
   position: relative;
   /* border-bottom: 5px var(--color-bg-primary) groove; */
   margin-bottom: 0;
-  height: 84px;
+  height: 83px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -68,8 +69,9 @@
   font-size: 18px;
   line-height: 20px;
   font-weight: 100;
+  font-style: italic;
 }
-.workDetails::after {
+.cardDetails::after {
   content: "";
   position: absolute;
   top: 0;

@@ -13,7 +13,7 @@ const Resume = () => {
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={"MY RESUME"} />
-      <div className="mb-3">
+      <div className="mb-3" style={{ marginTop: "15px" }}>
         <div className="resumeHeader w-100">
           <NavLink to="/main/resume/skills" className=" w-100">
             Skills

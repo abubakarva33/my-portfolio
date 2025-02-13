@@ -5,7 +5,7 @@ import { MdOutlineSchool } from "react-icons/md";
 const ExperienceSection = ({ data }) => {
   const { title, location, details, endYear, startYear, institute } = data;
   return (
-    <div className="eduSection p-4 my-2 ">
+    <div className="cardContainer p-4 my-2 ">
       <div>
         <h3>{title}</h3>
         <p className="mb-0">
