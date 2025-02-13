@@ -38,23 +38,34 @@
   background-color: var(--color-bg-primary);
   box-shadow: var(--icon-primary-shadow-hover);
 }
+.workDetailsContainer{
+  padding: 0 8px;
+}
 .workTitle {
-  position: relative;
-  color: var(--title-light);
-  height: 36px;
+  height: 46px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   font: 400 14px / 18px "Open Sans", sans-serif;
-  margin: 8px 5px 5px;
+  margin: 8px 0px 8px;
   white-space: normal;
   overflow: hidden;
+  font-size: 22px;
+  line-height: 22px;
 }
 .workDetails {
   position: relative;
-  border-bottom: 5px var(--color-bg-primary) groove;
+  /* border-bottom: 5px var(--color-bg-primary) groove; */
   margin-bottom: 0;
+  height: 84px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 20px;
 }
 .workDetails::after {
   content: "";

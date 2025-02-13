@@ -10,8 +10,8 @@ const Project = ({ data }) => {
   const { title, description, link, projectType, img, createdAt, _id } = data;
 
   return (
-    <div className="cardBorder h-100">
-      <div className="eduSection" style={{ minHeight: 450 }}>
+    <div className="h-100">
+      <div className="eduSection">
         <motion.img
           src={img}
           alt=""
@@ -22,26 +22,28 @@ const Project = ({ data }) => {
           exit={{ opacity: 0, scale: 0.5 }}
         />
         <motion.div
-          className="cardBody"
           initial={{ y: "100px", opacity: 0.5 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
           exit={{ y: "100px", opacity: 0.5 }}
         >
-          <div className="d-flex justify-content-between pt-3">
-            <small className="fs-6">
-              <BiCategory className="me-1" /> {projectType}
-            </small>
-            <small className="fs-6">
-              <MdOutlineCreate className="me-1" />
-              {moment(createdAt).format("DD/MM/YYYY")}
-            </small>
+          <div className="workDetailsContainer">
+            <div className="d-flex justify-content-between pt-3">
+              <small className="fs-6">
+                <BiCategory className="me-1" /> {projectType}
+              </small>
+              <small className="fs-6">
+                <MdOutlineCreate className="me-1" />
+                {moment(createdAt).format("DD/MM/YYYY")}
+              </small>
+            </div>
+            <p className="workTitle">{title}</p>
+            <p className="workDetails">{description}</p>
           </div>
-          <h4 className="pt-3 pb-2 workTitle">{title}</h4>
-          <p className="workDetails">
-            {description.length > 180 ? `${description.slice(0, 180)}...` : description}
-          </p>
-          <div className="d-flex items-center justify-content-between">
+          <div
+            className="d-flex items-center justify-content-between"
+            style={{ borderTop: "5px var(--color-bg-primary) groove", padding: 0 }}
+          >
             <Link to={`/main/recent-works/${_id}`} className="w-100 text-center">
               <AiOutlineEye className="me-1" />
               Preview
