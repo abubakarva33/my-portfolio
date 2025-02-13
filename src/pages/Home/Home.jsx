@@ -31,7 +31,7 @@ const Home = () => {
         exit={{ opacity: 0 }}
       >
         <div className="home p-3 p-md-5">
-          <div
+          {/* <div
             style={{
               // backgroundColor: "#212428",
               height: "100px",
@@ -74,10 +74,10 @@ const Home = () => {
                 }}
               />
             ))}
-          </div>
+          </div> */}
           <h6 className="welcome">WELCOME TO MY WORLD</h6>
           <div className="homeHeading">
-            <p style={{ fontFamily: "jungleFont" }}>
+            <p >
               Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
             <div className="d-flex">
