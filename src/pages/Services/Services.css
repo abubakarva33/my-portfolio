@@ -1,11 +1,49 @@
-.cardBody {
-  box-shadow: var(--icon-primary-shadow);
+.cardDetailsContainer {
+  padding: 0 8px;
+  font-style: italic;
 }
 .cardImg {
   width: 100%;
   height: 180px;
   border-bottom: 5px var(--color-bg-primary) groove;
   padding-top: 2px;
+}
+.cardTitle {
+  height: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  font: 400 14px / 18px "Open Sans", sans-serif;
+  margin: 8px 0px 8px;
+  white-space: normal;
+  overflow: hidden;
+  font-size: 22px;
+  line-height: 22px;
+  font-style: italic;
+}
+.cardDetails {
+  position: relative;
+  margin-bottom: 0;
+  height: 83px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 100;
+  font-style: italic;
+}
+.cardDetails::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(29 36 244 / 0%) 60%, var(--color-bg-primary) 100%);
 }
 
 .btnGroup {
@@ -38,4 +76,60 @@
   border-radius: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+@media only screen and (min-width: 2400px) {
+  .cardImg {
+    height: 350px;
+  }
+  .cardTitle {
+    font-size: 38px;
+    height: 78px;
+    line-height: 38px;
+  }
+}
+@media only screen and (min-width: 1900px) and (max-width: 2400px) {
+  .cardImg {
+    height: 300px;
+  }
+  .cardTitle {
+    font-size: 32px;
+    height: 70px;
+    line-height: 34px;
+  }
+}
+@media only screen and (min-width: 1650px) and (max-width: 1900px) {
+  .cardImg {
+    height: 250px;
+  }
+  .cardTitle {
+    font-size: 28px;
+    height: 58px;
+    line-height: 28px;
+  }
+}
+@media only screen and (min-width: 1500px) and (max-width: 1650px) {
+  .cardImg {
+    height: 220px;
+  }
+  .cardTitle {
+    font-size: 25px;
+    height: 54px;
+    line-height: 26px;
+  }
+}
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+  .cardImg {
+    height: 280px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .cardTitle {
+    font-size: 20px;
+    height: 42px;
+    line-height: 20px;
+  }
+  .cardImg {
+    height: 160px;
+  }
 }
