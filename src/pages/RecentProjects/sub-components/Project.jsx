@@ -27,10 +27,10 @@ const Project = ({ data }) => {
         >
           <div className="cardDetailsContainer">
             <div className="d-flex justify-content-between pt-3">
-              <small className="fs-6">
+              <small className="cardSmallText">
                 <BiCategory className="me-1" /> {projectType}
               </small>
-              <small className="fs-6">
+              <small className="cardSmallText">
                 <MdOutlineCreate className="me-1" />
                 {moment(createdAt).format("DD/MM/YYYY")}
               </small>
