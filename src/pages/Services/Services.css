@@ -87,6 +87,11 @@
     height: 78px;
     line-height: 38px;
   }
+  .cardDetails {
+    font-size: 28px;
+    height: 116px;
+    line-height: 28px;
+  }
 }
 @media only screen and (min-width: 1900px) and (max-width: 2400px) {
   .cardImg {
@@ -96,6 +101,11 @@
     font-size: 32px;
     height: 70px;
     line-height: 34px;
+  }
+  .cardDetails {
+    font-size: 25px;
+    height: 102px;
+    line-height: 25px;
   }
 }
 @media only screen and (min-width: 1650px) and (max-width: 1900px) {
@@ -107,6 +117,11 @@
     height: 58px;
     line-height: 28px;
   }
+  .cardDetails {
+    font-size: 22px;
+    height: 96px;
+    line-height: 22px;
+  }
 }
 @media only screen and (min-width: 1500px) and (max-width: 1650px) {
   .cardImg {
@@ -116,6 +131,10 @@
     font-size: 25px;
     height: 54px;
     line-height: 26px;
+  }
+  .cardDetails {
+    font-size: 20px;
+    height: 86px;
   }
 }
 @media only screen and (min-width: 450px) and (max-width: 576px) {
@@ -131,5 +150,8 @@
   }
   .cardImg {
     height: 160px;
+  }
+  .cardDetails {
+    font-size: 16px;
   }
 }
