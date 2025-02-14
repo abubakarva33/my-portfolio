@@ -38,9 +38,7 @@
   padding: 10px 20px;
   border: 3px solid #c4c4c4;
   border-radius: 10px;
-}
-.scoreContainer {
-  width: 70%;
+  width: 80%;
 }
 
 .browseBtn {
@@ -135,17 +133,55 @@
   background-image: url(/Images/crossIcon.webp) !important;
 }
 
-
 @media only screen and (max-width: 1000px) {
   .gameBtnGroup {
     width: 90%;
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .scoreContainer {
-    width: 80%;
+@media only screen and (min-width: 2100px) {
+  .gameIcon {
+    height: 360px;
+    width: 360px;
   }
+  .gameIcon img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 1800px) and (max-width: 2100px) {
+  .gameIcon {
+    height: 300px;
+    width: 300px;
+  }
+  .gameIcon img {
+    height: 270px;
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 1500px) and (max-width: 1800px) {
+  .gameIcon {
+    height: 260px;
+    width: 260px;
+  }
+  .gameIcon img {
+    height: 220px;
+    width: 220px;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1500px) {
+  .gameIcon {
+    height: 230px;
+    width: 230px;
+  }
+  .gameIcon img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .gameIcon {
     height: 160px;
     width: 160px;
@@ -168,9 +204,6 @@
   }
 
   @media only screen and (max-width: 650px) {
-    .scoreContainer {
-      width: 90%;
-    }
     .gameImages {
       flex-wrap: wrap;
     }
@@ -203,9 +236,6 @@
   }
 
   @media only screen and (max-width: 450px) {
-    .scoreContainer {
-      width: 90%;
-    }
     .gameIcon {
       height: 125px;
       width: 125px;

@@ -47,8 +47,8 @@ const Game = () => {
   };
 
   return (
-    <div className="gameSection">
-      <div className="scoreContainer">
+    <div>
+      <div className="gameSection">
         <div className="scoreBoard">
           <div>
             <p className="my-0 p-0 lh-1">FUN WITH</p>
@@ -212,93 +212,92 @@ const Game = () => {
             </motion.div>
           )}
         </div>
-      </div>
-
-      <div className="d-flex align-items-center justify-content-center flex-column">
-        {!result ? (
-          <button className="linkBtn">
-            <Link to="/main/home">
-              Busy Now?
-              <span className="browseBtn">
-                <b> Browse Portfolio</b>
-              </span>
-            </Link>
+        <div className="d-flex align-items-center justify-content-center flex-column">
+          {!result ? (
+            <button className="linkBtn">
+              <Link to="/main/home">
+                Busy Now?
+                <span className="browseBtn">
+                  <b> Browse Portfolio</b>
+                </span>
+              </Link>
+            </button>
+          ) : undefined}
+          <button className="rulesBtn" onClick={rulesHandler}>
+            RULES
           </button>
-        ) : undefined}
-        <button className="rulesBtn" onClick={rulesHandler}>
-          RULES
-        </button>
-      </div>
-      <Modal
-        show={show}
-        onHide={handleClose}
-        size="lg"
-        fullscreen={"lg-down md-down sm-down "}
-        className="bg-transparent"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>RULES FOR GAME</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className=" d-flex align-items-center justify-content-center flex-column">
-            <div className="modalBody align-items-center justify-content-center">
-              <div className="gameIcon">
-                <motion.img
-                  src="/Images/paper.webp"
-                  alt=""
-                  className="rock "
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  exit={{ opacity: 0 }}
-                />
-              </div>
+        </div>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          size="lg"
+          fullscreen={"lg-down md-down sm-down "}
+          className="bg-transparent"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>RULES FOR GAME</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className=" d-flex align-items-center justify-content-center flex-column">
+              <div className="modalBody align-items-center justify-content-center">
+                <div className="gameIcon">
+                  <motion.img
+                    src="/Images/paper.webp"
+                    alt=""
+                    className="rock "
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    exit={{ opacity: 0 }}
+                  />
+                </div>
 
-              <div className="rotateItem0">
-                <img
-                  src="/Images/arrow.webp"
-                  alt=""
-                  className="arrow1"
-                  style={{ rotate: "180deg" }}
-                />
-                <p>BEATS</p>
+                <div className="rotateItem0">
+                  <img
+                    src="/Images/arrow.webp"
+                    alt=""
+                    className="arrow1"
+                    style={{ rotate: "180deg" }}
+                  />
+                  <p>BEATS</p>
+                </div>
+                <div className="gameIcon">
+                  <motion.img
+                    src="/Images/scissor.webp"
+                    alt=""
+                    className="paper"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    exit={{ opacity: 0 }}
+                  />
+                </div>
               </div>
-              <div className="gameIcon">
-                <motion.img
-                  src="/Images/scissor.webp"
-                  alt=""
-                  className="paper"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  exit={{ opacity: 0 }}
-                />
+              <div className="d-flex ">
+                <div className="rotateItem1">
+                  <img src="/Images/arrow.webp" alt="" className="arrow1" />
+                  <p>BEATS</p>
+                </div>
+                <div className="gameIcon lastImg ruleImg3">
+                  <motion.img
+                    src="/Images/rock.webp"
+                    alt=""
+                    className="scissor"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    exit={{ opacity: 0 }}
+                  />
+                </div>
+                <div className="rotateItem2">
+                  <img src="/Images/arrow.webp" alt="" className="arrow1" />
+                  <p>BEATS</p>
+                </div>
               </div>
             </div>
-            <div className="d-flex ">
-              <div className="rotateItem1">
-                <img src="/Images/arrow.webp" alt="" className="arrow1" />
-                <p>BEATS</p>
-              </div>
-              <div className="gameIcon lastImg ruleImg3">
-                <motion.img
-                  src="/Images/rock.webp"
-                  alt=""
-                  className="scissor"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  exit={{ opacity: 0 }}
-                />
-              </div>
-              <div className="rotateItem2">
-                <img src="/Images/arrow.webp" alt="" className="arrow1" />
-                <p>BEATS</p>
-              </div>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+          </Modal.Body>
+        </Modal>
+      </div>
     </div>
   );
 };
