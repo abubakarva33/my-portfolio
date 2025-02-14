@@ -1,43 +1,39 @@
-.modalMain {
+/* .modalMain {
   position: relative;
   transition: 0.5s ease-in-out;
   height: calc(100vh - 100px);
   overflow-y: scroll;
   box-shadow: var(--btn-primary-shadow) !important;
   background-color: var(--color-bg-primary) !important;
-}
+} */
 
-.crossBtn {
+/* .crossBtn {
   position: absolute;
   font-size: 25px;
   top: 5px;
   right: 10px;
-}
+} */
 
 .project {
   min-height: 415px !important;
 }
-.toastMain {
+/* .toastMain {
   box-shadow: var(--btn-primary-shadow) !important;
   background-color: var(--color-bg-primary) !important;
   border-radius: 10px;
   border: none !important;
-}
-.toastt {
+} */
+/* .toastt {
   background-color: var(--color-bg-primary) !important;
   color: var(--text-color) !important;
   border: none !important;
-}
+} */
 .tags {
   background-color: var(--color-bg-primary);
   box-shadow: var(--icon-primary-shadow-hover);
   border-radius: 10px;
 }
 
-.test {
-  background-color: var(--color-bg-primary);
-  box-shadow: var(--icon-primary-shadow-hover);
-}
 .cardDetailsContainer {
   padding: 0 8px;
   font-style: italic;
@@ -92,17 +88,17 @@
   box-shadow: var(--icon-primary-shadow);
   padding: 5px 10px;
 }
-.likebtn {
+/* .likebtn {
   font-size: 20px;
-}
+} */
 .tags {
   margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 400px) {
-  .likebtn {
+  /* .likebtn {
     font-size: 17px;
-  }
+  } */
   .previewBtn {
     font-size: 17px !important;
     color: var(--text-color);
