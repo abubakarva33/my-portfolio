@@ -8,7 +8,9 @@ const Service = ({ data }) => {
       <div>
         <motion.img
           src={img}
+          loading="lazy"
           alt={title}
+          maxHeight="350px"
           className="cardImg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

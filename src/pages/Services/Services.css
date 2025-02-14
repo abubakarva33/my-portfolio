@@ -46,27 +46,11 @@
   background: linear-gradient(180deg, rgb(29 36 244 / 0%) 60%, var(--color-bg-primary) 100%);
 }
 
-.btnGroup {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.btnGroup a {
-  text-decoration: none;
-  font-size: 20px;
-}
-
 .serviceCardDetails > .cardDetails::after {
   background: transparent !important;
 }
 .serviceCardDetails > .cardDetails {
   display: block;
-}
-
-.serviceEachImg {
-  min-height: 50vh;
-  width: 100%;
 }
 
 

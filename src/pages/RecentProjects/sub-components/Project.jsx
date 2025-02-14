@@ -12,7 +12,9 @@ const Project = ({ data }) => {
       <div className="cardContainer">
         <motion.img
           src={img}
-          alt=""
+          loading="lazy"
+          maxHeight="350px"
+          alt={title}
           className="cardImg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
