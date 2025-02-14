@@ -10,7 +10,7 @@ export const api = createApi({
     }),
 
     getServices: builder.query({
-      query: (page) => `service?page=${page}`,
+      query: () => `service`,
     }),
     getAService: builder.query({
       query: (serviceId) => `service/${serviceId}`,
@@ -18,7 +18,7 @@ export const api = createApi({
     }),
 
     getWorks: builder.query({
-      query: (page) => `work?sortBy=preferredIndex&sortOrder=asc&page=${page}`,
+      query: () => `work?sortBy=preferredIndex&sortOrder=asc`,
     }),
     getAWork: builder.query({
       query: (workId) => `work/${workId}`,

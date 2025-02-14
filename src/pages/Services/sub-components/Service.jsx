@@ -6,17 +6,20 @@ const Service = ({ data }) => {
   return (
     <div className="cardContainer pb-2">
       <div>
-        <motion.img
-          src={img}
-          loading="lazy"
-          alt={title}
-          maxHeight="350px"
-          className="cardImg"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
-          exit={{ opacity: 0, scale: 0.5 }}
-        />
+        <div style={{ borderBottom: "5px var(--color-bg-primary) groove", overflow: "hidden" }}>
+          <motion.img
+            src={img}
+            loading="lazy"
+            alt={title}
+            maxHeight="350px"
+            className="cardImg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            exit={{ opacity: 0, scale: 0.5 }}
+          />
+        </div>
+
         <motion.div
           className="serviceCardDetails px-2"
           initial={{ y: "100px", opacity: 0.5 }}
