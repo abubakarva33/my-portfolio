@@ -142,7 +142,7 @@ const Game = () => {
                     />
                   )}
                 </div>
-                <h5 className="gameIconName mt-3"> YOU PICKED</h5>
+                <h3 className="gameIconName mt-3"> YOU PICKED</h3>
               </motion.div>
             )}
             {computerChoice && (
@@ -186,7 +186,7 @@ const Game = () => {
                     />
                   )}
                 </div>
-                <h5 className="gameIconName mt-3 lastImg">COMPUTER PICKED</h5>
+                <h3 className="gameIconName mt-3 lastImg">COMPUTER PICKED</h3>
               </motion.div>
             )}
           </div>
@@ -199,11 +199,11 @@ const Game = () => {
               exit={{ opacity: 0 }}
             >
               <h1 className="my-4">{result}</h1>
-              <div className="gameBtn gameBtnGroup ">
-                <button onClick={playAgainHandler} className="linkBtn playAgainBtn">
+              <div className="gameBtn gameBtnGroup">
+                <button onClick={playAgainHandler} className="navlinkA linkBtn playAgainBtn">
                   PLAY AGAIN
                 </button>
-                <button className="linkBtn ">
+                <button className="navlinkA linkBtn">
                   <Link to="/main/home" className="portfolioBtn">
                     BROWSE <span className="browseBtn"> PORTFOLIO</span>
                   </Link>
@@ -214,7 +214,7 @@ const Game = () => {
         </div>
         <div className="d-flex align-items-center justify-content-center flex-column">
           {!result ? (
-            <button className="linkBtn">
+            <button className="navlinkA linkBtn ">
               <Link to="/main/home">
                 Busy Now?
                 <span className="browseBtn">
