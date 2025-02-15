@@ -52,12 +52,12 @@ const Game = () => {
         <div className="scoreBoard">
           <div>
             <p className="my-0 p-0 lh-1">FUN WITH</p>
-            <h5 className="my-0 p-0 lh-1">ROCK</h5>
-            <h5 className="my-0 p-0 lh-1">PAPER</h5>
-            <h5 className="my-0 p-0 lh-1">SCISSORS</h5>
+            <p className="my-0 p-0 lh-1">ROCK</p>
+            <p className="my-0 p-0 lh-1">PAPER</p>
+            <p className="my-0 p-0 lh-1">SCISSORS</p>
           </div>
           <div className="d-flex align-items-center justify-content-center flex-column">
-            <h5 className="my-0 p-0">SCORE</h5>
+            <p className="my-0 p-0">SCORE</p>
             <h1 className="my-0 p-0">{score}</h1>
           </div>
         </div>
