@@ -32,18 +32,18 @@ const ProjectDetails = () => {
   } = data;
 
   return (
-    <div className="mx-2 mb-4">
-      <div className=" serviceBox px-2 mb-3">
+    <div className="mx-3 mb-4">
+      <div className="sectionHeader px-2 mb-3 mt-3 justify-content-between">
         <div>
-          <HiOutlineArrowLeft className="fs-2 my-2 ms-2" onClick={() => navigate(-1)} />
+          <HiOutlineArrowLeft className="fs-2" onClick={() => navigate(-1)} />
         </div>
         <h4>PROJECT DETAILS</h4>
         <div>
-          <MdOutlineRefresh className="fs-2 my-2 me-2" onClick={() => location.reload()} />
+          <MdOutlineRefresh className="fs-2" onClick={() => location.reload()} />
         </div>
       </div>
 
-      <div className="serviceTable p-3">
+      <div className="serviceTable py-1">
         <Row xs={1} md={2}>
           <Col>
             {video ? (
