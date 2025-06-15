@@ -10,8 +10,6 @@ import ReactPlayer from "react-player";
 import Spinner from "../../../components/Utilities/Spinner/Spinner";
 import { Skeleton } from "antd";
 import { useState } from "react";
-import VideoWithLoader from "../../../components/utilities/VideoWithLoader";
-import { FaVideo } from "react-icons/fa";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -39,11 +37,11 @@ const ProjectDetails = () => {
   return (
     <div className="mx-3 mb-4">
       <div className="sectionHeader px-2 mb-3 mt-3 justify-content-between">
-        <div>
+        <div className="cursor-pointer">
           <HiOutlineArrowLeft className="fs-2" onClick={() => navigate(-1)} />
         </div>
         <h4>PROJECT DETAILS</h4>
-        <div>
+        <div className="cursor-pointer">
           <MdOutlineRefresh className="fs-2" onClick={() => location.reload()} />
         </div>
       </div>
@@ -67,7 +65,7 @@ const ProjectDetails = () => {
                 />
               </>
             ) : (
-              <img src={img} alt="" className="serviceEachImg rounded" />
+              <img src={img} alt="" style={{ width: "100%", height: "100%" }} className="rounded" />
             )}
           </Col>
 
