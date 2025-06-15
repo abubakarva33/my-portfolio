@@ -8,10 +8,14 @@ import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
 import ReactPlayer from "react-player";
 import Spinner from "../../../components/Utilities/Spinner/Spinner";
+import { Skeleton } from "antd";
+import { useState } from "react";
+import VideoWithLoader from "../../../components/utilities/VideoWithLoader";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
   const { data, isLoading } = useGetAWorkQuery(workId);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   if (isLoading) {
     return <Spinner />;
@@ -45,7 +49,28 @@ const ProjectDetails = () => {
 
       <div className="serviceTable py-1">
         <Row xs={1} md={2}>
-          <Col>
+          <Col className="h-full w-full">
+            {video ? (
+              <>
+                {loading && <Skeleton active style={{ height: 300 }} />}
+                  <ReactPlayer
+                    url={video}
+                    width="100%"
+                    height="100%"
+                    loop={true}
+                    playing={true}
+                    muted={true}
+                    controls={true}
+                    onReady={() => setLoading(false)}
+                    style={{ display: loading ? "none" : "block" }}
+                  />
+              </>
+            ) : (
+              <img src={img} alt="" className="serviceEachImg rounded" />
+            )}
+            {/* <VideoWithLoader video={video} img={img} /> */}
+          </Col>
+          {/* <Col>
             {video ? (
               <ReactPlayer
                 url={video}
@@ -59,7 +84,7 @@ const ProjectDetails = () => {
             ) : (
               <img src={img} alt="" className="serviceEachImg rounded " />
             )}
-          </Col>
+          </Col> */}
           <Col>
             <div className="mt-2">
               <h3>{title}</h3>
