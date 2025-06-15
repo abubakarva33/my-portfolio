@@ -11,6 +11,7 @@ import Spinner from "../../../components/Utilities/Spinner/Spinner";
 import { Skeleton } from "antd";
 import { useState } from "react";
 import VideoWithLoader from "../../../components/utilities/VideoWithLoader";
+import { FaVideo } from "react-icons/fa";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -49,42 +50,27 @@ const ProjectDetails = () => {
 
       <div className="serviceTable py-1">
         <Row xs={1} md={2}>
-          <Col className="h-full w-full">
+          <Col>
             {video ? (
               <>
-                {loading && <Skeleton active style={{ height: 300 }} />}
-                  <ReactPlayer
-                    url={video}
-                    width="100%"
-                    height="100%"
-                    loop={true}
-                    playing={true}
-                    muted={true}
-                    controls={true}
-                    onReady={() => setLoading(false)}
-                    style={{ display: loading ? "none" : "block" }}
-                  />
+                {loading && <Skeleton.Image active className="!h-full !w-full" />}
+                <ReactPlayer
+                  url={video}
+                  width="100%"
+                  height="100%"
+                  loop={true}
+                  playing={true}
+                  muted={true}
+                  controls={true}
+                  onReady={() => setLoading(false)}
+                  style={{ display: loading ? "none" : "block" }}
+                />
               </>
             ) : (
               <img src={img} alt="" className="serviceEachImg rounded" />
             )}
-            {/* <VideoWithLoader video={video} img={img} /> */}
           </Col>
-          {/* <Col>
-            {video ? (
-              <ReactPlayer
-                url={video}
-                width="100%"
-                height="100%"
-                loop={true}
-                playing={true}
-                muted={true}
-                controls={true}
-              />
-            ) : (
-              <img src={img} alt="" className="serviceEachImg rounded " />
-            )}
-          </Col> */}
+
           <Col>
             <div className="mt-2">
               <h3>{title}</h3>
