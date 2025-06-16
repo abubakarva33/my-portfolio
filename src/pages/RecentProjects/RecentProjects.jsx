@@ -15,9 +15,9 @@ const RecentProjects = () => {
   return (
     <motion.div
       className="mx-3 mb-4"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.5 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.25, duration: 0.5, ease: "easeInOut" }}
+      transition={{  duration: 1, ease: "easeInOut" }}
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={"RECENT PROJECTS"} />

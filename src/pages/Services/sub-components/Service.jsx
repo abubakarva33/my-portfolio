@@ -4,7 +4,7 @@ const Service = ({ data }) => {
   const { title, description, img } = data;
 
   return (
-    <div className="cardContainer pb-2">
+    <div className="cardContainer pb-2 overflow-hidden">
       <div>
         <div style={{ borderBottom: "5px var(--color-bg-primary) groove", overflow: "hidden" }}>
           <motion.img

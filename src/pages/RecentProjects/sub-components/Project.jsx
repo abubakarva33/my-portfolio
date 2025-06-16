@@ -8,7 +8,7 @@ const Project = ({ data }) => {
   const { title, description, link, projectType, img, createdAt, _id } = data;
 
   return (
-    <div className="h-100">
+    <div className="h-100 overflow-hidden">
       <div className="cardContainer">
         <div style={{ borderBottom: "5px var(--color-bg-primary) groove", overflow: "hidden" }}>
           <motion.img
