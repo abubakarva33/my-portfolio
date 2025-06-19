@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { useGetProfileQuery } from "../../redux/api";
+import { useGetProfileQuery, useGetWorksQuery } from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
 import ThreeDText from "../../components/utilities/utilities";
 
 const Home = () => {
-  const { data } = useGetProfileQuery();
+  const { data, isLoading, isSuccess: profileSuccess } = useGetProfileQuery();
+  const { isSuccess: workSuccess } = useGetWorksQuery(undefined, {
+    skip: !profileSuccess,
+  });
   const { name, description } = data?.data[0] || {};
   const handleDownload = () => {
     try {
@@ -77,7 +80,7 @@ const Home = () => {
           </div> */}
           <h6 className="welcome">WELCOME TO MY WORLD</h6>
           <div className="homeHeading">
-            <p >
+            <p>
               Hi, I’m <span className="homeHeadingSpan">{name?.toUpperCase()}</span>
             </p>
             <div className="d-flex">
