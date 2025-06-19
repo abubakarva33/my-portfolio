@@ -3,7 +3,7 @@ import "./Game.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Modal from "react-bootstrap/Modal";
-import { useGetProfileQuery } from "../../redux/api";
+import { useGetProfileQuery, useGetServicesQuery, useGetWorksQuery } from "../../redux/api";
 
 const Game = () => {
   const [userChoice, setUserChoice] = useState(null);
@@ -13,7 +13,14 @@ const Game = () => {
   const [show, setShow] = useState(false);
 
   //! do not remove this function //
-  useGetProfileQuery();
+  const { isSuccess: profileSuccess } = useGetProfileQuery();
+  const { isSuccess: workSuccess } = useGetWorksQuery(undefined, {
+    skip: !profileSuccess,
+  });
+  useGetServicesQuery(undefined, {
+    skip: !workSuccess,
+  });
+   //! do not remove this function //
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

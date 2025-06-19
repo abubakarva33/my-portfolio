@@ -1,15 +1,36 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { useGetProfileQuery, useGetWorksQuery } from "../../redux/api";
+import {
+  useGetProfileQuery,
+  useGetResumeQuery,
+  useGetServicesQuery,
+  useGetSkillQuery,
+  useGetWorksQuery,
+} from "../../redux/api";
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
 import ThreeDText from "../../components/utilities/utilities";
+import Spinner from "../../components/Utilities/Spinner/Spinner";
 
 const Home = () => {
   const { data, isLoading, isSuccess: profileSuccess } = useGetProfileQuery();
   const { isSuccess: workSuccess } = useGetWorksQuery(undefined, {
     skip: !profileSuccess,
   });
+  const { isSuccess: serviceSuccess } = useGetServicesQuery(undefined, {
+    skip: !workSuccess,
+  });
+  useGetSkillQuery("design", { skip: !serviceSuccess });
+  useGetSkillQuery("development", { skip: !serviceSuccess });
+  useGetResumeQuery("training", { skip: !serviceSuccess });
+  useGetResumeQuery("job", { skip: !serviceSuccess });
+  useGetResumeQuery("academic", { skip: !serviceSuccess });
+  useGetResumeQuery("programming", { skip: !serviceSuccess });
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   const { name, description } = data?.data[0] || {};
   const handleDownload = () => {
     try {
