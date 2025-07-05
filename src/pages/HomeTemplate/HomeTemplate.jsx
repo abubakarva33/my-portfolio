@@ -33,9 +33,9 @@ const HomeTemplate = ({ data, handleDownload }) => {
       </div>
       <div className="designationContainer">
         <div className="designationInnerContainer">
-          {/* <h4 className="designationItem1">Web Developer</h4>
+          <h4 className="designationItem1">Web Developer</h4>
           <h4 className="designationItem2">Web Designer</h4>
-          <h4 className="designationItem3">Front-End Developer</h4> */}
+          <h4 className="designationItem3">Front-End Developer</h4>
           <h4 className="designationItem4">Developer</h4>
           <div className="designationCircle"></div>
         </div>
