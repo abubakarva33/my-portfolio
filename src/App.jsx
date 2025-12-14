@@ -4,7 +4,7 @@ import { routes } from "./routes/Routes";
 import { useState } from "react";
 import { useGetProfileQuery } from "./redux/api";
 import { motion } from "framer-motion";
-import PreLoader from "./components/Utilities/PreLoader/PreLoader";
+import PreLoader from "./components/utilities/PreLoader/PreLoader";
 
 function App() {
   const [loading, setLoading] = useState(true);

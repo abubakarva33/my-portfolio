@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://portfolio-server-black-xi.vercel.app/api/v1/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api/v1/" }),
 
   endpoints: (builder) => ({
     getProfile: builder.query({

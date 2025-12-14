@@ -1,7 +1,7 @@
 import "./Resume.css";
 import { NavLink, Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-import SectionHeader from "../../components/Utilities/SectionHeader";
+import SectionHeader from "../../components/utilities/SectionHeader";
 
 const Resume = () => {
   return (

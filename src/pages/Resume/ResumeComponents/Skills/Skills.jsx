@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Skill from "./Skill/Skill";
 import { useGetSkillQuery } from "../../../../redux/api";
-import Spinner from "../../../../components/Utilities/Spinner/Spinner";
+import Spinner from "../../../../components/utilities/Spinner/Spinner";
 
 const Skills = () => {
   const designData = useGetSkillQuery("design");

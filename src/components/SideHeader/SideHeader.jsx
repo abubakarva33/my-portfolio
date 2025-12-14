@@ -5,7 +5,8 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useGetProfileQuery } from "../../redux/api";
-import { dynamicSize } from "../Utilities/Utilities";
+import { dynamicSize } from "../utilities/utilities";
+// import { dynamicSize } from "../utilities/Utilities";
 
 const SideHeader = () => {
   const { data, isLoading } = useGetProfileQuery();

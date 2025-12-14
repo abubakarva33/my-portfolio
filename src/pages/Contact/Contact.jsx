@@ -12,7 +12,7 @@ import emailjs from "@emailjs/browser";
 import { useCreateMessageMutation } from "../../redux/api";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
-import SectionHeader from "../../components/Utilities/SectionHeader";
+import SectionHeader from "../../components/utilities/SectionHeader";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -26,8 +26,8 @@ const Contact = () => {
     };
 
     emailjs.send("service_iarwqio", "template_brhcv54", templateParams, "TZpRx-J6FGuXMUput").then(
-      () => {},
-      () => {}
+      () => { },
+      () => { }
     );
     sendMessage({ name, email, message });
     form.resetFields();

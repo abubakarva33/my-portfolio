@@ -10,7 +10,7 @@ import {
 import { AiOutlineDownload } from "react-icons/ai";
 import { motion } from "framer-motion";
 import ThreeDText from "../../components/utilities/utilities";
-import Spinner from "../../components/Utilities/Spinner/Spinner";
+import Spinner from "../../components/utilities/Spinner/Spinner";
 
 const Home = () => {
   const { data, isLoading, isSuccess: profileSuccess } = useGetProfileQuery();

@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 import Service from "./sub-components/Service";
 import { useGetServicesQuery } from "../../redux/api";
 import { motion } from "framer-motion";
-import SectionHeader from "../../components/Utilities/SectionHeader";
-import Spinner from "../../components/Utilities/Spinner/Spinner";
+import SectionHeader from "../../components/utilities/SectionHeader";
+import Spinner from "../../components/utilities/Spinner/Spinner";
 
 const Services = () => {
   const { data, isLoading } = useGetServicesQuery();
@@ -17,7 +17,7 @@ const Services = () => {
       className="mx-3 mb-4"
       initial={{ opacity: 0.5 }}
       animate={{ opacity: 1 }}
-      transition={{  duration: 1, ease: "easeInOut" }}
+      transition={{ duration: 1, ease: "easeInOut" }}
       exit={{ opacity: 0 }}
     >
       <SectionHeader title={"SERVICES"} />

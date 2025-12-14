@@ -7,7 +7,7 @@ import { HiOutlineArrowLeft } from "react-icons/hi2";
 import { ImShare } from "react-icons/im";
 import { MdOutlineRefresh } from "react-icons/md";
 import ReactPlayer from "react-player";
-import Spinner from "../../../components/Utilities/Spinner/Spinner";
+import Spinner from "../../../components/utilities/Spinner/Spinner";
 import { Skeleton } from "antd";
 import { useState } from "react";
 
